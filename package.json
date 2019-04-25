@@ -13,6 +13,9 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "7.4.3",
+    "@babel/plugin-proposal-class-properties": "7.4.0",
+    "@babel/plugin-proposal-decorators": "7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.4.3",
     "@babel/preset-env": "7.4.3",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
@@ -22,6 +25,7 @@
     "eslint-plugin-jsx-a11y": "6.2.1",
     "fs": "0.0.1-security",
     "gulp": "4.0.1",
+    "gulp-autoprefixer": "6.1.0",
     "gulp-cache": "1.1.1",
     "gulp-clean": "0.4.0",
     "gulp-cssnano": "2.1.3",

@@ -1,10 +1,7 @@
 const path = require('path');
-const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin')
 
-const mode = process.env.NODE_ENV || 'development';
-const isProduction = mode === 'production';
-const isDevelopment = mode === 'development';
+const { rootPath, sourcePath, mode, isProduction, isDevelopment } = require('./env');
 
 module.exports = {
   mode,
@@ -12,25 +9,22 @@ module.exports = {
   entry: './app.js',
   output: {
     filename: './bundle.js',
-    path: path.resolve(__dirname, 'src/js'),
+    path: path.resolve(sourcePath, 'js'),
   },
-  context: path.resolve(__dirname, 'src/js'),
+  context: path.resolve(sourcePath, 'js'),
   module: {
     rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        query: {
-          presets: ['@babel/preset-env']
-        }
       }
     ],
   },
   resolve: {
     alias: {
-      src: path.resolve(__dirname, 'src/js'),
-      components: path.resolve(__dirname, 'src/js/components'),
+      src: path.resolve(sourcePath, 'js'),
+      components: path.resolve(sourcePath, 'js/components'),
     },
     mainFiles: ['index'],
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -39,7 +33,7 @@ module.exports = {
     minimizer: [
       new TerserPlugin({
         test: /\.js(\?.*)?$/i,
-        cache: path.resolve(__dirname, '.cache'),
+        cache: path.resolve(rootPath, '.cache'),
         parallel: true,
         sourceMap: isDevelopment,
         terserOptions: {
@@ -47,7 +41,6 @@ module.exports = {
           warnings: false,
           mangle: true, // Note `mangle.properties` is `false` by default.
           module: false,
-          output: null,
           toplevel: false,
           nameCache: null,
           ie8: false,
