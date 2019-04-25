@@ -1,5 +1,3 @@
-import first from 'components/first';
-import second from 'components/second';
+import test from 'components/test';
 
-first();
-second();
+test();

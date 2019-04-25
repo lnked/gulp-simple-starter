@@ -15,7 +15,6 @@ dist
 profiling
 .docz
 .cache
-.awcache
 
 # Numerous always-ignore extensions
 *.bak
