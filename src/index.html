@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="/static/css/main.css">
-</head>
-<body>
+---
+title: Главная
+current: index
+description: Главная
+keywords: Главная
+---
 
-  <header>111</header>
+{%- extends "layouts/_base.html" -%}
 
-  <script src="/static/js/bundle.js"></script>
+{%- block content -%}
+  <h1>{{ title }}</h1>
 
-</body>
-</html>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nulla laborum similique! Sit corporis nostrum repellat! Iusto debitis aliquam totam laboriosam itaque incidunt aut maxime dolor molestias cupiditate. Nulla, alias!</p>
+
+{%- endblock -%}

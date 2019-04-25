@@ -1,20 +1,25 @@
 const { src, task, dest, watch, series, parallel } = require('gulp');
 
+const fs = require('fs');
+const path = require('path');
+
 const clean = require('gulp-clean');
 const sass = require('gulp-sass');
 const cssnano = require('gulp-cssnano');
-const template = require('gulp-template');
 const sassGlob = require('gulp-sass-glob');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const plumber = require('gulp-plumber');
 const cache = require('gulp-cache');
 const imageminOptipng = require('imagemin-optipng');
+const nunjucksRender = require('gulp-nunjucks-render');
+const webpack = require('webpack-stream');
+const webpackConfig = require('./webpack.config');
+const frontMatter = require('gulp-front-matter');
 
 const browserSync = require('browser-sync').create();
 
-const webpack = require('webpack-stream');
-const webpackConfig = require('./webpack.config');
+const isProduction = process.env.NODE_ENV === 'production';
 
 task('webserver', () => {
   browserSync.init({
@@ -103,16 +108,40 @@ task('img', () =>
     .pipe(dest('dist/img'))
 );
 
+const getTemplateData = () => {
+  const jsonExists = fs.existsSync(path.resolve(__dirname, 'src/template/data.json'));
+
+  if (jsonExists) {
+    const rawdata = fs.readFileSync(path.resolve(__dirname, 'src/template/data.json'));
+    return JSON.parse(rawdata);
+  }
+
+  return {}
+}
+
+nunjucksRender.nunjucks.configure({
+  watch: !isProduction,
+  trimBlocks: true,
+  lstripBlocks: false,
+});
+
 task('template', () =>
   src('src/*.html')
-    .pipe(template())
+    .pipe(frontMatter({ property: 'data' }))
+    .pipe(nunjucksRender({
+      data: getTemplateData(),
+      path: ['src/template'],
+      envOptions: {
+        watch: !isProduction,
+      }
+    }))
     .pipe(dest('dist'))
 );
 
 task('watch', () => {
   watch(['src/img/*.*'], series('img'));
-  watch(['src/*.html'], series('template'));
   watch(['src/js/*.js', 'src/js/**/*.js'], series('js'));
+  watch(['src/*.html', 'src/**/*.html', 'src/**/*.json'], series('template'));
   watch(['src/scss/*.{sass,scss}', 'src/scss/**/*.{sass,scss}'], series('sass'));
 });
 
