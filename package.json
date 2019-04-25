@@ -9,7 +9,7 @@
     "lint": "eslint src/js/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Edik Bulikyan <ed.proff@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "7.4.3",

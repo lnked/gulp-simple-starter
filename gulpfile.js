@@ -88,12 +88,12 @@ task('img', () =>
             {removeXMLProcInst:true},
             {removeDimensions:true},
             {cleanupNumericValues: {
-                floatPrecision: 2
+              floatPrecision: 2
             }},
             {cleanupIDs:true},
             {convertColors: {
-                names2hex: true,
-                rgb2hex: true
+              names2hex: true,
+              rgb2hex: true
             }},
             {removeUselessStrokeAndFill:false},
           ],
