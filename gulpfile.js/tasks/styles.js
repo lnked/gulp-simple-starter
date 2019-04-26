@@ -6,7 +6,7 @@ const cssnano = require('gulp-cssnano');
 const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('gulp-autoprefixer');
 
-const { outputPath } = require('../env');
+const { staticPath } = require('../env');
 
 const watch = [
   'src/scss/*.{sass,scss}',
@@ -28,4 +28,4 @@ module.exports = () =>
       cascade: false,
     }))
     .pipe(cssnano())
-    .pipe(dest(resolve(outputPath, 'static/css')))
+    .pipe(dest(resolve(staticPath, 'css')))

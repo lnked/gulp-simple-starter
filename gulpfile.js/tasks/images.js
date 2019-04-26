@@ -1,18 +1,16 @@
 const { resolve } = require('path');
 const { src, dest } = require('gulp');
 
-const imagemin = require('gulp-imagemin');
-const newer = require('gulp-newer');
-const plumber = require('gulp-plumber');
 const cache = require('gulp-cache');
+const newer = require('gulp-newer');
+const imagemin = require('gulp-imagemin');
 const imageminOptipng = require('imagemin-optipng');
 
-const { outputPath } = require('../env');
+const { staticPath } = require('../env');
 
 module.exports = () =>
   src('src/img/*.*')
-    .pipe(plumber())
-    .pipe(newer(resolve(outputPath, 'img')))
+    .pipe(newer(resolve(staticPath, 'img')))
     .pipe(cache(
       imagemin([
         imagemin.gifsicle({
@@ -49,4 +47,4 @@ module.exports = () =>
         })
       ], { verbose: true })
     ))
-    .pipe(dest(resolve(outputPath, 'img')))
+    .pipe(dest(resolve(staticPath, 'img')))

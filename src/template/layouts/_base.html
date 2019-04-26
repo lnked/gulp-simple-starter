@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/static/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
-  {%- include "components/_header.html" -%}
-
-  <h2>current: {{ current }}</h2>
-
-  {%- block content -%}{%- endblock -%}
+  <main>
+    {%- include "components/_header.html" -%}
+    {%- block content -%}{%- endblock -%}
+  </main>
 
   {%- include "components/_footer.html" -%}
 
-  <script src="/static/js/bundle.js"></script>
-
+  <script src="js/bundle.js"></script>
 </body>
 </html>

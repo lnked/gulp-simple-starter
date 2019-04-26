@@ -4,7 +4,7 @@ const { src, dest } = require('gulp');
 const webpack = require('webpack-stream');
 
 const webpackConfig = require('../webpack.config');
-const { outputPath } = require('../env');
+const { staticPath } = require('../env');
 
 const watch = [
   'src/js/*.js',
@@ -22,4 +22,4 @@ module.exports = () =>
     .pipe(webpack({
       config: webpackConfig,
     }))
-    .pipe(dest(resolve(outputPath, 'static/js')))
+    .pipe(dest(resolve(staticPath, 'js')))

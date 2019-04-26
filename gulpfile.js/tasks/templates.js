@@ -3,6 +3,7 @@ const { src, dest } = require('gulp');
 
 const fs = require('fs');
 const path = require('path');
+const beautify = require('gulp-beautify');
 const frontMatter = require('gulp-front-matter');
 const nunjucksRender = require('gulp-nunjucks-render');
 
@@ -34,5 +35,16 @@ module.exports = () =>
       envOptions: {
         watch: !isProduction,
       }
+    }))
+    .pipe(beautify.html({
+      indent_size: 2,
+      indent_char: ' ',
+      brace_style: 'expand',
+      end_with_newline: true,
+      preserve_newlines: true,
+      indent_handlebars: true,
+      indent_inner_html: false,
+      max_preserve_newlines: 1,
+      unformatted: ['pre', 'code', 'textarea', 'script']
     }))
     .pipe(dest(resolve(outputPath)))

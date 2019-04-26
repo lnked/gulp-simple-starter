@@ -1,7 +1,21 @@
 @import 'settings/variables';
 @import 'components/*';
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
+  color: #fff;
   background-color: #fefefe;
+}
+
+main {
+  height: 100vh;
+  background-image: url(../img/logo.png);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: auto 60%;
 }
