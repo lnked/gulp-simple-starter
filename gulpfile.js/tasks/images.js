@@ -7,12 +7,11 @@ const imagemin = require('gulp-imagemin');
 const imageminOptipng = require('imagemin-optipng');
 
 const { staticPath } = require('../env');
+const { imagesPath } = require('../config');
 
 const watchPaths = [
-  'src/images/*.*',
+  `${imagesPath}/*.*`,
 ];
-
-module.exports.watchPaths = watchPaths;
 
 module.exports = () =>
   src(watchPaths)
@@ -54,3 +53,5 @@ module.exports = () =>
       ], { verbose: true })
     ))
     .pipe(dest(resolve(staticPath, 'img')))
+
+module.exports.imagesWatchPaths = watchPaths;

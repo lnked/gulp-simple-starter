@@ -5,21 +5,22 @@ const webpack = require('webpack-stream');
 
 const webpackConfig = require('../webpack.config');
 const { staticPath } = require('../env');
+const { scriptsPath } = require('../config');
 
 const watchPaths = [
-  'src/js/*.js',
-  'src/js/**/*.js',
+  `${scriptsPath}/*.js`,
+  `${scriptsPath}/**/*.js`,
 ];
-
-module.exports.watchPaths = watchPaths;
 
 module.exports = () =>
   src([
     ...watchPaths,
-    '!src/js/_*.*',
-    '!src/js/**/_*.*',
+    `!${scriptsPath}/_*.*`,
+    `!${scriptsPath}/**/_*.*`,
   ])
     .pipe(webpack({
       config: webpackConfig,
     }))
     .pipe(dest(resolve(staticPath, 'js')))
+
+module.exports.scriptsWatchPaths = watchPaths;

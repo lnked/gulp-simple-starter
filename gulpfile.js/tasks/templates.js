@@ -8,6 +8,7 @@ const frontMatter = require('gulp-front-matter');
 const nunjucksRender = require('gulp-nunjucks-render');
 
 const { sourcePath, outputPath, isProduction } = require('../env');
+const { templatesPath } = require('../config');
 
 const getData = () => {
   const jsonExists = fs.existsSync(path.resolve(sourcePath, 'templates/data.json'));
@@ -27,23 +28,22 @@ nunjucksRender.nunjucks.configure({
 });
 
 const watchPaths = [
-  'src/templates/*.html',
-  'src/templates/**/*.html',
-  'src/templates/**/*.json',
+  `${templatesPath}/*.html`,
+  `${templatesPath}/**/*.html`,
+  `${templatesPath}/**/*.json`,
 ];
-
-module.exports.watchPaths = watchPaths;
 
 module.exports = () =>
   src([
-    'src/templates/pages/*.html',
-    '!src/templates/_*.*',
-    '!src/templates/**/_*.*',
+    `${templatesPath}/pages/*.html`,
+    `${templatesPath}/pages/**/*.html`,
+    `!${templatesPath}/_*.*`,
+    `!${templatesPath}/**/_*.*`,
   ])
     .pipe(frontMatter({ property: 'data' }))
     .pipe(nunjucksRender({
       data: getData(),
-      path: ['src/templates'],
+      path: [templatesPath],
       envOptions: {
         watch: !isProduction,
       }
@@ -60,3 +60,5 @@ module.exports = () =>
       unformatted: ['pre', 'code', 'textarea', 'script']
     }))
     .pipe(dest(resolve(outputPath)))
+
+module.exports.templatesWatchPaths = watchPaths;

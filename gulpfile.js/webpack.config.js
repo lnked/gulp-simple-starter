@@ -1,7 +1,10 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin')
 
-const { rootPath, sourcePath, mode, isProduction, isDevelopment } = require('./env');
+const { rootPath, mode, isProduction, isDevelopment } = require('./env');
+const { scriptsPath } = require('./config');
+
+const scriptsSourcePath = path.resolve(rootPath, scriptsPath);
 
 const optimizationConfig = {
   minimizer: [
@@ -68,9 +71,9 @@ module.exports = {
   entry: './app.js',
   output: {
     filename: './bundle.js',
-    path: path.resolve(sourcePath, 'js'),
+    path: scriptsSourcePath,
   },
-  context: path.resolve(sourcePath, 'js'),
+  context: scriptsSourcePath,
   module: {
     rules: [
       {
@@ -82,8 +85,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      src: path.resolve(sourcePath, 'js'),
-      components: path.resolve(sourcePath, 'js/components'),
+      src: scriptsSourcePath,
+      components: path.resolve(scriptsSourcePath, 'components'),
     },
     mainFiles: ['index'],
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],

@@ -7,19 +7,18 @@ const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('gulp-autoprefixer');
 
 const { staticPath } = require('../env');
+const { stylesPath } = require('../config');
 
 const watchPaths = [
-  'src/styles/*.{sass,scss}',
-  'src/styles/**/*.{sass,scss}',
+  `${stylesPath}/*.{sass,scss}`,
+  `${stylesPath}/**/*.{sass,scss}`,
 ];
-
-module.exports.watchPaths = watchPaths;
 
 module.exports = () =>
   src([
     ...watchPaths,
-    '!src/styles/_*.*',
-    '!src/styles/**/_*.*',
+    `!${stylesPath}/_*.*`,
+    `!${stylesPath}/**/_*.*`,
   ])
     .pipe(sassGlob())
     .pipe(sass())
@@ -29,3 +28,5 @@ module.exports = () =>
     }))
     .pipe(cssnano())
     .pipe(dest(resolve(staticPath, 'css')))
+
+module.exports.stylesWatchPaths = watchPaths;
