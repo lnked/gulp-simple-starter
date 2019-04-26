@@ -1,8 +1,13 @@
 const { watch, series } = require('gulp');
 
+const stylesWatchPaths = require('./styles').watchPaths;
+const imagesWatchPaths = require('./images').watchPaths;
+const scriptsWatchPaths = require('./scripts').watchPaths;
+const templatesWatchPaths = require('./templates').watchPaths;
+
 module.exports = () => {
-  watch(['src/img/*.*'], series('images'));
-  watch(['src/js/*.js', 'src/js/**/*.js'], series('scripts'));
-  watch(['src/*.html', 'src/**/*.html', 'src/**/*.json'], series('templates'));
-  watch(['src/scss/*.{sass,scss}', 'src/scss/**/*.{sass,scss}'], series('styles'));
+  watch(imagesWatchPaths, series('images'));
+  watch(stylesWatchPaths, series('styles'));
+  watch(scriptsWatchPaths, series('scripts'));
+  watch(templatesWatchPaths, series('templates'));
 }

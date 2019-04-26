@@ -8,18 +8,18 @@ const autoprefixer = require('gulp-autoprefixer');
 
 const { staticPath } = require('../env');
 
-const watch = [
-  'src/scss/*.{sass,scss}',
-  'src/scss/**/*.{sass,scss}',
+const watchPaths = [
+  'src/styles/*.{sass,scss}',
+  'src/styles/**/*.{sass,scss}',
 ];
 
-module.exports.watch = watch;
+module.exports.watchPaths = watchPaths;
 
 module.exports = () =>
   src([
-    ...watch,
-    '!src/scss/_*.*',
-    '!src/scss/**/_*.*',
+    ...watchPaths,
+    '!src/styles/_*.*',
+    '!src/styles/**/_*.*',
   ])
     .pipe(sassGlob())
     .pipe(sass())

@@ -8,8 +8,14 @@ const imageminOptipng = require('imagemin-optipng');
 
 const { staticPath } = require('../env');
 
+const watchPaths = [
+  'src/images/*.*',
+];
+
+module.exports.watchPaths = watchPaths;
+
 module.exports = () =>
-  src('src/img/*.*')
+  src(watchPaths)
     .pipe(newer(resolve(staticPath, 'img')))
     .pipe(cache(
       imagemin([

@@ -10,10 +10,10 @@ const nunjucksRender = require('gulp-nunjucks-render');
 const { sourcePath, outputPath, isProduction } = require('../env');
 
 const getData = () => {
-  const jsonExists = fs.existsSync(path.resolve(sourcePath, 'template/data.json'));
+  const jsonExists = fs.existsSync(path.resolve(sourcePath, 'templates/data.json'));
 
   if (jsonExists) {
-    const rawdata = fs.readFileSync(path.resolve(sourcePath, 'template/data.json'));
+    const rawdata = fs.readFileSync(path.resolve(sourcePath, 'templates/data.json'));
     return JSON.parse(rawdata);
   }
 
@@ -26,12 +26,24 @@ nunjucksRender.nunjucks.configure({
   lstripBlocks: false,
 });
 
+const watchPaths = [
+  'src/templates/*.html',
+  'src/templates/**/*.html',
+  'src/templates/**/*.json',
+];
+
+module.exports.watchPaths = watchPaths;
+
 module.exports = () =>
-  src('src/*.html')
+  src([
+    'src/templates/pages/*.html',
+    '!src/templates/_*.*',
+    '!src/templates/**/_*.*',
+  ])
     .pipe(frontMatter({ property: 'data' }))
     .pipe(nunjucksRender({
       data: getData(),
-      path: ['src/template'],
+      path: ['src/templates'],
       envOptions: {
         watch: !isProduction,
       }

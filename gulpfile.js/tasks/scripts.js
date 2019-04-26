@@ -6,16 +6,16 @@ const webpack = require('webpack-stream');
 const webpackConfig = require('../webpack.config');
 const { staticPath } = require('../env');
 
-const watch = [
+const watchPaths = [
   'src/js/*.js',
   'src/js/**/*.js',
 ];
 
-module.exports.watch = watch;
+module.exports.watchPaths = watchPaths;
 
 module.exports = () =>
   src([
-    ...watch,
+    ...watchPaths,
     '!src/js/_*.*',
     '!src/js/**/_*.*',
   ])
