@@ -1,39 +1,39 @@
-const { resolve } = require('path');
-const { src, dest } = require('gulp');
+import { existsSync, readFileSync } from 'fs';
+import { resolve } from 'path';
+import { src, dest } from 'gulp';
+import beautify from 'gulp-beautify';
+import browsersync from 'browser-sync';
+import frontMatter from 'gulp-front-matter';
+import nunjucksRender from 'gulp-nunjucks-render';
 
-const fs = require('fs');
-const path = require('path');
-const beautify = require('gulp-beautify');
-const frontMatter = require('gulp-front-matter');
-const nunjucksRender = require('gulp-nunjucks-render');
-
-const { sourcePath, outputPath, isProduction } = require('../env');
-const { templatesPath } = require('../config');
+import { sourcePath, outputPath, development } from '../env';
+import { templatesPath } from '../config';
 
 const getData = () => {
-  const jsonExists = fs.existsSync(path.resolve(sourcePath, 'templates/data.json'));
+  const jsonFile = resolve(sourcePath, 'templates/data.json');
+  const jsonExists = existsSync(jsonFile);
 
   if (jsonExists) {
-    const rawdata = fs.readFileSync(path.resolve(sourcePath, 'templates/data.json'));
+    const rawdata = readFileSync(jsonFile);
     return JSON.parse(rawdata);
   }
 
   return {}
 }
 
-nunjucksRender.nunjucks.configure({
-  watch: !isProduction,
-  trimBlocks: true,
-  lstripBlocks: false,
-});
-
-const watchPaths = [
+export const templatesWatchPaths = [
   `${templatesPath}/*.html`,
   `${templatesPath}/**/*.html`,
   `${templatesPath}/**/*.json`,
 ];
 
-module.exports = () =>
+nunjucksRender.nunjucks.configure({
+  watch: development,
+  trimBlocks: true,
+  lstripBlocks: false,
+});
+
+export default () =>
   src([
     `${templatesPath}/pages/*.html`,
     `${templatesPath}/pages/**/*.html`,
@@ -45,7 +45,7 @@ module.exports = () =>
       data: getData(),
       path: [templatesPath],
       envOptions: {
-        watch: !isProduction,
+        watch: development,
       }
     }))
     .pipe(beautify.html({
@@ -60,5 +60,4 @@ module.exports = () =>
       unformatted: ['pre', 'code', 'textarea', 'script']
     }))
     .pipe(dest(resolve(outputPath)))
-
-module.exports.templatesWatchPaths = watchPaths;
+    .on('end', browsersync.reload);

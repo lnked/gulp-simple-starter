@@ -2,10 +2,9 @@
   "name": "gulp-simple-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp",
-    "build": "env NODE_ENV=production gulp build",
+    "start": "gulp --development",
+    "build": "gulp build --production",
     "lint": "eslint src/js/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,9 +16,11 @@
     "@babel/plugin-proposal-decorators": "7.4.4",
     "@babel/plugin-proposal-object-rest-spread": "7.4.4",
     "@babel/preset-env": "7.4.4",
+    "@babel/register": "7.4.4",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
     "browser-sync": "2.26.5",
+    "css-mqpacker": "7.0.0",
     "eslint": "5.16.0",
     "eslint-plugin-import": "2.17.2",
     "eslint-plugin-jsx-a11y": "6.2.1",
@@ -31,15 +32,21 @@
     "gulp-clean": "0.4.0",
     "gulp-cssnano": "2.1.3",
     "gulp-front-matter": "1.3.0",
+    "gulp-if": "2.0.2",
     "gulp-imagemin": "5.0.3",
     "gulp-newer": "1.4.0",
     "gulp-nunjucks-render": "2.2.3",
+    "gulp-plumber": "1.2.1",
+    "gulp-postcss": "8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "1.0.9",
+    "gulp-sourcemaps": "2.6.5",
     "imagemin-optipng": "6.0.0",
     "path": "0.12.7",
+    "sort-css-media-queries": "1.4.3",
     "terser-webpack-plugin": "1.2.3",
     "webpack": "4.30.0",
-    "webpack-stream": "5.2.1"
+    "webpack-stream": "5.2.1",
+    "yargs": "13.2.2"
   }
 }

@@ -1,21 +1,23 @@
-const { resolve } = require('path');
-const { src, dest } = require('gulp');
+import { resolve } from 'path';
+import { src, dest } from 'gulp';
+import cache from 'gulp-cache';
+import newer from 'gulp-newer';
+import imagemin from 'gulp-imagemin';
+import browsersync from 'browser-sync';
+import imageminOptipng from 'imagemin-optipng';
 
-const cache = require('gulp-cache');
-const newer = require('gulp-newer');
-const imagemin = require('gulp-imagemin');
-const imageminOptipng = require('imagemin-optipng');
+import { staticPath } from '../env';
+import { imagesPath } from '../config';
 
-const { staticPath } = require('../env');
-const { imagesPath } = require('../config');
-
-const watchPaths = [
+export const imagesWatchPaths = [
   `${imagesPath}/*.*`,
 ];
 
-module.exports = () =>
-  src(watchPaths)
-    .pipe(newer(resolve(staticPath, 'img')))
+const imagesDist = resolve(staticPath, 'img');
+
+export default () =>
+  src(imagesWatchPaths)
+    .pipe(newer(imagesDist))
     .pipe(cache(
       imagemin([
         imagemin.gifsicle({
@@ -52,6 +54,5 @@ module.exports = () =>
         })
       ], { verbose: true })
     ))
-    .pipe(dest(resolve(staticPath, 'img')))
-
-module.exports.imagesWatchPaths = watchPaths;
+    .pipe(dest(imagesDist))
+    .on('end', browsersync.reload);

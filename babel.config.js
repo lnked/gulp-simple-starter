@@ -3,9 +3,7 @@ module.exports = function (api) {
 
   return {
     presets: [
-      ['@babel/preset-env', {
-        modules: false,
-      }],
+      '@babel/preset-env',
     ],
     plugins: [
       ['@babel/plugin-proposal-decorators', { legacy: true }],

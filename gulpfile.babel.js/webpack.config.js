@@ -1,7 +1,7 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin')
 
-const { rootPath, mode, isProduction, isDevelopment } = require('./env');
+const { rootPath, mode, production, development } = require('./env');
 const { scriptsPath } = require('./config');
 
 const scriptsSourcePath = path.resolve(rootPath, scriptsPath);
@@ -12,7 +12,7 @@ const optimizationConfig = {
       test: /\.js(\?.*)?$/i,
       cache: path.resolve(rootPath, '.cache'),
       parallel: true,
-      sourceMap: isDevelopment,
+      sourceMap: development,
       terserOptions: {
         ecma: 5,
         warnings: false,
@@ -46,8 +46,8 @@ const optimizationConfig = {
           if_return: true,
           join_vars: true,
           dead_code: true,
-          drop_console: isProduction,
-          drop_debugger: isProduction,
+          drop_console: production,
+          drop_debugger: production,
           global_defs: {
             DEBUG: false,
           },
@@ -67,7 +67,7 @@ const optimizationConfig = {
 
 module.exports = {
   mode,
-  devtool: isProduction ? false : 'source-map',
+  devtool: production ? false : 'source-map',
   entry: './app.js',
   output: {
     filename: './bundle.js',
@@ -91,5 +91,5 @@ module.exports = {
     mainFiles: ['index'],
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
   },
-  optimization: isProduction ? optimizationConfig : {},
+  optimization: production ? optimizationConfig : {},
 }

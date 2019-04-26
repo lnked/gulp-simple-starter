@@ -1,11 +1,12 @@
-const { series, parallel } = require('gulp');
+import { series, parallel } from 'gulp';
 
-module.exports = () =>
+export default () =>
   series('clean',
     parallel(
       'templates',
       'scripts',
       'styles',
       'images',
+      'fonts',
     )
   )

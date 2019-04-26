@@ -1,16 +1,6 @@
 @import 'settings/variables';
+@import 'general/*';
 @import 'components/*';
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  color: #fff;
-  background-color: #fefefe;
-}
 
 main {
   height: 100vh;

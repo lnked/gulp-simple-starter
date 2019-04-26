@@ -1,6 +1,9 @@
 header {
-  padding: 20px;
-  text-align: center;
-  border: 1px solid $lime;
+  height: 80px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: $lime;
+  font-size: 2rem;
 }
