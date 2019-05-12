@@ -1,3 +1,4 @@
+import size from 'gulp-size';
 import webpack from 'webpack-stream';
 import browsersync from 'browser-sync';
 import { resolve } from 'path';
@@ -22,4 +23,9 @@ export default () =>
       config: webpackConfig,
     }))
     .pipe(dest(resolve(staticPath, 'js')))
+    .pipe(size({
+      gzip: true,
+      showFiles: true,
+      showTotal: true,
+    }))
     .on('end', browsersync.reload);

@@ -1,5 +1,7 @@
 const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin')
+const zopfli = require('@gfx/zopfli');
+const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const { rootPath, mode, production, development } = require('./env');
 const { scriptsPath } = require('./config');
@@ -65,6 +67,27 @@ const optimizationConfig = {
   ],
 };
 
+const plugins = [];
+
+if (production) {
+  plugins.push(
+    new CompressionPlugin({
+      test: /\.js$/,
+      filename: '[path].gz[query]',
+      minRatio: 0.8,
+      threshold: 10240,
+      compressionOptions: {
+        level: 11,
+        numiterations: 15,
+      },
+      algorithm(input, compressionOptions, callback) {
+        return zopfli.gzip(input, compressionOptions, callback);
+      },
+      deleteOriginalAssets: false,
+    }),
+  );
+}
+
 module.exports = {
   mode,
   devtool: production ? false : 'source-map',
@@ -91,5 +114,6 @@ module.exports = {
     mainFiles: ['index'],
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
   },
+  plugins,
   optimization: production ? optimizationConfig : {},
 }
