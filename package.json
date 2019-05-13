@@ -52,6 +52,6 @@
     "terser-webpack-plugin": "1.2.3",
     "webpack": "4.31.0",
     "webpack-stream": "5.2.1",
-    "yargs": "13.2.2"
+    "yargs": "13.2.4"
   }
 }
