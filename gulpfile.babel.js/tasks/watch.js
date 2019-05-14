@@ -1,6 +1,7 @@
 import { watch, series } from 'gulp';
 
 import { fontsWatchPaths } from './fonts';
+import { publicWatchPaths } from './public';
 import { stylesWatchPaths } from './styles';
 import { imagesWatchPaths } from './images';
 import { scriptsWatchPaths } from './scripts';
@@ -8,6 +9,7 @@ import { templatesWatchPaths } from './templates';
 
 export default () => {
   watch(fontsWatchPaths, series('fonts'));
+  watch(publicWatchPaths, series('public'));
   watch(imagesWatchPaths, series('images'));
   watch(stylesWatchPaths, series('styles'));
   watch(scriptsWatchPaths, series('scripts'));

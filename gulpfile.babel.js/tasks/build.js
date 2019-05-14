@@ -6,6 +6,7 @@ export default () =>
       'templates',
       'scripts',
       'styles',
+      'public',
       'images',
       'fonts',
     )

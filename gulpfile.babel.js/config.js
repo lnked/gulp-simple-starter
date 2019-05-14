@@ -1,3 +1,4 @@
+export const publicPath = 'public';
 export const fontsPath = 'src/fonts';
 export const imagesPath = 'src/images';
 export const stylesPath = 'src/styles';
