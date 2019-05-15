@@ -49,7 +49,7 @@
     "imagemin-optipng": "6.0.0",
     "path": "0.12.7",
     "sort-css-media-queries": "1.4.3",
-    "terser-webpack-plugin": "1.2.3",
+    "terser-webpack-plugin": "1.2.4",
     "webpack": "4.31.0",
     "webpack-stream": "5.2.1",
     "yargs": "13.2.4"
