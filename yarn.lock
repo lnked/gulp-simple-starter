@@ -765,10 +765,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@gfx/zopfli@1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@gfx/zopfli/-/zopfli-1.0.11.tgz#6ced06b4566a5feb0036fe6a1e0262ce6cb1d6c5"
-  integrity sha512-wW+hi+bqdYCpBIvL8g7RYub9YXf5crhZK9SNk/VZmbF177Em1VwFv488qyh8iBpCo6GptcP1Zam0bJfY3VmMbg==
+"@gfx/zopfli@1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@gfx/zopfli/-/zopfli-1.0.12.tgz#32b20a96758a224f3a3756d72bbdaa0a4d69341c"
+  integrity sha512-PWULp7GMHuNVXiRsxrBTGDrYARIEvuAVobLywB7IaA6C/398Df7s6gZ7GxXcYSV8g+KozNnnbkmH5fUKvxMVDg==
   dependencies:
     base64-js "^1.3.0"
 
