@@ -9,6 +9,7 @@ import images from './tasks/images';
 import publics from './tasks/public';
 import scripts from './tasks/scripts';
 import templates from './tasks/templates';
+import pug from './tasks/pug';
 import webserver from './tasks/webserver';
 
 task('clean', clean);
@@ -18,6 +19,7 @@ task('images', images);
 task('public', publics);
 task('scripts', scripts);
 task('templates', templates);
+task('pug', pug);
 
 task('watch', watch);
 task('build', build());

@@ -1,0 +1,14 @@
+include ../../node_modules/bempug/index
+  - BEMPUG.modifier = '_';
+
+extends ../layouts/_default
+
+block variables
+  - var pageTitle = 'Главная'
+  - var current = 'index'
+  - var description = 'Главная'
+  - var keywords = 'Главная'
+
+block content
+  .container
+    include ../components/_button
