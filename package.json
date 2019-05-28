@@ -19,7 +19,7 @@
     "@babel/plugin-transform-object-assign": "7.2.0",
     "@babel/preset-env": "7.4.5",
     "@babel/register": "7.4.4",
-    "@gfx/zopfli": "1.0.12",
+    "@gfx/zopfli": "1.0.13",
     "autoprefixer": "9.5.1",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.6",
