@@ -21,7 +21,7 @@
     "@babel/register": "7.4.4",
     "@gfx/zopfli": "1.0.13",
     "autoprefixer": "9.6.0",
-    "babel-eslint": "10.0.1",
+    "babel-eslint": "10.0.2",
     "babel-loader": "8.0.6",
     "bempug": "1.1.1",
     "browser-sync": "2.26.7",
