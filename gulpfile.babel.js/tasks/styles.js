@@ -12,8 +12,9 @@ import sourcemaps from 'gulp-sourcemaps';
 import sortCSSmq from 'sort-css-media-queries';
 import autoprefixer from 'autoprefixer';
 import atImport from 'postcss-import';
+import uncss from'postcss-uncss';
 
-import { staticPath, nodeModulesPath, production, development } from '../env';
+import { isUncss, staticPath, nodeModulesPath, production, development } from '../env';
 import { stylesPath } from '../config';
 
 export const stylesWatchPaths = [
@@ -37,6 +38,21 @@ if (production) {
     }),
     cssnano(),
   );
+}
+
+if (isUncss) {
+  plugins.push(
+    uncss({
+      html: ['dist/**/*.html', 'dist/*.html'],
+      ignore: [
+        '.fade',
+        '.active',
+        '.disabled',
+        '.visible',
+        '.hidden',
+      ]
+    })
+  )
 }
 
 export default () =>

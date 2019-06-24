@@ -3,6 +3,7 @@ import { resolve, dirname } from 'path';
 
 export const argv = yargs.argv;
 
+export const isUncss = !!argv.uncss;
 export const production = !!argv.production;
 export const development = !!argv.development;
 

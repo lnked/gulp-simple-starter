@@ -35,12 +35,19 @@ Or you can download the latest version at: https://github.com/lnked/gulp-simple-
 
 ## Run tasks
 
+## Start a development server
 ```
-# Start a development server
 yarn start
+yarn start:uncss
+```
 
-# Build for production
+## Build for production
+```
 yarn build
+yarn build:uncss
+```
 
-# Lint
+## Lint
+```
 yarn lint
+```
