@@ -11,18 +11,20 @@ import browsersync from 'browser-sync';
 import sourcemaps from 'gulp-sourcemaps';
 import sortCSSmq from 'sort-css-media-queries';
 import autoprefixer from 'autoprefixer';
+import atImport from 'postcss-import';
 
-import { staticPath, production, development } from '../env';
+import { staticPath, nodeModulesPath, production, development } from '../env';
 import { stylesPath } from '../config';
 
 export const stylesWatchPaths = [
-  `${stylesPath}/*.{sass,scss}`,
-  `${stylesPath}/**/*.{sass,scss}`,
+  `${stylesPath}/*.{css,sass,scss}`,
+  `${stylesPath}/**/*.{css,sass,scss}`,
 ];
 
 const plugins = [];
 
 plugins.push(
+  atImport(),
   mqpacker({
     sort: sortCSSmq,
   })
@@ -46,7 +48,9 @@ export default () =>
     .pipe(gulpif(development, sourcemaps.init()))
     .pipe(plumber())
     .pipe(sassGlob())
-    .pipe(sass())
+    .pipe(sass({
+      includePaths: [nodeModulesPath],
+    }))
     .pipe(postcss(plugins))
     .pipe(plumber.stop())
     .pipe(gulpif(development, sourcemaps.write('./maps/')))
