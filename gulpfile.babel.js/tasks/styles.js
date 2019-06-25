@@ -13,6 +13,10 @@ import sortCSSmq from 'sort-css-media-queries';
 import autoprefixer from 'autoprefixer';
 import atImport from 'postcss-import';
 import uncss from'postcss-uncss';
+import postcssFixes from 'postcss-fixes';
+import animation from 'postcss-animation';
+import reporter from 'postcss-reporter';
+import immutableCss from 'immutable-css';
 
 import { isUncss, staticPath, nodeModulesPath, production, development } from '../env';
 import { stylesPath } from '../config';
@@ -26,9 +30,16 @@ const plugins = [];
 
 plugins.push(
   atImport(),
+  postcssFixes({
+    preset: 'safe'
+  }),
   mqpacker({
     sort: sortCSSmq,
-  })
+  }),
+  animation(),
+  immutableCss({
+    verbose: false,
+  }),
 );
 
 if (production) {
@@ -54,6 +65,13 @@ if (isUncss) {
     })
   )
 }
+
+plugins.push(
+  reporter({
+    clearMessages: true,
+    throwError: false,
+  })
+)
 
 export default () =>
   src([
