@@ -3,16 +3,16 @@ const zopfli = require('@gfx/zopfli');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
-const { rootPath, mode, production, development } = require('./env');
+const { mode, production, development, rootPath, cacheDirectory } = require('./env');
 const { scriptsPath } = require('./config');
 
 const scriptsSourcePath = path.resolve(rootPath, scriptsPath);
 
 const optimizationConfig = {
   minimizer: [
-     new TerserPlugin({
+    new TerserPlugin({
       test: /\.js(\?.*)?$/i,
-      cache: path.resolve(rootPath, '.cache'),
+      cache: cacheDirectory,
       parallel: true,
       sourceMap: development,
       terserOptions: {
@@ -103,6 +103,9 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
+        options: {
+          cacheDirectory,
+        },
       }
     ],
   },
