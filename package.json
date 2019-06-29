@@ -41,12 +41,15 @@
     "gulp-front-matter": "1.3.0",
     "gulp-if": "2.0.2",
     "gulp-imagemin": "6.0.0",
+    "gulp-modify-css-urls": "2.0.0",
     "gulp-newer": "1.4.0",
     "gulp-nunjucks-render": "2.2.3",
+    "gulp-path-modifier": "0.0.1",
     "gulp-plumber": "1.2.1",
     "gulp-postcss": "8.0.0",
     "gulp-pug": "4.0.1",
     "gulp-pugbem": "2.2.4",
+    "gulp-rigger": "0.5.8",
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "1.0.9",
     "gulp-size": "3.0.0",
@@ -66,7 +69,7 @@
     "yargs": "13.2.4"
   },
   "dependencies": {
-    "postcss-uncss": "0.16.1",
+    "postcss-uncss": "0.17.0",
     "swiper": "4.5.0",
     "uncss": "0.17.0"
   }

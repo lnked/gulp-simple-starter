@@ -1,4 +1,4 @@
-import browsersync from 'browser-sync';
+import browserSync from 'browser-sync';
 import { src, dest } from 'gulp';
 
 import { outputPath } from '../env';
@@ -12,4 +12,4 @@ export const publicWatchPaths = [
 export default () =>
   src(publicWatchPaths)
     .pipe(dest(outputPath))
-    .on('end', browsersync.reload);
+    .on('end', browserSync.reload);

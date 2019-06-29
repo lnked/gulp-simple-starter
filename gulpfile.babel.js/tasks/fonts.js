@@ -1,4 +1,4 @@
-import browsersync from 'browser-sync';
+import browserSync from 'browser-sync';
 import { resolve } from 'path';
 import { src, dest } from 'gulp';
 
@@ -13,4 +13,4 @@ export const fontsWatchPaths = [
 export default () =>
   src(fontsWatchPaths)
     .pipe(dest(resolve(staticPath, 'fonts')))
-    .on('end', browsersync.reload);
+    .on('end', browserSync.reload);

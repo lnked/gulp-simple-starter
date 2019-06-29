@@ -3,7 +3,7 @@ import { src, dest } from 'gulp';
 import cache from 'gulp-cache';
 import newer from 'gulp-newer';
 import imagemin from 'gulp-imagemin';
-import browsersync from 'browser-sync';
+import browserSync from 'browser-sync';
 import imageminOptipng from 'imagemin-optipng';
 
 import { staticPath } from '../env';
@@ -55,4 +55,4 @@ export default () =>
       ], { verbose: true })
     ))
     .pipe(dest(imagesDist))
-    .on('end', browsersync.reload);
+    .on('end', browserSync.reload);

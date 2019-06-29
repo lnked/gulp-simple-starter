@@ -4,8 +4,12 @@
 
 main {
   height: 100vh;
-  background-image: url(../img/logo.png);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: auto 60%;
+}
+
+.image-background-example {
+  width: 100px;
+  height: 100px;
+  border: 1px solid lime;
+  background: url(img/HTML5-logo.png);
+  background-size: cover;
 }

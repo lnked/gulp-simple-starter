@@ -7,7 +7,7 @@ import cssnano from 'cssnano';
 import postcss from 'gulp-postcss';
 import mqpacker from 'css-mqpacker';
 import sassGlob from 'gulp-sass-glob';
-import browsersync from 'browser-sync';
+import browserSync from 'browser-sync';
 import sourcemaps from 'gulp-sourcemaps';
 import sortCSSmq from 'sort-css-media-queries';
 import autoprefixer from 'autoprefixer';
@@ -17,6 +17,7 @@ import postcssFixes from 'postcss-fixes';
 import animation from 'postcss-animation';
 import reporter from 'postcss-reporter';
 import immutableCss from 'immutable-css';
+import modifyCssUrls from 'gulp-modify-css-urls';
 
 import { isUncss, staticPath, nodeModulesPath, production, development } from '../env';
 import { stylesPath } from '../config';
@@ -85,8 +86,25 @@ export default () =>
     .pipe(sass({
       includePaths: [nodeModulesPath],
     }))
+    .pipe(modifyCssUrls({
+      modify(url) {
+        if (url && /static\//.test(url)) {
+          url = url.replace('static/', '');
+        }
+
+        if (url && /images\//.test(url)) {
+          url = url.replace('images/', 'img/');
+        }
+
+        url = url.replace(/^(\.\/|\.\.\/)|\/$/g, '').replace(/^\/|\/$/g, '');
+
+        return url;
+      },
+      prepend: '../',
+      append: '',
+    }))
     .pipe(postcss(plugins))
     .pipe(plumber.stop())
-    .pipe(gulpif(development, sourcemaps.write('./maps/')))
+    .pipe(gulpif(development, sourcemaps.write('./')))
     .pipe(dest(resolve(staticPath, 'css')))
-    .pipe(browsersync.stream());
+    .pipe(browserSync.stream());

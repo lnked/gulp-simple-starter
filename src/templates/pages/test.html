@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{ pageTitle }}</title>
-</head>
+{%- include "parts/_head.html" -%}
 <body>
-  {%- include "components/_header.html" -%}
+  <main>
+    {%- include "components/_header.html" -%}
+    {%- include "components/_images.html" -%}
+  </main>
 
   {%- include "components/_footer.html" -%}
-
   {%- include "components/_scripts.html" -%}
 </body>
 </html>

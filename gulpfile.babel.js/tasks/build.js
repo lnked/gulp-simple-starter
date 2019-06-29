@@ -5,10 +5,10 @@ export default () =>
     parallel(
       'pug',
       'templates',
+      'images',
       'scripts',
       'styles',
       'public',
-      'images',
       'fonts',
     )
   )

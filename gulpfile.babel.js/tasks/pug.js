@@ -3,7 +3,7 @@ import { src, dest } from 'gulp';
 import pug from 'gulp-pug';
 import pugbem from "gulp-pugbem";
 import beautify from 'gulp-beautify';
-import browsersync from 'browser-sync';
+import browserSync from 'browser-sync';
 import frontMatter from 'gulp-front-matter';
 
 import { outputPath } from '../env';
@@ -36,4 +36,4 @@ export default () =>
     }))
     .pipe(beautify.html(htmlFormatConfig))
     .pipe(dest(resolve(outputPath)))
-    .on('end', browsersync.reload);
+    .on('end', browserSync.reload);
