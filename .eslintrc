@@ -2,8 +2,7 @@
   "root": true,
   "parser": "babel-eslint",
   "plugins": [
-    "import",
-    "jsx-a11y"
+    "import"
   ],
   "extends": [
     "eslint:recommended"
