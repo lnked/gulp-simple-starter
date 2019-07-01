@@ -7,3 +7,4 @@ gulpfile.babel.js/*
 *.spec.js
 babel.config.js
 jest.config.js
+lint-staged.config.js

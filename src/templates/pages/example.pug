@@ -7,6 +7,26 @@ block variables
   - var keywords = 'Главная'
 
 block content
+  .header
+    form.search-form._search-form
+
+  header.header
+    nav.menu
+      a(href="#")._logo Company
+      .list
+        a._item.-active(href="#") Home
+        a._item(href="#") News
+        a._item(href="#") Gallery
+        a._item(href="#") Partners
+        a._item(href="#") About
+        a._item(href="#") Contacts
+    h1._title Hello, World!
+    .myslider._myslider
+      ._slide Content
+      ._slide.-active Content
+      ._slide Content
+    p._text Good weather
+
   .container
     include ../components/_button
 
@@ -24,23 +44,3 @@ block content
 
     form.search-form.-theme_islands
       button._button.-size_m Search
-
-    .header
-      form.search-form._search-form
-
-    header.header
-      nav.menu
-        a(href="#")._logo Company
-        .list
-          a._item.-active(href="#") Home
-          a._item(href="#") News
-          a._item(href="#") Gallery
-          a._item(href="#") Partners
-          a._item(href="#") About
-          a._item(href="#") Contacts
-      h1._title Hello, World!
-      .myslider._myslider
-        ._slide Content
-        ._slide.-active Content
-        ._slide Content
-      p._text Good weather

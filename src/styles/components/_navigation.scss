@@ -1,0 +1,21 @@
+.navigation {
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    color: #00f;
+    font-size: 1.4rem;
+    text-decoration: none;
+  }
+}
