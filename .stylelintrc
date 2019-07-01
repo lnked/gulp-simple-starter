@@ -1,6 +1,5 @@
 {
   "rules": {
-    "property-blacklist": ["flex"],
-    "unit-blacklist": ["em", "rem"]
+    "property-blacklist": ["flex"]
   }
 }
