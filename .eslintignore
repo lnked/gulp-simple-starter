@@ -1,3 +1,9 @@
 dist/*
+__tests__/**
+__mocks__/**
 node_modules/*
-gulpfile.babel.js/
+gulpfile.babel.js/*
+*.test.js
+*.spec.js
+babel.config.js
+jest.config.js

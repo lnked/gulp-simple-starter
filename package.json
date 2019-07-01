@@ -9,7 +9,7 @@
     "build:uncss": "gulp build --production --uncss",
     "lint": "eslint src/scripts/*",
     "lint:fix": "eslint src/scripts/* --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Edik Bulikyan <ed.proff@gmail.com>",
   "license": "MIT",
@@ -24,7 +24,9 @@
     "@babel/register": "7.4.4",
     "@gfx/zopfli": "1.0.13",
     "autoprefixer": "9.6.0",
+    "babel-core": "6.26.3",
     "babel-eslint": "10.0.2",
+    "babel-jest": "24.8.0",
     "babel-loader": "8.0.6",
     "bempug": "1.1.1",
     "browser-sync": "2.26.7",
@@ -61,6 +63,7 @@
     "imagemin-lint-staged": "0.4.0",
     "imagemin-optipng": "7.0.0",
     "immutable-css": "1.1.2",
+    "jest": "24.8.0",
     "lint-staged": "9.0.0",
     "path": "0.12.7",
     "postcss-animation": "0.0.12",
