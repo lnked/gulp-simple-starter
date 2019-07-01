@@ -53,6 +53,7 @@
     "gulp-sass-glob": "1.0.9",
     "gulp-size": "3.0.0",
     "gulp-sourcemaps": "2.6.5",
+    "gulp-watch": "5.0.1",
     "imagemin-optipng": "7.0.0",
     "immutable-css": "1.1.2",
     "path": "0.12.7",

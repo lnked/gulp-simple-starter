@@ -1,4 +1,5 @@
-import { watch, series } from 'gulp';
+import { series } from 'gulp';
+import watch from 'gulp-watch';
 
 import { fontsWatchPaths } from './fonts';
 import { publicWatchPaths } from './public';
