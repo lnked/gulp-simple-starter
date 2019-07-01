@@ -1,4 +1,4 @@
-const path = require('path');
+const { resolve } = require('path');
 const zopfli = require('@gfx/zopfli');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
@@ -6,7 +6,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const { mode, production, development, rootPath, cacheDirectory } = require('./env');
 const { scriptsPath } = require('./config');
 
-const scriptsSourcePath = path.resolve(rootPath, scriptsPath);
+const scriptsSourcePath = resolve(rootPath, scriptsPath);
 
 const optimizationConfig = {
   minimizer: [
@@ -101,6 +101,15 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        include: scriptsSourcePath,
+        options: {
+          configFile: resolve(rootPath, '.eslintrc')
+        }
+      },
+      {
+        test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
@@ -112,7 +121,7 @@ module.exports = {
   resolve: {
     alias: {
       src: scriptsSourcePath,
-      components: path.resolve(scriptsSourcePath, 'components'),
+      components: resolve(scriptsSourcePath, 'components'),
     },
     mainFiles: ['index'],
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],

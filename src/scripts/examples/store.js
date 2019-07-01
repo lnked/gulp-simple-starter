@@ -33,21 +33,21 @@ import store from 'store';
 // var store = require('store').createStore(storage)
 
 // Store current user
-store.set('user', { name:'Marcus' })
+store.set('user', { name: 'Marcus' });
 
 // Get current user
-store.get('user')
+store.get('user');
 
 // Remove current user
-store.remove('user')
+store.remove('user');
 
 // Clear all keys
-store.clearAll()
+store.clearAll();
 
 // Loop over all stored values
-store.each(function(value, key) {
-  console.log(key, '==', value)
-})
+store.each(function (value, key) {
+    console.log(key, '==', value);
+});
 
-store.set('user', { name:'Marcus' })
-store.get('user').name == 'Marcus'
+store.set('user', { name: 'Marcus' });
+console.log(store.get('user').name === 'Marcus');
