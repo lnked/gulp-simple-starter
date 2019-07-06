@@ -14,45 +14,44 @@ export const imagesWatchPaths = [
 ];
 
 const imagesDist = resolve(staticPath, 'img');
+const imagesImagemin = imagemin([
+  imagemin.gifsicle({
+    interlaced: true,
+    optimizationLevel: 3,
+  }),
+  imagemin.jpegtran({
+    progressive: true,
+  }),
+  imagemin.optipng({
+    optimizationLevel: 5,
+  }, { use: imageminOptipng() }),
+  imagemin.svgo({
+    plugins: [
+      {removeTitle:true},
+      {removeDesc:true},
+      {removeViewBox:false},
+      {removeDoctype:true},
+      {removeMetadata:true},
+      {removeComments:true},
+      {removeUselessDefs:true},
+      {removeXMLProcInst:true},
+      {removeDimensions:true},
+      {cleanupNumericValues: {
+        floatPrecision: 2
+      }},
+      {cleanupIDs:true},
+      {convertColors: {
+        names2hex: true,
+        rgb2hex: true
+      }},
+      {removeUselessStrokeAndFill:false},
+    ],
+  })
+], { verbose: true, name: 'images' });
 
 export default () =>
   src(imagesWatchPaths)
     .pipe(newer(imagesDist))
-    .pipe(cache(
-      imagemin([
-        imagemin.gifsicle({
-          interlaced: true,
-          optimizationLevel: 3,
-        }),
-        imagemin.jpegtran({
-          progressive: true,
-        }),
-        imagemin.optipng({
-          optimizationLevel: 5,
-        }, { use: imageminOptipng() }),
-        imagemin.svgo({
-          plugins: [
-            {removeTitle:true},
-            {removeDesc:true},
-            {removeViewBox:false},
-            {removeDoctype:true},
-            {removeMetadata:true},
-            {removeComments:true},
-            {removeUselessDefs:true},
-            {removeXMLProcInst:true},
-            {removeDimensions:true},
-            {cleanupNumericValues: {
-              floatPrecision: 2
-            }},
-            {cleanupIDs:true},
-            {convertColors: {
-              names2hex: true,
-              rgb2hex: true
-            }},
-            {removeUselessStrokeAndFill:false},
-          ],
-        })
-      ], { verbose: true })
-    ))
+    .pipe(cache(imagesImagemin))
     .pipe(dest(imagesDist))
     .on('end', browserSync.reload);

@@ -1,6 +1,7 @@
 import { task, parallel } from 'gulp';
 
 import pug from './tasks/pug';
+import clear from './tasks/clear';
 import watch from './tasks/watch';
 import clean from './tasks/clean';
 import build from './tasks/build';
@@ -11,6 +12,8 @@ import publics from './tasks/public';
 import scripts from './tasks/scripts';
 import templates from './tasks/templates';
 import webserver from './tasks/webserver';
+
+task('clear', clear);
 
 task('clean', clean);
 task('fonts', fonts);
