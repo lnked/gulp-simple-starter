@@ -1,12 +1,12 @@
-const { resolve } = require('path');
-const zopfli = require('@gfx/zopfli');
-const TerserPlugin = require('terser-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
+const { resolve } = require('path')
+const zopfli = require('@gfx/zopfli')
+const TerserPlugin = require('terser-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 
-const { mode, production, development, rootPath, cacheDirectory } = require('./env');
-const { scriptsPath } = require('./config');
+const { mode, production, development, rootPath, cacheDirectory } = require('./env')
+const { scriptsPath } = require('./config')
 
-const scriptsSourcePath = resolve(rootPath, scriptsPath);
+const scriptsSourcePath = resolve(rootPath, scriptsPath)
 
 const optimizationConfig = {
   minimizer: [
@@ -65,9 +65,9 @@ const optimizationConfig = {
       },
     }),
   ],
-};
+}
 
-const plugins = [];
+const plugins = []
 
 if (production) {
   plugins.push(
@@ -81,11 +81,11 @@ if (production) {
         numiterations: 15,
       },
       algorithm(input, compressionOptions, callback) {
-        return zopfli.gzip(input, compressionOptions, callback);
+        return zopfli.gzip(input, compressionOptions, callback)
       },
       deleteOriginalAssets: false,
     }),
-  );
+  )
 }
 
 module.exports = {

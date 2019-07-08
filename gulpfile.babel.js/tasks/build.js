@@ -1,9 +1,8 @@
-import { series, parallel } from 'gulp';
+import { series, parallel } from 'gulp'
 
 export default () =>
   series('clean',
     parallel(
-      'clear',
       'pug',
       'templates',
       'images',

@@ -1,9 +1,12 @@
-export const publicPath = 'public';
-export const fontsPath = 'src/fonts';
-export const imagesPath = 'src/images';
-export const stylesPath = 'src/styles';
-export const scriptsPath = 'src/scripts';
-export const templatesPath = 'src/templates';
+import imagemin from 'gulp-imagemin'
+import imageminOptipng from 'imagemin-optipng'
+
+export const publicPath = 'public'
+export const fontsPath = 'src/fonts'
+export const imagesPath = 'src/images'
+export const stylesPath = 'src/styles'
+export const scriptsPath = 'src/scripts'
+export const templatesPath = 'src/templates'
 export const htmlFormatConfig = {
   indent_size: 2,
   indent_char: ' ',
@@ -21,4 +24,39 @@ export const htmlFormatConfig = {
     'strong', 'sub', 'sup', 'template', 'time', 'u', 'var', 'wbr', 'text',
     'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt'
   ],
-};
+}
+
+export const imageminConfig = [
+  imagemin.gifsicle({
+    interlaced: true,
+    optimizationLevel: 3,
+  }),
+  imagemin.jpegtran({
+    progressive: true,
+  }),
+  imagemin.optipng({
+    optimizationLevel: 5,
+  }, { use: imageminOptipng() }),
+  imagemin.svgo({
+    plugins: [
+      {removeTitle:true},
+      {removeDesc:true},
+      {removeViewBox:false},
+      {removeDoctype:true},
+      {removeMetadata:true},
+      {removeComments:true},
+      {removeUselessDefs:true},
+      {removeXMLProcInst:true},
+      {removeDimensions:true},
+      {cleanupNumericValues: {
+        floatPrecision: 2
+      }},
+      {cleanupIDs:true},
+      {convertColors: {
+        names2hex: true,
+        rgb2hex: true
+      }},
+      {removeUselessStrokeAndFill:false},
+    ],
+  })
+]
