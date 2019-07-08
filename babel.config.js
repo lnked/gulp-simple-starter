@@ -10,6 +10,8 @@ module.exports = function (api) {
       }],
     ],
     plugins: [
+      ['@babel/plugin-transform-runtime'],
+      ['@babel/plugin-transform-async-to-generator'],
       ['@babel/plugin-proposal-decorators', { legacy: true }],
       ['@babel/plugin-proposal-class-properties', { loose: true }],
       ['@babel/plugin-transform-object-assign'],
