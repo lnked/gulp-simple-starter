@@ -3,10 +3,10 @@ import browserSync from 'browser-sync'
 
 import { outputPath } from '../env'
 
-export default () => {
-  const devServer = browserSync.create()
-  const watchGlob = resolve(outputPath, '**/*.*')
+const devServer = browserSync.create()
+const watchGlob = resolve(outputPath, '**/*.*')
 
+export default () => {
   devServer.init({
     open: true,
     notify: true,
