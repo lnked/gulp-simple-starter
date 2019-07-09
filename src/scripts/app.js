@@ -1,4 +1,8 @@
-import 'components/swiper';
-import test from 'components/test';
+import scrollTarget from 'components/scroll-target';
 
-test();
+window.onload = () => {
+  scrollTarget({
+    trigger: '.j-nav-link',
+  });
+};
+
