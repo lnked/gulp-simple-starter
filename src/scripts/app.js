@@ -5,4 +5,3 @@ window.onload = () => {
     trigger: '.j-nav-link',
   });
 };
-
