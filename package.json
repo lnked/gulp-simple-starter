@@ -86,7 +86,7 @@
     "uncss": "0.17.0",
     "webpack": "4.35.3",
     "webpack-stream": "5.2.1",
-    "yargs": "13.2.4"
+    "yargs": "13.3.0"
   },
   "dependencies": {
     "@babel/polyfill": "7.4.4",
