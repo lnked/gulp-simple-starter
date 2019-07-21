@@ -8,8 +8,8 @@ import frontMatter from 'gulp-front-matter'
 import nunjucksRender from 'gulp-nunjucks-render'
 import pathModifier from 'gulp-path-modifier'
 
-import { outputPath, staticPath, development } from '../env'
-import { templatesPath, htmlFormatConfig } from '../config'
+import { outputPath, development } from '../env'
+import { publicPath, svgStoreFile, templatesPath, htmlFormatConfig } from '../config'
 
 import { getData } from '../get-data'
 
@@ -27,6 +27,7 @@ export const templatesWatchPaths = [
 
 export default () =>
   src([
+    svgStoreFile,
     `${templatesPath}/pages/*.html`,
     `${templatesPath}/pages/**/*.html`,
     `!${templatesPath}/_*.*`,
@@ -36,7 +37,10 @@ export default () =>
     .pipe(frontMatter({ property: 'data' }))
     .pipe(nunjucksRender({
       data: getData(),
-      path: [templatesPath],
+      path: [
+        publicPath,
+        templatesPath,
+      ],
       envOptions: {
         watch: development,
       }

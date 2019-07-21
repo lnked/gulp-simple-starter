@@ -7,7 +7,7 @@ import browserSync from 'browser-sync'
 import frontMatter from 'gulp-front-matter'
 
 import { outputPath } from '../env'
-import { templatesPath, htmlFormatConfig } from '../config'
+import { publicPath, svgStoreFile, templatesPath, htmlFormatConfig } from '../config'
 
 import { getData } from '../get-data'
 
@@ -20,6 +20,7 @@ export const pugWatchPaths = [
 
 export default () =>
   src([
+    svgStoreFile,
     `${templatesPath}/pages/*.pug`,
     `${templatesPath}/pages/**/*.pug`,
     `!${templatesPath}/_*.*`,
@@ -28,7 +29,10 @@ export default () =>
     .pipe(frontMatter({ property: 'data' }))
     .pipe(pug({
       data: getData(),
-      basedir: [templatesPath],
+      basedir: [
+        publicPath,
+        templatesPath,
+      ],
       plugins: [pugbem],
       verbose: false,
       pretty: true,

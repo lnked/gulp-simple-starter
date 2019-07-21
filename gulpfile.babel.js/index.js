@@ -9,6 +9,7 @@ import styles from './tasks/styles'
 import images from './tasks/images'
 import publics from './tasks/public'
 import scripts from './tasks/scripts'
+import svgstore from './tasks/svgstore'
 import templates from './tasks/templates'
 import webserver from './tasks/webserver'
 
@@ -18,6 +19,7 @@ task('styles', styles)
 task('images', images)
 task('public', publics)
 task('scripts', scripts)
+task('svgstore', svgstore)
 task('templates', templates)
 task('pug', pug)
 

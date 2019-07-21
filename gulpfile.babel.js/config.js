@@ -7,6 +7,8 @@ export const imagesPath = 'src/images'
 export const stylesPath = 'src/styles'
 export const scriptsPath = 'src/scripts'
 export const templatesPath = 'src/templates'
+export const svgStorePath = 'src/svgstore'
+export const svgStoreFile = `${publicPath}/_svgstore.html`
 export const htmlFormatConfig = {
   indent_size: 2,
   indent_char: ' ',
@@ -25,6 +27,47 @@ export const htmlFormatConfig = {
     'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt'
   ],
 }
+
+export const svgminConfig = (prefix) => ({
+  plugins: [
+    { sortAttrs: true },
+    { removeTitle: true },
+    { removeDesc: true },
+    { removeViewBox: false },
+    { removeDoctype: true },
+    { removeMetadata: true },
+    { removeComments: true },
+    { removeEmptyText: true },
+    { removeEmptyAttrs: true },
+    { removeHiddenElems: true },
+    { removeStyleElement: true },
+    { removeEditorsNSData: true },
+    { removeEmptyContainers: true },
+    { removeUselessDefs: true },
+    { removeXMLProcInst: true },
+    { removeDimensions: true },
+    { cleanupNumericValues: {
+        floatPrecision: 2
+    }},
+    { cleanupIDs: {
+        prefix: prefix + '-',
+        minify: false
+    }},
+    { js2svg: {
+        pretty: true
+    }},
+    { convertColors: {
+        names2hex: true,
+        rgb2hex: true
+    }},
+    { removeAttrs: {
+        attrs: ["id", "class", "data-name", "stroke", "fill", "fill-rule"]
+    } },
+    { removeStyleElement: true },
+    { removeScriptElement: true },
+    { removeUselessStrokeAndFill: true }
+  ]
+})
 
 export const imageminConfig = [
   imagemin.gifsicle({
