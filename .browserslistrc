@@ -1,8 +1,15 @@
-[production staging]
-> 0.2%
+[modern]
+> 0.5%
+safari 11
+chrome 65
 not dead
 not ie < 11
 not op_mini all
+
+[legacy]
+ie 11
+safari 9
+chrome 40
 
 [development]
 last 2 chrome version

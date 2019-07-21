@@ -4,10 +4,14 @@
   "description": "",
   "scripts": {
     "prestart": "gulp build --production",
+    "size": "size-limit",
     "start": "gulp --development",
     "start:uncss": "gulp --development --uncss",
     "build": "gulp build --production",
-    "build:uncss": "gulp build --production --uncss",
+    "build:uncss": "yarn build --uncss",
+    "build:legacy": "BROWSERSLIST_ENV=legacy yarn build",
+    "build:modern": "BROWSERSLIST_ENV=modern yarn build",
+    "postbuild": "yarn size",
     "lint": "eslint src/scripts/*",
     "lint:fix": "eslint src/scripts/* --fix",
     "test": "jest"
@@ -77,6 +81,7 @@
     "postcss-uncss": "0.17.0",
     "prettier": "1.18.2",
     "pug": "2.0.4",
+    "size-limit": "1.3.7",
     "sort-css-media-queries": "1.4.3",
     "stylelint": "10.1.0",
     "stylelint-config-prettier": "5.2.0",
@@ -101,6 +106,16 @@
     "swiper": "4.5.0",
     "three": "0.106.2"
   },
+  "size-limit": [
+    {
+      "webpack": false,
+      "path": "dist/static/**/*.js"
+    },
+    {
+      "webpack": false,
+      "path": "dist/static/**/*.css"
+    }
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
