@@ -1,13 +1,13 @@
 import Cookies from 'cookies-js';
 
 if (Cookies.enabled) {
-    Cookies.set('key', 'value');
+  Cookies.set('key', 'value');
 }
 
 
 Cookies.defaults = {
-    path: '/',
-    secure: true
+  path: '/',
+  secure: true
 };
 
 Cookies.set('key', 'value'); // Will be secure and have a path of '/'

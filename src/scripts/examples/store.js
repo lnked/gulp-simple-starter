@@ -46,7 +46,7 @@ store.clearAll();
 
 // Loop over all stored values
 store.each(function (value, key) {
-    console.log(key, '==', value);
+  console.log(key, '==', value);
 });
 
 store.set('user', { name: 'Marcus' });
