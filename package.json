@@ -30,7 +30,7 @@
     "@babel/preset-env": "7.5.5",
     "@babel/register": "7.5.5",
     "@gfx/zopfli": "1.0.14",
-    "@size-limit/preset-app": "2.1.0",
+    "@size-limit/preset-app": "2.1.1",
     "@size-limit/webpack": "2.1.1",
     "add": "2.0.6",
     "autoprefixer": "9.6.1",
