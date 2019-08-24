@@ -44,7 +44,7 @@
     "css-mqpacker": "7.0.0",
     "cssnano": "4.1.10",
     "eslint": "6.2.2",
-    "eslint-loader": "2.2.1",
+    "eslint-loader": "3.0.0",
     "eslint-plugin-import": "2.18.2",
     "fs": "0.0.1-security",
     "gulp": "4.0.2",
