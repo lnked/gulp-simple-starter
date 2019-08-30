@@ -93,7 +93,7 @@
     "stylelint": "10.1.0",
     "stylelint-config-prettier": "5.2.0",
     "stylelint-config-recommended": "2.2.0",
-    "stylelint-order": "3.0.1",
+    "stylelint-order": "3.1.0",
     "terser-webpack-plugin": "1.4.1",
     "uncss": "0.17.2",
     "webpack": "4.39.3",
