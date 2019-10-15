@@ -674,8 +674,6 @@
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-shorthand-properties/-/plugin-transform-shorthand-properties-7.2.0.tgz#6333aee2f8d6ee7e28615457298934a3b46198f0"
   integrity sha512-QP4eUM83ha9zmYtpbnyjTLAGKQritA5XW/iG9cjtuOI8s1RuL/3V6a3DeSHfKutJQ+ayUfeZJPcnCYEQzaPQqg==
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.0.0"
 
 "@babel/plugin-transform-spread@^7.6.2":
   version "7.6.2"
@@ -14739,10 +14737,10 @@ webpack-stream@5.2.1:
     vinyl "^2.1.0"
     webpack "^4.26.1"
 
-webpack@4.41.1:
-  version "4.41.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.1.tgz#5388dd3047d680d5d382a84249fd4750e87372fd"
-  integrity sha512-ak7u4tUu/U63sCVxA571IuPZO/Q0pZ9cEXKg+R/woxkDzVovq57uB6L2Hlg/pC8LCU+TWpvtcYwsstivQwMJmw==
+webpack@4.41.2:
+  version "4.41.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.2.tgz#c34ec76daa3a8468c9b61a50336d8e3303dce74e"
+  integrity sha512-Zhw69edTGfbz9/8JJoyRQ/pq8FYUoY0diOXqW0T6yhgdhCv6wr0hra5DwwWexNRns2Z2+gsnrNcbe9hbGBgk/A==
   dependencies:
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/helper-module-context" "1.8.5"
