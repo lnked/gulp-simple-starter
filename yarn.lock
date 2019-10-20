@@ -6229,10 +6229,10 @@ gulp-beautify@3.0.0:
     js-beautify "^1.8.8"
     through2 "^2.0.0"
 
-gulp-cheerio@0.6.3:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/gulp-cheerio/-/gulp-cheerio-0.6.3.tgz#40271c1703368c88408ab8750ba9bf3e1aea9c68"
-  integrity sha512-ZuRAq48qT9u2E8QUz1pHQZOq9500tQojOfGXzAER91CGYf8a3U5+fHuLWk5wvJ0iwrriaApg5Honvt3r5XMcNg==
+gulp-cheerio@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-cheerio/-/gulp-cheerio-1.0.0.tgz#01c5324dba0fbe5f1b3ddce9e61ef1a8b43278d0"
+  integrity sha512-4dgOVngKJK0+Re+prT/nuXtKM7+F92XeidxjuCeOpOlmYA5rkVaoKrH+xMN/JWOd2iI5OP/NJ6BIjWxeU+ozXQ==
   dependencies:
     cheerio "0.*"
     plugin-error "^0.1.2"
