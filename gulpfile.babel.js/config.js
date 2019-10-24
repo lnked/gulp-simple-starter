@@ -74,12 +74,17 @@ export const imageminConfig = [
     interlaced: true,
     optimizationLevel: 3,
   }),
-  imagemin.jpegtran({
-    progressive: true,
-  }),
-  imagemin.optipng({
-    optimizationLevel: 5,
-  }, { use: imageminOptipng() }),
+  // imagemin.jpegtran({
+  //   progressive: true,
+  // }),
+  imagemin.optipng(
+    {
+      optimizationLevel: 5,
+    },
+    {
+      use: imageminOptipng()
+    }
+  ),
   imagemin.svgo({
     plugins: [
       {removeTitle:true},
@@ -101,5 +106,5 @@ export const imageminConfig = [
       }},
       {removeUselessStrokeAndFill:false},
     ],
-  })
+  }),
 ]
