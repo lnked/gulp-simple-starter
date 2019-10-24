@@ -1,6 +1,6 @@
 {
   "name": "gulp-simple-starter",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "",
   "scripts": {
     "prestart": "gulp build --production",
