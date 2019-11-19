@@ -33,7 +33,7 @@
     "@size-limit/preset-app": "2.2.1",
     "@size-limit/webpack": "2.2.1",
     "add": "2.0.6",
-    "autoprefixer": "9.7.1",
+    "autoprefixer": "9.7.2",
     "babel-core": "6.26.3",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",
