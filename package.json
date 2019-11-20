@@ -108,9 +108,9 @@
     "domurl": "2.2.0",
     "gsap": "3.0.1",
     "ms": "2.1.2",
-    "path-to-regexp": "5.0.0",
+    "path-to-regexp": "6.1.0",
     "store.js": "1.0.4",
-    "swiper": "5.2.0",
+    "swiper": "5.2.1",
     "three": "0.110.0"
   },
   "size-limit": [
