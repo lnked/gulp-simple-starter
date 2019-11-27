@@ -111,7 +111,7 @@
     "path-to-regexp": "6.1.0",
     "store.js": "1.0.4",
     "swiper": "5.2.1",
-    "three": "0.110.0"
+    "three": "0.111.0"
   },
   "size-limit": [
     {
