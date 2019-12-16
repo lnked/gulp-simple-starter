@@ -1165,29 +1165,29 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
-"@size-limit/file@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@size-limit/file/-/file-2.2.2.tgz#100eb7267f04f3bc21f005de5391f23d3992f116"
-  integrity sha512-5JcHWB9/r2eQzyBLbUVl+hBe/cvCE30NZPWMU9EQ0iIUjXAoEx0cVb0A18vmcScjHB00hAYUiUK5kuP7rZefdA==
+"@size-limit/file@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@size-limit/file/-/file-2.2.3.tgz#d84f9588bedabd0502bc63124bb9b1689d4976d2"
+  integrity sha512-qcyfczGyqakI7dNNTUWrR6UilCd74uA5Z47w4zfXMSRbcSJ2HCSWBKZ+DTfxCrzopuEy/cqZAhxaANsVBatH9Q==
   dependencies:
-    size-limit "2.2.2"
+    size-limit "2.2.3"
 
-"@size-limit/preset-app@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@size-limit/preset-app/-/preset-app-2.2.2.tgz#dcd377e3d8bb147b2e88b2c587f2a28d3904fa7a"
-  integrity sha512-R2/4IX6uKYQwGGghJ3y+qYYEvUWCrvellird2DRJek8AxB+aqa9CgspzQiveJ6p8ERmb32Dk853JwCF5x+liHQ==
+"@size-limit/preset-app@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@size-limit/preset-app/-/preset-app-2.2.3.tgz#32d6e6800a06b8792554a3cea389731212725076"
+  integrity sha512-1k15VlNJxndkLZGyfv1ZLe2qC23eOaknkpfKSpEiFQCSX7ItPetin7Z8LCKG6ubvMcnJSuqxdfqt+h20EDQ7xg==
   dependencies:
-    "@size-limit/file" "2.2.2"
-    "@size-limit/time" "2.2.2"
+    "@size-limit/file" "2.2.3"
+    "@size-limit/time" "2.2.3"
 
-"@size-limit/time@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-2.2.2.tgz#23a333873d066451f6a4d57142ee164c87a0dc9c"
-  integrity sha512-Ci9qWwNovL+kwKsnuI9JeZP0xLWNjgKwynAtuOcSGQe8X0C/Q5y+1dr3yAQAu7c9XZOrbXn5nHRhX+xcZAP+OQ==
+"@size-limit/time@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-2.2.3.tgz#4928894e80355c4788eef2b28702c21df811945d"
+  integrity sha512-jqhgbAPGQmvnkoZYg5tkZNqYhw0tU9rNn2+uGzRE8kNDkNVsyFqxEAHemHYz4GAnNO2ta27Ku9ZdIpAMQcy33Q==
   dependencies:
     estimo "^2.0.1"
     react "^16.12.0"
-    size-limit "2.2.2"
+    size-limit "2.2.3"
 
 "@size-limit/webpack@2.2.2":
   version "2.2.2"
@@ -12922,7 +12922,7 @@ sisteransi@^1.0.3:
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.3.tgz#98168d62b79e3a5e758e27ae63c4a053d748f4eb"
   integrity sha512-SbEG75TzH8G7eVXFSN5f9EExILKfly7SUvVY5DhhYLvfhKqhDFY0OzevWa/zwak0RLRfWS5AvfMWpd9gJvr5Yg==
 
-size-limit@2.2.2:
+size-limit@2.2.2, size-limit@2.2.3:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-2.2.2.tgz#292a032cb52545a2bab8dbeef433659a8fd21f3d"
   integrity sha512-SgKOynIVQ2Y+V7H0k9Lbot4UfB9KTs+jA4Zj9VHMYAOhB3UydZ3yk424aDxSS2FcN9bYNqn39+nOh93lhJcPbQ==
@@ -13938,6 +13938,21 @@ terser-webpack-plugin@^1.4.1:
     webpack-sources "^1.4.0"
     worker-farm "^1.7.0"
 
+terser-webpack-plugin@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-1.4.3.tgz#5ecaf2dbdc5fb99745fd06791f46fc9ddb1c9a7c"
+  integrity sha512-QMxecFz/gHQwteWwSo5nTc6UaICqN1bMedC5sMtUc7y3Ha3Q8y6ZO0iCR8pq4RJC8Hjf0FEPEHZqcMB/+DFCrA==
+  dependencies:
+    cacache "^12.0.2"
+    find-cache-dir "^2.1.0"
+    is-wsl "^1.1.0"
+    schema-utils "^1.0.0"
+    serialize-javascript "^2.1.2"
+    source-map "^0.6.1"
+    terser "^4.1.2"
+    webpack-sources "^1.4.0"
+    worker-farm "^1.7.0"
+
 terser@^4.0.0, terser@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/terser/-/terser-4.1.2.tgz#b2656c8a506f7ce805a3f300a2ff48db022fa391"
@@ -14937,10 +14952,10 @@ webpack-stream@5.2.1:
     vinyl "^2.1.0"
     webpack "^4.26.1"
 
-webpack@4.41.2, webpack@^4.41.2:
-  version "4.41.2"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.2.tgz#c34ec76daa3a8468c9b61a50336d8e3303dce74e"
-  integrity sha512-Zhw69edTGfbz9/8JJoyRQ/pq8FYUoY0diOXqW0T6yhgdhCv6wr0hra5DwwWexNRns2Z2+gsnrNcbe9hbGBgk/A==
+webpack@4.41.3:
+  version "4.41.3"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.3.tgz#cb7592c43080337dbc9be9e98fc6478eb3981026"
+  integrity sha512-EcNzP9jGoxpQAXq1VOoTet0ik7/VVU1MovIfcUSAjLowc7GhcQku/sOXALvq5nPpSei2HF6VRhibeJSC3i/Law==
   dependencies:
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/helper-module-context" "1.8.5"
@@ -14962,7 +14977,7 @@ webpack@4.41.2, webpack@^4.41.2:
     node-libs-browser "^2.2.1"
     schema-utils "^1.0.0"
     tapable "^1.1.3"
-    terser-webpack-plugin "^1.4.1"
+    terser-webpack-plugin "^1.4.3"
     watchpack "^1.6.0"
     webpack-sources "^1.4.1"
 
@@ -14994,6 +15009,35 @@ webpack@^4.26.1:
     terser-webpack-plugin "^1.1.0"
     watchpack "^1.5.0"
     webpack-sources "^1.3.0"
+
+webpack@^4.41.2:
+  version "4.41.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.2.tgz#c34ec76daa3a8468c9b61a50336d8e3303dce74e"
+  integrity sha512-Zhw69edTGfbz9/8JJoyRQ/pq8FYUoY0diOXqW0T6yhgdhCv6wr0hra5DwwWexNRns2Z2+gsnrNcbe9hbGBgk/A==
+  dependencies:
+    "@webassemblyjs/ast" "1.8.5"
+    "@webassemblyjs/helper-module-context" "1.8.5"
+    "@webassemblyjs/wasm-edit" "1.8.5"
+    "@webassemblyjs/wasm-parser" "1.8.5"
+    acorn "^6.2.1"
+    ajv "^6.10.2"
+    ajv-keywords "^3.4.1"
+    chrome-trace-event "^1.0.2"
+    enhanced-resolve "^4.1.0"
+    eslint-scope "^4.0.3"
+    json-parse-better-errors "^1.0.2"
+    loader-runner "^2.4.0"
+    loader-utils "^1.2.3"
+    memory-fs "^0.4.1"
+    micromatch "^3.1.10"
+    mkdirp "^0.5.1"
+    neo-async "^2.6.1"
+    node-libs-browser "^2.2.1"
+    schema-utils "^1.0.0"
+    tapable "^1.1.3"
+    terser-webpack-plugin "^1.4.1"
+    watchpack "^1.6.0"
+    webpack-sources "^1.4.1"
 
 whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3, whatwg-encoding@^1.0.5:
   version "1.0.5"
