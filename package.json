@@ -45,7 +45,7 @@
     "cssnano": "4.1.10",
     "eslint": "6.8.0",
     "eslint-loader": "3.0.3",
-    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-import": "2.20.0",
     "fs": "0.0.1-security",
     "gulp": "4.0.2",
     "gulp-beautify": "3.0.0",
@@ -110,7 +110,7 @@
     "ms": "2.1.2",
     "path-to-regexp": "6.1.0",
     "store.js": "1.0.4",
-    "swiper": "5.2.1",
+    "swiper": "5.3.0",
     "three": "0.112.1"
   },
   "size-limit": [
