@@ -4375,10 +4375,10 @@ domhandler@^2.3.0:
   dependencies:
     domelementtype "1"
 
-domurl@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/domurl/-/domurl-2.2.0.tgz#b150f0cbbbfcd5bc19e733eb5b59ad0f2d163097"
-  integrity sha512-HImTLh3nL9tTbM5OvgixJ7wknTiRJXAwk219mMKlE53P71hFNO/rIap2LkOFbDjm/0ivhlXXN3Srq1cdz2zoGg==
+domurl@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/domurl/-/domurl-2.3.0.tgz#0c8b15ba6aef46ff4bb6d90c200462ddc7568ed1"
+  integrity sha512-KoPGBykwI0AnDjWuEz3SQECab4FbwvE/1CJk1qTBGiIdyquCFRLs0eldfl6ESrpSKd1GGjMnzS2g7+Xl12obqg==
 
 domutils@1.5.1:
   version "1.5.1"
@@ -8558,10 +8558,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@10.0.2:
-  version "10.0.2"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.0.2.tgz#cfdd9fa5080b05fc6e29536897da1795bc67c7f9"
-  integrity sha512-ZldhtIfT7bynVa7nmU/1jbK05r9hYQXbIQqZSotqdBCAcGJDEUqaUB7kG3ZCdoe9Qkj6HUM3x2yjCGJRxPUQLA==
+lint-staged@10.0.3:
+  version "10.0.3"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.0.3.tgz#fd27e25c308fb857d9cb44caa5fa845408d07df4"
+  integrity sha512-N071+M0yxKX0u67UOB8emFms29ekzrKoX1UlPcLS615O/rhx3+xRk5so8uU4tjdg4yNsD3ntdPSsuZnUPzblLA==
   dependencies:
     chalk "^3.0.0"
     commander "^4.0.1"
