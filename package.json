@@ -30,8 +30,8 @@
     "@babel/preset-env": "7.8.4",
     "@babel/register": "7.8.3",
     "@gfx/zopfli": "1.0.14",
-    "@size-limit/preset-app": "3.0.0",
-    "@size-limit/webpack": "3.0.0",
+    "@size-limit/preset-app": "4.0.0",
+    "@size-limit/webpack": "4.0.0",
     "add": "2.0.6",
     "autoprefixer": "9.7.4",
     "babel-core": "6.26.3",
@@ -79,7 +79,7 @@
     "immutable-css": "1.1.2",
     "jest": "25.1.0",
     "jpegtran-bin": "4.0.0",
-    "lint-staged": "10.0.6",
+    "lint-staged": "10.0.7",
     "path": "0.12.7",
     "postcss-animation": "0.0.12",
     "postcss-fixes": "2.0.1",
@@ -93,7 +93,7 @@
     "stylelint-config-prettier": "8.0.1",
     "stylelint-config-recommended": "3.0.0",
     "stylelint-order": "4.0.0",
-    "terser-webpack-plugin": "2.3.3",
+    "terser-webpack-plugin": "2.3.4",
     "uncss": "0.17.2",
     "webpack": "4.41.5",
     "webpack-stream": "5.2.1",
@@ -111,7 +111,7 @@
     "path-to-regexp": "6.1.0",
     "store.js": "1.0.4",
     "swiper": "5.3.0",
-    "three": "0.112.1"
+    "three": "0.113.2"
   },
   "size-limit": [
     {
