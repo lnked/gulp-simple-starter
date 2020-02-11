@@ -95,7 +95,7 @@
     "stylelint-order": "4.0.0",
     "terser-webpack-plugin": "2.3.4",
     "uncss": "0.17.3",
-    "webpack": "4.41.5",
+    "webpack": "4.41.6",
     "webpack-stream": "5.2.1",
     "yargs": "15.1.0"
   },
