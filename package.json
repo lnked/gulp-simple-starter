@@ -88,6 +88,7 @@
     "postcss-uncss": "0.17.0",
     "prettier": "1.19.1",
     "pug": "2.0.4",
+    "size-limit": "^4.0.1",
     "sort-css-media-queries": "1.5.0",
     "stylelint": "13.2.0",
     "stylelint-config-prettier": "8.0.1",
