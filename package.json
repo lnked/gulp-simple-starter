@@ -36,7 +36,7 @@
     "autoprefixer": "9.7.5",
     "babel-core": "6.26.3",
     "babel-eslint": "10.1.0",
-    "babel-jest": "25.1.0",
+    "babel-jest": "25.2.0",
     "babel-loader": "8.1.0",
     "bempug": "1.1.1",
     "browser-sync": "2.26.7",
@@ -77,7 +77,7 @@
     "imagemin-lint-staged": "0.4.0",
     "imagemin-optipng": "7.1.0",
     "immutable-css": "1.1.2",
-    "jest": "25.1.0",
+    "jest": "25.2.0",
     "jpegtran-bin": "4.0.0",
     "lint-staged": "10.0.9",
     "path": "0.12.7",
@@ -112,7 +112,7 @@
     "path-to-regexp": "6.1.0",
     "store.js": "1.0.4",
     "swiper": "5.3.6",
-    "three": "0.114.0"
+    "three": "0.115.0"
   },
   "size-limit": [
     {
