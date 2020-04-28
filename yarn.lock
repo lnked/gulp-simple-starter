@@ -4714,10 +4714,10 @@ domhandler@^2.3.0:
   dependencies:
     domelementtype "1"
 
-domurl@2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/domurl/-/domurl-2.3.3.tgz#c7b69ae16693a0ef2ed046084b6c3e26415c6d40"
-  integrity sha512-wD9kVT7URNvt8d9aeSOUTyaUMhbR4kDr7F/E4eBebFqDkfuyFfA9GnJ88OaTXBMlxz5RDnywqTp1yp/0ijBc9A==
+domurl@2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/domurl/-/domurl-2.3.4.tgz#fc0de7f9185b197ca7afe8a989e30d462c082489"
+  integrity sha512-/pmFKQbQqjsCB5qppxfGexcaVykxcawJi2S9aRq3iF9fcIUrkUd9ceXxehP2ARbCbmhh4O21YBRC1pn86rpujg==
 
 domutils@1.5.1:
   version "1.5.1"

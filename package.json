@@ -106,7 +106,7 @@
     "axios": "0.19.2",
     "cookies-js": "1.2.3",
     "date.js": "0.3.3",
-    "domurl": "2.3.3",
+    "domurl": "2.3.4",
     "gsap": "3.2.6",
     "ms": "2.1.2",
     "path-to-regexp": "6.1.0",
