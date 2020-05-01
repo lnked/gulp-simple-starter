@@ -102,7 +102,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "7.8.7",
-    "@babel/runtime": "7.9.2",
+    "@babel/runtime": "7.9.6",
     "axios": "0.19.2",
     "cookies-js": "1.2.3",
     "date.js": "0.3.3",
@@ -112,7 +112,7 @@
     "path-to-regexp": "6.1.0",
     "store.js": "1.0.4",
     "swiper": "5.3.8",
-    "three": "0.115.0"
+    "three": "0.116.0"
   },
   "size-limit": [
     {
