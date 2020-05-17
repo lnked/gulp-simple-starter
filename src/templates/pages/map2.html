@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Create a hover effect</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  const states = [
+    { "id": "01", "name": "Alabama", "code": "AL", "center": [-86.902298, 32.318230] },
+    { "id": "02", "name": "Alaska", "code": "AK", "center": [-153.369141, 66.160507] },
+    { "id": "04", "name": "Arizona", "code": "AZ", "center": [-111.093735, 34.048927] },
+    { "id": "05", "name": "Arkansas", "code": "AR", "center": [-92.199997, 34.799999] },
+    { "id": "06", "name": "California", "code": "CA", "center": [-119.417931, 36.778259] },
+    { "id": "08", "name": "Colorado", "code": "CO", "center": [-105.358887, 39.113014] },
+    { "id": "09", "name": "Connecticut", "code": "CT", "center": [-72.699997, 41.599998] },
+    { "id": "10", "name": "Delaware", "code": "DE", "center": [-75.500000, 39.000000] },
+    { "id": "11", "name": "District of Columbia", "code": "DC", "center": [-77.1198, 38.9343] },
+    { "id": "12", "name": "Florida", "code": "FL", "center": [-81.760254, 27.994402] },
+    { "id": "13", "name": "Georgia", "code": "GA", "center": [-83.441162, 33.247875] },
+    { "id": "15", "name": "Hawaii", "code": "HI", "center": [-155.844437, 19.741755] },
+    { "id": "16", "name": "Idaho", "code": "ID", "center": [-114.742043, 44.068203] },
+    { "id": "17", "name": "Illinois", "code": "IL", "center": [-89.000000, 40.000000] },
+    { "id": "18", "name": "Indiana", "code": "IN", "center": [-86.126976, 40.273502] },
+    { "id": "19", "name": "Iowa", "code": "IA", "center": [-93.581543, 42.032974] },
+    { "id": "20", "name": "Kansas", "code": "KS", "center": [-98.000000, 38.500000] },
+    { "id": "21", "name": "Kentucky", "code": "KY", "center": [-84.270020, 37.839333] },
+  ];
+
+  const state_code = 'CA';
+
+	mapboxgl.accessToken = 'pk.eyJ1IjoiaHBldHJ1IiwiYSI6ImNqMHh2bHdzMzAwZjEyd3BoM3BseW9zbmMifQ.Ui3ozj9ckZlj2C15AetORQ';
+
+  var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      zoom: 4,
+  });
+
+  const getCenter = async (name) => {
+    let response = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/United States ${name}.json?access_token=${mapboxgl.accessToken}`);
+    let data = await response.json()
+    return data;
+  }
+
+  map.on('load', function() {
+    map.addSource('states', {
+      'type': 'geojson',
+      'data': 'https://docs.mapbox.com/mapbox-gl-js/assets/us_states.geojson'
+    });
+
+    console.log();
+    map.addLayer({
+        'id': 'state-fills',
+        'type': 'fill',
+        'source': 'states',
+        'layout': {},
+        'paint': {
+          'fill-color': 'rgba(255,145,97,0.37)',
+          'fill-opacity': [
+            'case',
+            ['boolean', ['feature-state', 'active'], false],
+            1,
+            0,
+          ]
+        }
+    });
+
+    map.addLayer({
+        'id': 'state-borders',
+        'type': 'line',
+        'source': 'states',
+        'layout': {},
+        'paint': {
+          'line-width': 2,
+          'line-color': [
+            'case',
+            ['boolean', ['feature-state', 'active'], false],
+            'rgba(255,145,97,0.7)',
+            'rgba(255,145,97,0.1)',
+          ]
+        }
+    });
+
+    const { id, name, center } = states.find(state => state.code === state_code);
+
+    getCenter(name)
+      .then(({ features }) => {
+        const place = features.find(feature => feature.place_type.includes('region'));
+
+        console.log({ features, place, coords: place.geometry.coordinates });
+
+        map.setFeatureState(
+          { source: 'states', id },
+          { active: true }
+        );
+
+        map.setCenter(place.geometry.coordinates)
+      });
+  });
+</script>
+
+</body>
+</html>
+
