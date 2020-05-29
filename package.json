@@ -78,8 +78,8 @@
     "imagemin-optipng": "8.0.0",
     "immutable-css": "1.1.2",
     "jest": "26.0.1",
-    "jpegtran-bin": "4.0.0",
-    "lint-staged": "10.2.6",
+    "jpegtran-bin": "5.0.0",
+    "lint-staged": "10.2.7",
     "path": "0.12.7",
     "postcss-animation": "0.0.12",
     "postcss-fixes": "2.0.1",
@@ -112,7 +112,7 @@
     "path-to-regexp": "6.1.0",
     "store.js": "1.0.4",
     "swiper": "5.4.1",
-    "three": "0.117.0"
+    "three": "0.117.1"
   },
   "size-limit": [
     {
