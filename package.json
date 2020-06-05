@@ -84,7 +84,7 @@
     "immutable-css": "1.1.2",
     "jest": "26.0.1",
     "jpegtran-bin": "5.0.1",
-    "lint-staged": "10.2.7",
+    "lint-staged": "10.2.9",
     "path": "0.12.7",
     "postcss-animation": "0.0.12",
     "postcss-fixes": "2.0.1",
@@ -99,7 +99,7 @@
     "stylelint-config-prettier": "8.0.1",
     "stylelint-config-recommended": "3.0.0",
     "stylelint-order": "4.1.0",
-    "terser-webpack-plugin": "3.0.2",
+    "terser-webpack-plugin": "3.0.3",
     "uncss": "0.17.3",
     "webpack": "4.43.0",
     "webpack-stream": "5.2.1",
@@ -116,7 +116,7 @@
     "ms": "2.1.2",
     "path-to-regexp": "6.1.0",
     "store.js": "1.0.4",
-    "swiper": "5.4.1",
+    "swiper": "5.4.2",
     "three": "0.117.1"
   },
   "husky": {
