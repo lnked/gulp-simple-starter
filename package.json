@@ -84,7 +84,7 @@
     "immutable-css": "1.1.2",
     "jest": "26.0.1",
     "jpegtran-bin": "5.0.1",
-    "lint-staged": "10.2.9",
+    "lint-staged": "10.2.10",
     "path": "0.12.7",
     "postcss-animation": "0.0.12",
     "postcss-fixes": "2.0.1",
