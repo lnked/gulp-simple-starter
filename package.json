@@ -99,7 +99,7 @@
     "stylelint-config-prettier": "8.0.1",
     "stylelint-config-recommended": "3.0.0",
     "stylelint-order": "4.1.0",
-    "terser-webpack-plugin": "3.0.3",
+    "terser-webpack-plugin": "3.0.4",
     "uncss": "0.17.3",
     "webpack": "4.43.0",
     "webpack-stream": "5.2.1",
@@ -112,11 +112,11 @@
     "cookies-js": "1.2.3",
     "date.js": "0.3.3",
     "domurl": "2.3.4",
-    "gsap": "3.3.1",
+    "gsap": "3.3.2",
     "ms": "2.1.2",
     "path-to-regexp": "6.1.0",
     "store.js": "1.0.4",
-    "swiper": "5.4.2",
+    "swiper": "5.4.3",
     "three": "0.117.1"
   },
   "husky": {
