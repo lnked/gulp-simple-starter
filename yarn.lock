@@ -2939,7 +2939,7 @@ bin-version@^3.0.0:
     execa "^1.0.0"
     find-versions "^3.0.0"
 
-bin-wrapper@^4.0.0:
+bin-wrapper@^4.0.0, bin-wrapper@^4.0.1:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/bin-wrapper/-/bin-wrapper-4.1.0.tgz#99348f2cf85031e3ef7efce7e5300aeaae960605"
   integrity sha512-hfRmo7hWIXPkbpi0ZltboCMVrU+0ClXR/JgbCKKjlDjQf6igXa7OwdqNcFWQZPZTgiY7ZpzE3+LjjkLiTN2T7Q==
@@ -4514,6 +4514,15 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
+cwebp-bin@^5.0.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/cwebp-bin/-/cwebp-bin-5.1.0.tgz#d5bea87c127358558e7bf7a90a6d440d42dcb074"
+  integrity sha512-BsPKStaNr98zfxwejWWLIGELbPERULJoD2v5ijvpeutSAGsegX7gmABgnkRK7MUucCPROXXfaPqkLAwI509JzA==
+  dependencies:
+    bin-build "^3.0.0"
+    bin-wrapper "^4.0.1"
+    logalot "^2.1.0"
+
 cyclist@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
@@ -6019,7 +6028,7 @@ file-type@^3.8.0:
   resolved "https://registry.yarnpkg.com/file-type/-/file-type-3.9.0.tgz#257a078384d1db8087bc449d107d52a52672b9e9"
   integrity sha1-JXoHg4TR24CHvESdEH1SpSZyuek=
 
-file-type@^4.2.0:
+file-type@^4.2.0, file-type@^4.3.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/file-type/-/file-type-4.4.0.tgz#1b600e5fca1fbdc6e80c0a70c71c8dba5f7906c5"
   integrity sha1-G2AOX8ofvcboDApwxxyNul95BsU=
@@ -7166,6 +7175,15 @@ gulp-watch@5.0.1:
     vinyl "^2.1.0"
     vinyl-file "^2.0.0"
 
+gulp-webp@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/gulp-webp/-/gulp-webp-4.0.1.tgz#c3cf0ee8362fced253784c50bc29a44a06d98ed1"
+  integrity sha512-ChrghhDJcLDGDNPvH4LwFX2jDOOunKmshYLc4tL3BajL/aGSYXRc+sY51R/6A9veZ7Maf/pzZqzNf6zkfItARA==
+  dependencies:
+    imagemin-webp "^5.0.0"
+    plugin-error "^1.0.1"
+    through2 "^3.0.0"
+
 gulp@4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/gulp/-/gulp-4.0.2.tgz#543651070fd0f6ab0a0650c6a3e6ff5a7cb09caa"
@@ -7659,6 +7677,15 @@ imagemin-svgo@^7.0.0:
     is-svg "^4.2.1"
     svgo "^1.3.2"
 
+imagemin-webp@^5.0.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/imagemin-webp/-/imagemin-webp-5.1.0.tgz#ddb1307ad97aff97293c5a600e384e40c07f68a7"
+  integrity sha512-BsPTpobgbDPFBBsI3UflnU/cpIVa15qInEDBcYBw16qI/6XiB4vDF/dGp9l4aM3pfFDDYqR0mANMcKpBD7wbCw==
+  dependencies:
+    cwebp-bin "^5.0.0"
+    exec-buffer "^3.0.0"
+    is-cwebp-readable "^2.0.1"
+
 imagemin@^7.0.0:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/imagemin/-/imagemin-7.0.1.tgz#f6441ca647197632e23db7d971fffbd530c87dbf"
@@ -7976,6 +8003,13 @@ is-css@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-css/-/is-css-1.0.0.tgz#9c4ee1110691e0a7df9e5e6aa7816bae3d526d38"
   integrity sha1-nE7hEQaR4Kffnl5qp4Frrj1SbTg=
+
+is-cwebp-readable@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/is-cwebp-readable/-/is-cwebp-readable-2.0.1.tgz#afb93b0c0abd0a25101016ae33aea8aedf926d26"
+  integrity sha1-r7k7DAq9CiUQEBauM66ort+SbSY=
+  dependencies:
+    file-type "^4.3.0"
 
 is-data-descriptor@^0.1.4:
   version "0.1.4"
@@ -14505,6 +14539,14 @@ through2@^0.6.3:
   dependencies:
     readable-stream ">=1.0.33-1 <1.1.0-0"
     xtend ">=4.0.0 <4.1.0-0"
+
+through2@^3.0.0:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/through2/-/through2-3.0.2.tgz#99f88931cfc761ec7678b41d5d7336b5b6a07bf4"
+  integrity sha512-enaDQ4MUyP2W6ZyT6EsMzqBPZaM/avg8iuo+l2d3QCs0J+6RaqkHV/2/lOwDTueBHeJ/2LG9lrLW3d5rWPucuQ==
+  dependencies:
+    inherits "^2.0.4"
+    readable-stream "2 || 3"
 
 through2@^3.0.1:
   version "3.0.1"

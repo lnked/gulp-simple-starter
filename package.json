@@ -78,6 +78,7 @@
     "gulp-svgmin": "2.2.0",
     "gulp-svgstore": "7.0.1",
     "gulp-watch": "5.0.1",
+    "gulp-webp": "^4.0.1",
     "husky": "4.2.5",
     "imagemin-lint-staged": "0.4.0",
     "imagemin-optipng": "8.0.0",
