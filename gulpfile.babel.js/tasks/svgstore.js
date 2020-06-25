@@ -21,7 +21,7 @@ const svgMinOptions = file =>
   )
 
 export default () =>
-  src(svgStoreFile)
+  src(svgStoreFile, { allowEmpty: true })
     .pipe(
       inject(
         src(`${svgStorePath}/**/*.svg`)

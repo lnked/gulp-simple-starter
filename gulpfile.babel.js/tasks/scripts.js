@@ -1,18 +1,18 @@
-import size from 'gulp-size'
-import rigger from 'gulp-rigger'
-import webpack from 'webpack-stream'
-import browserSync from 'browser-sync'
-import { resolve } from 'path'
-import { src, dest } from 'gulp'
+import size from 'gulp-size';
+import rigger from 'gulp-rigger';
+import webpack from 'webpack-stream';
+import browserSync from 'browser-sync';
+import { resolve } from 'path';
+import { src, dest } from 'gulp';
 
-import webpackConfig from '../webpack.config'
-import { staticPath } from '../env'
-import { scriptsPath } from '../config'
+import webpackConfig from '../webpack.config';
+import { staticPath } from '../env';
+import { scriptsPath } from '../config';
 
 export const scriptsWatchPaths = [
-  `${scriptsPath}/*.js`,
-  `${scriptsPath}/**/*.js`,
-]
+  `${scriptsPath}/*.{js,jsx,ts,tsx,mjs}`,
+  `${scriptsPath}/**/*.{js,jsx,ts,tsx,mjs}`,
+];
 
 export default () =>
   src([
@@ -30,4 +30,4 @@ export default () =>
       showFiles: true,
       showTotal: true,
     }))
-    .on('end', browserSync.reload)
+    .on('end', browserSync.reload);

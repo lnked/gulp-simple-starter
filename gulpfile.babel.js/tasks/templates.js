@@ -43,7 +43,7 @@ export default () =>
       ],
       envOptions: {
         watch: development,
-      }
+      },
     }))
     .pipe(pathModifier('img', (link) => {
       if (link && /static\//.test(link)) {
