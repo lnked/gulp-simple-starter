@@ -10,7 +10,8 @@ import { imagesPath, imageminConfig } from '../config'
 const imagesDist = resolve(staticPath, 'img')
 
 export const imagesWatchPaths = [
-  `${imagesPath}/*.*`,
+  `${imagesPath}/*`,
+  `${imagesPath}/**/*`,
 ]
 
 export default () =>

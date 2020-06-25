@@ -74,9 +74,10 @@ export const imageminConfig = [
     interlaced: true,
     optimizationLevel: 3,
   }),
-  // imagemin.jpegtran({
-  //   progressive: true,
-  // }),
+  imagemin.mozjpeg({
+    progressive: true,
+    interlaced: true,
+  }),
   imagemin.optipng(
     {
       optimizationLevel: 5,
