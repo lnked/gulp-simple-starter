@@ -75,7 +75,7 @@
     "gulp-sass-glob": "1.1.0",
     "gulp-size": "3.0.0",
     "gulp-sourcemaps": "2.6.5",
-    "gulp-svgmin": "2.2.0",
+    "gulp-svgmin": "3.0.0",
     "gulp-svgstore": "7.0.1",
     "gulp-watch": "5.0.1",
     "gulp-webp": "^4.0.1",
@@ -118,7 +118,7 @@
     "path-to-regexp": "6.1.0",
     "store.js": "1.0.4",
     "swiper": "5.4.5",
-    "three": "0.117.1"
+    "three": "0.118.1"
   },
   "husky": {
     "hooks": {
