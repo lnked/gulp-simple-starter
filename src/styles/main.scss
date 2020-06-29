@@ -1,9 +1,15 @@
-@import 'settings/variables';
-@import 'general/*';
+@import 'utils/*';
+
+@import 'core/*';
+
 @import 'components/*';
 
+html {
+  font-size: 10px;
+}
+
 main {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .image-background-example {

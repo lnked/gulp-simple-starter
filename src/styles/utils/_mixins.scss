@@ -1,0 +1,52 @@
+// @include clearfix;
+
+@mixin clearfix {
+
+  &:after {
+    content: ' ';
+    height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+  }
+
+  * html & {
+    height: 1px;
+  }
+}
+
+// @include pseudo(inline-block,relative,'next');
+
+@mixin pseudo($display: block, $content: '') {
+  content: $content;
+  display: $display;
+}
+
+// @include aspect-ratio(16,9);
+
+@mixin aspect-ratio($x, $y, $pseudo: true) {
+  $padding: unquote(($y / $x) * 100 + '%');
+
+  @if $pseudo {
+
+    &:before {
+
+      @include pseudo();
+      width: 100%;
+      padding-top: $padding;
+    }
+  }
+
+  @else {
+    padding-top: $padding;
+  }
+}
+
+// @include truncate(110px);
+
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
