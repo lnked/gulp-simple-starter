@@ -7,7 +7,7 @@ import browserSync from 'browser-sync'
 import frontMatter from 'gulp-front-matter'
 
 import { outputPath } from '../env'
-import { publicPath, svgStoreFile, templatesPath, htmlFormatConfig } from '../config'
+import { publicPath, templatesPath, htmlFormatConfig } from '../config'
 
 import { getData } from '../get-data'
 
@@ -20,7 +20,6 @@ export const pugWatchPaths = [
 
 export default () =>
   src([
-    svgStoreFile,
     `${templatesPath}/pages/*.pug`,
     `${templatesPath}/pages/**/*.pug`,
     `!${templatesPath}/_*.*`,

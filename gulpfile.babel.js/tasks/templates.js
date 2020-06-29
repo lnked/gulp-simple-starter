@@ -9,7 +9,7 @@ import nunjucksRender from 'gulp-nunjucks-render'
 import pathModifier from 'gulp-path-modifier'
 
 import { outputPath, development } from '../env'
-import { publicPath, svgStoreFile, templatesPath, htmlFormatConfig } from '../config'
+import { publicPath, templatesPath, htmlFormatConfig } from '../config'
 
 import { getData } from '../get-data'
 
@@ -27,7 +27,6 @@ export const templatesWatchPaths = [
 
 export default () =>
   src([
-    svgStoreFile,
     `${templatesPath}/pages/*.html`,
     `${templatesPath}/pages/**/*.html`,
     `!${templatesPath}/_*.*`,
