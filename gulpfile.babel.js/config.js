@@ -1,6 +1,8 @@
 import imagemin from 'gulp-imagemin'
 import imageminOptipng from 'imagemin-optipng'
 
+export { environment } from './tools/env';
+
 export const publicPath = 'public'
 export const fontsPath = 'src/fonts'
 export const imagesPath = 'src/images'
