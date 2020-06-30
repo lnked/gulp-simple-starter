@@ -86,7 +86,7 @@
     "imagemin-optipng": "8.0.0",
     "immutable-css": "1.1.2",
     "jest": "26.1.0",
-    "jpegtran-bin": "5.0.1",
+    "jpegtran-bin": "5.0.2",
     "lint-staged": "10.2.11",
     "path": "^0.12.7",
     "postcss-animation": "0.0.12",
