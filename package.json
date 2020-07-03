@@ -35,8 +35,8 @@
     "@babel/preset-typescript": "^7.10.4",
     "@babel/register": "7.10.4",
     "@gfx/zopfli": "1.0.14",
-    "@size-limit/preset-app": "4.5.2",
-    "@size-limit/webpack": "4.5.2",
+    "@size-limit/preset-app": "4.5.3",
+    "@size-limit/webpack": "4.5.3",
     "add": "2.0.6",
     "autoprefixer": "9.8.4",
     "babel-core": "6.26.3",
@@ -96,7 +96,7 @@
     "postcss-uncss": "0.17.0",
     "prettier": "2.0.5",
     "pug": "3.0.0",
-    "size-limit": "4.5.2",
+    "size-limit": "4.5.3",
     "sort-css-media-queries": "1.5.0",
     "stylelint": "13.6.1",
     "stylelint-config-prettier": "8.0.2",
@@ -106,7 +106,7 @@
     "uncss": "0.17.3",
     "webpack": "4.43.0",
     "webpack-stream": "5.2.1",
-    "yargs": "15.3.1"
+    "yargs": "15.4.0"
   },
   "dependencies": {
     "@babel/polyfill": "7.10.4",
