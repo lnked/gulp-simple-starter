@@ -1,0 +1,15 @@
+{% macro card(image='', title='') %}
+<picture class="picture">
+  <source srcset="{{ image }}.webp" type="image/webp">
+  <source srcset="{{ image }}.jpg" type="image/jpeg">
+  <img src="{{ image }}.jpg" alt="{{ title | escape }}">
+</picture>
+{% endmacro %}
+
+{% macro navitem(name='', link='', isCurrent=false, accesskey='') %}
+<li class="navigation__item" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+  <a href="{{ link }}" class="navigation__link{% if isCurrent %} navigation__link--active{% endif %}" accesskey="{{ accesskey }}" itemprop="url">
+    <span itemprop="name">{{ name | escape }}</span>
+  </a>
+</li>
+{% endmacro %}
