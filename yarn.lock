@@ -14684,6 +14684,11 @@ tempfile@^2.0.0:
     temp-dir "^1.0.0"
     uuid "^3.0.1"
 
+template7@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/template7/-/template7-1.4.2.tgz#62f32959361e455ec171ef9ef33d29ca7130e009"
+  integrity sha512-eoKnScBMDk7lyj7+iCzKbxGiSLLlQk0DNvmclyJuMCUKxy9JrFuAB+GD5iplF4WiQPtMdI06CHHks3avL22JXA==
+
 terminal-link@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/terminal-link/-/terminal-link-2.1.1.tgz#14a64a27ab3c0df933ea546fba55f2d078edc994"
