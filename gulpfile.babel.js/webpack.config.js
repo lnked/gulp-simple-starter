@@ -1,12 +1,13 @@
-const { resolve } = require('path')
-const zopfli = require('@gfx/zopfli')
-const TerserPlugin = require('terser-webpack-plugin')
-const CompressionPlugin = require('compression-webpack-plugin')
+const glob = require('glob');
+const { resolve } = require('path');
+const zopfli = require('@gfx/zopfli');
+const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
-const { mode, production, development, rootPath, cacheDirectory } = require('./env')
-const { scriptsPath } = require('./config')
+const { mode, production, development, rootPath, cacheDirectory } = require('./env');
+const { scriptsPath } = require('./config');
 
-const scriptsSourcePath = resolve(rootPath, scriptsPath)
+const scriptsSourcePath = resolve(rootPath, scriptsPath);
 
 const optimizationConfig = {
   minimizer: [
@@ -91,7 +92,13 @@ if (production) {
 module.exports = {
   mode,
   devtool: production ? false : 'source-map',
-  entry: './app.js',
+  // entry: './app.js',
+  entry: [
+    ...glob.sync(`${scriptsSourcePath}/*.js`),
+    ...glob.sync(`${scriptsSourcePath}/*.jsx`),
+    ...glob.sync(`${scriptsSourcePath}/*.ts`),
+    ...glob.sync(`${scriptsSourcePath}/*.tsx`),
+  ],
   output: {
     filename: './bundle.js',
     path: scriptsSourcePath,

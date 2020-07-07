@@ -16,6 +16,7 @@ import uncss from'postcss-uncss';
 import postcssFixes from 'postcss-fixes';
 import animation from 'postcss-animation';
 import reporter from 'postcss-reporter';
+import position from 'postcss-position';
 import immutableCss from 'immutable-css';
 import modifyCssUrls from 'gulp-modify-css-urls';
 
@@ -26,6 +27,7 @@ const plugins = []
 
 plugins.push(
   atImport(),
+  position(),
   postcssFixes({
     preset: 'safe'
   }),
