@@ -1,5 +1,3 @@
 {
-  "rules": {
-    "property-blacklist": ["flex"]
-  }
+  "rules": {}
 }

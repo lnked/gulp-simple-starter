@@ -1,7 +1,6 @@
 {
   "extends": [
     "stylelint-config-recommended",
-    "stylelint-config-prettier",
   ],
   "plugins": [
     "stylelint-order",
@@ -14,7 +13,6 @@
     "at-rule-no-unknown": [true, {
       "ignoreAtRules": ["function", "if", "else", "each", "include", "mixin"],
     }],
-    "property-blacklist": ["flex"],
     "order/order": [
       "declarations",
       {
