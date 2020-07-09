@@ -19,10 +19,13 @@ nunjucksRender.nunjucks.configure({
   lstripBlocks: false,
 })
 
-export const templatesWatchPaths = [
+export const templatesWatchGlob = [
   `${templatesPath}/*.html`,
+  `${templatesPath}/_*.html`,
   `${templatesPath}/**/*.html`,
+  `${templatesPath}/**/_*.html`,
   `${templatesPath}/**/*.json`,
+  `${templatesPath}/**/_*.json`,
 ]
 
 export default () =>

@@ -5,12 +5,12 @@ import { src, dest } from 'gulp'
 import { staticPath } from '../env'
 import { fontsPath } from '../config'
 
-export const fontsWatchPaths = [
+export const fontsWatchGlob = [
   `${fontsPath}/*.*`,
   `${fontsPath}/**/*.*`,
 ]
 
 export default () =>
-  src(fontsWatchPaths)
+  src(fontsWatchGlob)
     .pipe(dest(resolve(staticPath, 'fonts')))
     .on('end', browserSync.reload)

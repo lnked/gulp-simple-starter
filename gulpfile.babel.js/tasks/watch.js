@@ -1,20 +1,22 @@
-import { series } from 'gulp';
 import watch from 'gulp-watch';
+import { series } from 'gulp';
 
-import { fontsWatchPaths } from './fonts';
-import { publicWatchPaths } from './public';
-import { stylesWatchPaths } from './styles';
-import { imagesWatchPaths } from './images';
-import { scriptsWatchPaths } from './scripts';
-import { templatesWatchPaths } from './templates';
-import { pugWatchPaths } from './pug';
+import pug, { pugWatchGlob } from './pug';
+import fonts, { fontsWatchGlob } from './fonts';
+import public, { publicWatchGlob } from './public';
+import styles, { stylesWatchGlob } from './styles';
+import images, { imagesWatchGlob } from './images';
+import scripts, { scriptsWatchGlob } from './scripts';
+import templates, { templatesWatchGlob } from './templates';
+import svgstore, { svgStoreWatchGlob } from './svgstore';
 
 export default () => {
-  watch(fontsWatchPaths, series('fonts'));
-  watch(publicWatchPaths, series('public'));
-  watch(imagesWatchPaths, series('images'));
-  watch(stylesWatchPaths, series('styles'));
-  watch(scriptsWatchPaths, series('scripts'));
-  watch(pugWatchPaths, series('pug'));
-  watch(templatesWatchPaths, series('templates'));
+  watch(pugWatchGlob, pug);
+  watch(fontsWatchGlob, fonts);
+  watch(publicWatchGlob, public);
+  watch(svgStoreWatchGlob, svgstore);
+  watch(imagesWatchGlob, images);
+  watch(stylesWatchGlob, styles);
+  watch(scriptsWatchGlob, scripts);
+  watch(templatesWatchGlob, templates);
 }

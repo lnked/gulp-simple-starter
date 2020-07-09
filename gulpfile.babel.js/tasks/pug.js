@@ -11,7 +11,7 @@ import { publicPath, templatesPath, htmlFormatConfig } from '../config'
 
 import { getData } from '../get-data'
 
-export const pugWatchPaths = [
+export const pugWatchGlob = [
   `${templatesPath}/*.pug`,
   `${templatesPath}/pages/*.pug`,
   `${templatesPath}/**/*.pug`,

@@ -3,7 +3,6 @@
   "version": "1.2.4",
   "description": "",
   "scripts": {
-    "prestart": "gulp build --production",
     "size": "size-limit",
     "start": "gulp --development",
     "start:uncss": "gulp --development --uncss",

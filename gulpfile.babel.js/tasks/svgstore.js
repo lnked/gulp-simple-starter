@@ -20,16 +20,19 @@ const svgMinOptions = file =>
     )
   )
 
+export const svgStoreWatchGlob = [
+  `${svgStorePath}/**/*.svg`
+]
+
 export default () =>
   src(svgStoreFile, { allowEmpty: true })
     .pipe(
       inject(
-        src(`${svgStorePath}/**/*.svg`)
+        src(svgStoreWatchGlob)
           .pipe(svgmin(svgMinOptions))
           .pipe(
             cheerio({
               run: ($) => {
-                $('[fill]').removeAttr('fill');
                 $('[style]').removeAttr('style');
               },
               parserOptions: { xmlMode: true },

@@ -4,13 +4,13 @@ import browserSync from 'browser-sync'
 import { outputPath } from '../env'
 import { publicPath, svgStoreFile } from '../config'
 
-export const publicWatchPaths = [
+export const publicWatchGlob = [
   `${publicPath}/*.*`,
   `${publicPath}/**/*.*`,
   `!${svgStoreFile}`,
 ]
 
 export default () =>
-  src(publicWatchPaths)
+  src(publicWatchGlob)
     .pipe(dest(outputPath))
     .on('end', browserSync.reload)

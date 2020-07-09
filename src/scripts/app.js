@@ -1,5 +1,6 @@
 import test from 'components/test';
 import scrollTarget from 'components/scroll-target';
+import Navigation from 'components/navigation';
 
 window.onload = () => {
   test();
@@ -7,4 +8,6 @@ window.onload = () => {
   scrollTarget({
     trigger: '.j-nav-link',
   });
+
+  Navigation.init({});
 };

@@ -13,7 +13,7 @@ import { imagesPath, imageminConfig, environment } from '../config';
 const { TINYPNG_API_KEY = '' } = environment;
 const imagesDist = resolve(staticPath, 'img')
 
-export const imagesWatchPaths = [
+export const imagesWatchGlob = [
   `${imagesPath}/*`,
   `${imagesPath}/**/*`,
 ]
@@ -27,7 +27,7 @@ const condition = formats => file => {
 }
 
 export default () =>
-  src(imagesWatchPaths)
+  src(imagesWatchGlob)
     .pipe(newer(imagesDist))
     .pipe(imagemin(imageminConfig, {
       verbose: true,

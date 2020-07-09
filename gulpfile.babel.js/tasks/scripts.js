@@ -9,14 +9,14 @@ import webpackConfig from '../webpack.config';
 import { staticPath } from '../env';
 import { scriptsPath } from '../config';
 
-export const scriptsWatchPaths = [
+export const scriptsWatchGlob = [
   `${scriptsPath}/*.{js,jsx,ts,tsx,mjs}`,
   `${scriptsPath}/**/*.{js,jsx,ts,tsx,mjs}`,
 ];
 
 export default () =>
   src([
-    ...scriptsWatchPaths,
+    ...scriptsWatchGlob,
     `!${scriptsPath}/_*.*`,
     `!${scriptsPath}/**/_*.*`,
   ])

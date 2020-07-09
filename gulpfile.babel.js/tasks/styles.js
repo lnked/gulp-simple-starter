@@ -71,14 +71,14 @@ plugins.push(
   })
 )
 
-export const stylesWatchPaths = [
+export const stylesWatchGlob = [
   `${stylesPath}/*.{css,sass,scss}`,
   `${stylesPath}/**/*.{css,sass,scss}`,
 ]
 
 export default () =>
   src([
-    ...stylesWatchPaths,
+    ...stylesWatchGlob,
     `!${stylesPath}/_*.*`,
     `!${stylesPath}/**/_*.*`,
   ])

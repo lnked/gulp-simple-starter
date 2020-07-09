@@ -63,7 +63,7 @@ export const svgminConfig = (prefix) => ({
         rgb2hex: true
     }},
     { removeAttrs: {
-        attrs: ["id", "class", "data-name", "stroke", "fill", "fill-rule"]
+        attrs: ["id", "class", "data-name", "stroke", "fill-rule"]
     } },
     { removeStyleElement: true },
     { removeScriptElement: true },

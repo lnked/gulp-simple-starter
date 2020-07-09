@@ -92,13 +92,7 @@ if (production) {
 module.exports = {
   mode,
   devtool: production ? false : 'source-map',
-  // entry: './app.js',
-  entry: [
-    ...glob.sync(`${scriptsSourcePath}/*.js`),
-    ...glob.sync(`${scriptsSourcePath}/*.jsx`),
-    ...glob.sync(`${scriptsSourcePath}/*.ts`),
-    ...glob.sync(`${scriptsSourcePath}/*.tsx`),
-  ],
+  entry: './app.js',
   output: {
     filename: './bundle.js',
     path: scriptsSourcePath,
