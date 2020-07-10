@@ -11,12 +11,12 @@ import templates, { templatesWatchGlob } from './templates';
 import svgstore, { svgStoreWatchGlob } from './svgstore';
 
 export default () => {
-  watch(pugWatchGlob, pug);
-  watch(fontsWatchGlob, fonts);
-  watch(publicWatchGlob, public);
-  watch(svgStoreWatchGlob, svgstore);
-  watch(imagesWatchGlob, images);
-  watch(stylesWatchGlob, styles);
-  watch(scriptsWatchGlob, scripts);
-  watch(templatesWatchGlob, templates);
+  watch(pugWatchGlob, series(pug));
+  watch(fontsWatchGlob, series(fonts));
+  watch(publicWatchGlob, series(public));
+  watch(svgStoreWatchGlob, series(svgstore));
+  watch(imagesWatchGlob, series(images));
+  watch(stylesWatchGlob, series(styles));
+  watch(scriptsWatchGlob, series(scripts));
+  watch(templatesWatchGlob, series(templates));
 }

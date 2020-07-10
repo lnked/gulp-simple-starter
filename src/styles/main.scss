@@ -8,13 +8,6 @@ html {
   font-size: 10px;
 }
 
-main {
+.base-layout {
   min-height: 100vh;
-}
-
-.image-background-example {
-  width: 100px;
-  height: 100px;
-  background: url(img/HTML5-logo.png);
-  background-size: cover;
 }

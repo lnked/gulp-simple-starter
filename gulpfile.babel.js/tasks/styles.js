@@ -72,9 +72,11 @@ plugins.push(
 )
 
 export const stylesWatchGlob = [
-  `${stylesPath}/*.{css,sass,scss}`,
-  `${stylesPath}/**/*.{css,sass,scss}`,
-]
+  `${stylesPath}/*.{sass,scss,css}`,
+  `${stylesPath}/_*.{sass,scss,css}`,
+  `${stylesPath}/**/*.{sass,scss,css}`,
+  `${stylesPath}/**/_*.{sass,scss,css}`,
+];
 
 export default () =>
   src([

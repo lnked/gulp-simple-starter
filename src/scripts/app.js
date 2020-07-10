@@ -1,13 +1,13 @@
-import test from 'components/test';
-import scrollTarget from 'components/scroll-target';
 import Navigation from 'components/navigation';
 
-window.onload = () => {
-  test();
+window.addEventListener('load', () => {
+  Navigation.init();
+});
 
-  scrollTarget({
-    trigger: '.j-nav-link',
-  });
+window.addEventListener('popstate', () => {
+  Navigation.terminate();
+});
 
-  Navigation.init({});
-};
+window.addEventListener('unload', () => {
+  Navigation.terminate();
+});
