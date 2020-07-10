@@ -11,7 +11,9 @@ import { scriptsPath } from '../config';
 
 export const scriptsWatchGlob = [
   `${scriptsPath}/*.{js,jsx,ts,tsx,mjs}`,
+  `${scriptsPath}/_*.{js,jsx,ts,tsx,mjs}`,
   `${scriptsPath}/**/*.{js,jsx,ts,tsx,mjs}`,
+  `${scriptsPath}/**/_*.{js,jsx,ts,tsx,mjs}`,
 ];
 
 export default () =>

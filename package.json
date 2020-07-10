@@ -42,7 +42,7 @@
     "babel-eslint": "10.1.0",
     "babel-jest": "26.1.0",
     "babel-loader": "8.1.0",
-    "bempug": "1.1.1",
+    "bempug": "^1.1.1",
     "browser-sync": "2.26.7",
     "compression-webpack-plugin": "4.0.0",
     "css-mqpacker": "7.0.0",
@@ -114,12 +114,16 @@
     "date.js": "0.3.3",
     "domurl": "2.3.4",
     "gsap": "3.4.0",
+    "jquery": "^3.5.1",
     "ms": "2.1.2",
     "path-to-regexp": "6.1.0",
     "store.js": "1.0.4",
     "swiper": "6.0.2",
     "template7": "^1.4.2",
     "three": "0.118.3"
+  },
+  "scarfSettings": {
+    "enabled": false
   },
   "husky": {
     "hooks": {
