@@ -101,27 +101,34 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        enforce: 'pre',
+        test: /\.(ts|js)x?$/,
         loader: 'eslint-loader',
+        enforce: 'pre',
         include: scriptsSourcePath,
         options: {
           configFile: resolve(rootPath, '.eslintrc')
         }
       },
       {
-        test: /\.js$/,
+        test: /\.(ts|js)x?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
           cacheDirectory,
         },
-      }
+      },
     ],
   },
   resolve: {
     alias: {
       src: scriptsSourcePath,
+      libs: resolve(scriptsSourcePath, 'libs'),
+      hooks: resolve(scriptsSourcePath, 'hooks'),
+      utils: resolve(scriptsSourcePath, 'utils'),
+      stores: resolve(scriptsSourcePath, 'stores'),
+      configs: resolve(scriptsSourcePath, 'configs'),
+      services: resolve(scriptsSourcePath, 'services'),
+      settings: resolve(scriptsSourcePath, 'settings'),
       components: resolve(scriptsSourcePath, 'components'),
     },
     mainFiles: ['index'],
