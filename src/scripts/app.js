@@ -1,16 +1,15 @@
 import * as utils from 'utils/math';
 import Navigation from 'components/navigation';
 
+const terminate = () => {
+  Navigation.terminate();
+};
+
 window.addEventListener('load', () => {
   Navigation.init();
 
-  alert(utils.randomInteger(1, 5));
+  console.log(utils.randomInteger(1, 5));
 });
 
-window.addEventListener('popstate', () => {
-  Navigation.terminate();
-});
-
-window.addEventListener('unload', () => {
-  Navigation.terminate();
-});
+window.addEventListener('unload', terminate);
+window.addEventListener('popstate', terminate);
