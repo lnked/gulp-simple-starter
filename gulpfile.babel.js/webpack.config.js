@@ -125,6 +125,7 @@ module.exports = {
       libs: resolve(scriptsSourcePath, 'libs'),
       hooks: resolve(scriptsSourcePath, 'hooks'),
       utils: resolve(scriptsSourcePath, 'utils'),
+      tools: resolve(scriptsSourcePath, 'tools'),
       stores: resolve(scriptsSourcePath, 'stores'),
       configs: resolve(scriptsSourcePath, 'configs'),
       services: resolve(scriptsSourcePath, 'services'),
