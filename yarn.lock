@@ -1386,33 +1386,33 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@size-limit/file@4.5.3":
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/@size-limit/file/-/file-4.5.3.tgz#f73afcdca4186255bb512630286de77589b7c756"
-  integrity sha512-QOvyhO4MyzYRjZLu0XYXdnun8aMOfea8uC6u46FsvvnWEnSL1LebeB1UKtk2zWGC9MYrv6c9IZvV11tbopeSjQ==
+"@size-limit/file@4.5.4":
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/@size-limit/file/-/file-4.5.4.tgz#7c05aabfb0c20f8d699f1edae7dd2703e259ae57"
+  integrity sha512-NLqS44ZBTx2KAh/FbPzg2KijQ+mbQqUfN16W/hkjXyOucjbFGtKp3FF1LlbMsdXaaXZ/diwKW0NyKH9tynSlVQ==
   dependencies:
     semver "7.3.2"
 
-"@size-limit/preset-app@4.5.3":
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/@size-limit/preset-app/-/preset-app-4.5.3.tgz#78509a0d60c4dbd456df671ebee7ffc199012ee4"
-  integrity sha512-O3ILVTI2ir1DDtUQNLOGQHbtYc9gsuMAORlxswT4u+y+hBzIPXnczcq+kHhEK5bWTfLJMNv7RTju2TaUpIOpTg==
+"@size-limit/preset-app@4.5.4":
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/@size-limit/preset-app/-/preset-app-4.5.4.tgz#ef46fe07d39af790e64cad919d4eea693321bf6e"
+  integrity sha512-sQo1a327b/t9TtEUiFWv8I+sOgot54f4H06lSqUVH2gSFpZIhHFu2o4BeAqOEjstoYe2Tjfax/3nynZBdq8oCg==
   dependencies:
-    "@size-limit/file" "4.5.3"
-    "@size-limit/time" "4.5.3"
+    "@size-limit/file" "4.5.4"
+    "@size-limit/time" "4.5.4"
 
-"@size-limit/time@4.5.3":
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-4.5.3.tgz#f3b79b5fc0afad7188cb3d022812a3cb56746a91"
-  integrity sha512-7+I7VPK8Kp1719FuthjpAeYkF0JsqWATmrpbazc30vs9ojRnusxRJmWL2AbBPdVmI6pGJMsbWebLdjvGQCUscQ==
+"@size-limit/time@4.5.4":
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-4.5.4.tgz#22747cd7fb95b89a63449e63683b176dcbb43d4a"
+  integrity sha512-HDTbSeOY15030Nq2Sp7G20CS/weyAdbQPmoQ7y19wIRLjkx1Ajf3ERSUzcuoI4cpmvZUf3a9BEOQp8RGfahkDQ==
   dependencies:
     estimo "^2.0.4"
     react "^16.13.1"
 
-"@size-limit/webpack@4.5.3":
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/@size-limit/webpack/-/webpack-4.5.3.tgz#ff0a9efd7799dc4ecbb3df525c824e82895258dd"
-  integrity sha512-Uw2ZgEM81RaHE9UjDGrjHyLLA1ngpWTNWU1wJmXpGHXq4F8I1wV5rLdAzWZO8F137LhK66hpYoaAk0y2w/wy2w==
+"@size-limit/webpack@4.5.4":
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/@size-limit/webpack/-/webpack-4.5.4.tgz#8d39ea478dc6891c1ef71737fa075486bfe2d256"
+  integrity sha512-6l3RwvL6f6qTR47BnaQGGL7QRQNUfwvSw5MWfCtG4pI/No9af+oCUmvkIulxawpjU4OJQOqgLVQmcTw4VIaXUA==
   dependencies:
     css-loader "^3.6.0"
     escape-string-regexp "^4.0.0"
@@ -3814,6 +3814,11 @@ colorette@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.0.tgz#45306add826d196e8c87236ac05d797f25982e63"
   integrity sha512-soRSroY+OF/8OdA3PTQXwaDJeMc7TfknKKrxeSCencL2a4+Tx5zhxmmv7hdpCjhKBjehzp8+bwe/T68K0hpIjw==
+
+colorette@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
+  integrity sha512-puCDz0CzydiSYOrnXpz/PKd69zRrribezjtE9yd4zvytoRc8+RY/KJPvtPFKZS3E3wP6neGyMe0vOTlHO5L3Pw==
 
 combined-stream@^1.0.6, combined-stream@~1.0.6:
   version "1.0.8"
@@ -13669,15 +13674,15 @@ sisteransi@^1.0.4:
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
   integrity sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==
 
-size-limit@4.5.3:
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-4.5.3.tgz#7534fc36695e0b526206c706a8a8353ba4f4d58d"
-  integrity sha512-i5zOu9qN+X+eKeBSkVZCFqXtwd4CjgMrRWimB3uA5FW2JM4oCa0qv+CBIb/oNfdMsghrrD3HjSb8pn15XlOu3A==
+size-limit@4.5.4:
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-4.5.4.tgz#ee2cbb3d2a9b2c0ab1b7ef10593da03ed85805a6"
+  integrity sha512-126uqTLSDf9UUppC1vFvIpeY1gECBLqFkd4h9AzpST/x8w1fZ3ac/bbZ72mUr4pR8/hcRoFqHZXWgsbfFTM/Cw==
   dependencies:
     bytes "^3.1.0"
     chokidar "^3.4.0"
     ci-job-number "^1.2.2"
-    colorette "^1.2.0"
+    colorette "^1.2.1"
     cosmiconfig "^6.0.0"
     globby "^11.0.1"
     ora "^4.0.4"
