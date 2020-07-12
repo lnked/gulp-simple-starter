@@ -92,7 +92,7 @@ if (production) {
 module.exports = {
   mode,
   devtool: production ? false : 'source-map',
-  entry: './app.js',
+  entry: './app',
   output: {
     filename: './bundle.js',
     path: scriptsSourcePath,
