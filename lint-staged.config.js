@@ -1,9 +1,9 @@
 module.exports = {
   "./src/**/*.css": [
-    "stylelint --fix --config ./.stylelint-format",
+    "stylelint --config ./.stylelintrc",
   ],
   "./src/**/*.scss": [
-    "stylelint --fix --config ./.stylelint-format --syntax scss",
+    "stylelint --config ./.stylelintrc --syntax scss",
   ],
   "./src/**/*.js": "eslint src/scripts/* --fix",
   "./src/**/*.{png,jpeg,jpg,gif,svg}": "imagemin-lint-staged",
