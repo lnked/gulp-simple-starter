@@ -1,11 +1,19 @@
-<header>
-  <h1>header</h1>
+<header class="layout-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+  <div class="layout-header__wrapper">
+    <a href="../index.html" class="logo" rel="home" itemprop="url" accesskey="1" data-title="LOGO">
+      <span itemprop="name">LOGO</span>
+    </a>
 
-  <nav class="navigation">
-    <ul class="navigation__list">
-      <li class="navigation__item"><a href="/index.html" class="navigation__link j-nav">Index</a></li>
-      <li class="navigation__item"><a href="/example.html" class="navigation__link j-nav">Example</a></li>
-      <li class="navigation__item"><a href="/test.html" class="navigation__link j-nav">Test</a></li>
-    </ul>
-  </nav>
+    <nav class="navigation" aria-label="Основное меню">
+      <ul class="navigation__list">
+        {{ macro.navItem('Index', '../index.html', current == 'index', 2) }}
+        {{ macro.navItem('Example', '../test.html', current == 'example', 3) }}
+        {{ macro.navItem('Test', '../example.html', current == 'test', 4) }}
+      </ul>
+    </nav>
+
+    <button type="button" class="sandwich j-sandwich" accesskey="=" aria-label="Меню сайта" id="sandwich">
+      <span class="sandwich__line">Меню</span>
+    </button>
+  </div>
 </header>

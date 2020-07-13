@@ -1,3 +1,13 @@
 {
-  "pageTitle": "Gulp Simple starter"
+  "pageTitle": "Gulp Simple starter",
+  "og": {
+    "type": "place",
+    "title": "",
+    "url": "",
+    "image": "",
+    "place": {
+      "latitude": "",
+      "longitude": ""
+    }
+  }
 }
