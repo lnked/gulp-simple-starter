@@ -1,5 +1,5 @@
-import imagemin from 'gulp-imagemin'
-import imageminOptipng from 'imagemin-optipng'
+import imagemin from 'gulp-imagemin';
+import imageminOptipng from 'imagemin-optipng';
 
 export { environment } from './tools/env';
 
@@ -29,7 +29,10 @@ export const htmlFormatConfig = {
     'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt'
   ],
 }
-
+export const testsPatterns = [
+  '**/__tests__/**/*.(j|t)s?(x)',
+  '**/?(*.)+(spec|test).(j|t)s?(x)',
+];
 export const svgminConfig = (prefix) => ({
   plugins: [
     { sortAttrs: true },
@@ -77,17 +80,14 @@ export const imageminConfig = [
     optimizationLevel: 3,
   }),
   imagemin.mozjpeg({
-    progressive: true,
     interlaced: true,
+    progressive: true,
   }),
-  imagemin.optipng(
-    {
-      optimizationLevel: 5,
-    },
-    {
-      use: imageminOptipng()
-    }
-  ),
+  imagemin.optipng({
+    optimizationLevel: 5,
+  }, {
+    use: imageminOptipng()
+  }),
   imagemin.svgo({
     plugins: [
       {removeTitle:true},

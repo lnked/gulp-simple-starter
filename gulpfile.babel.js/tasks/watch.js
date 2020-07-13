@@ -10,13 +10,14 @@ import scripts, { scriptsWatchGlob } from './scripts';
 import templates, { templatesWatchGlob } from './templates';
 import svgstore, { svgStoreWatchGlob } from './svgstore';
 
+import { testsPatterns } from '../config';
+
 export default () => {
-  watch(pugWatchGlob, series(pug));
   watch(fontsWatchGlob, series(fonts));
   watch(publicWatchGlob, series(public));
-  watch(svgStoreWatchGlob, series(svgstore));
   watch(imagesWatchGlob, series(images));
   watch(stylesWatchGlob, series(styles));
-  watch(scriptsWatchGlob, series(scripts));
-  watch(templatesWatchGlob, series(templates));
+  watch(svgStoreWatchGlob, series(svgstore));
+  watch(scriptsWatchGlob, { ignored: testsPatterns }, series(scripts));
+  watch([...pugWatchGlob, ...templatesWatchGlob], series(pug, templates));
 }

@@ -7,7 +7,6 @@ const terminate = () => {
 
 window.addEventListener('load', () => {
   Navigation.init();
-
   console.log(utils.randomInteger(1, 5));
 });
 

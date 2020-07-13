@@ -14,24 +14,26 @@ const { TINYPNG_API_KEY = '' } = environment;
 const imagesDist = resolve(staticPath, 'img')
 
 export const imagesWatchGlob = [
-  `${imagesPath}/*`,
-  `${imagesPath}/**/*`,
+  `${imagesPath}`,
+  `${imagesPath}/**/*.*`,
 ]
 
 const condition = formats => file => {
   const { history = [] } = file || {};
   const [filename] = history;
-  const extension = filename.split('.').pop();
 
-  return formats.includes(extension);
+  return formats.includes(filename.split('.').pop() || '');
 }
 
 export default () =>
-  src(imagesWatchGlob)
+  src([
+    `${imagesPath}/*.*`,
+    `${imagesPath}/**/*.*`,
+  ])
     .pipe(newer(imagesDist))
     .pipe(gulpif(production, imagemin(imageminConfig, {
-      verbose: true,
       name: 'images',
+      verbose: true,
     })))
     .pipe(dest(imagesDist))
 

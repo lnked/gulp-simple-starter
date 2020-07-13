@@ -1,10 +1,10 @@
-import { resolve } from 'path'
-import browserSync from 'browser-sync'
+import { resolve } from 'path';
+import browserSync from 'browser-sync';
 
-import { outputPath } from '../env'
+import { outputPath } from '../env';
 
-const devServer = browserSync.create()
-const watchGlob = resolve(outputPath, '**/*.*')
+const devServer = browserSync.create();
+const watchGlob = resolve(outputPath, '**/*.*');
 
 export default () => {
   devServer.init({
@@ -13,7 +13,7 @@ export default () => {
     server: {
       baseDir: outputPath,
     },
-  })
+  });
 
-  devServer.watch(watchGlob).on('change', devServer.reload)
+  devServer.watch(watchGlob).on('change', devServer.reload);
 }
