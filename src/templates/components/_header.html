@@ -4,13 +4,7 @@
       <span itemprop="name">LOGO</span>
     </a>
 
-    <nav class="navigation" aria-label="Основное меню">
-      <ul class="navigation__list">
-        {{ macro.navItem('Index', '../index.html', current == 'index', 2) }}
-        {{ macro.navItem('Example', '../test.html', current == 'example', 3) }}
-        {{ macro.navItem('Test', '../example.html', current == 'test', 4) }}
-      </ul>
-    </nav>
+    {%- include "./_navigation.html" -%}
 
     <button type="button" class="sandwich j-sandwich" accesskey="=" aria-label="Меню сайта" id="sandwich">
       <span class="sandwich__line">Меню</span>

@@ -1,0 +1,86 @@
+<template id="tmpl-modal-template">
+    <div class="modal" id="modal-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal__dialog" data-change="true">
+            <div class="modal__content size-medium" role="document" data-change="true">
+
+                <button type="button" class="modal__close-button" data-dismiss="modal" aria-label="Close" data-target="#modal-item">
+                    <svg role="img">
+                        <use xlink:href="#close"/>
+                    </svg>
+                </button>
+
+                {{#if header}}
+                <header class="modal__header" data-change="true">
+                    {{header}}
+                </header>
+                {{/if}}
+
+                {{#if body}}
+                <div class="modal__body" data-change="true">
+                    {{body}}
+                </div>
+                {{/if}}
+
+                {{#if footer}}
+                <footer class="modal__footer" data-change="true">
+                    {{footer}}
+                    <button class="modal__default-button" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#modal-item">OK</button>
+                </footer>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>
+
+<div class="modal" id="modal-feedback" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal__dialog" data-change="true">
+        <div class="modal__content size-large" role="document" data-change="true">
+            <button type="button" class="modal__close-button" data-dismiss="modal" aria-label="Close" data-target="#modal-feedback">
+                <svg role="img">
+                    <use xlink:href="#close"/>
+                </svg>
+            </button>
+
+            <header class="modal__header" data-change="true">
+                <div class="modal__header__center">
+                    <div class="modal__header__title">ОТПРАВИТЬ ЗАЯВКУ</div>
+                    <div class="modal__header__comment">НА РАЗРАБОТКУ ПРОЕКТА</div>
+                </div>
+            </header>
+
+            <form action="" method="POST" class="form-ajax form-reset">
+                <div class="modal__body">
+
+                    <div class="f-row clearfix">
+                        <div class="f-row__col _x50">
+                            <input type="text" class="f-input" name="" placeholder="ФИО">
+                        </div>
+
+                        <div class="f-row__col _x50">
+                            <input type="text" class="f-input" name="" placeholder="Тип и название предприятия">
+                        </div>
+                    </div>
+
+                    <div class="f-row clearfix">
+                        <div class="f-row__col _x50">
+                            <input type="text" class="f-input" name="" placeholder="Контактный телефон">
+                        </div>
+
+                        <div class="f-row__col _x50">
+                            <input type="text" class="f-input" name="" placeholder="E-mail">
+                        </div>
+                    </div>
+
+                    <div class="f-row is-small-margin clearfix">
+                        <textarea name="" class="f-textarea" placeholder="Комментарий" cols="30" rows="3"></textarea>
+                    </div>
+
+                </div>
+
+                <footer class="modal__footer" data-change="true">
+                    <button class="button" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#modal-feedback">ОТПРАВИТЬ</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+</div>
