@@ -21,7 +21,6 @@ profiling
 .gulp
 .cache
 
-
 # Numerous always-ignore extensions
 *.bak
 *.diff
