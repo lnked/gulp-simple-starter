@@ -108,7 +108,6 @@ const Modal = ((w, d, b) => {
 
       if ((selector = _valid(selector))) {
         this.show(selector);
-        Mask.init({});
       }
     },
 
@@ -160,7 +159,7 @@ const Modal = ((w, d, b) => {
       }
     },
 
-    terminate: () => {
+    terminate() {
       // const selectors = d.querySelectorAll(settings.trigger);
 
       // if (selectors.length) {
@@ -174,21 +173,23 @@ const Modal = ((w, d, b) => {
       // }
     },
 
-    events: () => {
+    events() {
       const selectors = d.querySelectorAll(settings.trigger);
 
       if (selectors.length) {
         for (let i = selectors.length - 1; i >= 0; i--) {
           selectors[i].onclick = (e) => {
             e.preventDefault();
+
             this.open(e.target);
+
             return false;
           };
         }
       }
     },
 
-    init: options => {
+    init(options) {
       settings = { ...settings, ...options };
 
       this.events();
