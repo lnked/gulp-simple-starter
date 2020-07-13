@@ -1,4 +1,4 @@
-{% macro card(image='', title='', className='') %}
+{% macro picture(image='', title='', className='') %}
 <picture class="picture{% if className %} {{ className }}{% endif %}">
   <source srcset="{{ image }}.webp" type="image/webp">
   <source srcset="{{ image }}.jpg" type="image/jpeg">
