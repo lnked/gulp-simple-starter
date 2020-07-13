@@ -12015,6 +12015,13 @@ postcss-selector-parser@^3.0.0:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
+postcss-short-spacing@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-short-spacing/-/postcss-short-spacing-4.0.0.tgz#0de9bf226915c66aca6f4262fb691de817e817f1"
+  integrity sha512-ThWP8vse9jtT26+l8fqfCriPVR7QGYUX7gEXYNPJ2+smD4XHpMJAmbhqa8aKuYsCMhvzeC9ZxCsR/B+nXA7iEw==
+  dependencies:
+    postcss "^7.0.5"
+
 postcss-sorting@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/postcss-sorting/-/postcss-sorting-5.0.1.tgz#10d5d0059eea8334dacc820c0121864035bc3f11"

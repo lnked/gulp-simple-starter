@@ -19,6 +19,7 @@ import reporter from 'postcss-reporter';
 import position from 'postcss-position';
 import immutableCss from 'immutable-css';
 import modifyCssUrls from 'gulp-modify-css-urls';
+import postcssShortSpacing from 'postcss-short-spacing';
 
 import { isUncss, staticPath, nodeModulesPath, production, development } from '../env';
 import { stylesPath } from '../config';
@@ -38,6 +39,7 @@ plugins.push(
   immutableCss({
     verbose: false,
   }),
+  postcssShortSpacing(),
 )
 
 if (production) {
