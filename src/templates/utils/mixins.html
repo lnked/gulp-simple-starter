@@ -1,9 +1,19 @@
-{% macro card(image='', title='') %}
-<picture class="picture">
+{% macro card(image='', title='', className='') %}
+<picture class="picture{% if className %} {{ className }}{% endif %}">
   <source srcset="{{ image }}.webp" type="image/webp">
   <source srcset="{{ image }}.jpg" type="image/jpeg">
   <img src="{{ image }}.jpg" alt="{{ title | escape }}">
 </picture>
+{% endmacro %}
+
+{% macro video(name='', className='') %}
+<div class="video{% if className %} {{ className }}{% endif %}">
+  <video class="video__player" poster="{{ name }}.jpg" preload="auto" loop video autobuffer autoplay>
+    <source src="{{ name }}.ogv" type='video/ogg; codecs="theora, vorbis"'>
+    <source src="{{ name }}.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    <source src="{{ name }}.webm" type='video/webm; codecs="vp8, vorbis"'>
+  </video>
+</div>
 {% endmacro %}
 
 {% macro navitem(name='', link='', isCurrent=false, accesskey='') %}
