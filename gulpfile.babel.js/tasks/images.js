@@ -7,7 +7,7 @@ import imagemin from 'gulp-imagemin';
 import browserSync from 'browser-sync';
 import tinypng from 'gulp-tinypng';
 
-import { staticPath } from '../env';
+import { staticPath, production } from '../env';
 import { imagesPath, imageminConfig, environment } from '../config';
 
 const { TINYPNG_API_KEY = '' } = environment;
@@ -29,18 +29,19 @@ const condition = formats => file => {
 export default () =>
   src(imagesWatchGlob)
     .pipe(newer(imagesDist))
-    .pipe(imagemin(imageminConfig, {
+    .pipe(gulpif(production, imagemin(imageminConfig, {
       verbose: true,
       name: 'images',
-    }))
+    })))
     .pipe(dest(imagesDist))
 
-    .pipe(gulpif((TINYPNG_API_KEY && condition(['png'])), tinypng(TINYPNG_API_KEY)))
+    .pipe(gulpif((production && TINYPNG_API_KEY && condition(['png'])), tinypng(TINYPNG_API_KEY)))
 
     .pipe(gulpif(condition(['jpg', 'jpeg']), webp({
-      quality: 50,
-      method: 6,
+      ...(production && {
+        quality: 50,
+        method: 6,
+      } || {}),
     })))
-
     .pipe(dest(imagesDist))
     .on('end', browserSync.reload);
