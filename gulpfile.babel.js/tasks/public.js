@@ -11,6 +11,6 @@ export const publicWatchGlob = [
 ]
 
 export default () =>
-  src(publicWatchGlob)
+  src(publicWatchGlob, { dot: true })
     .pipe(dest(outputPath))
     .on('end', browserSync.reload)
