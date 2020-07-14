@@ -64,7 +64,6 @@
     "gulp-modify-css-urls": "2.0.0",
     "gulp-newer": "1.4.0",
     "gulp-nunjucks-render": "2.2.3",
-    "gulp-path-modifier": "0.0.1",
     "gulp-plumber": "1.2.1",
     "gulp-postcss": "8.0.0",
     "gulp-pug": "4.0.1",
