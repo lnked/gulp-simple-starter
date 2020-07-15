@@ -1,5 +1,47 @@
 <?php
 
+// Yandex
+// $mail->Host = 'ssl://smtp.yandex.ru';
+// $mail->Port = 465;
+// $mail->Username = 'Логин@yandex.ru';
+// $mail->Password = 'Пароль';
+
+// Mail
+// $mail->Host = 'ssl://smtp.mail.ru';
+// $mail->Port = 465;
+// $mail->Username = 'Логин@mail.ru';
+// $mail->Password = 'Пароль';
+
+// Gmail
+// $mail->Host = 'ssl://smtp.gmail.com';
+// $mail->Port = 465;
+// $mail->Username = 'Логин@gmail.com';
+// $mail->Password = 'Пароль';
+
+// Rambler
+// $mail->Host = 'ssl://smtp.rambler.ru';
+// $mail->Port = 465;
+// $mail->Username = 'Логин@rambler.ru';
+// $mail->Password = 'Пароль';
+
+// iCloud
+// $mail->Host = 'ssl://smtp.mail.me.com';
+// $mail->Port = 587;
+// $mail->Username = 'Логин@icloud.com';
+// $mail->Password = 'Пароль';
+
+// Timeweb
+// $mail->Host = 'ssl://smtp.timeweb.ru';
+// $mail->Port = 465;
+// $mail->Username = 'Логин@домен.ru';
+// $mail->Password = 'Пароль';
+
+// Reg.ru
+// $mail->Host = 'ssl://serverXXX.hosting.reg.ru';
+// $mail->Port = 465;
+// $mail->Username = 'Логин@домен.ru';
+// $mail->Password = 'Пароль';
+
 return [
   'sender' => [
     'email' => 'message.from@gmail.com',
