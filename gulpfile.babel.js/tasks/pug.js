@@ -1,13 +1,16 @@
-import { resolve } from 'path'
-import { src, dest } from 'gulp'
-import pug from 'gulp-pug'
-import pugbem from "gulp-pugbem"
-import beautify from 'gulp-beautify'
-import browserSync from 'browser-sync'
-import frontMatter from 'gulp-front-matter'
+import { resolve } from 'path';
+import { src, dest } from 'gulp';
+import pug from 'gulp-pug';
+import gulpif from 'gulp-if';
+import pugbem from 'gulp-pugbem';
+import htmlmin from 'gulp-htmlmin';
+import replace from 'gulp-replace';
+import beautify from 'gulp-beautify';
+import browserSync from 'browser-sync';
+import frontMatter from 'gulp-front-matter';
 
-import { outputPath } from '../env'
-import { publicPath, templatesPath, htmlFormatConfig } from '../config'
+import { optimized, outputPath } from '../env'
+import { publicPath, templatesPath, htmlFormatConfig, htmlminConfig } from '../config'
 
 import { getData } from '../get-data'
 
@@ -37,6 +40,8 @@ export default () =>
       pretty: true,
       debug: false,
     }))
-    .pipe(beautify.html(htmlFormatConfig))
+    .pipe(gulpif(optimized, htmlmin(htmlminConfig)))
+    .pipe(gulpif(optimized, replace('href=/static/ ', 'href=/static/')))
+    .pipe(gulpif(!optimized, beautify.html(htmlFormatConfig)))
     .pipe(dest(resolve(outputPath)))
     .on('end', browserSync.reload)

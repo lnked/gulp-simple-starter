@@ -13,12 +13,12 @@ import sortCSSmq from 'sort-css-media-queries';
 import autoprefixer from 'autoprefixer';
 import atImport from 'postcss-import';
 import uncss from'postcss-uncss';
-import postcssFixes from 'postcss-fixes';
 import animation from 'postcss-animation';
 import reporter from 'postcss-reporter';
 import position from 'postcss-position';
 import immutableCss from 'immutable-css';
 import modifyCssUrls from 'gulp-modify-css-urls';
+import postcssFixes from 'postcss-fixes';
 import postcssShortSpacing from 'postcss-short-spacing';
 
 import { isUncss, staticPath, nodeModulesPath, production, development } from '../env';
@@ -54,7 +54,7 @@ if (production) {
 if (isUncss) {
   plugins.push(
     uncss({
-      html: ['dist/**/*.html', 'dist/*.html'],
+      html: ['output/**/*.html', 'output/*.html'],
       ignore: [
         '.fade',
         '.active',

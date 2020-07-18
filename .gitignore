@@ -16,6 +16,7 @@ release-builds
 
 # Compiled output
 dist
+output
 profiling
 .docz
 .gulp

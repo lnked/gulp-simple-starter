@@ -73,7 +73,20 @@ export const svgminConfig = (prefix) => ({
     { removeUselessStrokeAndFill: true }
   ]
 })
-
+export const htmlminConfig = {
+  minifyJS: true,
+  minifyCSS: true,
+  removeComments: true,
+  collapseWhitespace: true,
+  collapseBooleanAttributes: true,
+  removeAttributeQuotes: true,
+  removeRedundantAttributes: true,
+  removeEmptyAttributes: true,
+  removeScriptTypeAttributes: true,
+  removeStyleLinkTypeAttributes: true,
+  removeOptionalTags: true,
+  processConditionalComments: true
+};
 export const imageminConfig = [
   imagemin.gifsicle({
     interlaced: true,

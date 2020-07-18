@@ -11,7 +11,7 @@ import { staticPath, production } from '../env';
 import { imagesPath, imageminConfig, environment } from '../config';
 
 const { TINYPNG_API_KEY = '' } = environment;
-const imagesDist = resolve(staticPath, 'img')
+const imagesOutput = resolve(staticPath, 'img')
 
 export const imagesWatchGlob = [
   `${imagesPath}`,
@@ -30,12 +30,12 @@ export default () =>
     `${imagesPath}/*.*`,
     `${imagesPath}/**/*.*`,
   ])
-    .pipe(newer(imagesDist))
+    .pipe(newer(imagesOutput))
     .pipe(gulpif(production, imagemin(imageminConfig, {
       name: 'images',
       verbose: true,
     })))
-    .pipe(dest(imagesDist))
+    .pipe(dest(imagesOutput))
 
     .pipe(gulpif((production && TINYPNG_API_KEY && condition(['png'])), tinypng(TINYPNG_API_KEY)))
 
@@ -45,5 +45,5 @@ export default () =>
         method: 6,
       } || {}),
     })))
-    .pipe(dest(imagesDist))
+    .pipe(dest(imagesOutput))
     .on('end', browserSync.reload);
