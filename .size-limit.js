@@ -2,8 +2,8 @@ module.exports = [
   {
     webpack: false,
     path: [
-      'output/static/**/*.js',
-      'output/static/**/*.css',
+      '(dist|output)/static/**/*.js',
+      '(dist|output)/static/**/*.css',
     ],
   },
 ]

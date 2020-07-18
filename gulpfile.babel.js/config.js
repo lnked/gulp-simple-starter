@@ -1,16 +1,18 @@
+import { resolve } from 'path';
 import imagemin from 'gulp-imagemin';
 import imageminOptipng from 'imagemin-optipng';
+import { cacheDirectory } from './env';
 
-export { environment } from './tools/env';
-
-export const publicPath = 'public'
-export const fontsPath = 'src/fonts'
-export const imagesPath = 'src/images'
-export const stylesPath = 'src/styles'
-export const scriptsPath = 'src/scripts'
-export const templatesPath = 'src/templates'
-export const svgStorePath = 'src/svgstore'
-export const svgStoreFile = `${publicPath}/_svgstore.html`
+export const publicPath = 'public';
+export const fontsPath = 'src/fonts';
+export const imagesPath = 'src/images';
+export const stylesPath = 'src/styles';
+export const scriptsPath = 'src/scripts';
+export const templatesPath = 'src/templates';
+export const svgStorePath = 'src/svgstore';
+export const manifestPath = resolve(cacheDirectory, 'rev-manifest.json');
+export const manifestConfig = { merge: true };
+export const svgStoreFile = `${publicPath}/_svgstore.html`;
 export const htmlFormatConfig = {
   indent_size: 2,
   indent_char: ' ',
@@ -124,3 +126,5 @@ export const imageminConfig = [
     ],
   }),
 ]
+
+export { environment } from './tools/env';

@@ -5,6 +5,7 @@
   "scripts": {
     "size": "size-limit",
     "start": "gulp --development",
+    "prestart": "gulp templates && gulp pug",
     "start:uncss": "gulp --development --uncss",
     "build": "gulp build --production",
     "build:uncss": "yarn build --uncss",
@@ -71,6 +72,8 @@
     "gulp-pug": "4.0.1",
     "gulp-pugbem": "2.2.4",
     "gulp-replace": "1.0.0",
+    "gulp-rev": "^9.0.0",
+    "gulp-rev-rewrite": "^3.0.3",
     "gulp-rigger": "0.5.8",
     "gulp-sass": "^4.1.0",
     "gulp-sass-glob": "1.1.0",

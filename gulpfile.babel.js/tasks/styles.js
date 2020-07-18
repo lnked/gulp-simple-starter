@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import { src, dest } from 'gulp';
+import rev from 'gulp-rev';
 import sass from 'gulp-sass';
 import gulpif from 'gulp-if';
 import plumber from 'gulp-plumber';
@@ -21,8 +22,8 @@ import modifyCssUrls from 'gulp-modify-css-urls';
 import postcssFixes from 'postcss-fixes';
 import postcssShortSpacing from 'postcss-short-spacing';
 
-import { isUncss, staticPath, nodeModulesPath, production, development } from '../env';
-import { stylesPath } from '../config';
+import { isUncss, rootPath, staticPath, outputFolder, nodeModulesPath, production, development } from '../env';
+import { stylesPath, manifestPath, manifestConfig } from '../config';
 
 const plugins = []
 
@@ -54,7 +55,7 @@ if (production) {
 if (isUncss) {
   plugins.push(
     uncss({
-      html: ['output/**/*.html', 'output/*.html'],
+      html: [`${outputFolder}/**/*.html`, `${outputFolder}/*.html`],
       ignore: [
         '.fade',
         '.active',
@@ -112,5 +113,12 @@ export default () =>
     .pipe(postcss(plugins))
     .pipe(plumber.stop())
     .pipe(gulpif(development, sourcemaps.write('./')))
+
+    .pipe(gulpif(production, rev()))
+
     .pipe(dest(resolve(staticPath, 'css')))
+
+    .pipe(gulpif(production, rev.manifest(manifestPath, manifestConfig)))
+    .pipe(gulpif(production, dest(rootPath)))
+
     .pipe(browserSync.stream())

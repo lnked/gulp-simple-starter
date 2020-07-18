@@ -4,10 +4,12 @@ export default () =>
   series(['clean', 'svgstore'],
     'images',
     parallel(
-      'pug',
-      'templates',
-      'scripts',
       'styles',
+      'scripts',
+    ),
+    parallel(
+      'templates',
+      'pug',
       'public',
       'fonts',
     )

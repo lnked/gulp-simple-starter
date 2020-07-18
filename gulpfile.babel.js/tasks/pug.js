@@ -8,9 +8,10 @@ import replace from 'gulp-replace';
 import beautify from 'gulp-beautify';
 import browserSync from 'browser-sync';
 import frontMatter from 'gulp-front-matter';
+import revRewrite from 'gulp-rev-rewrite';
 
-import { optimized, outputPath } from '../env'
-import { publicPath, templatesPath, htmlFormatConfig, htmlminConfig } from '../config'
+import { optimized, outputPath, production } from '../env'
+import { publicPath, manifestPath, templatesPath, htmlFormatConfig, htmlminConfig } from '../config'
 
 import { getData } from '../get-data'
 
@@ -21,8 +22,10 @@ export const pugWatchGlob = [
   `${templatesPath}/**/*.json`,
 ]
 
-export default () =>
-  src([
+export default () => {
+  const manifest = src(manifestPath);
+
+  return src([
     `${templatesPath}/pages/*.pug`,
     `${templatesPath}/pages/**/*.pug`,
     `!${templatesPath}/_*.*`,
@@ -43,5 +46,9 @@ export default () =>
     .pipe(gulpif(optimized, htmlmin(htmlminConfig)))
     .pipe(gulpif(optimized, replace('href=/static/ ', 'href=/static/')))
     .pipe(gulpif(!optimized, beautify.html(htmlFormatConfig)))
+
+    .pipe(gulpif(production, revRewrite({ manifest })))
+
     .pipe(dest(resolve(outputPath)))
     .on('end', browserSync.reload)
+}
