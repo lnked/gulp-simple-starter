@@ -7,7 +7,7 @@ import imagemin from 'gulp-imagemin';
 import browserSync from 'browser-sync';
 import tinypng from 'gulp-tinypng';
 
-import { staticPath, optimized } from '../env';
+import { staticPath, optimized, production } from '../env';
 import { imagesPath, imageminConfig, environment } from '../config';
 
 const { TINYPNG_API_KEY = '' } = environment;
@@ -31,7 +31,7 @@ export default () =>
     `${imagesPath}/**/*.*`,
   ])
     .pipe(newer(imagesOutput))
-    .pipe(gulpif(optimized, imagemin(imageminConfig, {
+    .pipe(gulpif(production, imagemin(imageminConfig, {
       name: 'images',
       verbose: true,
     })))
@@ -40,7 +40,7 @@ export default () =>
     .pipe(gulpif((optimized && TINYPNG_API_KEY && condition(['png'])), tinypng(TINYPNG_API_KEY)))
 
     .pipe(gulpif(condition(['jpg', 'jpeg']), webp({
-      ...(optimized && {
+      ...(production && {
         quality: 50,
         method: 6,
       } || {}),
