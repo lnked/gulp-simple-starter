@@ -3,15 +3,15 @@ import { src, dest } from 'gulp';
 import gulpif from 'gulp-if';
 import webp from 'gulp-webp';
 import newer from 'gulp-newer';
+import plumber from 'gulp-plumber';
 import imagemin from 'gulp-imagemin';
 import browserSync from 'browser-sync';
 import tinypng from 'gulp-tinypng';
 
-import { staticPath, optimized, production } from '../env';
+import { imagesCache, imagesOutput, optimized } from '../env';
 import { imagesPath, imageminConfig, environment } from '../config';
 
 const { TINYPNG_API_KEY = '' } = environment;
-const imagesOutput = resolve(staticPath, 'img')
 
 export const imagesWatchGlob = [
   `${imagesPath}`,
@@ -25,25 +25,25 @@ const condition = formats => file => {
   return formats.includes(filename.split('.').pop() || '');
 }
 
-export default () =>
+const webpConfig = {
+  ...(optimized && {
+    quality: 50,
+    method: 6,
+  } || {}),
+};
+
+export default () => {
   src([
     `${imagesPath}/*.*`,
     `${imagesPath}/**/*.*`,
   ])
-    .pipe(newer(imagesOutput))
-    .pipe(gulpif(production, imagemin(imageminConfig, {
-      name: 'images',
-      verbose: true,
-    })))
-    .pipe(dest(imagesOutput))
-
+    .pipe(plumber())
+    .pipe(newer(imagesCache))
+    .pipe(gulpif(optimized, imagemin(imageminConfig, { name: 'images', verbose: true })))
     .pipe(gulpif((optimized && TINYPNG_API_KEY && condition(['png'])), tinypng(TINYPNG_API_KEY)))
+    .pipe(plumber.stop())
+    .pipe(gulpif(condition(['jpg', 'jpeg']), webp(webpConfig)))
+    .pipe(dest(imagesCache));
 
-    .pipe(gulpif(condition(['jpg', 'jpeg']), webp({
-      ...(production && {
-        quality: 50,
-        method: 6,
-      } || {}),
-    })))
-    .pipe(dest(imagesOutput))
-    .on('end', browserSync.reload);
+  return src(`${imagesCache}/**/*.*`).pipe(dest(imagesOutput)).on('end', browserSync.reload);
+}
