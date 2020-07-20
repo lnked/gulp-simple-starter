@@ -8,7 +8,7 @@ import imagemin from 'gulp-imagemin';
 import browserSync from 'browser-sync';
 import tinypng from 'gulp-tinypng';
 
-import { imagesCache, imagesOutput, optimized } from '../env';
+import { imagesCache, imagesOutput, production } from '../env';
 import { imagesPath, imageminConfig, environment } from '../config';
 
 const { TINYPNG_API_KEY = '' } = environment;
@@ -26,7 +26,7 @@ const condition = formats => file => {
 }
 
 const webpConfig = {
-  ...(optimized && {
+  ...(production && {
     quality: 50,
     method: 6,
   } || {}),
@@ -39,11 +39,17 @@ export default () => {
   ])
     .pipe(plumber())
     .pipe(newer(imagesCache))
-    .pipe(gulpif(optimized, imagemin(imageminConfig, { name: 'images', verbose: true })))
-    .pipe(gulpif((optimized && TINYPNG_API_KEY && condition(['png'])), tinypng(TINYPNG_API_KEY)))
-    .pipe(plumber.stop())
+    .pipe(gulpif(production, imagemin(imageminConfig, { name: 'images', verbose: true })))
+    .pipe(gulpif((production && condition(['png']) && TINYPNG_API_KEY), tinypng(TINYPNG_API_KEY)))
+    .pipe(dest(imagesCache))
     .pipe(gulpif(condition(['jpg', 'jpeg']), webp(webpConfig)))
+    .pipe(plumber.stop())
     .pipe(dest(imagesCache));
 
-  return src(`${imagesCache}/**/*.*`).pipe(dest(imagesOutput)).on('end', browserSync.reload);
+  return src([
+    `${imagesCache}/*.*`,
+    `${imagesCache}/**/*.*`,
+  ])
+    .pipe(dest(imagesOutput))
+    .on('end', browserSync.reload);
 }

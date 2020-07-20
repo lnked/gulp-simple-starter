@@ -53,10 +53,10 @@ export default () => {
       },
     }))
     .pipe(gulpif(optimized, htmlmin(htmlminConfig)))
-    .pipe(gulpif(optimized, replace('href=/static/ ', 'href=/static/')))
+    .pipe(gulpif((optimized || production), replace('href=/static/ ', 'href=/static/')))
     .pipe(gulpif(!optimized, beautify.html(htmlFormatConfig)))
 
-    .pipe(gulpif(production, revRewrite({ manifest })))
+    .pipe(gulpif((optimized || production), revRewrite({ manifest })))
 
     .pipe(dest(resolve(outputPath)))
     .on('end', browserSync.reload)
