@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
   <base href="./static/">
-  <link rel="stylesheet" href="css/main.css">
+  {# <link rel="stylesheet" href="css/main.css"> #}
 
   <title itemprop="name">{{ pageTitle }}</title>
   <meta name="description" content="{{ description }}">
@@ -25,6 +25,20 @@
   <meta property="og:image" content="{{ og.image }}">
   <meta property="place:location:latitude" content="{{ og.place.latitude }}">
   <meta property="place:location:longitude" content="{{ og.place.longitude }}">
+
+  <script>
+  (function loadCSS(d,s) {
+    var i = d.createElement('link');
+    var o = d.getElementsByTagName('script')[0];
+    i.rel = 'stylesheet';
+    i.href = s;
+    i.media = 'only x';
+    o.parentNode.insertBefore(i,o);
+    setTimeout(function() {
+      i.media = 'all'
+    });
+  })(window.document, 'css/main-b1b829d27f.css');
+  </script>
 
   <script>(function(d){d.className=d.className.replace(/\bno-js/,'')})(document.documentElement)</script>
 </head>
