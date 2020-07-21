@@ -1,8 +1,9 @@
 import { series, parallel } from 'gulp'
 
 export default () =>
-  series(['clean', 'svgstore'],
-    'images',
+  series(
+    ['clean', 'svgstore'],
+    ['images'],
     parallel(
       'styles',
       'scripts',
@@ -13,5 +14,5 @@ export default () =>
       'public',
       'fonts',
     ),
-    'critical',
+    ['critical'],
   )

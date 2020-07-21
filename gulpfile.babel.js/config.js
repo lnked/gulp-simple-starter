@@ -81,13 +81,12 @@ export const htmlminConfig = {
   removeComments: true,
   collapseWhitespace: true,
   collapseBooleanAttributes: true,
+  processConditionalComments: true,
   removeAttributeQuotes: true,
   removeRedundantAttributes: true,
   removeEmptyAttributes: true,
   removeScriptTypeAttributes: true,
   removeStyleLinkTypeAttributes: true,
-  removeOptionalTags: true,
-  processConditionalComments: true
 };
 export const imageminConfig = [
   imagemin.gifsicle({
