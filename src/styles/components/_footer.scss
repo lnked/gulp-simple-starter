@@ -1,10 +1,9 @@
-footer {
-  height: 80px;
+.layout-footer {
+  height: $footer-height;
   padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #ddd;
-  font-size: 2rem;
-  margin-top: -80px;
+  margin-top: -$footer-height;
 }

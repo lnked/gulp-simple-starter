@@ -1,13 +1,89 @@
 @import 'utils/*';
-
 @import 'core/*';
-
+@import 'sections/*';
 @import 'components/*';
 
 html {
   font-size: 10px;
 }
 
-.base-layout {
-  min-height: 100vh;
+.layout {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $layout-width;
+}
+
+.layout-wrapper {
+  min-height: 100%;
+
+  &__content {
+    padding-bottom: $footer-height;
+  }
+}
+
+.page {
+  color: $text;
+  min-width: 320px;
+  font-kerning: none;
+  font-family: Roboto,Arial,Helvetica,sans-serif;
+  line-height: 1.42857143;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -moz-overflow-y: -moz-scrollbars-none;
+  -webkit-overflow-scrolling: none;
+  background-color: $white;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &.modal-open {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+p:not([class]) {
+  color: #121212;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.01ex;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+h2:not([class]) {
+  @include text-crop($line-height: 1.1666666667);
+  color: $dark;
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1.1666666667;
+  margin-left: -2px;
+  margin-bottom: 25px;
+}
+
+h3:not([class]) {
+  @include text-crop($line-height: 1);
+  color: $dark;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.1666666667;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }

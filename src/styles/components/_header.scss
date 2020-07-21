@@ -1,5 +1,5 @@
-header {
-  height: 80px;
+.layout-header {
+  height: $header-height;
   font-size: 2rem;
   padding: 0 20px;
   display: flex;
