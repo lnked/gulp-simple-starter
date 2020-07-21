@@ -12,5 +12,6 @@ export default () =>
       'pug',
       'public',
       'fonts',
-    )
+    ),
+    'critical',
   )

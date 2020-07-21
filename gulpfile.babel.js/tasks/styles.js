@@ -43,15 +43,6 @@ plugins.push(
   postcssShortSpacing(),
 )
 
-if (production) {
-  plugins.push(
-    autoprefixer({
-      cascade: false,
-    }),
-    cssnano(),
-  )
-}
-
 if (isUncss) {
   plugins.push(
     uncss({
@@ -64,6 +55,15 @@ if (isUncss) {
         '.hidden',
       ]
     })
+  )
+}
+
+if (production) {
+  plugins.push(
+    autoprefixer({
+      cascade: false,
+    }),
+    cssnano(),
   )
 }
 

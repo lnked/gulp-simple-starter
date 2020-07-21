@@ -4,5 +4,5 @@ import clean from 'gulp-clean';
 import { outputFolder } from '../env';
 
 export default () =>
-  src(`${outputFolder}/*`, {read: false})
+  src(`${outputFolder}/*`, { read: false })
     .pipe(clean())

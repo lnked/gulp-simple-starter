@@ -24,7 +24,7 @@ html {
 }
 
 .page {
-  color: $text;
+  color: $text-color;
   min-width: 320px;
   font-kerning: none;
   font-family: Roboto,Arial,Helvetica,sans-serif;
@@ -70,7 +70,7 @@ p:not([class]) {
 
 h2:not([class]) {
   @include text-crop($line-height: 1.1666666667);
-  color: $dark;
+  color: $black;
   font-size: 3.6rem;
   font-weight: 700;
   line-height: 1.1666666667;
@@ -80,7 +80,7 @@ h2:not([class]) {
 
 h3:not([class]) {
   @include text-crop($line-height: 1);
-  color: $dark;
+  color: $black;
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.1666666667;
