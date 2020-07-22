@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /*?utm_source
+
+User-Agent: Yandex
+Disallow: /
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /*?utm_source
+# Host:
