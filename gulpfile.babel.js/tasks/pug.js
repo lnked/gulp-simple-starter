@@ -11,38 +11,19 @@ import frontMatter from 'gulp-front-matter';
 import revRewrite from 'gulp-rev-rewrite';
 
 import { optimized, outputPath, production } from '../env'
-import { publicPath, manifestPath, templatesPath, htmlFormatConfig, htmlminConfig } from '../config'
-
-import { getData } from '../get-data'
+import { pugConfig, manifestPath, htmlPath, htmlFormatConfig, htmlminConfig } from '../config'
 
 export const pugWatchGlob = [
-  `${templatesPath}/*.pug`,
-  `${templatesPath}/pages/*.pug`,
-  `${templatesPath}/**/*.pug`,
-  `${templatesPath}/**/*.json`,
+  `${htmlPath}/**/*.pug`,
+  `${htmlPath}/**/*.json`,
 ]
 
 export default () => {
-  const manifest = src(manifestPath);
+  const manifest = src(manifestPath, { allowEmpty: true });
 
-  return src([
-    `${templatesPath}/pages/*.pug`,
-    `${templatesPath}/pages/**/*.pug`,
-    `!${templatesPath}/_*.*`,
-    `!${templatesPath}/**/_*.*`,
-  ])
+  return src([ `${htmlPath}/pages/**/*.pug`, `!${htmlPath}/**/_*.*` ])
     .pipe(frontMatter({ property: 'data' }))
-    .pipe(pug({
-      data: getData(),
-      basedir: [
-        publicPath,
-        templatesPath,
-      ],
-      plugins: [pugbem],
-      verbose: false,
-      pretty: true,
-      debug: false,
-    }))
+    .pipe(pug(pugConfig([pugbem])))
     .pipe(gulpif(optimized, htmlmin(htmlminConfig)))
     .pipe(gulpif(optimized, replace('href=/static/ ', 'href=/static/')))
     .pipe(gulpif(!optimized, beautify.html(htmlFormatConfig)))

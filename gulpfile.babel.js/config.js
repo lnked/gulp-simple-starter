@@ -1,14 +1,16 @@
 import { resolve } from 'path';
 import imagemin from 'gulp-imagemin';
 import imageminOptipng from 'imagemin-optipng';
-import { cacheDirectory } from './env';
+
+import { getData } from './get-data'
+import { cacheDirectory, development } from './env';
 
 export const publicPath = 'public';
+export const htmlPath = 'src/templates';
 export const fontsPath = 'src/fonts';
 export const imagesPath = 'src/images';
 export const stylesPath = 'src/styles';
 export const scriptsPath = 'src/scripts';
-export const templatesPath = 'src/templates';
 export const svgStorePath = 'src/svgstore';
 export const manifestPath = resolve(cacheDirectory, 'rev-manifest.json');
 export const manifestConfig = { merge: true };
@@ -125,5 +127,27 @@ export const imageminConfig = [
     ],
   }),
 ]
+export const pugConfig = (plugins) => ({
+  plugins,
+  data: getData(),
+  basedir: [
+    htmlPath,
+    publicPath,
+  ],
+  debug: false,
+  pretty: true,
+  verbose: false,
+});
+
+export const nunjucksRenderConfig = {
+  data: getData(),
+  path: [
+    htmlPath,
+    publicPath,
+  ],
+  envOptions: {
+    watch: development,
+  },
+};
 
 export { environment } from './tools/env';

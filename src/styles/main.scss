@@ -27,13 +27,13 @@ html {
   color: $text-color;
   min-width: 320px;
   font-kerning: none;
-  font-family: Roboto,Arial,Helvetica,sans-serif;
+  font-family: Arial,Helvetica,sans-serif;
   line-height: 1.42857143;
   overflow-y: scroll;
   overflow-x: hidden;
   -moz-overflow-y: -moz-scrollbars-none;
   -webkit-overflow-scrolling: none;
-  background-color: $white;
+  background-color: $background-color;
 
   &::-webkit-scrollbar {
     width: 0;

@@ -5,7 +5,6 @@ import { outputPath } from '../env'
 import { publicPath, svgStoreFile } from '../config'
 
 export const publicWatchGlob = [
-  `${publicPath}/*.*`,
   `${publicPath}/**/*.*`,
   `!${svgStoreFile}`,
 ]

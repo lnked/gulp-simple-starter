@@ -12,9 +12,7 @@ import nunjucksRender from 'gulp-nunjucks-render';
 import revRewrite from 'gulp-rev-rewrite';
 
 import { optimized, outputPath, production, development } from '../env';
-import { publicPath, templatesPath, manifestPath, htmlFormatConfig, htmlminConfig } from '../config';
-
-import { getData } from '../get-data';
+import { htmlPath, manifestPath, htmlFormatConfig, htmlminConfig, nunjucksRenderConfig } from '../config';
 
 nunjucksRender.nunjucks.configure({
   watch: development,
@@ -22,42 +20,22 @@ nunjucksRender.nunjucks.configure({
   lstripBlocks: false,
 });
 
-export const templatesWatchGlob = [
-  `${templatesPath}/*.html`,
-  `${templatesPath}/_*.html`,
-  `${templatesPath}/**/*.html`,
-  `${templatesPath}/**/_*.html`,
-  `${templatesPath}/**/*.json`,
-  `${templatesPath}/**/_*.json`,
+export const htmlWatchGlob = [
+  `${htmlPath}/**/*.html`,
+  `${htmlPath}/**/*.json`,
 ]
 
 export default () => {
-  const manifest = src(manifestPath);
+  const manifest = src(manifestPath, { allowEmpty: true });
 
-  return src([
-    `${templatesPath}/pages/*.html`,
-    `${templatesPath}/pages/**/*.html`,
-    `!${templatesPath}/_*.*`,
-    `!${templatesPath}/**/_*.*`,
-  ])
+  return src([`${htmlPath}/pages/**/*.html`, `!${htmlPath}/**/_*.*`])
     .pipe(rigger())
     .pipe(frontMatter({ property: 'data' }))
-    .pipe(nunjucksRender({
-      data: getData(),
-      path: [
-        publicPath,
-        templatesPath,
-      ],
-      envOptions: {
-        watch: development,
-      },
-    }))
+    .pipe(nunjucksRender(nunjucksRenderConfig))
     .pipe(gulpif(optimized, htmlmin(htmlminConfig)))
     .pipe(gulpif((optimized || production), replace('href=/static/ ', 'href=/static/')))
     .pipe(gulpif(!optimized, beautify.html(htmlFormatConfig)))
-
     .pipe(gulpif((optimized || production), revRewrite({ manifest })))
-
     .pipe(dest(resolve(outputPath)))
     .on('end', browserSync.reload)
 }

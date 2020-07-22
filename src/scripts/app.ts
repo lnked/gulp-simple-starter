@@ -10,7 +10,7 @@ const terminate = () => {
 window.addEventListener('load', () => {
   Modal.init();
   Navigation.init();
-  console.log(utils.randomInteger(1, 5));
+  console.log('init scripts: ', utils);
 });
 
 window.addEventListener('unload', terminate);

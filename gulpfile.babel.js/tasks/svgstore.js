@@ -21,7 +21,7 @@ const svgMinOptions = file =>
   )
 
 export const svgStoreWatchGlob = [
-  `${svgStorePath}/**/*.svg`
+  `${svgStorePath}/**/*.svg`,
 ]
 
 export default () =>

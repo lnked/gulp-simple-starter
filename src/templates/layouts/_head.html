@@ -26,10 +26,10 @@
   <meta property="place:location:latitude" content="{{ og.place.latitude }}">
   <meta property="place:location:longitude" content="{{ og.place.longitude }}">
 
+  {% if styleName %}
   <script>
   (function loadCSS(d,s) {
-    var i = d.createElement('link');
-    var o = d.getElementsByTagName('script')[0];
+    var i = d.createElement('link'), o = d.getElementsByTagName('script')[0];
     i.rel = 'stylesheet';
     i.href = s;
     i.media = 'only x';
@@ -37,8 +37,9 @@
     setTimeout(function() {
       i.media = 'all'
     });
-  })(window.document, 'css/{{ styleName }}');
+  })(window.document, '{{ styleName }}');
   </script>
+  {% endif %}
 
   <script>(function(d){d.className=d.className.replace(/\bno-js/,'')})(document.documentElement)</script>
 </head>

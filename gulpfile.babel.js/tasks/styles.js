@@ -46,7 +46,7 @@ plugins.push(
 if (isUncss) {
   plugins.push(
     uncss({
-      html: [`${outputFolder}/**/*.html`, `${outputFolder}/*.html`],
+      html: [`${outputFolder}/**/*.html`],
       ignore: [
         '.fade',
         '.active',
@@ -75,18 +75,11 @@ plugins.push(
 )
 
 export const stylesWatchGlob = [
-  `${stylesPath}/*.{sass,scss,css}`,
-  `${stylesPath}/_*.{sass,scss,css}`,
   `${stylesPath}/**/*.{sass,scss,css}`,
-  `${stylesPath}/**/_*.{sass,scss,css}`,
 ];
 
 export default () =>
-  src([
-    ...stylesWatchGlob,
-    `!${stylesPath}/_*.*`,
-    `!${stylesPath}/**/_*.*`,
-  ])
+  src([ ...stylesWatchGlob, `!${stylesPath}/**/_*.*` ])
     .pipe(gulpif(development, sourcemaps.init()))
     .pipe(plumber())
     .pipe(sassGlob())

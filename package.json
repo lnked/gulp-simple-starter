@@ -5,7 +5,6 @@
   "scripts": {
     "size": "size-limit",
     "start": "gulp --development",
-    "prestart": "gulp templates && gulp pug",
     "start:uncss": "gulp --development --uncss",
     "build": "gulp build --production",
     "build:uncss": "yarn build --uncss",
@@ -120,7 +119,7 @@
     "cookies-js": "1.2.3",
     "date.js": "0.3.3",
     "domurl": "2.3.4",
-    "gsap": "3.4.1",
+    "gsap": "3.4.2",
     "jquery": "^3.5.1",
     "ms": "2.1.2",
     "path-to-regexp": "6.1.0",

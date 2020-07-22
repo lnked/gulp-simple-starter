@@ -33,10 +33,7 @@ const webpConfig = {
 };
 
 export default () => {
-  src([
-    `${imagesPath}/*.*`,
-    `${imagesPath}/**/*.*`,
-  ])
+  src([ `${imagesPath}/**/*.*` ])
     .pipe(plumber())
     .pipe(newer(imagesCache))
     .pipe(gulpif(production, imagemin(imageminConfig, { name: 'images', verbose: true })))
@@ -46,10 +43,7 @@ export default () => {
     .pipe(plumber.stop())
     .pipe(dest(imagesCache));
 
-  return src([
-    `${imagesCache}/*.*`,
-    `${imagesCache}/**/*.*`,
-  ])
+  return src([ `${imagesCache}/**/*.*` ])
     .pipe(dest(imagesOutput))
     .on('end', browserSync.reload);
 }
