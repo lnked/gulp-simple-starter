@@ -2,16 +2,20 @@ import glob from 'glob';
 import { resolve } from 'path';
 import { existsSync, readFileSync } from 'fs';
 
-import { sourcePath, outputPath, development } from './env';
+import { sourcePath, outputPath, styleFolder, development } from './env';
 
 export const getData = () => {
-  const defaultStyles = 'css/main.css';
+  const defaultStyles = `${styleFolder}/main.css`;
 
   const jsonFile = resolve(sourcePath, 'templates/data.json');
   const jsonExists = existsSync(jsonFile);
 
   const [style] = glob.sync(`${outputPath}/**/*.css`);
-  const styleName = development ? defaultStyles : (style && style.split('/').pop()) || defaultStyles;
+  const revisionFile = style && style.split('/').pop();
+
+  const styleName = development
+    ? defaultStyles
+    : (revisionFile && `${styleFolder}/${revisionFile}`) || defaultStyles;
 
   if (jsonExists) {
     const rawdata = readFileSync(jsonFile);

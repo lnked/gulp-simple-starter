@@ -13,6 +13,8 @@ export const mode = production ? 'production' : 'development';
 export const sourceFolder = 'src';
 export const outputFolder = 'dist';
 
+export const styleFolder = 'css';
+
 export const rootPath = resolve(dirname(__dirname));
 export const sourcePath = resolve(rootPath, sourceFolder);
 export const outputPath = resolve(rootPath, outputFolder);

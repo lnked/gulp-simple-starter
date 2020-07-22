@@ -22,7 +22,7 @@ import modifyCssUrls from 'gulp-modify-css-urls';
 import postcssFixes from 'postcss-fixes';
 import postcssShortSpacing from 'postcss-short-spacing';
 
-import { isUncss, rootPath, staticPath, outputFolder, nodeModulesPath, production, development } from '../env';
+import { isUncss, rootPath, staticPath, styleFolder, outputFolder, nodeModulesPath, production, development } from '../env';
 import { stylesPath, manifestPath, manifestConfig } from '../config';
 
 const plugins = []
@@ -109,7 +109,7 @@ export default () =>
 
     .pipe(gulpif(production, rev()))
 
-    .pipe(dest(resolve(staticPath, 'css')))
+    .pipe(dest(resolve(staticPath, styleFolder)))
 
     .pipe(gulpif(production, rev.manifest(manifestPath, manifestConfig)))
     .pipe(gulpif(production, dest(rootPath)))
