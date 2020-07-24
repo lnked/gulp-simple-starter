@@ -26,7 +26,7 @@ const condition = formats => file => {
 }
 
 export const cacheImages = () =>
-  src([`${imagesPath}/**/*.*`])
+  src([`${imagesPath}/*.*`, `${imagesPath}/**/*.*`])
     .pipe(plumber())
     .pipe(newer(imagesCache))
     .pipe(gulpif(production, imagemin(imageminConfig, { name: 'images', verbose: true })))

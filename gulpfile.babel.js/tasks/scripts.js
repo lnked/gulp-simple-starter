@@ -12,6 +12,7 @@ import { rootPath, staticPath, production } from '../env';
 import { scriptsPath, manifestPath, manifestConfig } from '../config';
 
 export const scriptsWatchGlob = [
+  `${scriptsPath}/*.{js,jsx,ts,tsx,mjs}`,
   `${scriptsPath}/**/*.{js,jsx,ts,tsx,mjs}`,
 ];
 

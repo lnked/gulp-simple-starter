@@ -14,6 +14,8 @@ import { optimized, outputPath, production } from '../env'
 import { manifestPath, pugConfig, htmlPath, htmlFormatConfig, htmlminConfig } from '../config'
 
 export const pugWatchGlob = [
+  `${htmlPath}/*.pug`,
+  `${htmlPath}/*.json`,
   `${htmlPath}/**/*.pug`,
   `${htmlPath}/**/*.json`,
 ]

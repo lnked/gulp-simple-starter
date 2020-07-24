@@ -21,9 +21,11 @@ nunjucksRender.nunjucks.configure({
 });
 
 export const htmlWatchGlob = [
+  `${htmlPath}/*.html`,
+  `${htmlPath}/*.json`,
   `${htmlPath}/**/*.html`,
   `${htmlPath}/**/*.json`,
-]
+];
 
 export default () => {
   const manifest = src(manifestPath, { allowEmpty: true });

@@ -4,6 +4,10 @@ import clean from 'gulp-clean';
 import { outputFolder } from '../env';
 import { manifestPath } from '../config';
 
-export default () =>
-  src([`${outputFolder}/*`, manifestPath], { read: false, allowEmpty: true })
+export const cleanFiles = (files) =>
+  src(files, { read: false, allowEmpty: true })
     .pipe(clean({ force: true }))
+
+export const cleanRevision = () => cleanFiles(manifestPath);
+
+export default () => cleanFiles([`${outputFolder}/*`, manifestPath])

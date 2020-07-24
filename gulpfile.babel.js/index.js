@@ -3,7 +3,7 @@ import { task, series, parallel } from 'gulp';
 import pug from './tasks/pug';
 import html from './tasks/html';
 import watch from './tasks/watch';
-import clean from './tasks/clean';
+import clean, { cleanRevision } from './tasks/clean';
 import build from './tasks/build';
 import fonts from './tasks/fonts';
 import styles from './tasks/styles';
@@ -17,6 +17,7 @@ import images, { cacheImages } from './tasks/images';
 task('pug', pug);
 task('html', html);
 task('clean', clean);
+task('clean.revision', cleanRevision);
 task('fonts', fonts);
 task('styles', styles);
 task('public', publics);
@@ -30,5 +31,4 @@ task('watch', watch);
 task('build', build());
 
 task('webserver', webserver);
-
-task('default', parallel('watch', 'webserver'));
+task('default', series('clean.revision', parallel('watch', 'webserver')));
