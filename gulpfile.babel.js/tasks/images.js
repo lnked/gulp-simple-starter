@@ -9,7 +9,7 @@ import browserSync from 'browser-sync';
 import tinypng from 'gulp-tinypng';
 
 import { imagesCache, imagesOutput, production } from '../env';
-import { imagesPath, imageminConfig, environment } from '../config';
+import { imagesPath, imageminConfig, webpConfig, environment } from '../config';
 
 const { TINYPNG_API_KEY = '' } = environment;
 
@@ -25,15 +25,8 @@ const condition = formats => file => {
   return formats.includes(filename.split('.').pop() || '');
 }
 
-const webpConfig = {
-  ...(production && {
-    quality: 50,
-    method: 6,
-  } || {}),
-};
-
-export default () => {
-  src([ `${imagesPath}/**/*.*` ])
+export const cacheImages = () =>
+  src([`${imagesPath}/**/*.*`])
     .pipe(plumber())
     .pipe(newer(imagesCache))
     .pipe(gulpif(production, imagemin(imageminConfig, { name: 'images', verbose: true })))
@@ -43,7 +36,7 @@ export default () => {
     .pipe(plumber.stop())
     .pipe(dest(imagesCache));
 
-  return src([ `${imagesCache}/**/*.*` ])
+export default () =>
+  src([`${imagesCache}/**/*.*`])
     .pipe(dest(imagesOutput))
     .on('end', browserSync.reload);
-}

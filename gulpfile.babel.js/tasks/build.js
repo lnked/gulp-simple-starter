@@ -2,11 +2,12 @@ import { series, parallel } from 'gulp';
 
 export default () =>
   series(
-    ['clean', 'svgstore'],
+    ['clean'],
     ['images'],
     parallel(
       'styles',
       'scripts',
+      'svgstore',
     ),
     parallel(
       'templates',

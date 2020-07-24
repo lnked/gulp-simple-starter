@@ -12,7 +12,7 @@ import nunjucksRender from 'gulp-nunjucks-render';
 import revRewrite from 'gulp-rev-rewrite';
 
 import { optimized, outputPath, production, development } from '../env';
-import { htmlPath, manifestPath, htmlFormatConfig, htmlminConfig, nunjucksRenderConfig } from '../config';
+import { manifestPath, htmlPath, htmlFormatConfig, htmlminConfig, nunjucksRenderConfig } from '../config';
 
 nunjucksRender.nunjucks.configure({
   watch: development,

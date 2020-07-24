@@ -11,7 +11,7 @@ import frontMatter from 'gulp-front-matter';
 import revRewrite from 'gulp-rev-rewrite';
 
 import { optimized, outputPath, production } from '../env'
-import { pugConfig, manifestPath, htmlPath, htmlFormatConfig, htmlminConfig } from '../config'
+import { manifestPath, pugConfig, htmlPath, htmlFormatConfig, htmlminConfig } from '../config'
 
 export const pugWatchGlob = [
   `${htmlPath}/**/*.pug`,
@@ -21,7 +21,7 @@ export const pugWatchGlob = [
 export default () => {
   const manifest = src(manifestPath, { allowEmpty: true });
 
-  return src([ `${htmlPath}/pages/**/*.pug`, `!${htmlPath}/**/_*.*` ])
+  return src([`${htmlPath}/pages/**/*.pug`, `!${htmlPath}/**/_*.*`])
     .pipe(frontMatter({ property: 'data' }))
     .pipe(pug(pugConfig([pugbem])))
     .pipe(gulpif(optimized, htmlmin(htmlminConfig)))

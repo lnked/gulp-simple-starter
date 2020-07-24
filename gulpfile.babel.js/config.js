@@ -2,8 +2,8 @@ import { resolve } from 'path';
 import imagemin from 'gulp-imagemin';
 import imageminOptipng from 'imagemin-optipng';
 
-import { getData } from './get-data'
-import { cacheDirectory, development } from './env';
+import { getData } from './get-data';
+import { cacheDirectory, development, production } from './env';
 
 export const publicPath = 'public';
 export const htmlPath = 'src/templates';
@@ -12,9 +12,10 @@ export const imagesPath = 'src/images';
 export const stylesPath = 'src/styles';
 export const scriptsPath = 'src/scripts';
 export const svgStorePath = 'src/svgstore';
-export const manifestPath = resolve(cacheDirectory, 'rev-manifest.json');
 export const manifestConfig = { merge: true };
 export const svgStoreFile = `${publicPath}/_svgstore.html`;
+export const manifestPath = resolve(cacheDirectory, 'rev-manifest.json');
+
 export const htmlFormatConfig = {
   indent_size: 2,
   indent_char: ' ',
@@ -32,11 +33,13 @@ export const htmlFormatConfig = {
     'strong', 'sub', 'sup', 'template', 'time', 'u', 'var', 'wbr', 'text',
     'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt'
   ],
-}
+};
+
 export const testsPatterns = [
   '**/__tests__/**/*.(j|t)s?(x)',
   '**/?(*.)+(spec|test).(j|t)s?(x)',
 ];
+
 export const svgminConfig = (prefix) => ({
   plugins: [
     { sortAttrs: true },
@@ -76,7 +79,8 @@ export const svgminConfig = (prefix) => ({
     { removeScriptElement: true },
     { removeUselessStrokeAndFill: true }
   ]
-})
+});
+
 export const htmlminConfig = {
   minifyJS: true,
   minifyCSS: true,
@@ -90,6 +94,7 @@ export const htmlminConfig = {
   removeScriptTypeAttributes: true,
   removeStyleLinkTypeAttributes: true,
 };
+
 export const imageminConfig = [
   imagemin.gifsicle({
     interlaced: true,
@@ -126,7 +131,8 @@ export const imageminConfig = [
       {removeUselessStrokeAndFill:false},
     ],
   }),
-]
+];
+
 export const pugConfig = (plugins) => ({
   plugins,
   data: getData(),
@@ -148,6 +154,13 @@ export const nunjucksRenderConfig = {
   envOptions: {
     watch: development,
   },
+};
+
+export const webpConfig = {
+  ...(production && {
+    quality: 50,
+    method: 6,
+  } || {}),
 };
 
 export { environment } from './tools/env';
