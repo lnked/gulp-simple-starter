@@ -18,11 +18,15 @@ export default () => {
     ...htmlWatchGlob,
   ];
 
-  watch(fontsWatchGlob, series('fonts'));
-  watch(publicWatchGlob, series('public'));
-  watch(imagesWatchGlob, series('images'));
-  watch(stylesWatchGlob, series('styles'));
-  watch(templatesWatchGlob, series('templates'));
-  watch(svgStoreWatchGlob, series('svgstore', 'templates'));
-  watch(scriptsWatchGlob, { ignored: testsPatterns }, series('scripts'));
+  const watchConfig = {
+    usePolling: true,
+  };
+
+  watch(fontsWatchGlob, watchConfig, series('fonts'));
+  watch(publicWatchGlob, watchConfig, series('public'));
+  watch(imagesWatchGlob, watchConfig, series('images'));
+  watch(stylesWatchGlob, watchConfig, series('styles'));
+  watch(templatesWatchGlob, watchConfig, series('templates'));
+  watch(svgStoreWatchGlob, watchConfig, series('svgstore', 'templates'));
+  watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, series('scripts'));
 }
