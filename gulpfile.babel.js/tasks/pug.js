@@ -6,18 +6,15 @@ import pugbem from 'gulp-pugbem';
 import htmlmin from 'gulp-htmlmin';
 import replace from 'gulp-replace';
 import beautify from 'gulp-beautify';
-import browserSync from 'browser-sync';
 import frontMatter from 'gulp-front-matter';
 import revRewrite from 'gulp-rev-rewrite';
 
 import { optimized, outputPath, production } from '../env'
 import { manifestPath, pugConfig, htmlPath, htmlFormatConfig, htmlminConfig } from '../config'
+import { reload } from './webserver';
 
 export const pugWatchGlob = [
-  `${htmlPath}/*.pug`,
-  `${htmlPath}/*.json`,
-  `${htmlPath}/**/*.pug`,
-  `${htmlPath}/**/*.json`,
+  `${htmlPath}/**/*.{pug,json}`,
 ]
 
 export default () => {
@@ -33,5 +30,5 @@ export default () => {
     .pipe(gulpif(production, revRewrite({ manifest })))
 
     .pipe(dest(resolve(outputPath)))
-    .on('end', browserSync.reload)
+    .on('end', reload)
 }

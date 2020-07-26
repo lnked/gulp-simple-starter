@@ -1,0 +1,65 @@
+/**
+ * Internet Explorer
+ * -----------------------------------------------------------------------------
+ * I am happy to exclude Internet Explorer 11 because it is decently good. My
+ * IE problems increase exponentially as I work backwards in time.
+ *
+ * @link http://keithclark.co.uk/articles/moving-ie-specific-css-into-media-blocks/
+ * @link http://keithclark.co.uk/articles/moving-ie-specific-css-into-media-blocks/media-tests/
+ * @link http://www.limecanvas.com/css-hacks-targeting-ie-10/
+ * @link http://www.paulirish.com/2009/browser-specific-css-hacks/
+ */
+
+@mixin ie($version: null) {
+  @if ($version) {
+    @if ($version == 6) {
+      $version: 'screen\9';
+    } @else if ($version == 7) {
+      $version: '\0screen\,screen\9';
+    } @else if ($version == 8) {
+      $version: '\0screen';
+    } @else if ($version == 9) {
+      $version: 'screen\0';
+    } @else if ($version == 10) {
+      $version: 'screen and (min-width:0\0)';
+    }
+  } @else {
+    // Target 8, 9 and 10 by default.
+    $version: 'screen\0';
+  }
+
+  @media #{$version} {
+    @content;
+  }
+}
+
+// @include media(ie) {
+//   // Fallback for IE8, IE9 and IE10.
+//   @include clearfix();
+// }
+
+// > * {
+//   box-sizing: border-box;
+//   @include flex-child(0 1 32%);
+
+//   @include media(ie) {
+//       float: left;
+//       width: 32%;
+//   }
+
+//   &:not(:nth-child(3n+0)):not(:last-child) {
+//       margin-right: 2%;
+//   }
+// }
+
+// @include media(ie 9) {
+//   float: right;
+//   width: $sides-66;
+// }
+
+// @include media($b-960) {
+//   // For Internet Explorer 9.
+//   float: none;
+//   width: 100%;
+//   @include flex-child(1);
+// }

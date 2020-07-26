@@ -1,0 +1,15 @@
+// @include clearfix;
+
+@mixin clearfix {
+  &:after {
+    content: ' ';
+    height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+  }
+
+  * html & {
+    height: 1px;
+  }
+}

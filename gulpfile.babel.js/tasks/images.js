@@ -1,21 +1,22 @@
 import { resolve } from 'path';
 import { src, dest } from 'gulp';
 import gulpif from 'gulp-if';
+import size from 'gulp-size';
 import webp from 'gulp-webp';
 import newer from 'gulp-newer';
 import plumber from 'gulp-plumber';
 import imagemin from 'gulp-imagemin';
-import browserSync from 'browser-sync';
 import tinypng from 'gulp-tinypng';
 
 import { imagesCache, imagesOutput, production } from '../env';
 import { imagesPath, imageminConfig, webpConfig, environment } from '../config';
+import { reload } from './webserver';
 
 const { TINYPNG_API_KEY = '' } = environment;
 
 export const imagesWatchGlob = [
   `${imagesPath}`,
-  `${imagesPath}/**/*.*`,
+  `${imagesPath}/**/*.{png,jpe?g,gif,svg,webp}`,
 ]
 
 const condition = formats => file => {
@@ -39,4 +40,9 @@ export const cacheImages = () =>
 export default () =>
   src([`${imagesCache}/**/*.*`])
     .pipe(dest(imagesOutput))
-    .on('end', browserSync.reload);
+    .pipe(size({
+      title: 'images',
+      showFiles: true,
+      showTotal: true,
+    }))
+    .on('end', reload);

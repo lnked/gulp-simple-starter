@@ -77,7 +77,8 @@ export const svgminConfig = (prefix) => ({
     } },
     { removeStyleElement: true },
     { removeScriptElement: true },
-    { removeUselessStrokeAndFill: true }
+    { transformsWithOnePath: true },
+    { removeUselessStrokeAndFill: true },
   ]
 });
 
@@ -111,24 +112,35 @@ export const imageminConfig = [
   }),
   imagemin.svgo({
     plugins: [
-      {removeTitle:true},
-      {removeDesc:true},
-      {removeViewBox:false},
-      {removeDoctype:true},
-      {removeMetadata:true},
-      {removeComments:true},
-      {removeUselessDefs:true},
-      {removeXMLProcInst:true},
-      {removeDimensions:true},
-      {cleanupNumericValues: {
+      { removeTitle: true },
+      { removeDesc: true },
+      { removeViewBox: false },
+      { removeDoctype: true },
+      { removeMetadata: true },
+      { removeComments: true },
+      { removeUselessDefs: true },
+      { removeXMLProcInst: true },
+      { removeDimensions: true },
+      { removeStyleElement: true },
+      { cleanupNumericValues: {
         floatPrecision: 2
-      }},
-      {cleanupIDs:true},
-      {convertColors: {
+      } },
+      { removeAttrs: {
+        attrs: ["id", "class", "data-name"]
+      } },
+      { sortAttrs: true },
+      { cleanupIDs: true },
+      { convertColors: {
         names2hex: true,
         rgb2hex: true
-      }},
-      {removeUselessStrokeAndFill:false},
+      } },
+      { removeEmptyContainers: true },
+      { removeUselessStrokeAndFill:false },
+      { removeEmptyText: true },
+      { removeEditorsNSData: true },
+      { removeEmptyAttrs: true },
+      { removeHiddenElems: true },
+      { transformsWithOnePath: true },
     ],
   }),
 ];

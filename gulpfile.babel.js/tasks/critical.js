@@ -1,9 +1,7 @@
-import browserSync from 'browser-sync';
 import glob from 'glob';
 import { resolve } from 'path';
 import { src, dest } from 'gulp';
 import { stream as critical } from 'critical';
-import criticalCss from 'gulp-penthouse';
 
 import { rootPath, outputPath, staticPath } from '../env';
 import { fontsPath, manifestPath } from '../config';

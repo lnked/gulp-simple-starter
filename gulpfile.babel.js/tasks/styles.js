@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import { src, dest } from 'gulp';
 import rev from 'gulp-rev';
+import size from 'gulp-size';
 import sass from 'gulp-sass';
 import gulpif from 'gulp-if';
 import plumber from 'gulp-plumber';
@@ -8,7 +9,6 @@ import cssnano from 'cssnano';
 import postcss from 'gulp-postcss';
 import mqpacker from 'css-mqpacker';
 import sassGlob from 'gulp-sass-glob';
-import browserSync from 'browser-sync';
 import sourcemaps from 'gulp-sourcemaps';
 import sortCSSmq from 'sort-css-media-queries';
 import autoprefixer from 'autoprefixer';
@@ -24,6 +24,7 @@ import postcssShortSpacing from 'postcss-short-spacing';
 
 import { isUncss, rootPath, staticPath, styleFolder, outputFolder, nodeModulesPath, production, development } from '../env';
 import { stylesPath, manifestPath, manifestConfig } from '../config';
+import { stream } from './webserver';
 
 const plugins = []
 
@@ -75,8 +76,7 @@ plugins.push(
 )
 
 export const stylesWatchGlob = [
-  `${stylesPath}/*.{sass,scss,css}`,
-  `${stylesPath}/**/*.{sass,scss,css}`,
+  `${stylesPath}/**/*.s?(a|c)?ss`,
 ];
 
 export default () =>
@@ -114,5 +114,9 @@ export default () =>
 
     .pipe(gulpif(production, rev.manifest(manifestPath, manifestConfig)))
     .pipe(gulpif(production, dest(rootPath)))
-
-    .pipe(browserSync.stream())
+    .pipe(size({
+      title: 'styles',
+      showFiles: true,
+      showTotal: true,
+    }))
+    .pipe(stream())

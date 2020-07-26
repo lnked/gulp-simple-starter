@@ -1,0 +1,6 @@
+// @include pseudo(inline-block,relative,'next');
+
+@mixin pseudo($display: block, $content: '') {
+  content: $content;
+  display: $display;
+}

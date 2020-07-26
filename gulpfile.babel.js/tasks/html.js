@@ -6,13 +6,13 @@ import gulpif from 'gulp-if';
 import replace from 'gulp-replace';
 import htmlmin from 'gulp-htmlmin';
 import beautify from 'gulp-beautify';
-import browserSync from 'browser-sync';
 import frontMatter from 'gulp-front-matter';
 import nunjucksRender from 'gulp-nunjucks-render';
 import revRewrite from 'gulp-rev-rewrite';
 
 import { optimized, outputPath, production, development } from '../env';
 import { manifestPath, htmlPath, htmlFormatConfig, htmlminConfig, nunjucksRenderConfig } from '../config';
+import { reload } from './webserver';
 
 nunjucksRender.nunjucks.configure({
   watch: development,
@@ -21,10 +21,7 @@ nunjucksRender.nunjucks.configure({
 });
 
 export const htmlWatchGlob = [
-  `${htmlPath}/*.html`,
-  `${htmlPath}/*.json`,
-  `${htmlPath}/**/*.html`,
-  `${htmlPath}/**/*.json`,
+  `${htmlPath}/**/*.{html,json}`,
 ];
 
 export default () => {
@@ -39,5 +36,5 @@ export default () => {
     .pipe(gulpif(!optimized, beautify.html(htmlFormatConfig)))
     .pipe(gulpif((optimized || production), revRewrite({ manifest })))
     .pipe(dest(resolve(outputPath)))
-    .on('end', browserSync.reload)
+    .on('end', reload)
 }
