@@ -111,11 +111,31 @@ module.exports = {
       },
       {
         test: /\.(ts|js)x?$/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
-        options: {
-          cacheDirectory,
-        },
+        use: [
+          ...(development && [
+            {
+              loader: 'cache-loader',
+              options: {
+                cacheDirectory,
+              }
+            }
+          ]),
+          {
+            loader: 'thread-loader',
+            options: {
+              name: 'js',
+              workerParallelJobs: 50,
+              poolRespawn: production,
+            }
+          },
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory,
+            },
+          },
+        ].filter(Boolean),
       },
     ],
   },

@@ -6,6 +6,15 @@
 </picture>
 {% endmacro %}
 
+{% macro navitem(name='', link='', accesskey='', isCurrent=false) %}
+<li class="navigation__item" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"{% if isCurrent %} aria-current="page"{% endif %}>
+  <a href="{{ link }}" class="navigation__link j-nav-link{% if isCurrent %} is-current{% endif %}" accesskey="{{ accesskey }}" itemprop="url">
+    {% if current == item.slug %}<span class="visually-hidden">Текущий пункт:</span> {% endif %}
+    <span itemprop="name">{{ name | escape }}</span>
+  </a>
+</li>
+{% endmacro %}
+
 {% macro video(name='', className='') %}
 <div class="video{% if className %} {{ className }}{% endif %}">
   <video class="video__player" poster="{{ name }}.jpg" preload="auto" autoplay loop autobuffer playsinline muted>
@@ -14,13 +23,4 @@
     <source src="{{ name }}.webm" type='video/webm; codecs="vp8, vorbis"'>
   </video>
 </div>
-{% endmacro %}
-
-{% macro navitem(name='', link='', accesskey='', isCurrent=false) %}
-<li class="navigation__item" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"{% if isCurrent %} aria-current="page"{% endif %}>
-  <a href="{{ link }}" class="navigation__link j-nav-link{% if isCurrent %} is-current{% endif %}" accesskey="{{ accesskey }}" itemprop="url">
-    {% if current == item.slug %}<span class="visually-hidden">Текущий пункт:</span> {% endif %}
-    <span itemprop="name">{{ name | escape }}</span>
-  </a>
-</li>
 {% endmacro %}

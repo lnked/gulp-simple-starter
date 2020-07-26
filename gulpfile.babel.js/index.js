@@ -31,4 +31,5 @@ task('watch', watch);
 task('build', build());
 
 task('webserver', webserver);
-task('default', series('clean.revision', parallel('webserver', 'watch')));
+task('preheat', series(parallel('styles', 'scripts'), 'templates'));
+task('default', series(['clean.revision', 'preheat'], parallel('webserver', 'watch')));
