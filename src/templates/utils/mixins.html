@@ -8,7 +8,7 @@
 
 {% macro video(name='', className='') %}
 <div class="video{% if className %} {{ className }}{% endif %}">
-  <video class="video__player" poster="{{ name }}.jpg" preload="auto" loop video autobuffer autoplay>
+  <video class="video__player" poster="{{ name }}.jpg" preload="auto" autoplay loop autobuffer playsinline muted>
     <source src="{{ name }}.ogv" type='video/ogg; codecs="theora, vorbis"'>
     <source src="{{ name }}.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     <source src="{{ name }}.webm" type='video/webm; codecs="vp8, vorbis"'>
