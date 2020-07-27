@@ -1,19 +1,15 @@
-export function loadScript(src, callback)
-{
-  var s,
-      r,
-      t;
-  r = false;
-  s = document.createElement('script');
+export function loadScript(src, callback) {
+  let r = false;
+  const s = document.createElement('script');
+  const t = document.getElementsByTagName('script')[0];
+
   s.type = 'text/javascript';
   s.src = src;
   s.onload = s.onreadystatechange = function() {
-    if ( !r && (!this.readyState || this.readyState === 'complete') )
-    {
+    if (!r && (!this.readyState || this.readyState === 'complete')) {
       r = true;
       callback();
     }
   };
-  t = document.getElementsByTagName('script')[0];
   t.parentNode.insertBefore(s, t);
 }
