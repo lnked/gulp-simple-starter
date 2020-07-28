@@ -170,7 +170,7 @@ export const nunjucksRenderConfig = {
 
 export const webpConfig = {
   ...(production && {
-    quality: 50,
+    quality: 80,
     method: 6,
   } || {}),
 };
