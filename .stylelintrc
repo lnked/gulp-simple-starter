@@ -26,17 +26,5 @@
         "selector": "^&_"
       },
     ],
-    "order/properties-order": [
-      [
-        "position",
-        "top",
-        "right",
-        "bottom",
-        "left",
-      ],
-      {
-        "unspecified": "bottom",
-      }
-    ],
   },
 }

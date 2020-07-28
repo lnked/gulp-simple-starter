@@ -107,7 +107,7 @@
     "stylelint": "13.6.1",
     "stylelint-config-recommended": "3.0.0",
     "stylelint-order": "4.1.0",
-    "terser-webpack-plugin": "3.0.7",
+    "terser-webpack-plugin": "3.0.8",
     "thread-loader": "^2.1.3",
     "uncss": "0.17.3",
     "webpack": "4.44.0",
