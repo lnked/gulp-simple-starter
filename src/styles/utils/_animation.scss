@@ -1,0 +1,19 @@
+.is-animated {
+  // outline: 2px solid lime;
+  transition: opacity .3s ease-in-out, transform .6s ease-in-out;
+}
+
+.fade-up {
+  opacity: .3;
+  transform: translateY(5rem);
+}
+
+.fade-left {
+  opacity: .5;
+  transform: translateX(-3rem);
+}
+
+.fade-right {
+  opacity: .5;
+  transform: translateX(3rem);
+}
