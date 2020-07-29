@@ -94,6 +94,7 @@
     "jpegtran-bin": "5.0.2",
     "lint-staged": "10.2.11",
     "path": "^0.12.7",
+    "postcss-100vh-fix": "^0.1.1",
     "postcss-animation": "0.0.12",
     "postcss-fixes": "2.0.1",
     "postcss-import": "12.0.1",

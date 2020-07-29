@@ -21,6 +21,7 @@ import immutableCss from 'immutable-css';
 import modifyCssUrls from 'gulp-modify-css-urls';
 import postcssFixes from 'postcss-fixes';
 import postcssShortSpacing from 'postcss-short-spacing';
+import postcss100vhFix from 'postcss-100vh-fix';
 
 import { isUncss, rootPath, staticPath, styleFolder, outputFolder, nodeModulesPath, production, development } from '../env';
 import { stylesPath, manifestPath, manifestConfig } from '../config';
@@ -61,6 +62,7 @@ if (isUncss) {
 
 if (production) {
   plugins.push(
+    postcss100vhFix(),
     autoprefixer({
       cascade: false,
     }),
