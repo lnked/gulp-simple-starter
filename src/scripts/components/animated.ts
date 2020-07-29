@@ -4,8 +4,6 @@ const Animated = (() => {
   let loaded = false;
 
   const fadeUps = document.querySelectorAll('.fade-up');
-  const fadeLeft = document.querySelectorAll('.fade-left');
-  const fadeRight = document.querySelectorAll('.fade-right');
 
   let elements = [
     ...Array.from(fadeUps),
@@ -31,8 +29,6 @@ const Animated = (() => {
 
   const reset = (element) => {
     element.classList.remove('fade-up');
-    element.classList.remove('fade-left');
-    element.classList.remove('fade-right');
   };
 
   const check = (element) => {
@@ -47,7 +43,7 @@ const Animated = (() => {
       loaded = true;
     },
     init: () => {
-      utils.scroll((lastScrollY, callback) => {
+      utils.tik((lastScrollY, callback) => {
         elements.forEach(element => setTimeout(() => check(element), 16));
 
         if (!loaded) {
