@@ -22,6 +22,7 @@ import modifyCssUrls from 'gulp-modify-css-urls';
 import postcssFixes from 'postcss-fixes';
 import postcssShortSpacing from 'postcss-short-spacing';
 import postcss100vhFix from 'postcss-100vh-fix';
+import pseudoelements from 'postcss-pseudoelements';
 
 import { isUncss, rootPath, staticPath, styleFolder, outputFolder, nodeModulesPath, production, development } from '../env';
 import { stylesPath, manifestPath, manifestConfig } from '../config';
@@ -62,6 +63,23 @@ if (isUncss) {
 
 if (production) {
   plugins.push(
+    pseudoelements({
+      single: true,
+      selectors: [
+        'hover',
+        'focus',
+        'active',
+        'after',
+        'ms-expand',
+        'not',
+        'first-child',
+        'last-child'
+      ],
+    }),
+    pseudoelements({
+      single: false,
+      selectors: ['before', 'after', 'first-letter', 'first-line'],
+    }),
     postcss100vhFix(),
     autoprefixer({
       cascade: false,
