@@ -11,7 +11,6 @@ export default () =>
     ),
     parallel(
       'templates',
-      'pug',
       'public',
       'fonts',
     ),

@@ -126,12 +126,9 @@ export default () =>
     }))
     .pipe(postcss(plugins))
     .pipe(plumber.stop())
-    .pipe(gulpif(development, sourcemaps.write('./')))
-
     .pipe(gulpif(production, rev()))
-
+    .pipe(gulpif(development, sourcemaps.write('./')))
     .pipe(dest(resolve(staticPath, styleFolder)))
-
     .pipe(gulpif(production, rev.manifest(manifestPath, manifestConfig)))
     .pipe(gulpif(production, dest(rootPath)))
     .pipe(size({

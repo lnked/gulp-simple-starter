@@ -12,7 +12,9 @@ export const imagesPath = 'src/images';
 export const stylesPath = 'src/styles';
 export const scriptsPath = 'src/scripts';
 export const svgStorePath = 'src/svgstore';
-export const manifestConfig = { merge: true };
+export const manifestConfig = {
+  merge: true,
+};
 export const svgStoreFile = `${publicPath}/_svgstore.html`;
 export const manifestPath = resolve(cacheDirectory, 'rev-manifest.json');
 

@@ -1,11 +1,10 @@
 {% import "utils/mixins.html" as macro %}
-
 <!DOCTYPE html>
 <html class="no-js" lang="ru" itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
 {%- include "./_head.html" -%}
 
-<body class="page{% if body_class %} {{ body_class }}{% endif %}">
+<body class="page debug{% if body_class %} {{ body_class }}{% endif %}">
   {%- include "_svgstore.html" -%}
 
   <main class="layout-wrapper">
