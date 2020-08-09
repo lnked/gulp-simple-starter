@@ -1,10 +1,12 @@
 <head>
+  <base href="./static/">
+
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta http-equiv=Content-Security-Policy content="default-src 'self'; script-src 'self' 'unsafe-inline' *.polyfill.io; img-src 'self' 'unsafe-inline' https://*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com; child-src 'self'; worker-src 'self';">
 
-  <base href="./static/">
-  {# <link rel="stylesheet" href="css/main.css"> #}
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <title itemprop="name">{{ pageTitle }}</title>
   <meta name="description" content="{{ description }}">
@@ -27,18 +29,7 @@
   <meta property="place:location:longitude" content="{{ og.place.longitude }}">
 
   {% if styleName %}
-  <script>
-  (function loadCSS(d,s) {
-    var i = d.createElement('link'), o = d.getElementsByTagName('script')[0];
-    i.rel = 'stylesheet';
-    i.href = s;
-    i.media = 'only x';
-    o.parentNode.insertBefore(i,o);
-    setTimeout(function() {
-      i.media = 'all'
-    });
-  })(window.document, '{{ styleName }}');
-  </script>
+  <script>(function loadCSS(d,s){var i=d.createElement('link'),o=d.getElementsByTagName('script')[0];i.rel='stylesheet';i.href=s;i.media='only x';o.parentNode.insertBefore(i,o);setTimeout(function(){i.media='all'});})(window.document,'{{ styleName }}');</script>
   {% endif %}
 
   <script>(function(d){d.className=d.className.replace(/\bno-js/,'')})(document.documentElement)</script>
