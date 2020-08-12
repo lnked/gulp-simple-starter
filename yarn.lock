@@ -11847,6 +11847,11 @@ pirates@^4.0.0, pirates@^4.0.1:
   dependencies:
     node-modules-regexp "^1.0.0"
 
+pixel-glass@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/pixel-glass/-/pixel-glass-1.0.13.tgz#c569764ecdd2a15da6dea98cf168ef0bf00736ab"
+  integrity sha1-xWl2Ts3SoV2m3qmM8WjvC/AHNqs=
+
 pixrem@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/pixrem/-/pixrem-3.0.2.tgz#30d1bafb4c3bdce8e9bb4bd56a13985619320c34"
