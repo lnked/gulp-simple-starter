@@ -1,11 +1,10 @@
-const glob = require('glob');
-const { resolve } = require('path');
-const zopfli = require('@gfx/zopfli');
-const TerserPlugin = require('terser-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
+import { resolve } from 'path';
+import TerserPlugin from 'terser-webpack-plugin';
+import CompressionPlugin from 'compression-webpack-plugin';
+import { gzip, zlib, deflate } from "@gfx/zopfli";
 
-const { mode, production, development, rootPath, cacheDirectory } = require('./env');
-const { scriptsPath } = require('./config');
+import { mode, production, development, rootPath, cacheDirectory } from './env';
+import { scriptsPath } from './config';
 
 const scriptsSourcePath = resolve(rootPath, scriptsPath);
 
@@ -79,10 +78,14 @@ if (production) {
       threshold: 10240,
       compressionOptions: {
         level: 11,
+        verbose: false,
+        verbose_more: false,
         numiterations: 15,
+        blocksplitting: true,
+        blocksplittingmax: 15,
       },
       algorithm(input, compressionOptions, callback) {
-        return zopfli.gzip(input, compressionOptions, callback)
+        return gzip(input, compressionOptions, callback)
       },
       deleteOriginalAssets: false,
     }),

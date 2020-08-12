@@ -1,8 +1,8 @@
-const fs = require('fs');
-const dotenv = require('dotenv');
-const { resolve } = require('path');
+import fs from 'fs';
+import dotenv from 'dotenv';
+import { resolve } from 'path';
 
-const { formatter } = require('./formatter')
+import { formatter } from './formatter';
 
 const root = process.cwd();
 

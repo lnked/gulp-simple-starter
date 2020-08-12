@@ -3,8 +3,8 @@ import { resolve } from 'path';
 import { src, dest } from 'gulp';
 import { stream as critical } from 'critical';
 
-import { rootPath, outputPath, staticPath } from '../env';
-import { fontsPath, manifestPath } from '../config';
+import { outputPath, staticPath } from '../env';
+import { manifestPath } from '../config';
 
 const getCssFiles = () => {
   const manifest = require(manifestPath);
