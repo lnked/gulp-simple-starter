@@ -1,4 +1,4 @@
-import * as utils from 'utils';
+import * as utils from 'utils/tik';
 
 const Animated = (() => {
   let loaded = false;
@@ -7,8 +7,6 @@ const Animated = (() => {
 
   let elements = [
     ...Array.from(fadeUps),
-    ...Array.from(fadeLeft),
-    ...Array.from(fadeRight),
   ];
 
   const isElementInViewport = (el) => {

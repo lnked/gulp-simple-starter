@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "rootDir": "src/scripts",
+    "baseUrl": ".",
+    "outDir": "dist",
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "noEmit": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "declaration": false,
+    "skipLibCheck": true,
+    "noResolve": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "removeComments": true,
+    "strictNullChecks": true,
+    "preserveConstEnums": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "paths": {
+      "*": ["*", "src/scripts/*"],
+      "libs/*": ["src/scripts/libs/*"],
+      "hooks/*": ["src/scripts/hooks/*"],
+      "utils/*": ["src/scripts/utils/*"],
+      "tools/*": ["src/scripts/tools/*"],
+      "stores/*": ["src/scripts/stores/*"],
+      "configs/*": ["src/scripts/configs/*"],
+      "services/*": ["src/scripts/services/*"],
+      "settings/*": ["src/scripts/settings/*"],
+      "components/*": ["src/scripts/components/*"]
+    },
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "include": ["src/scripts/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
+}

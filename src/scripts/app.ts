@@ -8,7 +8,7 @@ const terminate = () => {
 };
 
 window.addEventListener('load', () => {
-  Modal.init();
+  Modal.init({});
   Navigation.init();
   console.log('init scripts: ', utils);
 });

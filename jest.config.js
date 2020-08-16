@@ -21,6 +21,13 @@ module.exports = {
   // The paths to modules that run some code to configure or set up the testing environment before each test
   setupFiles: [],
 
+  transform: {
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.(js|jsx|ts)$": "<rootDir>/node_modules/babel-jest",
+    "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+    "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+  },
+
   // The glob patterns Jest uses to detect test files
   testMatch: [
     "**/__tests__/**/*.[jt]s?(x)",

@@ -5,8 +5,10 @@ export const template = (id, data, precompile) => {
     precompile = false;
   }
 
-  if (document.getElementById(id) !== null) {
-    const pattern = document.getElementById(id).innerHTML;
+  const element = document.getElementById(id);
+
+  if (element !== null && typeof element !== 'undefined') {
+    const pattern = element.innerHTML;
 
     if (precompile) {
       if (!window.precompiledT7) {
