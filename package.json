@@ -124,7 +124,7 @@
   "dependencies": {
     "@babel/polyfill": "7.10.4",
     "@babel/runtime": "7.11.2",
-    "axios": "0.19.2",
+    "axios": "0.20.0",
     "cookies-js": "1.2.3",
     "date.js": "0.3.3",
     "domurl": "2.3.4",
