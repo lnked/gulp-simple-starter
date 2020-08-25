@@ -2,7 +2,8 @@ import glob from 'glob';
 import { resolve } from 'path';
 import { existsSync, readFileSync } from 'fs';
 
-import { sourcePath, outputPath, styleFolder, development } from './env';
+import { sourcePath, outputPath, styleFolder, development, production } from './env';
+import { environment } from './tools/env';
 
 export const getData = () => {
   const defaultStyles = `${styleFolder}/main.css`;
@@ -24,6 +25,9 @@ export const getData = () => {
     return {
       data,
       styleName,
+      production,
+      development,
+      environment,
     };
   }
 
