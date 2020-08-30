@@ -135,7 +135,7 @@
     "store.js": "1.0.4",
     "swiper": "6.1.2",
     "template7": "^1.4.2",
-    "three": "0.120.0"
+    "three": "0.120.1"
   },
   "scarfSettings": {
     "enabled": false
