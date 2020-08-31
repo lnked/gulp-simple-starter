@@ -34,7 +34,6 @@
     "@babel/preset-env": "7.11.0",
     "@babel/preset-typescript": "^7.10.4",
     "@babel/register": "7.10.5",
-    "@gfx/zopfli": "1.0.15",
     "@size-limit/preset-app": "4.5.7",
     "@size-limit/webpack": "4.5.7",
     "@types/jest": "^26.0.10",

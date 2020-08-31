@@ -1,7 +1,6 @@
 import { resolve } from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
-import { gzip, zlib, deflate } from "@gfx/zopfli";
 
 import { mode, production, development, rootPath, cacheDirectory } from './env';
 import { scriptsPath } from './config';
@@ -75,17 +74,14 @@ if (production) {
       test: /\.js$/,
       filename: '[path].gz[query]',
       minRatio: 0.8,
-      threshold: 10240,
+      threshold: 8192,
       compressionOptions: {
-        level: 11,
+        level: 9,
         verbose: false,
         verbose_more: false,
         numiterations: 15,
         blocksplitting: true,
         blocksplittingmax: 15,
-      },
-      algorithm(input, compressionOptions, callback) {
-        return gzip(input, compressionOptions, callback)
       },
       deleteOriginalAssets: false,
     }),
