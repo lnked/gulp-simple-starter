@@ -12,8 +12,8 @@
     "build:legacy": "BROWSERSLIST_ENV=legacy yarn build",
     "build:modern": "BROWSERSLIST_ENV=modern yarn build",
     "postbuild": "yarn size",
-    "lint": "eslint src/scripts/*",
-    "lint:fix": "eslint src/scripts/* --fix",
+    "lint": "eslint src/scripts/ --ext .js,.jsx,.ts,.tsx --quiet",
+    "lint:fix": "yarn lint --fix",
     "test": "jest"
   },
   "author": "Edik Bulikyan <ed.proff@gmail.com>",
