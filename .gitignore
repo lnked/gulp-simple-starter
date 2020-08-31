@@ -99,6 +99,7 @@ Thumbs.db
 .git
 .hg
 .svn
+.history
 bower_components
 .publish
 

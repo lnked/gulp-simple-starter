@@ -109,7 +109,7 @@
     "rsync": "^0.6.1",
     "size-limit": "4.5.7",
     "sort-css-media-queries": "1.5.0",
-    "stylelint": "13.6.1",
+    "stylelint": "13.7.0",
     "stylelint-config-recommended": "3.0.0",
     "stylelint-order": "4.1.0",
     "terser-webpack-plugin": "4.1.0",
