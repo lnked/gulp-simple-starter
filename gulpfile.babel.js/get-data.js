@@ -5,6 +5,23 @@ import { existsSync, readFileSync } from 'fs';
 import { sourcePath, outputPath, styleFolder, development, production } from './env';
 import { environment } from './tools/env';
 
+export const getEnvironments = () => {
+  return Object.keys(environment).reduce((e, c) => {
+    if (c.startsWith('GULP_APP_')) {
+      const name = c.replace('GULP_APP_', '');
+
+      return {
+        ...e,
+        [name]: environment[c],
+      };
+    }
+
+    return {
+      ...e,
+    };
+  }, {});
+}
+
 export const getData = () => {
   const defaultStyles = `${styleFolder}/main.css`;
 

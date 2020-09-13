@@ -1,11 +1,19 @@
+import webpack from 'webpack';
 import { resolve } from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 
 import { mode, production, development, rootPath, cacheDirectory } from './env';
 import { scriptsPath } from './config';
+import { getEnvironments } from './get-data';
 
 const scriptsSourcePath = resolve(rootPath, scriptsPath);
+
+const plugins = [
+  new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(getEnvironments()),
+  }),
+];
 
 const optimizationConfig = {
   minimizer: [
@@ -65,8 +73,6 @@ const optimizationConfig = {
     }),
   ],
 }
-
-const plugins = []
 
 if (production) {
   plugins.push(
