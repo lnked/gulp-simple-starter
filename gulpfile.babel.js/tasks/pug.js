@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import { src, dest } from 'gulp';
 import pug from 'gulp-pug';
-import gulpif from 'gulp-if';
+import gulpIf from 'gulp-if';
 import pugbem from 'gulp-pugbem';
 import htmlmin from 'gulp-htmlmin';
 import replace from 'gulp-replace';
@@ -23,11 +23,11 @@ export default () => {
   return src([`${htmlPath}/pages/**/*.pug`, `!${htmlPath}/**/_*.*`])
     .pipe(frontMatter({ property: 'data' }))
     .pipe(pug(pugConfig([pugbem])))
-    .pipe(gulpif(optimized, htmlmin(htmlminConfig)))
-    .pipe(gulpif(optimized, replace('href=/static/ ', 'href=/static/')))
-    .pipe(gulpif(!optimized, beautify.html(htmlFormatConfig)))
+    .pipe(gulpIf(optimized, htmlmin(htmlminConfig)))
+    .pipe(gulpIf(optimized, replace('href=/static/ ', 'href=/static/')))
+    .pipe(gulpIf(!optimized, beautify.html(htmlFormatConfig)))
 
-    .pipe(gulpif(production, revRewrite({ manifest })))
+    .pipe(gulpIf(production, revRewrite({ manifest })))
 
     .pipe(dest(resolve(outputPath)))
     .on('end', reload)

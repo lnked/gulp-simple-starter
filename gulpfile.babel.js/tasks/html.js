@@ -2,7 +2,7 @@ import fs from 'fs';
 import { resolve } from 'path';
 import { src, dest } from 'gulp';
 import rigger from 'gulp-rigger';
-import gulpif from 'gulp-if';
+import gulpIf from 'gulp-if';
 import replace from 'gulp-replace';
 import htmlmin from 'gulp-htmlmin';
 import beautify from 'gulp-beautify';
@@ -31,10 +31,10 @@ export default () => {
     .pipe(rigger())
     .pipe(frontMatter({ property: 'data' }))
     .pipe(nunjucksRender(nunjucksRenderConfig))
-    .pipe(gulpif(optimized, htmlmin(htmlminConfig)))
-    .pipe(gulpif((optimized || production), replace('href=/static/ ', 'href=/static/')))
-    .pipe(gulpif(!optimized, beautify.html(htmlFormatConfig)))
-    .pipe(gulpif((optimized || production), revRewrite({ manifest })))
+    .pipe(gulpIf(optimized, htmlmin(htmlminConfig)))
+    .pipe(gulpIf((optimized || production), replace('href=/static/ ', 'href=/static/')))
+    .pipe(gulpIf(!optimized, beautify.html(htmlFormatConfig)))
+    .pipe(gulpIf((optimized || production), revRewrite({ manifest })))
     .pipe(dest(resolve(outputPath)))
     .on('end', reload)
 }

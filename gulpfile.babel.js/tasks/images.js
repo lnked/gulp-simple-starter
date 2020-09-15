@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 import { src, dest } from 'gulp';
-import gulpif from 'gulp-if';
+import gulpIf from 'gulp-if';
 import size from 'gulp-size';
 import webp from 'gulp-webp';
 import newer from 'gulp-newer';
@@ -30,10 +30,10 @@ export const cacheImages = () =>
   src([`${imagesPath}/*.*`, `${imagesPath}/**/*.*`])
     .pipe(plumber())
     .pipe(newer(imagesCache))
-    .pipe(gulpif(production, imagemin(imageminConfig, { name: 'images', verbose: true })))
-    .pipe(gulpif((production && condition(['png']) && TINYPNG_API_KEY), tinypng(TINYPNG_API_KEY)))
+    .pipe(gulpIf(production, imagemin(imageminConfig, { name: 'images', verbose: true })))
+    .pipe(gulpIf((production && condition(['png']) && TINYPNG_API_KEY), tinypng(TINYPNG_API_KEY)))
     .pipe(dest(imagesCache))
-    .pipe(gulpif(condition(['jpg', 'jpeg']), webp(webpConfig)))
+    .pipe(gulpIf(condition(['jpg', 'jpeg']), webp(webpConfig)))
     .pipe(plumber.stop())
     .pipe(dest(imagesCache));
 

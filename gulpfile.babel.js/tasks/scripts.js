@@ -1,8 +1,9 @@
 import rev from 'gulp-rev';
 import size from 'gulp-size';
-import gulpif from 'gulp-if';
+import gulpIf from 'gulp-if';
 import rigger from 'gulp-rigger';
 import webpack from 'webpack-stream';
+import replaceTask from 'gulp-replace-task';
 import { resolve } from 'path';
 import { src, dest } from 'gulp';
 
@@ -22,10 +23,18 @@ export default () =>
     .pipe(webpack({
       config: webpackConfig,
     }))
-    .pipe(gulpif(production, rev()))
+    .pipe(replaceTask({
+      patterns: [
+        {
+          match: 'timestamp',
+          replacement: new Date().getTime(),
+        },
+      ],
+    }))
+    .pipe(gulpIf(production, rev()))
     .pipe(dest(resolve(staticPath, 'js')))
-    .pipe(gulpif(production, rev.manifest(manifestPath, manifestConfig)))
-    .pipe(gulpif(production, dest(rootPath)))
+    .pipe(gulpIf(production, rev.manifest(manifestPath, manifestConfig)))
+    .pipe(gulpIf(production, dest(rootPath)))
     .pipe(size({
       title: 'scripts',
       gzip: true,

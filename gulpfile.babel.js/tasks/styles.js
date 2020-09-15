@@ -3,11 +3,11 @@ import { src, dest } from 'gulp';
 import rev from 'gulp-rev';
 import size from 'gulp-size';
 import sass from 'gulp-sass';
-import gulpif from 'gulp-if';
+import gulpIf from 'gulp-if';
 import plumber from 'gulp-plumber';
 import cssnano from 'cssnano';
 import postcss from 'gulp-postcss';
-import mqpacker from 'css-mqpacker';
+import MQPacker from 'css-mqpacker';
 import sassGlob from 'gulp-sass-glob';
 import sourcemaps from 'gulp-sourcemaps';
 import sortCSSmq from 'sort-css-media-queries';
@@ -23,6 +23,7 @@ import postcssFixes from 'postcss-fixes';
 import postcssShortSpacing from 'postcss-short-spacing';
 import postcss100vhFix from 'postcss-100vh-fix';
 import pseudoelements from 'postcss-pseudoelements';
+import replaceTask from 'gulp-replace-task';
 
 import { isUncss, rootPath, staticPath, styleFolder, outputFolder, nodeModulesPath, production, development } from '../env';
 import { stylesPath, manifestPath, manifestConfig } from '../config';
@@ -36,7 +37,7 @@ plugins.push(
   postcssFixes({
     preset: 'safe'
   }),
-  mqpacker({
+  MQPacker({
     sort: sortCSSmq,
   }),
   animation(),
@@ -101,7 +102,7 @@ export const stylesWatchGlob = [
 
 export default () =>
   src([ ...stylesWatchGlob, `!${stylesPath}/**/_*.*` ])
-    .pipe(gulpif(development, sourcemaps.init()))
+    .pipe(gulpIf(development, sourcemaps.init()))
     .pipe(plumber())
     .pipe(sassGlob())
     .pipe(sass({
@@ -126,11 +127,19 @@ export default () =>
     }))
     .pipe(postcss(plugins))
     .pipe(plumber.stop())
-    .pipe(gulpif(production, rev()))
-    .pipe(gulpif(development, sourcemaps.write('./')))
+    .pipe(replaceTask({
+      patterns: [
+        {
+          match: 'timestamp',
+          replacement: new Date().getTime(),
+        },
+      ],
+    }))
+    .pipe(gulpIf(production, rev()))
+    .pipe(gulpIf(development, sourcemaps.write('./')))
     .pipe(dest(resolve(staticPath, styleFolder)))
-    .pipe(gulpif(production, rev.manifest(manifestPath, manifestConfig)))
-    .pipe(gulpif(production, dest(rootPath)))
+    .pipe(gulpIf(production, rev.manifest(manifestPath, manifestConfig)))
+    .pipe(gulpIf(production, dest(rootPath)))
     .pipe(size({
       title: 'styles',
       showFiles: true,
