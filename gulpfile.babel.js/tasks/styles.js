@@ -5,96 +5,16 @@ import size from 'gulp-size';
 import sass from 'gulp-sass';
 import gulpIf from 'gulp-if';
 import plumber from 'gulp-plumber';
-import cssnano from 'cssnano';
 import postcss from 'gulp-postcss';
-import MQPacker from 'css-mqpacker';
 import sassGlob from 'gulp-sass-glob';
 import sourcemaps from 'gulp-sourcemaps';
-import sortCSSmq from 'sort-css-media-queries';
-import autoprefixer from 'autoprefixer';
-import atImport from 'postcss-import';
-import uncss from'postcss-uncss';
-import animation from 'postcss-animation';
-import reporter from 'postcss-reporter';
-import position from 'postcss-position';
-import immutableCss from 'immutable-css';
 import modifyCssUrls from 'gulp-modify-css-urls';
-import postcssFixes from 'postcss-fixes';
-import postcssShortSpacing from 'postcss-short-spacing';
-import postcss100vhFix from 'postcss-100vh-fix';
-import pseudoelements from 'postcss-pseudoelements';
 import replaceTask from 'gulp-replace-task';
 
-import { isUncss, rootPath, staticPath, styleFolder, outputFolder, nodeModulesPath, production, development } from '../env';
+import { rootPath, staticPath, styleFolder, nodeModulesPath, production, development } from '../env';
 import { stylesPath, manifestPath, manifestConfig } from '../config';
+import { postCSSCallback } from '../postcss.callback';
 import { stream } from './webserver';
-
-const plugins = []
-
-plugins.push(
-  atImport(),
-  position(),
-  postcssFixes({
-    preset: 'safe'
-  }),
-  MQPacker({
-    sort: sortCSSmq,
-  }),
-  animation(),
-  immutableCss({
-    verbose: false,
-  }),
-  postcssShortSpacing(),
-)
-
-if (isUncss) {
-  plugins.push(
-    uncss({
-      html: [`${outputFolder}/**/*.html`],
-      ignore: [
-        '.fade',
-        '.active',
-        '.disabled',
-        '.visible',
-        '.hidden',
-      ]
-    })
-  )
-}
-
-if (production) {
-  plugins.push(
-    pseudoelements({
-      single: true,
-      selectors: [
-        'hover',
-        'focus',
-        'active',
-        'after',
-        'ms-expand',
-        'not',
-        'first-child',
-        'last-child'
-      ],
-    }),
-    pseudoelements({
-      single: false,
-      selectors: ['before', 'after', 'first-letter', 'first-line'],
-    }),
-    postcss100vhFix(),
-    autoprefixer({
-      cascade: false,
-    }),
-    cssnano(),
-  )
-}
-
-plugins.push(
-  reporter({
-    clearMessages: true,
-    throwError: false,
-  })
-)
 
 export const stylesWatchGlob = [
   `${stylesPath}/**/*.s?(a|c)?ss`,
@@ -125,7 +45,7 @@ export default () =>
       prepend: '../',
       append: '',
     }))
-    .pipe(postcss(plugins))
+    .pipe(postcss(postCSSCallback))
     .pipe(plumber.stop())
     .pipe(replaceTask({
       patterns: [
