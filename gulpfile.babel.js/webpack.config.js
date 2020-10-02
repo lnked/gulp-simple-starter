@@ -99,7 +99,7 @@ module.exports = {
   devtool: production ? false : 'source-map',
   entry: './app',
   output: {
-    filename: './bundle.js',
+    filename: './app.js',
     path: scriptsSourcePath,
   },
   context: scriptsSourcePath,

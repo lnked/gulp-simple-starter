@@ -12,3 +12,4 @@ window.addEventListener('load', () => {
 
 window.addEventListener('unload', terminate);
 window.addEventListener('popstate', terminate);
+

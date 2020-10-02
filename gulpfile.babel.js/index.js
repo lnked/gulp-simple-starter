@@ -1,5 +1,6 @@
 import { task, series, parallel } from 'gulp';
 
+import js from './tasks/js';
 import pug from './tasks/pug';
 import html from './tasks/html';
 import watch from './tasks/watch';
@@ -21,6 +22,7 @@ task('clean.revision', cleanRevision);
 task('fonts', fonts);
 task('styles', styles);
 task('public', publics);
+task('js', js);
 task('scripts', scripts);
 task('svgstore', svgstore);
 task('critical', critical);
@@ -31,5 +33,6 @@ task('watch', watch);
 task('build', build());
 
 task('webserver', webserver);
-task('preheat', series(parallel('styles', 'scripts'), 'templates'));
+// task('preheat', series(parallel('styles', 'scripts'), 'templates'));
+task('preheat', series(parallel('styles', 'js'), 'templates'));
 task('default', series(['clean.revision', 'preheat'], parallel('webserver', 'watch')));

@@ -6,7 +6,8 @@ export default () =>
     ['images'],
     parallel(
       'styles',
-      'scripts',
+      'js',
+      // 'scripts',
       'svgstore',
     ),
     parallel(

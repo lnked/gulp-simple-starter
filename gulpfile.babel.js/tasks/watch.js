@@ -28,5 +28,6 @@ export default () => {
   watch(stylesWatchGlob, watchConfig, series('styles'));
   watch(templatesWatchGlob, watchConfig, series('templates'));
   watch(svgStoreWatchGlob, watchConfig, series('svgstore', 'templates'));
-  watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, series('scripts'));
+  // watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, series('scripts'));
+  watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, series('js'));
 }
