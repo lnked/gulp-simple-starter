@@ -6,6 +6,7 @@ import html from './tasks/html';
 import watch from './tasks/watch';
 import clean, { cleanRevision } from './tasks/clean';
 import build from './tasks/build';
+import webpackBuild from './tasks/webpack-build';
 import fonts from './tasks/fonts';
 import styles from './tasks/styles';
 import publics from './tasks/public';
@@ -31,8 +32,11 @@ task('templates', parallel('pug', 'html'));
 
 task('watch', watch);
 task('build', build());
+task('build:webpack', webpackBuild());
 
 task('webserver', webserver);
-// task('preheat', series(parallel('styles', 'scripts'), 'templates'));
+task('preheat:webpack', series(parallel('styles', 'scripts'), 'templates'));
+task('start:webpack', series(['clean.revision', 'preheat:webpack'], parallel('webserver', 'watch')));
+
 task('preheat', series(parallel('styles', 'js'), 'templates'));
 task('default', series(['clean.revision', 'preheat'], parallel('webserver', 'watch')));
