@@ -6,7 +6,7 @@ export default () =>
     ['images'],
     parallel(
       'styles',
-      'js',
+      'esbuild',
       'svgstore',
     ),
     parallel(

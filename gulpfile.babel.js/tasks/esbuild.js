@@ -4,7 +4,7 @@ import gulpIf from 'gulp-if';
 import rigger from 'gulp-rigger';
 import replaceTask from 'gulp-replace-task';
 import gulpEsBuild from 'gulp-esbuild';
-import { resolve, join } from 'path';
+import { resolve } from 'path';
 import { src, dest } from 'gulp';
 
 import { rootPath, staticPath, production, development } from '../env';
@@ -13,7 +13,6 @@ import { reload } from './webserver';
 
 export const scriptsWatchGlob = [
   `${scriptsPath}/*.{js,jsx,ts,tsx,mjs}`,
-  // `${scriptsPath}/**/*.{js,jsx,ts,tsx,mjs}`,
 ];
 
 export default () =>

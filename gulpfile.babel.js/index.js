@@ -1,6 +1,5 @@
 import { task, series, parallel } from 'gulp';
 
-import js from './tasks/js';
 import pug from './tasks/pug';
 import html from './tasks/html';
 import watch from './tasks/watch';
@@ -10,6 +9,7 @@ import webpackBuild from './tasks/webpack-build';
 import fonts from './tasks/fonts';
 import styles from './tasks/styles';
 import publics from './tasks/public';
+import esBuild from './tasks/esbuild';
 import scripts from './tasks/scripts';
 import critical from './tasks/critical';
 import svgstore from './tasks/svgstore';
@@ -23,7 +23,7 @@ task('clean.revision', cleanRevision);
 task('fonts', fonts);
 task('styles', styles);
 task('public', publics);
-task('js', js);
+task('esbuild', esBuild);
 task('scripts', scripts);
 task('svgstore', svgstore);
 task('critical', critical);
@@ -38,5 +38,5 @@ task('webserver', webserver);
 task('preheat:webpack', series(parallel('styles', 'scripts'), 'templates'));
 task('start:webpack', series(['clean.revision', 'preheat:webpack'], parallel('webserver', 'watch')));
 
-task('preheat', series(parallel('styles', 'js'), 'templates'));
+task('preheat', series(parallel('styles', 'esbuild'), 'templates'));
 task('default', series(['clean.revision', 'preheat'], parallel('webserver', 'watch')));
