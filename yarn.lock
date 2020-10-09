@@ -1487,10 +1487,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.2.tgz#2de1ed6670439387da1c9f549a2ade2b0a799256"
   integrity sha512-jiE3QIxJ8JLNcb1Ps6rDbysDhN4xa8DJJvuC9prr6w+1tIh+QAbYyNF3tyiZNLDBIuBCf4KEcV2UvQm/V60xfA==
 
-"@types/node@^14.11.5":
-  version "14.11.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.5.tgz#fecad41c041cae7f2404ad4b2d0742fdb628b305"
-  integrity sha512-jVFzDV6NTbrLMxm4xDSIW/gKnk8rQLF9wAzLWIOg+5nU6ACrIMndeBdXci0FGtqJbP9tQvm6V39eshc96TO2wQ==
+"@types/node@^14.11.7":
+  version "14.11.7"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.7.tgz#4d9673b8331ce262628ea89d9ef3964b6c1e5489"
+  integrity sha512-hSEXknS4KiayUdZ7401J/T6eykXHJkDEipnyQMJ4/GstK4kWjbHnwXlcpvIWfPKiEH1JU96DkbzJ1nHRmpmKLw==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -5382,10 +5382,10 @@ es6-weak-map@^2.0.1, es6-weak-map@^2.0.2:
     es6-iterator "^2.0.3"
     es6-symbol "^3.1.1"
 
-esbuild@^0.7.11:
-  version "0.7.11"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.11.tgz#e7722e3bd8eabc5b52d1d3c2d7f5e5dd8946dd94"
-  integrity sha512-coV3XUjMVWeO4dqKEMzBncwTYmGnLyxy7Af2w9UR7SMZTxfvJP3BcAvBI6ujNXTdj+zXro7MLMlWhs4MfoMe0g==
+esbuild@^0.7.13:
+  version "0.7.13"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.13.tgz#ca614002e70814d548dd3243eb3ccc5d93833112"
+  integrity sha512-IHBqE0blYhBw3fSgaQOHI1hdxq5OJgzdU/Tg0FPIZyag6eHCB5I8wirz1Oyse7W+TwCcFeCxMNLhdyjzdFACcw==
 
 escalade@^3.0.2, escalade@^3.1.0:
   version "3.1.0"
@@ -7120,12 +7120,12 @@ gulp-cli@^2.2.0:
     v8flags "^3.2.0"
     yargs "^7.1.0"
 
-gulp-esbuild@^0.1.21:
-  version "0.1.21"
-  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.1.21.tgz#5ac9cb8072954e4aee27dc77a645cb07c8374874"
-  integrity sha512-hVuf38CcuypM5rPjA7maJYlEWtUBi261N5wtJ6R+Q0BG91YhRnY2xHQK8xaRX+3gxorNWTiRehK9pwCxGZN0IA==
+gulp-esbuild@^0.1.24:
+  version "0.1.24"
+  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.1.24.tgz#b320101ad4db9f4c289604f4ad49294809f464c8"
+  integrity sha512-eHw05SNm2O0CBnXKpPDbPUwNYs1YajGTwIV3gQPwQGMaAKvO4/wwteaCIfQYvdKLQIjTnB3jgqI1Usx/iSzNQg==
   dependencies:
-    esbuild "^0.7.11"
+    esbuild "^0.7.13"
     plugin-error "^1.0.1"
     vinyl "^2.2.1"
 
