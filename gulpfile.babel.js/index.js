@@ -5,7 +5,6 @@ import html from './tasks/html';
 import watch from './tasks/watch';
 import clean, { cleanRevision } from './tasks/clean';
 import build from './tasks/build';
-import webpackBuild from './tasks/webpack-build';
 import fonts from './tasks/fonts';
 import styles from './tasks/styles';
 import publics from './tasks/public';
@@ -30,9 +29,11 @@ task('critical', critical);
 task('images', series(cacheImages, images));
 task('templates', parallel('pug', 'html'));
 
-task('watch', watch);
-task('build', build());
-task('build:webpack', webpackBuild());
+task('watch', watch('esbuild'));
+task('watch:webpack', watch('scripts'));
+
+task('build', build('esbuild'));
+task('build:webpack', build('scripts'));
 
 task('webserver', webserver);
 task('preheat:webpack', series(parallel('styles', 'scripts'), 'templates'));

@@ -12,7 +12,7 @@ import { svgStoreWatchGlob } from './svgstore';
 
 import { testsPatterns } from '../config';
 
-export default () => {
+export default mode => {
   const templatesWatchGlob = [
     ...pugWatchGlob,
     ...htmlWatchGlob,
@@ -22,12 +22,13 @@ export default () => {
     usePolling: true,
   };
 
-  watch(fontsWatchGlob, watchConfig, series('fonts'));
-  watch(publicWatchGlob, watchConfig, series('public'));
-  watch(imagesWatchGlob, watchConfig, series('images'));
-  watch(stylesWatchGlob, watchConfig, series('styles'));
-  watch(templatesWatchGlob, watchConfig, series('templates'));
-  watch(svgStoreWatchGlob, watchConfig, series('svgstore', 'templates'));
-  // watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, series('scripts'));
-  watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, series('js'));
+  return () => {
+    watch(fontsWatchGlob, watchConfig, series('fonts'));
+    watch(publicWatchGlob, watchConfig, series('public'));
+    watch(imagesWatchGlob, watchConfig, series('images'));
+    watch(stylesWatchGlob, watchConfig, series('styles'));
+    watch(templatesWatchGlob, watchConfig, series('templates'));
+    watch(svgStoreWatchGlob, watchConfig, series('svgstore', 'templates'));
+    watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, series(mode));
+  }
 }

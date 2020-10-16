@@ -1,18 +1,10 @@
 import { series, parallel } from 'gulp';
 
-export default () =>
+export default mode =>
   series(
     ['clean'],
     ['images'],
-    parallel(
-      'styles',
-      'esbuild',
-      'svgstore',
-    ),
-    parallel(
-      'templates',
-      'public',
-      'fonts',
-    ),
+    parallel('styles', mode, 'svgstore'),
+    parallel('templates', 'public', 'fonts'),
     ['critical'],
-  )
+  );

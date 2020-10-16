@@ -4,10 +4,9 @@ import gulpIf from 'gulp-if';
 import rigger from 'gulp-rigger';
 import replaceTask from 'gulp-replace-task';
 import gulpEsBuild from 'gulp-esbuild';
-import { resolve } from 'path';
 import { src, dest } from 'gulp';
 
-import { rootPath, staticPath, production, development } from '../env';
+import { rootPath, staticPathScripts, production, development } from '../env';
 import { scriptsPath, manifestPath, manifestConfig } from '../config';
 import { reload } from './webserver';
 
@@ -16,14 +15,13 @@ export const scriptsWatchGlob = [
 ];
 
 export default () =>
-  src([ ...scriptsWatchGlob, `!${scriptsPath}/**/_*.*` ])
+  src([...scriptsWatchGlob, `!${scriptsPath}/**/_*.*`])
     .pipe(rigger())
     .pipe(gulpEsBuild({
       sourcemap: development,
       outdir: '../js',
       bundle: true,
       minify: true,
-      // splitting: true,
       format: 'esm',
       platform: 'node',
       loader: {
@@ -39,7 +37,7 @@ export default () =>
       ],
     }))
     .pipe(gulpIf(production, rev()))
-    .pipe(dest(resolve(staticPath, 'js')))
+    .pipe(dest(staticPathScripts))
     .pipe(gulpIf(production, rev.manifest(manifestPath, manifestConfig)))
     .pipe(gulpIf(production, dest(rootPath)))
     .pipe(size({

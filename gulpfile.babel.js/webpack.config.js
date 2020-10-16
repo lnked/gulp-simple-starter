@@ -3,7 +3,7 @@ import TerserPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
 import { resolve } from 'path';
 
-import { mode, production, rootPath, cacheDirectory } from './env';
+import { mode, production, rootPath, cacheDirectory, staticPathScripts } from './env';
 import { scriptsPath } from './config';
 import { getEnvironments } from './get-data';
 
@@ -15,7 +15,6 @@ const optimizationConfig = {
     new ESBuildPlugin(),
     // new TerserPlugin({
     //   test: /\.js(\?.*)?$/i,
-    //   cache: cacheDirectory,
     //   parallel: true,
     //   sourceMap: true,
     //   terserOptions: {
