@@ -113,18 +113,6 @@ module.exports = {
     ],
   },
   resolve: {
-    alias: {
-      src: scriptsSourcePath,
-      libs: resolve(scriptsSourcePath, 'libs'),
-      hooks: resolve(scriptsSourcePath, 'hooks'),
-      utils: resolve(scriptsSourcePath, 'utils'),
-      tools: resolve(scriptsSourcePath, 'tools'),
-      stores: resolve(scriptsSourcePath, 'stores'),
-      configs: resolve(scriptsSourcePath, 'configs'),
-      services: resolve(scriptsSourcePath, 'services'),
-      settings: resolve(scriptsSourcePath, 'settings'),
-      components: resolve(scriptsSourcePath, 'components'),
-    },
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
   },
   plugins: [

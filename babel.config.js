@@ -13,6 +13,20 @@ module.exports = function (api) {
       ['@babel/preset-typescript'],
     ],
     plugins: [
+      ['module-resolver', {
+        root: ['./src/scripts'],
+        alias: {
+          libs: './libs',
+          hooks: './hooks',
+          utils: './utils',
+          tools: './tools',
+          stores: './stores',
+          configs: './configs',
+          services: './services',
+          settings: './settings',
+          components: './components',
+        }
+      }],
       ['@babel/plugin-transform-runtime'],
       ['@babel/plugin-transform-async-to-generator'],
       ['@babel/plugin-transform-spread', { loose }],
