@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "rootDir": "src/scripts",
-    "baseUrl": ".",
+    "rootDir": "./",
+    "baseUrl": "src/scripts",
     "outDir": "dist",
     "target": "es5",
     "module": "esnext",
@@ -16,7 +16,6 @@
     "noImplicitAny": false,
     "esModuleInterop": true,
     "removeComments": true,
-    "strictNullChecks": true,
     "preserveConstEnums": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -28,19 +27,19 @@
       "esnext"
     ],
     "paths": {
-      "*": ["*", "src/scripts/*"],
-      "libs/*": ["src/scripts/libs/*"],
-      "hooks/*": ["src/scripts/hooks/*"],
-      "utils/*": ["src/scripts/utils/*"],
-      "tools/*": ["src/scripts/tools/*"],
-      "stores/*": ["src/scripts/stores/*"],
-      "configs/*": ["src/scripts/configs/*"],
-      "services/*": ["src/scripts/services/*"],
-      "settings/*": ["src/scripts/settings/*"],
-      "components/*": ["src/scripts/components/*"]
+      "*": ["*", "./*"],
+      "libs/*": ["./libs/*"],
+      "hooks/*": ["./hooks/*"],
+      "utils/*": ["./utils/*"],
+      "tools/*": ["./tools/*"],
+      "stores/*": ["./stores/*"],
+      "configs/*": ["./configs/*"],
+      "services/*": ["./services/*"],
+      "settings/*": ["./settings/*"],
+      "components/*": ["./components/*"]
     },
     "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["src/scripts/**/*"],
+  "include": ["./**/*"],
   "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }
