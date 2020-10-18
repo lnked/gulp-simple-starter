@@ -66,7 +66,7 @@
     "gulp-beautify": "3.0.0",
     "gulp-cheerio": "1.0.0",
     "gulp-clean": "0.4.0",
-    "gulp-esbuild": "^0.1.27",
+    "gulp-esbuild": "^0.1.28",
     "gulp-eslint": "6.0.0",
     "gulp-front-matter": "1.3.0",
     "gulp-htmlmin": "^5.0.1",

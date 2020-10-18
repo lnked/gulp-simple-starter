@@ -5369,10 +5369,10 @@ esbuild@^0.6.8:
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.6.34.tgz#76565a60e006f45d5f273b6e59e61ed0816551f5"
   integrity sha512-InRdL/Q96pUucPqovJzvuLhquZr6jOn81FDVwFjCKz1rYKIm9OdOC+7Fs4vr6x48vKBl5LzKgtjU39BUpO636A==
 
-esbuild@^0.7.16:
-  version "0.7.16"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.16.tgz#688fe048b98eca5121bc1a8686cba99ea1f9b5ab"
-  integrity sha512-qPQ3OE2BCCioUSep3Bnm1BA9EEkamGJwIowyjKmntCKSHIFuNoyfP+cV4HA5zJnQJAjhdM/JOuAnKq8PxlW1Dg==
+esbuild@^0.7.17:
+  version "0.7.17"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.17.tgz#38b180f7c160e8a1b7f396a8d7a299e8f5df7325"
+  integrity sha512-5lO1NBOekZYU8h55SJJUc2dMe8duAwIqOQrIIvawRwbBRoWCmLSsMJmEvdFDITt24pkhu8AN4IKfyflLgaKxbg==
 
 escalade@^3.1.0, escalade@^3.1.1:
   version "3.1.1"
@@ -7118,12 +7118,12 @@ gulp-cli@^2.2.0:
     v8flags "^3.2.0"
     yargs "^7.1.0"
 
-gulp-esbuild@^0.1.27:
-  version "0.1.27"
-  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.1.27.tgz#4d3ad6ceb1d42ee5c90e06b277aa51b392e5cf08"
-  integrity sha512-C7eUFKKejNO5zV5OMPWoj8v2sAVM5xOwL9eEI1UHm7h9QnnJGRHGnHRHXJnF79poXpD8ecE2fG9M+5BSsD/yNw==
+gulp-esbuild@^0.1.28:
+  version "0.1.28"
+  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.1.28.tgz#90d94a8da6ca1a03a8510b561fbe97c978aedb15"
+  integrity sha512-yo/ap7iJjnpWb4JrrtmcrEpU3hVod6n+JB8eLjXCSD6MZ7h2oQNK3dBrbT374G7UGN4IOFH8A0LNZKigj9mGSg==
   dependencies:
-    esbuild "^0.7.16"
+    esbuild "^0.7.17"
     plugin-error "^1.0.1"
     vinyl "^2.2.1"
 
