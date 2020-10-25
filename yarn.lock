@@ -3833,9 +3833,9 @@ commander@^5.1.0:
   integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
 
 commander@^6.0.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-6.1.0.tgz#f8d722b78103141006b66f4c7ba1e97315ba75bc"
-  integrity sha512-wl7PNrYWd2y5mp1OK/LhTlv8Ff4kQJQRXXAvF+uU/TPNiVJUxZLRYGj/B0y/lPGAVcSbJqH2Za/cvHmrPMC8mA==
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.0.tgz#b990bfb8ac030aedc6d11bc04d1488ffef56db75"
+  integrity sha512-zP4jEKbe8SHzKJYQmq8Y9gYjtO/POJLgIdKgV7B9qNmABVFVc+ctqSX6iXh4mCpJfRBOabiZ2YKPg8ciDw6C+Q==
 
 commander@~2.19.0:
   version "2.19.0"
@@ -5351,10 +5351,10 @@ esbuild-webpack-plugin@^1.1.0:
   dependencies:
     esbuild "^0.7.15"
 
-esbuild@^0.7.15, esbuild@^0.7.19:
-  version "0.7.19"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.19.tgz#6f8b94445e06f8bf6125183a877de6046c965abc"
-  integrity sha512-0Ur8ZtuRPwJMj4+VjRLqn5z88WXf+2etZhe4dBA6eYFcdviQefb+Vrd59cTk0VXg08NU/BnAMkalCMHI8lig/A==
+esbuild@^0.7.15, esbuild@^0.7.21:
+  version "0.7.21"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.21.tgz#e93f9d7e673cd5fcab2aab7774d489a0f680d657"
+  integrity sha512-qEnJdj+6Mdpt5kZwwCqO6PDNXSHNDDOPbnF4pduS3nub1v5GfgZfi8ysZ2DN4Q65WWgx6hz1a237ZETEHZpR0Q==
 
 escalade@^3.1.0, escalade@^3.1.1:
   version "3.1.1"
@@ -7101,11 +7101,11 @@ gulp-cli@^2.2.0:
     yargs "^7.1.0"
 
 gulp-esbuild@^0.1.30:
-  version "0.1.30"
-  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.1.30.tgz#c90f16d2162e2eecb18bfba041e7a17e556b6502"
-  integrity sha512-tqJvsldKTg5MRgxiGGUSDMwNokzAgmiU671L3k6uaFoPz0FCx61PbLHpVkmT48g+v9kcCQUaRrJaJJLbV4uS6Q==
+  version "0.1.32"
+  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.1.32.tgz#6097d306e0fbbffbde2caa7b78a1ac637940c4d9"
+  integrity sha512-BX0TJ+1Bv5VecEp8M3Y1VFWILiVHBZyiljyayONcdRV6M/1/af34m0YKPSiLzPdX0SzpP1BHuBkf0rP7B/T4VQ==
   dependencies:
-    esbuild "^0.7.19"
+    esbuild "^0.7.21"
     plugin-error "^1.0.1"
     vinyl "^2.2.1"
 
@@ -16771,9 +16771,9 @@ y18n@^4.0.0:
   integrity sha512-r9S/ZyXu/Xu9q1tYlpsLIsa3EeLXXk0VwlxqTcFRfg9EhMW+17kbt9G0NrgCmhGb5vT2hyhJZLfDGx+7+5Uj/w==
 
 y18n@^5.0.2:
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-5.0.4.tgz#0ab2db89dd5873b5ec4682d8e703e833373ea897"
-  integrity sha512-deLOfD+RvFgrpAmSZgfGdWYE+OKyHcVHaRQ7NphG/63scpRvTHHeQMAxGGvaLVGJ+HYVcCXlzcTK0ZehFf+eHQ==
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-5.0.5.tgz#8769ec08d03b1ea2df2500acef561743bbb9ab18"
+  integrity sha512-hsRUr4FFrvhhRH12wOdfs38Gy7k2FFzB9qgN9v3aLykRq0dRcdcpz5C9FxdS2NuhOrI/628b/KSTJ3rwHysYSg==
 
 yallist@^2.1.2:
   version "2.1.2"
