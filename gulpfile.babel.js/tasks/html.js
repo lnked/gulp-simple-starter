@@ -11,7 +11,7 @@ import nunjucksRender from 'gulp-nunjucks-render';
 import revRewrite from 'gulp-rev-rewrite';
 
 import { optimized, outputPath, production, development } from '../env';
-import { manifestPath, htmlPath, htmlFormatConfig, htmlminConfig, nunjucksRenderConfig } from '../config';
+import { manifestPath, checkManifestPath, htmlPath, htmlFormatConfig, htmlminConfig, nunjucksRenderConfig } from '../config';
 import { reload } from './webserver';
 
 nunjucksRender.nunjucks.configure({
@@ -25,6 +25,7 @@ export const htmlWatchGlob = [
 ];
 
 export default () => {
+  checkManifestPath();
   const manifest = readFileSync(manifestPath);
 
   return src([`${htmlPath}/pages/**/*.html`, `!${htmlPath}/**/_*.*`])

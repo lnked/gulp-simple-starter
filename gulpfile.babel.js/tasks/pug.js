@@ -11,7 +11,7 @@ import frontMatter from 'gulp-front-matter';
 import revRewrite from 'gulp-rev-rewrite';
 
 import { optimized, outputPath, production } from '../env'
-import { manifestPath, pugConfig, htmlPath, htmlFormatConfig, htmlminConfig } from '../config'
+import { manifestPath, checkManifestPath, pugConfig, htmlPath, htmlFormatConfig, htmlminConfig } from '../config'
 import { reload } from './webserver';
 
 export const pugWatchGlob = [
@@ -19,6 +19,7 @@ export const pugWatchGlob = [
 ]
 
 export default () => {
+  checkManifestPath();
   const manifest = readFileSync(manifestPath);
 
   return src([`${htmlPath}/pages/**/*.pug`, `!${htmlPath}/**/_*.*`])
@@ -27,9 +28,7 @@ export default () => {
     .pipe(gulpIf(optimized, htmlmin(htmlminConfig)))
     .pipe(gulpIf(optimized, replace('href=/static/ ', 'href=/static/')))
     .pipe(gulpIf(!optimized, beautify.html(htmlFormatConfig)))
-
-    .pipe(gulpIf(production, revRewrite({ manifest })))
-
+    .pipe(gulpIf((optimized || production), revRewrite({ manifest })))
     .pipe(dest(resolve(outputPath)))
     .on('end', reload)
 }

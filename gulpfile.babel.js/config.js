@@ -1,3 +1,4 @@
+import { existsSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import imagemin from 'gulp-imagemin';
 import imageminOptipng from 'imagemin-optipng';
@@ -16,7 +17,14 @@ export const manifestConfig = {
   merge: true,
 };
 export const svgStoreFile = `${publicPath}/_svgstore.html`;
+
 export const manifestPath = resolve(cacheDirectory, 'rev-manifest.json');
+
+export const checkManifestPath = () => {
+  if (!existsSync(manifestPath)) {
+    writeFileSync(manifestPath, '{}');
+  }
+};
 
 export const htmlFormatConfig = {
   indent_size: 2,
@@ -60,23 +68,33 @@ export const svgminConfig = (prefix) => ({
     { removeUselessDefs: true },
     { removeXMLProcInst: true },
     { removeDimensions: true },
-    { cleanupNumericValues: {
+    {
+      cleanupNumericValues: {
         floatPrecision: 2
-    }},
-    { cleanupIDs: {
+      }
+    },
+    {
+      cleanupIDs: {
         prefix: prefix + '-',
         minify: false
-    }},
-    { js2svg: {
+      }
+    },
+    {
+      js2svg: {
         pretty: true
-    }},
-    { convertColors: {
+      }
+    },
+    {
+      convertColors: {
         names2hex: true,
         rgb2hex: true
-    }},
-    { removeAttrs: {
+      }
+    },
+    {
+      removeAttrs: {
         attrs: ["id", "class", "data-name", "stroke", "fill-rule"]
-    } },
+      }
+    },
     { removeStyleElement: true },
     { removeScriptElement: true },
     { transformsWithOnePath: true },
@@ -124,20 +142,26 @@ export const imageminConfig = [
       { removeXMLProcInst: true },
       { removeDimensions: true },
       { removeStyleElement: true },
-      { cleanupNumericValues: {
-        floatPrecision: 2
-      } },
-      { removeAttrs: {
-        attrs: ["id", "class", "data-name"]
-      } },
+      {
+        cleanupNumericValues: {
+          floatPrecision: 2
+        }
+      },
+      {
+        removeAttrs: {
+          attrs: ["id", "class", "data-name"]
+        }
+      },
       { sortAttrs: true },
       { cleanupIDs: true },
-      { convertColors: {
-        names2hex: true,
-        rgb2hex: true
-      } },
+      {
+        convertColors: {
+          names2hex: true,
+          rgb2hex: true
+        }
+      },
       { removeEmptyContainers: true },
-      { removeUselessStrokeAndFill:false },
+      { removeUselessStrokeAndFill: false },
       { removeEmptyText: true },
       { removeEditorsNSData: true },
       { removeEmptyAttrs: true },
