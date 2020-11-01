@@ -1,6 +1,6 @@
-import fs from 'fs';
 import { resolve } from 'path';
 import { src, dest } from 'gulp';
+import { readFileSync } from 'fs';
 import rigger from 'gulp-rigger';
 import gulpIf from 'gulp-if';
 import replace from 'gulp-replace';
@@ -25,7 +25,7 @@ export const htmlWatchGlob = [
 ];
 
 export default () => {
-  const manifest = src(manifestPath, { allowEmpty: true });
+  const manifest = readFileSync(manifestPath);
 
   return src([`${htmlPath}/pages/**/*.html`, `!${htmlPath}/**/_*.*`])
     .pipe(rigger())

@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import { src, dest } from 'gulp';
+import { readFileSync } from 'fs';
 import pug from 'gulp-pug';
 import gulpIf from 'gulp-if';
 import pugbem from 'gulp-pugbem';
@@ -18,7 +19,7 @@ export const pugWatchGlob = [
 ]
 
 export default () => {
-  const manifest = src(manifestPath, { allowEmpty: true });
+  const manifest = readFileSync(manifestPath);
 
   return src([`${htmlPath}/pages/**/*.pug`, `!${htmlPath}/**/_*.*`])
     .pipe(frontMatter({ property: 'data' }))
