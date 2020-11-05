@@ -19,16 +19,18 @@ const getCssFiles = () => {
   const [cssFile = ''] = glob.sync(`${staticPath}/**/*.css`).map(file => file.replace(`${staticPath}/`, ''));
 
   return cssFile || '';
-}
+};
 
 export default () =>
   src(`${outputPath}/**/*.html`)
-    .pipe(critical({
-      css: getCssFiles(),
-      base: staticPath,
-      inline: true,
-      ignore: {
-        atrule: ['@font-face'],
-      },
-    }))
-    .pipe(dest(resolve(outputPath)))
+    .pipe(
+      critical({
+        css: getCssFiles(),
+        base: staticPath,
+        inline: true,
+        ignore: {
+          atrule: ['@font-face'],
+        },
+      }),
+    )
+    .pipe(dest(resolve(outputPath)));

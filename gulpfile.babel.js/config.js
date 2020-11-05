@@ -36,21 +36,62 @@ export const htmlFormatConfig = {
   indent_inner_html: false,
   max_preserve_newlines: 1,
   unformatted: [
-    'abbr', 'area', 'b', 'bdi', 'bdo', 'br', 'cite', 'textarea',
-    'pre', 'code', 'data', 'datalist', 'del', 'dfn', 'em', 'embed', 'i', 'ins', 'kbd', 'keygen',
-    'map', 'mark', 'math', 'meter', 'noscript', 'script',
-    'object', 'output', 'progress', 'q', 'ruby', 's', 'samp', 'small',
-    'strong', 'sub', 'sup', 'template', 'time', 'u', 'var', 'wbr', 'text',
-    'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt'
+    'abbr',
+    'area',
+    'b',
+    'bdi',
+    'bdo',
+    'br',
+    'cite',
+    'textarea',
+    'pre',
+    'code',
+    'data',
+    'datalist',
+    'del',
+    'dfn',
+    'em',
+    'embed',
+    'i',
+    'ins',
+    'kbd',
+    'keygen',
+    'map',
+    'mark',
+    'math',
+    'meter',
+    'noscript',
+    'script',
+    'object',
+    'output',
+    'progress',
+    'q',
+    'ruby',
+    's',
+    'samp',
+    'small',
+    'strong',
+    'sub',
+    'sup',
+    'template',
+    'time',
+    'u',
+    'var',
+    'wbr',
+    'text',
+    'acronym',
+    'address',
+    'big',
+    'dt',
+    'ins',
+    'strike',
+    'tt',
   ],
 };
 
-export const testsPatterns = [
-  '**/__tests__/**/*.(j|t)s?(x)',
-  '**/?(*.)+(spec|test).(j|t)s?(x)',
-];
+export const testsPatterns = ['**/__tests__/**/*.(j|t)s?(x)', '**/?(*.)+(spec|test).(j|t)s?(x)'];
 
-export const svgminConfig = (prefix) => ({
+export const svgminConfig = prefix => ({
   plugins: [
     { sortAttrs: true },
     { removeTitle: true },
@@ -70,36 +111,36 @@ export const svgminConfig = (prefix) => ({
     { removeDimensions: true },
     {
       cleanupNumericValues: {
-        floatPrecision: 2
-      }
+        floatPrecision: 2,
+      },
     },
     {
       cleanupIDs: {
         prefix: prefix + '-',
-        minify: false
-      }
+        minify: false,
+      },
     },
     {
       js2svg: {
-        pretty: true
-      }
+        pretty: true,
+      },
     },
     {
       convertColors: {
         names2hex: true,
-        rgb2hex: true
-      }
+        rgb2hex: true,
+      },
     },
     {
       removeAttrs: {
-        attrs: ["id", "class", "data-name", "stroke", "fill-rule"]
-      }
+        attrs: ['id', 'class', 'data-name', 'stroke', 'fill-rule'],
+      },
     },
     { removeStyleElement: true },
     { removeScriptElement: true },
     { transformsWithOnePath: true },
     { removeUselessStrokeAndFill: true },
-  ]
+  ],
 });
 
 export const htmlminConfig = {
@@ -125,11 +166,14 @@ export const imageminConfig = [
     interlaced: true,
     progressive: true,
   }),
-  imagemin.optipng({
-    optimizationLevel: 5,
-  }, {
-    use: imageminOptipng()
-  }),
+  imagemin.optipng(
+    {
+      optimizationLevel: 5,
+    },
+    {
+      use: imageminOptipng(),
+    },
+  ),
   imagemin.svgo({
     plugins: [
       { removeTitle: true },
@@ -144,21 +188,21 @@ export const imageminConfig = [
       { removeStyleElement: true },
       {
         cleanupNumericValues: {
-          floatPrecision: 2
-        }
+          floatPrecision: 2,
+        },
       },
       {
         removeAttrs: {
-          attrs: ["id", "class", "data-name"]
-        }
+          attrs: ['id', 'class', 'data-name'],
+        },
       },
       { sortAttrs: true },
       { cleanupIDs: true },
       {
         convertColors: {
           names2hex: true,
-          rgb2hex: true
-        }
+          rgb2hex: true,
+        },
       },
       { removeEmptyContainers: true },
       { removeUselessStrokeAndFill: false },
@@ -171,13 +215,10 @@ export const imageminConfig = [
   }),
 ];
 
-export const pugConfig = (plugins) => ({
+export const pugConfig = plugins => ({
   plugins,
   data: getData(),
-  basedir: [
-    htmlPath,
-    publicPath,
-  ],
+  basedir: [htmlPath, publicPath],
   debug: false,
   pretty: true,
   verbose: false,
@@ -185,20 +226,18 @@ export const pugConfig = (plugins) => ({
 
 export const nunjucksRenderConfig = {
   data: getData(),
-  path: [
-    htmlPath,
-    publicPath,
-  ],
+  path: [htmlPath, publicPath],
   envOptions: {
     watch: development,
   },
 };
 
 export const webpConfig = {
-  ...(production && {
+  ...((production && {
     quality: 80,
     method: 6,
-  } || {}),
+  }) ||
+    {}),
 };
 
 export { environment } from './tools/env';

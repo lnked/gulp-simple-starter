@@ -2,10 +2,14 @@
   "root": true,
   "parser": "babel-eslint",
   "plugins": [
-    "import"
+    "import",
+    "prettier"
   ],
   "extends": [
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "prettier/standard",
+    "prettier/@typescript-eslint"
   ],
   "env": {
     "es6": true,
@@ -22,6 +26,7 @@
     }
   },
   "rules": {
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
     "indent": [1, 2, {"SwitchCase": 1}],
     "brace-style": [1, "1tbs"],
     "camelcase": [1, { "properties": "always" }],

@@ -20,7 +20,7 @@ export const getEnvironments = () => {
       ...e,
     };
   }, {});
-}
+};
 
 export const getData = () => {
   const defaultStyles = `${styleFolder}/main.css`;
@@ -31,9 +31,7 @@ export const getData = () => {
   const [style] = glob.sync(`${outputPath}/**/*.css`);
   const revisionFile = style && style.split('/').pop();
 
-  const styleName = development
-    ? defaultStyles
-    : (revisionFile && `${styleFolder}/${revisionFile}`) || defaultStyles;
+  const styleName = development ? defaultStyles : (revisionFile && `${styleFolder}/${revisionFile}`) || defaultStyles;
 
   if (jsonExists) {
     const rawdata = readFileSync(jsonFile);
@@ -49,4 +47,4 @@ export const getData = () => {
   }
 
   return {};
-}
+};

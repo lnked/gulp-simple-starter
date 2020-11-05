@@ -1,0 +1,4 @@
+./public
+./gulpfile.babel.js
+./.prettierrc.yml
+./lint-staged.config.js

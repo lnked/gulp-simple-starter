@@ -15,53 +15,59 @@ import { stylesPath, manifestPath, manifestConfig } from '../config';
 import { postCSSCallback } from '../postcss.callback';
 import { stream } from './webserver';
 
-export const stylesWatchGlob = [
-  `${stylesPath}/**/*.s?(a|c)?ss`,
-];
+export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`];
 
 export default () =>
   src([...stylesWatchGlob, `!${stylesPath}/**/_*.*`])
     .pipe(gulpIf(development, sourcemaps.init()))
     .pipe(plumber())
     .pipe(sassGlob())
-    .pipe(sass({
-      includePaths: [nodeModulesPath],
-    }))
-    .pipe(modifyCssUrls({
-      modify(url) {
-        if (url && /static\//.test(url)) {
-          url = url.replace('static/', '')
-        }
+    .pipe(
+      sass({
+        includePaths: [nodeModulesPath],
+      }),
+    )
+    .pipe(
+      modifyCssUrls({
+        modify(url) {
+          if (url && /static\//.test(url)) {
+            url = url.replace('static/', '');
+          }
 
-        if (url && /images\//.test(url)) {
-          url = url.replace('images/', 'img/')
-        }
+          if (url && /images\//.test(url)) {
+            url = url.replace('images/', 'img/');
+          }
 
-        url = url.replace(/^(\.\/|\.\.\/)|\/$/g, '').replace(/^\/|\/$/g, '')
+          url = url.replace(/^(\.\/|\.\.\/)|\/$/g, '').replace(/^\/|\/$/g, '');
 
-        return url
-      },
-      prepend: '../',
-      append: '',
-    }))
+          return url;
+        },
+        prepend: '../',
+        append: '',
+      }),
+    )
     .pipe(postcss(postCSSCallback))
     .pipe(plumber.stop())
-    .pipe(replaceTask({
-      patterns: [
-        {
-          match: 'timestamp',
-          replacement: new Date().getTime(),
-        },
-      ],
-    }))
+    .pipe(
+      replaceTask({
+        patterns: [
+          {
+            match: 'timestamp',
+            replacement: new Date().getTime(),
+          },
+        ],
+      }),
+    )
     .pipe(gulpIf(production, rev()))
     .pipe(gulpIf(development, sourcemaps.write('./')))
     .pipe(dest(staticPathStyles))
     .pipe(gulpIf(production, rev.manifest(manifestPath, manifestConfig)))
     .pipe(gulpIf(production, dest(rootPath)))
-    .pipe(size({
-      title: 'styles',
-      showFiles: true,
-      showTotal: true,
-    }))
-    .pipe(stream())
+    .pipe(
+      size({
+        title: 'styles',
+        showFiles: true,
+        showTotal: true,
+      }),
+    )
+    .pipe(stream());
