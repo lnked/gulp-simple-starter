@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import webpack from 'webpack';
 import ESBuildPlugin from 'esbuild-webpack-plugin';
 
-import { mode, production, rootPath, cacheDirectory, staticPathScripts } from './env';
+import { mode, production, rootPath, cacheDirectory } from './env';
 import { scriptsPath } from './config';
 import { getEnvironments } from './get-data';
 
