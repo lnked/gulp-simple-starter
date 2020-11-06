@@ -8,12 +8,13 @@ import { publicWatchGlob } from './public';
 import { stylesWatchGlob } from './styles';
 import { imagesWatchGlob } from './images';
 import { scriptsWatchGlob } from './scripts';
-import { svgStoreWatchGlob } from './svgstore';
 
-import { testsPatterns } from '../config';
+import { testsPatterns, svgStorePath } from '../config';
+
+const svgstoreWatchGlob = [`${svgStorePath}/**/*.svg`];
 
 export default mode => {
-  const templatesWatchGlob = [...pugWatchGlob, ...htmlWatchGlob];
+  const templatesWatchGlob = [...pugWatchGlob, ...htmlWatchGlob, ...svgstoreWatchGlob];
 
   const watchConfig = {
     usePolling: true,
@@ -25,7 +26,6 @@ export default mode => {
     watch(imagesWatchGlob, watchConfig, series('images'));
     watch(stylesWatchGlob, watchConfig, series('styles'));
     watch(templatesWatchGlob, watchConfig, series('templates'));
-    watch(svgStoreWatchGlob, watchConfig, series('svgstore', 'templates'));
     watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, series(mode));
   };
 };

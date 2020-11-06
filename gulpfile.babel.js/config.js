@@ -91,57 +91,33 @@ export const htmlFormatConfig = {
 
 export const testsPatterns = ['**/__tests__/**/*.(j|t)s?(x)', '**/?(*.)+(spec|test).(j|t)s?(x)'];
 
-export const svgminConfig = prefix => ({
-  plugins: [
-    { sortAttrs: true },
-    { removeTitle: true },
-    { removeDesc: true },
-    { removeViewBox: false },
-    { removeDoctype: true },
-    { removeMetadata: true },
-    { removeComments: true },
-    { removeEmptyText: true },
-    { removeEmptyAttrs: true },
-    { removeHiddenElems: true },
-    { removeStyleElement: true },
-    { removeEditorsNSData: true },
-    { removeEmptyContainers: true },
-    { removeUselessDefs: true },
-    { removeXMLProcInst: true },
-    { removeDimensions: true },
-    {
-      cleanupNumericValues: {
-        floatPrecision: 2,
-      },
+export const commonSVGO = [
+  { sortAttrs: true },
+  { removeDesc: true },
+  { removeTitle: true },
+  { removeDoctype: true },
+  { removeViewBox: false },
+  { removeMetadata: true },
+  { removeComments: true },
+  { removeEmptyText: true },
+  { removeEmptyAttrs: true },
+  { removeDimensions: true },
+  { removeStyleElement: true },
+  { removeUselessDefs: true },
+  { removeXMLProcInst: true },
+  { transformsWithOnePath: true },
+  {
+    cleanupNumericValues: {
+      floatPrecision: 2,
     },
-    {
-      cleanupIDs: {
-        prefix: prefix + '-',
-        minify: false,
-      },
+  },
+  {
+    convertColors: {
+      names2hex: true,
+      rgb2hex: true,
     },
-    {
-      js2svg: {
-        pretty: true,
-      },
-    },
-    {
-      convertColors: {
-        names2hex: true,
-        rgb2hex: true,
-      },
-    },
-    {
-      removeAttrs: {
-        attrs: ['id', 'class', 'data-name', 'stroke', 'fill-rule'],
-      },
-    },
-    { removeStyleElement: true },
-    { removeScriptElement: true },
-    { transformsWithOnePath: true },
-    { removeUselessStrokeAndFill: true },
-  ],
-});
+  },
+];
 
 export const htmlminConfig = {
   minifyJS: true,
@@ -176,48 +152,25 @@ export const imageminConfig = [
   ),
   imagemin.svgo({
     plugins: [
-      { removeTitle: true },
-      { removeDesc: true },
+      ...commonSVGO,
+      { cleanupIDs: true },
       { removeViewBox: false },
-      { removeDoctype: true },
-      { removeMetadata: true },
-      { removeComments: true },
-      { removeUselessDefs: true },
-      { removeXMLProcInst: true },
-      { removeDimensions: true },
-      { removeStyleElement: true },
-      {
-        cleanupNumericValues: {
-          floatPrecision: 2,
-        },
-      },
+      { removeHiddenElems: true },
+      { removeEditorsNSData: true },
+      { removeEmptyContainers: true },
+      { removeUselessStrokeAndFill: false },
       {
         removeAttrs: {
           attrs: ['id', 'class', 'data-name'],
         },
       },
-      { sortAttrs: true },
-      { cleanupIDs: true },
-      {
-        convertColors: {
-          names2hex: true,
-          rgb2hex: true,
-        },
-      },
-      { removeEmptyContainers: true },
-      { removeUselessStrokeAndFill: false },
-      { removeEmptyText: true },
-      { removeEditorsNSData: true },
-      { removeEmptyAttrs: true },
-      { removeHiddenElems: true },
-      { transformsWithOnePath: true },
     ],
   }),
 ];
 
 export const pugConfig = plugins => ({
-  plugins,
   data: getData(),
+  plugins,
   basedir: [htmlPath, publicPath],
   debug: false,
   pretty: true,
@@ -225,6 +178,7 @@ export const pugConfig = plugins => ({
 });
 
 export const nunjucksRenderConfig = {
+  web: { async: true },
   data: getData(),
   path: [htmlPath, publicPath],
   envOptions: {

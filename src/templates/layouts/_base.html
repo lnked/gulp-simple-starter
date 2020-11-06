@@ -5,7 +5,7 @@
 {%- include "./_head.html" -%}
 
 <body class="page debug{% if body_class %} {{ body_class }}{% endif %}">
-  {%- include "_svgstore.html" -%}
+  {{ svgstore | safe }}
 
   <main class="layout-wrapper">
     {%- include "components/_header.html" -%}

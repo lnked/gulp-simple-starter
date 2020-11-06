@@ -2,6 +2,7 @@ import glob from 'glob';
 import { resolve } from 'path';
 import { existsSync, readFileSync } from 'fs';
 
+import { parseSVGStore } from './tools/svgstore';
 import { mode, environment, sourcePath, outputPath, styleFolder, development, production } from './env';
 
 export const getData = () => {
@@ -16,10 +17,12 @@ export const getData = () => {
   const styleName = development ? defaultStyles : (revisionFile && `${styleFolder}/${revisionFile}`) || defaultStyles;
 
   if (jsonExists) {
-    const rawdata = readFileSync(jsonFile);
-    const data = JSON.parse(rawdata);
+    const svgstore = parseSVGStore();
+    const rawData = readFileSync(jsonFile);
+    const data = JSON.parse(rawData);
 
     return {
+      svgstore,
       data,
       mode,
       styleName,

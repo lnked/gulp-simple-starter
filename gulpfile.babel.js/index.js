@@ -11,7 +11,6 @@ import publics from './tasks/public';
 import esBuild from './tasks/esbuild';
 import scripts from './tasks/scripts';
 import critical from './tasks/critical';
-import svgstore from './tasks/svgstore';
 import webserver from './tasks/webserver';
 import images, { cacheImages } from './tasks/images';
 
@@ -24,7 +23,6 @@ task('styles', styles);
 task('public', publics);
 task('esbuild', esBuild);
 task('scripts', scripts);
-task('svgstore', svgstore);
 task('critical', critical);
 task('images', series(cacheImages, images));
 task('templates', parallel('pug', 'html'));
