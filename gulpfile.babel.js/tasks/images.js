@@ -1,4 +1,3 @@
-import { resolve } from 'path';
 import { src, dest } from 'gulp';
 import gulpIf from 'gulp-if';
 import size from 'gulp-size';
@@ -14,24 +13,21 @@ import { reload } from './webserver';
 
 const { TINYPNG_API_KEY = '' } = environment;
 
-export const imagesWatchGlob = [
-  `${imagesPath}`,
-  `${imagesPath}/**/*.{png,jpe?g,gif,svg,webp}`,
-]
+export const imagesWatchGlob = [`${imagesPath}`, `${imagesPath}/**/*.{png,jpe?g,gif,svg,webp}`];
 
 const condition = formats => file => {
   const { history = [] } = file || {};
   const [filename] = history;
 
   return formats.includes(filename.split('.').pop() || '');
-}
+};
 
 export const cacheImages = () =>
   src([`${imagesPath}/*.*`, `${imagesPath}/**/*.*`])
     .pipe(plumber())
     .pipe(newer(imagesCache))
     .pipe(gulpIf(production, imagemin(imageminConfig, { name: 'images', verbose: true })))
-    .pipe(gulpIf((production && condition(['png']) && TINYPNG_API_KEY), tinypng(TINYPNG_API_KEY)))
+    .pipe(gulpIf(production && condition(['png']) && TINYPNG_API_KEY, tinypng(TINYPNG_API_KEY)))
     .pipe(dest(imagesCache))
     .pipe(gulpIf(condition(['jpg', 'jpeg']), webp(webpConfig)))
     .pipe(plumber.stop())
@@ -40,9 +36,11 @@ export const cacheImages = () =>
 export default () =>
   src([`${imagesCache}/**/*.*`])
     .pipe(dest(imagesOutput))
-    .pipe(size({
-      title: 'images',
-      showFiles: true,
-      showTotal: true,
-    }))
+    .pipe(
+      size({
+        title: 'images',
+        showFiles: true,
+        showTotal: true,
+      }),
+    )
     .on('end', reload);

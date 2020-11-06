@@ -12,6 +12,7 @@ release-builds
 **/styles.scss.d.ts
 **/__snapshots__
 .env.*
+!.env
 !.env.example
 
 # Compiled output

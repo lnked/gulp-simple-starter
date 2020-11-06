@@ -240,4 +240,4 @@ export const webpConfig = {
     {}),
 };
 
-export { environment } from './tools/env';
+export { environment } from './env/transform';

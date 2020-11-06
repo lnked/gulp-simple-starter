@@ -8,9 +8,9 @@ const animate = (elem, style, unit, from, to, time, prop) => {
     const step = Math.min(1, (new Date().getTime() - start) / time);
 
     if (prop) {
-      elem[style] = (from + step * (to - from)) + unit;
+      elem[style] = from + step * (to - from) + unit;
     } else {
-      elem.style[style] = (from + step * (to - from)) + unit;
+      elem.style[style] = from + step * (to - from) + unit;
     }
     if (step === 1) {
       clearInterval(timer);

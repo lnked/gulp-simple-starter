@@ -1,14 +1,7 @@
-import yargs from 'yargs';
-import { resolve, dirname } from 'path';
+import { resolve } from 'path';
 
-export const argv = yargs.argv;
-
-export const isUncss = !!argv.uncss;
-export const optimized = !!argv.optimized;
-export const production = !!argv.production;
-export const development = !!argv.development;
-
-export const mode = production ? 'production' : 'development';
+export { environment } from './transform';
+export { argv, isUncss, mode, optimized, production, development } from './args';
 
 export const sourceFolder = 'src';
 export const outputFolder = 'dist';
@@ -16,7 +9,7 @@ export const outputFolder = 'dist';
 export const styleFolder = 'css';
 export const scriptsFolder = 'js';
 
-export const rootPath = resolve(dirname(__dirname));
+export const rootPath = resolve(process.cwd());
 export const sourcePath = resolve(rootPath, sourceFolder);
 export const outputPath = resolve(rootPath, outputFolder);
 export const staticPath = resolve(outputPath, 'static');

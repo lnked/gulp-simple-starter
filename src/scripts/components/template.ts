@@ -1,5 +1,11 @@
 import Template7 from 'template7';
 
+declare global {
+  interface Window {
+    precompiledT7: any;
+  }
+}
+
 export const template = (id, data, precompile) => {
   if (typeof precompile === 'undefined') {
     precompile = false;
@@ -11,7 +17,7 @@ export const template = (id, data, precompile) => {
     const pattern = element.innerHTML;
 
     if (precompile) {
-      if (!window.precompiledT7) {
+      if (!window?.precompiledT7) {
         window.precompiledT7 = Template7.compile(pattern);
       }
 

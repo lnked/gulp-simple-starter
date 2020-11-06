@@ -6,7 +6,7 @@ export function loadScript(src, callback) {
   s.type = 'text/javascript';
   s.src = src;
 
-  s.onload = s.onreadystatechange = function() {
+  s.onload = s.onreadystatechange = function () {
     if (!r && (!this.readyState || this.readyState === 'complete')) {
       r = true;
       callback();

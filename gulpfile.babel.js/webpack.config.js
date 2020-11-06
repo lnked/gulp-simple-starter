@@ -3,8 +3,8 @@ import webpack from 'webpack';
 import ESBuildPlugin from 'esbuild-webpack-plugin';
 
 import { mode, production, rootPath, cacheDirectory } from './env';
+import { appEnvironment } from './env/transform';
 import { scriptsPath } from './config';
-import { getEnvironments } from './get-data';
 
 const scriptsSourcePath = resolve(rootPath, scriptsPath);
 
@@ -61,7 +61,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(getEnvironments()),
+      'process.env.NODE_ENV': JSON.stringify(appEnvironment),
     }),
   ],
   optimization: production ? optimizationConfig : {},

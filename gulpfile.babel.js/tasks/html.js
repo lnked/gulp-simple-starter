@@ -11,7 +11,14 @@ import nunjucksRender from 'gulp-nunjucks-render';
 import revRewrite from 'gulp-rev-rewrite';
 
 import { optimized, outputPath, production, development } from '../env';
-import { manifestPath, checkManifestPath, htmlPath, htmlFormatConfig, htmlminConfig, nunjucksRenderConfig } from '../config';
+import {
+  manifestPath,
+  checkManifestPath,
+  htmlPath,
+  htmlFormatConfig,
+  htmlminConfig,
+  nunjucksRenderConfig,
+} from '../config';
 import { reload } from './webserver';
 
 nunjucksRender.nunjucks.configure({
@@ -20,9 +27,7 @@ nunjucksRender.nunjucks.configure({
   lstripBlocks: false,
 });
 
-export const htmlWatchGlob = [
-  `${htmlPath}/**/*.{html,json}`,
-];
+export const htmlWatchGlob = [`${htmlPath}/**/*.{html,json}`];
 
 export default () => {
   checkManifestPath();
@@ -33,9 +38,9 @@ export default () => {
     .pipe(frontMatter({ property: 'data' }))
     .pipe(nunjucksRender(nunjucksRenderConfig))
     .pipe(gulpIf(optimized, htmlmin(htmlminConfig)))
-    .pipe(gulpIf((optimized || production), replace('href=/static/ ', 'href=/static/')))
+    .pipe(gulpIf(optimized || production, replace('href=/static/ ', 'href=/static/')))
     .pipe(gulpIf(!optimized, beautify.html(htmlFormatConfig)))
-    .pipe(gulpIf((optimized || production), revRewrite({ manifest })))
+    .pipe(gulpIf(optimized || production, revRewrite({ manifest })))
     .pipe(dest(resolve(outputPath)))
-    .on('end', reload)
-}
+    .on('end', reload);
+};

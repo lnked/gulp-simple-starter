@@ -5,11 +5,9 @@ const Animated = (() => {
 
   const fadeUps = document.querySelectorAll('.fade-up');
 
-  let elements = [
-    ...Array.from(fadeUps),
-  ];
+  let elements = [...Array.from(fadeUps)];
 
-  const isElementInViewport = (el) => {
+  const isElementInViewport = el => {
     if (typeof el === 'undefined') {
       return false;
     }
@@ -19,22 +17,22 @@ const Animated = (() => {
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 
-    const vertInView = (rect.top <= vh) && ((rect.top + rect.height) >= 0);
-    const horInView = (rect.left <= vw) && ((rect.left + rect.width) >= 0);
+    const vertInView = rect.top <= vh && rect.top + rect.height >= 0;
+    const horInView = rect.left <= vw && rect.left + rect.width >= 0;
 
-    return (vertInView && horInView);
+    return vertInView && horInView;
   };
 
-  const reset = (element) => {
+  const reset = element => {
     element.classList.remove('fade-up');
   };
 
-  const check = (element) => {
+  const check = element => {
     if (isElementInViewport(element)) {
       reset(element);
       elements = elements.filter(item => item !== element);
     }
-  }
+  };
 
   return {
     terminate: () => {

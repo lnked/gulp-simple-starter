@@ -13,10 +13,7 @@ import { svgStoreWatchGlob } from './svgstore';
 import { testsPatterns } from '../config';
 
 export default mode => {
-  const templatesWatchGlob = [
-    ...pugWatchGlob,
-    ...htmlWatchGlob,
-  ];
+  const templatesWatchGlob = [...pugWatchGlob, ...htmlWatchGlob];
 
   const watchConfig = {
     usePolling: true,
@@ -30,5 +27,5 @@ export default mode => {
     watch(templatesWatchGlob, watchConfig, series('templates'));
     watch(svgStoreWatchGlob, watchConfig, series('svgstore', 'templates'));
     watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, series(mode));
-  }
-}
+  };
+};

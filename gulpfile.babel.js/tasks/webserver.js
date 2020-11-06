@@ -6,7 +6,7 @@ import { outputPath } from '../env';
 const devServer = browserSync.create();
 const watchGlob = resolve(outputPath, '**/*.*');
 
-export const stream = () => browserSync.stream()
+export const stream = () => browserSync.stream();
 export const reload = () => browserSync.reload();
 
 export default () => {
@@ -18,11 +18,11 @@ export default () => {
     },
     snippetOptions: {
       rule: {
-        match: /<\/body>/i
-      }
+        match: /<\/body>/i,
+      },
     },
     reloadOnRestart: true,
   });
 
   devServer.watch(watchGlob).on('change', devServer.reload);
-}
+};

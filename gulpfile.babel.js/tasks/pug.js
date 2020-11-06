@@ -10,13 +10,11 @@ import beautify from 'gulp-beautify';
 import frontMatter from 'gulp-front-matter';
 import revRewrite from 'gulp-rev-rewrite';
 
-import { optimized, outputPath, production } from '../env'
-import { manifestPath, checkManifestPath, pugConfig, htmlPath, htmlFormatConfig, htmlminConfig } from '../config'
+import { optimized, outputPath, production } from '../env';
+import { manifestPath, checkManifestPath, pugConfig, htmlPath, htmlFormatConfig, htmlminConfig } from '../config';
 import { reload } from './webserver';
 
-export const pugWatchGlob = [
-  `${htmlPath}/**/*.{pug,json}`,
-]
+export const pugWatchGlob = [`${htmlPath}/**/*.{pug,json}`];
 
 export default () => {
   checkManifestPath();
@@ -28,7 +26,7 @@ export default () => {
     .pipe(gulpIf(optimized, htmlmin(htmlminConfig)))
     .pipe(gulpIf(optimized, replace('href=/static/ ', 'href=/static/')))
     .pipe(gulpIf(!optimized, beautify.html(htmlFormatConfig)))
-    .pipe(gulpIf((optimized || production), revRewrite({ manifest })))
+    .pipe(gulpIf(optimized || production, revRewrite({ manifest })))
     .pipe(dest(resolve(outputPath)))
-    .on('end', reload)
-}
+    .on('end', reload);
+};

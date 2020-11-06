@@ -3,7 +3,7 @@ import animate from './animate';
 const scrollTarget = ({ trigger }) => {
   const elements = document.querySelectorAll(trigger);
 
-  const handleClick = element => (e) => {
+  const handleClick = element => e => {
     e.preventDefault();
 
     const item = element.getAttribute('href') || element.getAttribute('target');
@@ -16,7 +16,7 @@ const scrollTarget = ({ trigger }) => {
       document.documentElement.scrollTop,
       target.offsetTop,
       200,
-      true
+      true,
     );
   };
 
