@@ -7262,6 +7262,14 @@ gulp-beautify@3.0.0:
     js-beautify "^1.8.8"
     through2 "^2.0.0"
 
+gulp-brotli@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-brotli/-/gulp-brotli-3.0.0.tgz#7f5a1d8a6d43cab28056f9e56f29ae071dcfe4b4"
+  integrity sha512-AkGR+FRn4Nrf9Ocx8/WXgNNX+owk4FN4xU4kRrso41DWWd9v1KXO8EyG1cGcwt4364Ax68b7ANcP9Em+/RM2OQ==
+  dependencies:
+    plugin-error "^1.0.1"
+    through2 "^3.0.1"
+
 gulp-cheerio@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/gulp-cheerio/-/gulp-cheerio-1.0.0.tgz#01c5324dba0fbe5f1b3ddce9e61ef1a8b43278d0"
@@ -17596,3 +17604,8 @@ yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
   integrity sha1-AI4G2AlDIMNy28L47XagymyKxBk=
+
+zlib@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/zlib/-/zlib-1.0.5.tgz#6e7c972fc371c645a6afb03ab14769def114fcc0"
+  integrity sha1-bnyXL8NxxkWmr7A6sUdp3vEU/MA=

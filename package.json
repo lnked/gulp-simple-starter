@@ -67,6 +67,7 @@
     "fs": "^0.0.1-security",
     "gulp": "4.0.2",
     "gulp-beautify": "3.0.0",
+    "gulp-brotli": "^3.0.0",
     "gulp-cheerio": "1.0.0",
     "gulp-clean": "0.4.0",
     "gulp-esbuild": "^0.2.5",
@@ -128,7 +129,8 @@
     "uncss": "0.17.3",
     "webpack": "5.4.0",
     "webpack-stream": "6.1.0",
-    "yargs": "16.1.0"
+    "yargs": "16.1.0",
+    "zlib": "^1.0.5"
   },
   "dependencies": {
     "@babel/polyfill": "7.12.1",

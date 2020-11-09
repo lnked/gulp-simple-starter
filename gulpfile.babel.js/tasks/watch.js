@@ -7,7 +7,7 @@ import { fontsWatchGlob } from './fonts';
 import { publicWatchGlob } from './public';
 import { stylesWatchGlob } from './styles';
 import { imagesWatchGlob } from './images';
-import { scriptsWatchGlob } from './scripts';
+import { scriptsWatchGlob } from './common.scripts';
 
 import { testsPatterns, svgStorePath } from '../config';
 

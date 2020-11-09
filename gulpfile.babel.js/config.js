@@ -1,5 +1,6 @@
 import { existsSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
+import zlib from 'zlib';
 import imagemin from 'gulp-imagemin';
 import imageminOptipng from 'imagemin-optipng';
 
@@ -129,6 +130,12 @@ export const htmlminConfig = {
   removeEmptyAttributes: true,
   removeScriptTypeAttributes: true,
   removeStyleLinkTypeAttributes: true,
+};
+
+export const brotliConfig = {
+  params: {
+    [zlib.constants.BROTLI_PARAM_QUALITY]: zlib.constants.BROTLI_MAX_QUALITY,
+  },
 };
 
 export const imageminConfig = [
