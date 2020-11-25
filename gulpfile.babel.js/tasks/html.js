@@ -12,6 +12,7 @@ import revRewrite from 'gulp-rev-rewrite';
 
 import { optimized, outputPath, production, development } from '../env';
 import {
+  componentsPath,
   manifestPath,
   checkManifestPath,
   htmlPath,
@@ -27,7 +28,7 @@ nunjucksRender.nunjucks.configure({
   lstripBlocks: false,
 });
 
-export const htmlWatchGlob = [`${htmlPath}/**/*.{html,json}`];
+export const htmlWatchGlob = [`${componentsPath}/**/*.{html,json}`, `${htmlPath}/**/*.{html,json}`];
 
 export default () => {
   checkManifestPath();

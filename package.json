@@ -70,6 +70,7 @@
     "gulp-brotli": "^3.0.0",
     "gulp-cheerio": "1.0.0",
     "gulp-clean": "0.4.0",
+    "gulp-concat": "^2.6.1",
     "gulp-esbuild": "^0.2.13",
     "gulp-eslint": "6.0.0",
     "gulp-front-matter": "1.3.0",

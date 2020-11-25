@@ -14,6 +14,7 @@ export const imagesPath = 'src/images';
 export const stylesPath = 'src/styles';
 export const scriptsPath = 'src/scripts';
 export const svgStorePath = 'src/svgstore';
+export const componentsPath = 'src/shared/components';
 export const manifestConfig = {
   merge: true,
 };
@@ -176,16 +177,17 @@ export const imageminConfig = [
 export const pugConfig = plugins => ({
   data: getData(),
   plugins,
-  basedir: [htmlPath, publicPath],
+  basedir: [componentsPath, htmlPath, publicPath],
   debug: false,
   pretty: true,
   verbose: false,
 });
 
 export const nunjucksRenderConfig = {
+  ext: '.html',
   web: { async: true },
   data: getData(),
-  path: [htmlPath, publicPath],
+  path: [componentsPath, htmlPath, publicPath],
   envOptions: {
     watch: development,
   },
