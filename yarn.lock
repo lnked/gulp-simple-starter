@@ -5532,10 +5532,10 @@ esbuild@^0.7.15:
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.22.tgz#9149b903f8128b7c45a754046c24199d76bbe08e"
   integrity sha512-B43SYg8LGWYTCv9Gs0RnuLNwjzpuWOoCaZHTWEDEf5AfrnuDMerPVMdCEu7xOdhFvQ+UqfP2MGU9lxEy0JzccA==
 
-esbuild@^0.8.16:
-  version "0.8.16"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.16.tgz#8ae34b15d938e8b8b5ac2459414fe3e7fd7dd6b2"
-  integrity sha512-HMvPNxDIhEGO/YUh8oO8oxQ1g+ttWz2anUF7NJmQglj2XfJS8zd8mP0Sb2y+jE1SVk3UjD/rYhdsEOFULN9/xw==
+esbuild@^0.8.17:
+  version "0.8.17"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.17.tgz#1c16c6d5988dcfdcf27a7e1612b7fd05e1477c54"
+  integrity sha512-ReHap+Iyn5BQF0B8F3xrLwu+j57ri5uDUw2ej9XTPAuFDebYiWwRzBY4jhF610bklveXLbCGim/8/2wQKQlu1w==
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -7356,12 +7356,12 @@ gulp-concat@^2.6.1:
     through2 "^2.0.0"
     vinyl "^2.0.0"
 
-gulp-esbuild@^0.2.15:
-  version "0.2.15"
-  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.2.15.tgz#3e4c633913d53742f2f7cf911b107a05d7f0571f"
-  integrity sha512-A4p/BJVfiuMLS4CINI3VMcjHMtxlP4ORKuuKX5U14qFMTtE6/21VmNzikeKyGRKOpGlvskp9GniOh2nIyOlB6g==
+gulp-esbuild@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.3.1.tgz#d5864da404d8f7b36878074b24929f2b208d30c8"
+  integrity sha512-KfEq4V6Ao/8FqCzImu7YpNXMD/QeW3pbZ9Vm1bjyZWN5861WNzAE6Cuz13CID3c6L8Xaws3Ilgz/bhMA6Is9Hw==
   dependencies:
-    esbuild "^0.8.16"
+    esbuild "^0.8.17"
     plugin-error "^1.0.1"
     vinyl "^2.2.1"
 
@@ -13281,10 +13281,10 @@ prettier@^2.1.1, prettier@^2.1.2:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.1.2.tgz#3050700dae2e4c8b67c4c3f666cdb8af405e1ce5"
   integrity sha512-16c7K+x4qVlJg9rEbXl7HEGmQyZlG4R9AgP+oHKRMsMsuk8s+ATStlf1NpDqyBI1HpVyfjLOeMhH2LvuNvV5Vg==
 
-prettier@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.0.tgz#8a03c7777883b29b37fb2c4348c66a78e980418b"
-  integrity sha512-yYerpkvseM4iKD/BXLYUkQV5aKt4tQPqaGW6EsZjzyu0r7sVZZNPJW4Y8MyKmicp6t42XUPcBVA+H6sB3gqndw==
+prettier@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
+  integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
 
 pretty-bytes@^4.0.2:
   version "4.0.2"
@@ -17057,10 +17057,10 @@ webpack-stream@6.1.1:
     vinyl "^2.1.0"
     webpack "^4.26.1"
 
-webpack@5.8.0:
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.8.0.tgz#65f00a181708279ff982c2d7338e1dd5505364c4"
-  integrity sha512-X2yosPiHip3L0TE+ylruzrOqSgEgsdGyBOGFWKYChcwlKChaw9VodZIUovG1oo7s0ss6e3ZxBMn9tXR+nkPThA==
+webpack@5.9.0:
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.9.0.tgz#af2e9cf9d6c7867cdcf214ea3bb5eb77aece6895"
+  integrity sha512-YnnqIV/uAS5ZrNpctSv378qV7HmbJ74DL+XfvMxzbX1bV9e7eeT6eEWU4wuUw33CNr/HspBh7R/xQlVjTEyAeA==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.45"
