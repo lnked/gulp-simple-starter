@@ -98,7 +98,7 @@
     "gulp-tinypng": "^1.0.2",
     "gulp-watch": "5.0.1",
     "gulp-webp": "^4.0.1",
-    "husky": "4.3.5",
+    "husky": "4.3.6",
     "imagemin-lint-staged": "0.4.0",
     "imagemin-optipng": "8.0.0",
     "immutable-css": "1.1.2",
