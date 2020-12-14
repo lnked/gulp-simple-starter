@@ -28,15 +28,15 @@
     ],
     "paths": {
       "*": ["*", "./*"],
-      "libs/*": ["./libs/*"],
-      "hooks/*": ["./hooks/*"],
-      "utils/*": ["./utils/*"],
-      "tools/*": ["./tools/*"],
-      "stores/*": ["./stores/*"],
-      "configs/*": ["./configs/*"],
-      "services/*": ["./services/*"],
-      "settings/*": ["./settings/*"],
-      "components/*": ["./components/*"]
+      "@libs/*": ["./libs/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@utils/*": ["./utils/*"],
+      "@tools/*": ["./tools/*"],
+      "@stores/*": ["./stores/*"],
+      "@configs/*": ["./configs/*"],
+      "@services/*": ["./services/*"],
+      "@settings/*": ["./settings/*"],
+      "@components/*": ["./components/*"]
     },
     "typeRoots": ["./node_modules/@types"]
   },

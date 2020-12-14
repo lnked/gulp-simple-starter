@@ -31,7 +31,7 @@ module.exports = {
         enforce: 'pre',
         include: scriptsSourcePath,
         options: {
-          configFile: resolve(rootPath, '.eslintrc'),
+          configFile: resolve(rootPath, '.eslintrc.js'),
         },
       },
       {
@@ -57,7 +57,18 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+    alias: {
+      '@libs': resolve(scriptsPath, 'libs'),
+      '@hooks': resolve(scriptsPath, 'hooks'),
+      '@utils': resolve(scriptsPath, 'utils'),
+      '@tools': resolve(scriptsPath, 'tools'),
+      '@stores': resolve(scriptsPath, 'stores'),
+      '@configs': resolve(scriptsPath, 'configs'),
+      '@services': resolve(scriptsPath, 'services'),
+      '@settings': resolve(scriptsPath, 'settings'),
+      '@components': resolve(scriptsPath, 'components'),
+    },
   },
   plugins: [
     new webpack.DefinePlugin({

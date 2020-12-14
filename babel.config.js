@@ -1,3 +1,7 @@
+const { resolve } = require('path');
+
+const ROOT_PATH = resolve(__dirname, 'src/scripts');
+
 module.exports = function (api) {
   const development = api.env('development');
   const loose = true;
@@ -5,28 +9,34 @@ module.exports = function (api) {
 
   return {
     presets: [
-      ['@babel/preset-env', {
-        targets: {
-          node: 'current'
+      [
+        '@babel/preset-env',
+        {
+          targets: {
+            node: 'current',
+          },
         },
-      }],
+      ],
       ['@babel/preset-typescript'],
     ],
     plugins: [
-      ['module-resolver', {
-        root: ['./src/scripts'],
-        alias: {
-          libs: './libs',
-          hooks: './hooks',
-          utils: './utils',
-          tools: './tools',
-          stores: './stores',
-          configs: './configs',
-          services: './services',
-          settings: './settings',
-          components: './components',
-        }
-      }],
+      [
+        'module-resolver',
+        {
+          root: [ROOT_PATH],
+          alias: {
+            '@libs': resolve(ROOT_PATH, 'libs'),
+            '@hooks': resolve(ROOT_PATH, 'hooks'),
+            '@utils': resolve(ROOT_PATH, 'utils'),
+            '@tools': resolve(ROOT_PATH, 'tools'),
+            '@stores': resolve(ROOT_PATH, 'stores'),
+            '@configs': resolve(ROOT_PATH, 'configs'),
+            '@services': resolve(ROOT_PATH, 'services'),
+            '@settings': resolve(ROOT_PATH, 'settings'),
+            '@components': resolve(ROOT_PATH, 'components'),
+          },
+        },
+      ],
       ['@babel/plugin-transform-runtime'],
       ['@babel/plugin-transform-async-to-generator'],
       ['@babel/plugin-transform-spread', { loose }],
@@ -37,11 +47,14 @@ module.exports = function (api) {
       ['@babel/plugin-transform-object-assign'],
       ['@babel/plugin-transform-arrow-functions'],
       ['@babel/plugin-transform-typescript'],
-      ['@babel/plugin-proposal-object-rest-spread', {
-        useBuiltIns: 'usage',
-        loose: true,
-      }],
+      [
+        '@babel/plugin-proposal-object-rest-spread',
+        {
+          useBuiltIns: 'usage',
+          loose: true,
+        },
+      ],
     ],
     comments: development,
-  }
-}
+  };
+};

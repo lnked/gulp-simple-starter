@@ -1,5 +1,5 @@
-import * as utils from 'utils/math';
-import Navigation from 'components/navigation';
+import * as utils from '@utils/math';
+import Navigation from '@components/navigation';
 
 const terminate = () => {
   Navigation.terminate();

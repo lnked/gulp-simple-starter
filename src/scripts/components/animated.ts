@@ -1,4 +1,4 @@
-import * as utils from 'utils/tik';
+import * as utils from '@utils/tik';
 
 const Animated = (() => {
   let loaded = false;
