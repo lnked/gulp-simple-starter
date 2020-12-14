@@ -35,7 +35,7 @@ task('build:webpack', build('scripts'));
 
 task('webserver', webserver);
 task('preheat:webpack', series(parallel('styles', 'scripts'), 'templates'));
-task('start:webpack', series(['clean.revision', 'preheat:webpack'], parallel('webserver', 'watch')));
+task('start:webpack', series(['clean.revision', 'preheat:webpack'], parallel('webserver', 'watch:webpack')));
 
 task('preheat', series(parallel('styles', 'esbuild'), 'templates'));
 task('default', series(['clean.revision', 'preheat'], parallel('webserver', 'watch')));
