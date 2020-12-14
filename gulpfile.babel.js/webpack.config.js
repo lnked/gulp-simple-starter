@@ -57,6 +57,7 @@ module.exports = {
     ],
   },
   resolve: {
+    mainFiles: ['index'],
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     alias: {
       '@libs': resolve(scriptsPath, 'libs'),
