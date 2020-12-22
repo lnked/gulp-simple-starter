@@ -8,7 +8,7 @@ const envName = (existsSync(`.env.${mode}`) && `.env.${mode}`) || '.env';
 
 const envFile = resolve(process.cwd(), envName);
 
-const { parsed } = dotenv.config({
+const { parsed = {} } = dotenv.config({
   path: envFile,
 });
 

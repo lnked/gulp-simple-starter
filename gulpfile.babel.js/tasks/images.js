@@ -22,12 +22,15 @@ const condition = formats => file => {
   return formats.includes(filename.split('.').pop() || '');
 };
 
+const hasTINY_PNG_KEY = Boolean(TINYPNG_API_KEY);
+const TinyPngTask = () => (hasTINY_PNG_KEY ? tinypng(TINYPNG_API_KEY) : null);
+
 export const cacheImages = () =>
   src([`${imagesPath}/*.*`, `${imagesPath}/**/*.*`])
     .pipe(plumber())
     .pipe(newer(imagesCache))
     .pipe(gulpIf(production, imagemin(imageminConfig, { name: 'images', verbose: true })))
-    .pipe(gulpIf(production && condition(['png']) && TINYPNG_API_KEY, tinypng(TINYPNG_API_KEY)))
+    .pipe(gulpIf(hasTINY_PNG_KEY && condition(['png']), TinyPngTask()))
     .pipe(dest(imagesCache))
     .pipe(gulpIf(condition(['jpg', 'jpeg']), webp(webpConfig)))
     .pipe(plumber.stop())
