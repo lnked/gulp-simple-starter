@@ -27,7 +27,7 @@ export const cacheImages = () =>
     .pipe(plumber())
     .pipe(newer(imagesCache))
     .pipe(gulpIf(production, imagemin(imageminConfig, { name: 'images', verbose: true })))
-    .pipe(gulpIf(Boolean(TINYPNG_API_KEY) && condition(['png']), tinypng(TINYPNG_API_KEY)))
+    // .pipe(gulpIf(Boolean(TINYPNG_API_KEY) && condition(['png']), tinypng(TINYPNG_API_KEY)))
     .pipe(dest(imagesCache))
     .pipe(gulpIf(condition(['jpg', 'jpeg']), webp(webpConfig)))
     .pipe(plumber.stop())
