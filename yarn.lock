@@ -3464,12 +3464,12 @@ cacheable-request@^7.0.1:
     responselike "^2.0.0"
 
 call-bind@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/call-bind/-/call-bind-1.0.0.tgz#24127054bb3f9bdcb4b1fb82418186072f77b8ce"
-  integrity sha512-AEXsYIyyDY3MCzbwdhzG3Jx1R0J2wetQyUynn6dYHAO+bg8l1k7jwZtRv4ryryFs7EP+NDlikJlVe59jr0cM2w==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/call-bind/-/call-bind-1.0.1.tgz#29aca9151f8ddcfd5b9b786898f005f425e88567"
+  integrity sha512-tvAvUwNcRikl3RVF20X9lsYmmepsovzTWeJiXjO0PkJp15uy/6xKFZOQtuiSULwYW+6ToZBprphCgWXC2dSgcQ==
   dependencies:
     function-bind "^1.1.1"
-    get-intrinsic "^1.0.0"
+    get-intrinsic "^1.0.2"
 
 caller-callsite@^2.0.0:
   version "2.0.0"
@@ -6887,7 +6887,7 @@ get-css-classes@1.1.0:
     css-selector-tokenizer "^0.5.4"
     lodash "^4.5.0"
 
-get-intrinsic@^1.0.0, get-intrinsic@^1.0.1:
+get-intrinsic@^1.0.1, get-intrinsic@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get-intrinsic/-/get-intrinsic-1.0.2.tgz#6820da226e50b24894e08859469dc68361545d49"
   integrity sha512-aeX0vrFm21ILl3+JpFFRNe9aUvp6VFZb2/CTbgLb8j75kOhvoNYjt9d8KA/tJG4gSo8nzEDedRl0h7vDmBYRVg==
@@ -10069,7 +10069,7 @@ loader-runner@^2.4.0:
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.4.0.tgz#ed47066bfe534d7e84c4c7b9998c2a75607d9357"
   integrity sha512-Jsmr89RcXGIwivFY21FcRrisYZfvLMTWx5kOLc+JTxtpBOG6xML0vzbc6SEQG2FO9/4Fc3wW4LVcB5DmGflaRw==
 
-loader-runner@^4.1.0:
+loader-runner@^4.1.0, loader-runner@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-4.2.0.tgz#d7022380d66d14c5fb1d496b89864ebcfd478384"
   integrity sha512-92+huvxMvYlMzMt0iIOukcwYBFpkYJdpl2xsZ7LrlayO7E8SOv+JJUEK17B/dJIHAOLMfh2dZZ/Y18WgmGtYNw==
@@ -17141,10 +17141,10 @@ webpack-stream@6.1.1:
     vinyl "^2.1.0"
     webpack "^4.26.1"
 
-webpack@5.11.1, webpack@^5.1.0:
-  version "5.11.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.11.1.tgz#39b2b9daeb5c6c620e03b7556ec674eaed4016b4"
-  integrity sha512-tNUIdAmYJv+nupRs/U/gqmADm6fgrf5xE+rSlSsf2PgsGO7j2WG7ccU6AWNlOJlHFl+HnmXlBmHIkiLf+XA9mQ==
+webpack@5.12.2:
+  version "5.12.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.12.2.tgz#f79574cdb7a4ef711c5f47f3d189e045a14217e5"
+  integrity sha512-HiTXBGLFQiRecP5Fwrh21aaxlEUqQdDeUaninKVKX0Dtqaf+WjKCsNcv+UVftfYXrY0bnRQHnouw1x+CPqQKFQ==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.45"
@@ -17161,7 +17161,7 @@ webpack@5.11.1, webpack@^5.1.0:
     glob-to-regexp "^0.4.1"
     graceful-fs "^4.2.4"
     json-parse-better-errors "^1.0.2"
-    loader-runner "^4.1.0"
+    loader-runner "^4.2.0"
     mime-types "^2.1.27"
     neo-async "^2.6.2"
     pkg-dir "^5.0.0"
@@ -17199,6 +17199,36 @@ webpack@^4.26.1, webpack@^4.44.1:
     terser-webpack-plugin "^1.4.3"
     watchpack "^1.7.4"
     webpack-sources "^1.4.1"
+
+webpack@^5.1.0:
+  version "5.11.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.11.1.tgz#39b2b9daeb5c6c620e03b7556ec674eaed4016b4"
+  integrity sha512-tNUIdAmYJv+nupRs/U/gqmADm6fgrf5xE+rSlSsf2PgsGO7j2WG7ccU6AWNlOJlHFl+HnmXlBmHIkiLf+XA9mQ==
+  dependencies:
+    "@types/eslint-scope" "^3.7.0"
+    "@types/estree" "^0.0.45"
+    "@webassemblyjs/ast" "1.9.1"
+    "@webassemblyjs/helper-module-context" "1.9.1"
+    "@webassemblyjs/wasm-edit" "1.9.1"
+    "@webassemblyjs/wasm-parser" "1.9.1"
+    acorn "^8.0.4"
+    browserslist "^4.14.5"
+    chrome-trace-event "^1.0.2"
+    enhanced-resolve "^5.3.1"
+    eslint-scope "^5.1.1"
+    events "^3.2.0"
+    glob-to-regexp "^0.4.1"
+    graceful-fs "^4.2.4"
+    json-parse-better-errors "^1.0.2"
+    loader-runner "^4.1.0"
+    mime-types "^2.1.27"
+    neo-async "^2.6.2"
+    pkg-dir "^5.0.0"
+    schema-utils "^3.0.0"
+    tapable "^2.1.1"
+    terser-webpack-plugin "^5.0.3"
+    watchpack "^2.0.0"
+    webpack-sources "^2.1.1"
 
 whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.5:
   version "1.0.5"

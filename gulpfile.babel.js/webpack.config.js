@@ -17,10 +17,14 @@ module.exports = {
   mode,
   target: 'web',
   devtool: production ? false : 'source-map',
-  entry: './app',
+  entry: {
+    app: './app',
+  },
   output: {
-    filename: './app.js',
+    filename: './[name].js',
     path: scriptsSourcePath,
+    pathinfo: false,
+    crossOriginLoading: 'anonymous',
   },
   context: scriptsSourcePath,
   module: {
