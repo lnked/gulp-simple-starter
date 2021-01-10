@@ -2,49 +2,29 @@
 
 {%- set nav = [
   {
-    name: "Описание",
-    slug: "description",
-    link: "../#/description"
+    name: "Пример стратегии",
+    slug: "examples",
+    link: "../#/examples"
   },
   {
-    name: "Планировки",
-    slug: "plans",
-    link: "../#/plans"
+    name: "Этапы",
+    slug: "stages",
+    link: "../#/stages"
   },
   {
-    name: "Инфраструктура",
-    slug: "infrastructure",
-    link: "../#/infrastructure"
-  },
-  {
-    name: "Ход строительства",
-    slug: "progress",
-    link: "../#/progress"
-  },
-  {
-    name: "Оплата",
-    slug: "payment",
-    link: "../#/payment"
-  },
-  {
-    name: "Документы",
-    slug: "documents",
-    link: "../#/documents"
-  },
-  {
-    name: "Контакты",
-    slug: "contacts",
-    link: "../#/contacts"
+    name: "Больше кейсов",
+    slug: "cases",
+    link: "../#/cases"
   }
 ]
 -%}
 
 <nav class="navigation" tabindex="-1" aria-label="Основное меню">
   <ul class="navigation__list">
-  {%- if nav -%}
-    {%- for item in nav -%}
-    {{ macro.navitem(item.name, item.link, loop.index, current === item.slug) }}
-    {%- endfor -%}
-  {%- endif -%}
+    {%- if nav -%}
+      {%- for item in nav -%}
+        {{ macro.navitem(item.name, item.link, loop.index, current === item.slug) }}
+      {%- endfor -%}
+    {%- endif -%}
   </ul>
 </nav>

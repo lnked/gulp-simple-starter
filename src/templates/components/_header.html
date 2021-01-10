@@ -1,13 +1,12 @@
 <header class="layout-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
   <div class="layout">
-    <a href="../index.html" class="logo" rel="home" itemprop="url" accesskey="1" data-title="LOGO">
-      <span itemprop="name">LOGO</span>
-    </a>
+    <div class="layout-header__content">
+      <a href="../index.html" class="logo" rel="home" accesskey="1" data-title="tvi.agency">tvi</a>
 
-    {%- include "./_navigation.html" -%}
-
-    <button type="button" class="sandwich j-sandwich" accesskey="=" aria-label="Меню сайта" id="sandwich">
-      <span class="sandwich__line">Меню</span>
-    </button>
+      <div class="layout-header__right-side">
+        {%- include "components/_navigation.html" -%}
+        <a href="tel:+7 989 127 37 00" class="phone">+7 989 127 37 00</a>
+      </div>
+    </div>
   </div>
 </header>
