@@ -2,20 +2,20 @@
 <!DOCTYPE html>
 <html class="no-js" lang="ru" itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
-{%- include "./_head.html" -%}
+  {%- include "./_head.html" -%}
 
-<body class="page debug{% if body_class %} {{ body_class }}{% endif %}">
-  {{ svgstore | safe }}
+  <body class="page{% if development %} debug{% endif %}{% if body_class %} {{ body_class }}{% endif %}">
+    {{ svgstore | safe }}
 
-  <main class="layout-wrapper">
-    {%- include "components/_header.html" -%}
+    <main class="layout-wrapper">
+      {%- include "components/_header.html" -%}
 
-    <div class="layout-wrapper__content">
-      {%- block content -%}{%- endblock -%}
-    </div>
-  </main>
+      <div class="layout-wrapper__content">
+        {%- block content -%}{%- endblock -%}
+      </div>
+    </main>
 
-  {%- include "components/_footer.html" -%}
-  {%- include "components/_scripts.html" -%}
-</body>
+    {%- include "components/_footer.html" -%}
+    {%- include "components/_scripts.html" -%}
+  </body>
 </html>
