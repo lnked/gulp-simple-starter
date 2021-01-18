@@ -22,8 +22,8 @@ export const getData = () => {
     const data = JSON.parse(rawData);
 
     return {
+      ...data,
       svgstore,
-      data,
       mode,
       styleName,
       production,
