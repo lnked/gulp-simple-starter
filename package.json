@@ -71,7 +71,7 @@
     "gulp-cheerio": "1.0.0",
     "gulp-clean": "0.4.0",
     "gulp-concat": "^2.6.1",
-    "gulp-esbuild": "^0.3.16",
+    "gulp-esbuild": "^0.3.17",
     "gulp-eslint": "6.0.0",
     "gulp-front-matter": "1.3.0",
     "gulp-htmlmin": "^5.0.1",
@@ -128,7 +128,7 @@
     "ts-jest": "^26.4.4",
     "typescript": "^4.1.3",
     "uncss": "0.17.3",
-    "webpack": "5.16.0",
+    "webpack": "5.17.0",
     "webpack-stream": "6.1.1",
     "yargs": "16.2.0",
     "zlib": "^1.0.5"
@@ -145,7 +145,7 @@
     "ms": "2.1.3",
     "path-to-regexp": "6.2.0",
     "store.js": "1.0.4",
-    "swiper": "6.4.7",
+    "swiper": "6.4.8",
     "template7": "^1.4.2",
     "three": "0.124.0"
   },
