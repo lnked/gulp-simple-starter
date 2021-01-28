@@ -40,6 +40,6 @@
     },
     "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["./**/*"],
+  "include": ["node_modules/@types"],
   "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }

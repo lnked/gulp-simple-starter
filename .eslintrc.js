@@ -3,17 +3,19 @@ const { environment } = require('./gulpfile.babel.js/env/transform');
 const globals = Object.keys(environment).reduce((acc, name) => ({ ...acc, [name]: true }), {
   wp: true,
   ga: true,
+  global: true,
   process: true,
 });
 
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   plugins: ['import', 'prettier'],
   extends: ['eslint:recommended', 'plugin:prettier/recommended', 'prettier/standard', 'prettier/@typescript-eslint'],
   env: {
     es6: true,
     node: true,
+    jest: true,
     jquery: true,
     browser: true,
     commonjs: true,

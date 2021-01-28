@@ -1,14 +1,15 @@
-import * as utils from '@utils/math';
 import Navigation from '@components/navigation';
 
-const terminate = () => {
-  Navigation.terminate();
-};
+const modules = [Navigation];
 
 window.addEventListener('load', () => {
-  Navigation.init();
-  console.log('init scripts: ', utils);
+  modules?.forEach(module => Object.prototype.hasOwnProperty.call(module, 'init') && module.init());
 });
+
+const terminate = () => {
+  modules?.forEach(module => Object.prototype.hasOwnProperty.call(module, 'terminate') && module.terminate());
+};
 
 window.addEventListener('unload', terminate);
 window.addEventListener('popstate', terminate);
+window.addEventListener('beforeunload', terminate);

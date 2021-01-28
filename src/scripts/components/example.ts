@@ -1,6 +1,10 @@
-const example = () => {
-  const example = document.getElementById('example');
-  example && example.classList.add('example');
-};
+const Example = (() => {
+  /* your code */
 
-export default example;
+  return {
+    terminate: () => {},
+    init: () => {},
+  };
+})();
+
+export default Example;

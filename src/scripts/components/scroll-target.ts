@@ -1,4 +1,4 @@
-import animate from './animate';
+import animate from '@tools/animate';
 
 const scrollTarget = ({ trigger }) => {
   const elements = document.querySelectorAll(trigger);
