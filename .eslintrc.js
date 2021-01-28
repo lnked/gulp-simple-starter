@@ -3,7 +3,6 @@ const { environment } = require('./gulpfile.babel.js/env/transform');
 const globals = Object.keys(environment).reduce((acc, name) => ({ ...acc, [name]: true }), {
   wp: true,
   ga: true,
-  global: true,
   process: true,
 });
 
