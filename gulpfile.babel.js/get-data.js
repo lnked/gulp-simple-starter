@@ -6,7 +6,7 @@ import { parseSVGStore } from './tools/svgstore';
 import { mode, environment, sourcePath, outputPath, styleFolder, development, production } from './env';
 
 export const getData = () => {
-  const defaultStyles = `${styleFolder}/main.css`;
+  const defaultStyles = `/static/${styleFolder}/main.css`;
 
   const jsonFile = resolve(sourcePath, 'templates/data.json');
   const jsonExists = existsSync(jsonFile);

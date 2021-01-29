@@ -13707,6 +13707,11 @@ query-string@^5.0.1:
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
+querystate@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/querystate/-/querystate-1.0.9.tgz#37f0b632f983458c8ad6174c36339628470320aa"
+  integrity sha512-Cano0UIpWpx5GQNfYz9RbdvLOi51WMkQuyvXsH6KiS10EncNjeVx2n1tFXl2++xAma3HECENkvV6+4a9Xv75lQ==
+
 querystring-es3@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/querystring-es3/-/querystring-es3-0.2.1.tgz#9ec61f79049875707d69414596fd907a4d711e73"
