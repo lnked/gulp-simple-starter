@@ -133,10 +133,9 @@ export const htmlminConfig = {
   removeStyleLinkTypeAttributes: true,
 };
 
-export const brotliConfig = {
-  params: {
-    [zlib.constants.BROTLI_PARAM_QUALITY]: zlib.constants.BROTLI_MAX_QUALITY,
-  },
+export const gzipConfig = {
+  threshold: 1024,
+  gzipOptions: { level: 5, memLevel: 1 },
 };
 
 export const imageminConfig = [

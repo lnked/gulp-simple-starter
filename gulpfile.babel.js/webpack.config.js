@@ -18,7 +18,7 @@ module.exports = {
   target: 'web',
   devtool: production ? false : 'source-map',
   entry: {
-    app: { app: './app' },
+    app: './app',
   },
   output: {
     filename: './[name].js',

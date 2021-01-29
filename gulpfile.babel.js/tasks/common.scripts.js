@@ -1,6 +1,8 @@
 import { scriptsPath } from '../config';
 
-export const scriptsWatchGlob = [`${scriptsPath}/*.{js,jsx,ts,tsx,mjs}`, `${scriptsPath}/**/*.{js,jsx,ts,tsx,mjs}`];
+export const scriptsBuildGlob = [`${scriptsPath}/*.{js,jsx,ts,tsx,mjs}`];
+
+export const scriptsWatchGlob = [...scriptsBuildGlob, `${scriptsPath}/**/*.{js,jsx,ts,tsx,mjs}`];
 
 export const replaceConfig = {
   patterns: [
