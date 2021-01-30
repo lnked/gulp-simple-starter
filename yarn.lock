@@ -9738,6 +9738,13 @@ lazy-cache@^1.0.3:
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
   integrity sha1-odePw6UEdMuAhF07O24dpJpEbo4=
 
+lazypipe@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/lazypipe/-/lazypipe-1.0.2.tgz#b66f64ed7fd8b04869f1f1bcb795dbbaa80e418c"
+  integrity sha512-CrU+NYdFHW8ElaeXCWz5IbmetiYVYq1fOCmpdAeZ8L+khbv1e7EnshyjlKqkO+pJbVPrsJQnHbVxEiLujG6qhQ==
+  dependencies:
+    stream-combiner "*"
+
 lazystream@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/lazystream/-/lazystream-1.0.0.tgz#f6995fe0f820392f61396be89462407bb77168e4"
@@ -15032,6 +15039,14 @@ stream-browserify@^2.0.1:
   dependencies:
     inherits "~2.0.1"
     readable-stream "^2.0.2"
+
+stream-combiner@*:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/stream-combiner/-/stream-combiner-0.2.2.tgz#aec8cbac177b56b6f4fa479ced8c1912cee52858"
+  integrity sha1-rsjLrBd7Vrb0+kec7YwZEs7lKFg=
+  dependencies:
+    duplexer "~0.1.1"
+    through "~2.3.4"
 
 stream-combiner@~0.0.4:
   version "0.0.4"
