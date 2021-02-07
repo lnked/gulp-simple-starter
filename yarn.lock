@@ -5709,7 +5709,7 @@ esbuild@^0.7.15:
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.22.tgz#9149b903f8128b7c45a754046c24199d76bbe08e"
   integrity sha512-B43SYg8LGWYTCv9Gs0RnuLNwjzpuWOoCaZHTWEDEf5AfrnuDMerPVMdCEu7xOdhFvQ+UqfP2MGU9lxEy0JzccA==
 
-esbuild@^0.8.40:
+esbuild@^0.8.42:
   version "0.8.42"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.42.tgz#26101cf17fe4c4602c7c767e3177cf0c538073ac"
   integrity sha512-zUtj5RMqROCCCH0vV/a7cd8YQg8I0GWBhV3A3PklWRT+oM/YwVbnrtFnITzE1otGdnXplWHWdZ4OcYiV0PN+JQ==
@@ -7470,12 +7470,12 @@ gulp-concat@^2.6.1:
     through2 "^2.0.0"
     vinyl "^2.0.0"
 
-gulp-esbuild@^0.3.22:
-  version "0.3.22"
-  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.3.22.tgz#ad42ee8e72a2098851ce9a61acd8f5065a9f1b18"
-  integrity sha512-sxiIGwmI02XqG3Q87A1EDY2SsEetntWk7P2UGJ/vTqEzLK7ySUQrJ1ngMHZ1jxFWjql2YBO7oqHLVHx7nB3b8Q==
+gulp-esbuild@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.4.0.tgz#69e3a94bfca03f13875e7f57fa891b5bdf03999d"
+  integrity sha512-zZCo3hkGFrgB4PjM4AEj+2NeVSbUCG87eyffOvgWjU2hignS7+CG64Y8luKHcAe/jlRSn/AXR5njdUIQ+KS0Cw==
   dependencies:
-    esbuild "^0.8.40"
+    esbuild "^0.8.42"
     plugin-error "^1.0.1"
     vinyl "^2.2.1"
 
@@ -17090,10 +17090,10 @@ webpack-stream@6.1.2:
     vinyl "^2.1.0"
     webpack "^4.26.1"
 
-webpack@5.21.1:
-  version "5.21.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.21.1.tgz#a5a13965187deeaa674a0ecea219b61060a2c38f"
-  integrity sha512-H/fjQiDETEZDKoZm/LhvDBxOIKf9rfOdqb2pKTHRvBFMIRtwAwYlPCgBd0gc5xiDG5DqkxAiFZgAF/4H41wMuQ==
+webpack@5.21.2:
+  version "5.21.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.21.2.tgz#647507e50d3637695be28af58a6a8246050394e7"
+  integrity sha512-xHflCenx+AM4uWKX71SWHhxml5aMXdy2tu/vdi4lClm7PADKxlyDAFFN1rEFzNV0MAoPpHtBeJnl/+K6F4QBPg==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.46"
