@@ -6,6 +6,7 @@ public/server
 yarn-*
 report.*
 coverage
+.husky
 .coverage
 .deepcheck
 release-builds
