@@ -1,7 +1,5 @@
 const { defaults } = require('jest-config');
 
-console.log(defaults.moduleFileExtensions);
-
 module.exports = {
   testEnvironment: 'node',
 
