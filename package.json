@@ -126,7 +126,7 @@
     "pug": "3.0.0",
     "rsync": "^0.6.1",
     "size-limit": "4.9.2",
-    "sort-css-media-queries": "1.5.2",
+    "sort-css-media-queries": "1.5.3",
     "stylelint": "13.10.0",
     "stylelint-config-recommended": "3.0.0",
     "stylelint-order": "4.1.0",

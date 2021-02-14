@@ -15044,10 +15044,10 @@ socket.io@2.4.0:
     socket.io-client "2.4.0"
     socket.io-parser "~3.4.0"
 
-sort-css-media-queries@1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/sort-css-media-queries/-/sort-css-media-queries-1.5.2.tgz#68df401e3fbb2bfa049f6caa738486cfc5c65880"
-  integrity sha512-ytWRP2PfWO2OYF79rbn2u58y7L7LeW+KjAqzVSVarvqMt0YkCS3YlohpULL+vIRm4BW87D67tYorw73J07Gy8Q==
+sort-css-media-queries@1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/sort-css-media-queries/-/sort-css-media-queries-1.5.3.tgz#3fb99680e3a95cbebb7f24b515125721aea0ac3f"
+  integrity sha512-2ji2VOHLUKaxsChFCBWHeJz33NJazcqHoKgziA/NWXlc4AyED0409TI+qxxteakPYlRYw7yvDlSBVASaeKckQQ==
 
 sort-keys-length@^1.0.0:
   version "1.0.1"
