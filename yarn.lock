@@ -5899,10 +5899,10 @@ esbuild@^0.7.15:
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.22.tgz#9149b903f8128b7c45a754046c24199d76bbe08e"
   integrity sha512-B43SYg8LGWYTCv9Gs0RnuLNwjzpuWOoCaZHTWEDEf5AfrnuDMerPVMdCEu7xOdhFvQ+UqfP2MGU9lxEy0JzccA==
 
-esbuild@^0.8.50:
-  version "0.8.51"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.51.tgz#1a59f1fee34892f143b7009081f9b4901a564b93"
-  integrity sha512-MVIom8fgL1+B6iGqWtrG7QJ1gqd64BycxounlsX1kR/IcIITaSlTo7gghKpg4a+bnxkpo0dwcikuvk4MVSA9ww==
+esbuild@^0.8.51:
+  version "0.8.52"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.52.tgz#6dabf11c517af449a96d66da20dfc204ee7b5294"
+  integrity sha512-b5KzFweLLXoXQwdC/e2+Z80c8uo2M5MgP7yQEEebkFw6In4T9CvYcNoM2ElvJt8ByO04zAZUV0fZkXmXoi2s9A==
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -7675,12 +7675,12 @@ gulp-concat@^2.6.1:
     through2 "^2.0.0"
     vinyl "^2.0.0"
 
-gulp-esbuild@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.5.0.tgz#99753223b51e2256620970dec10090a9a66b00e4"
-  integrity sha512-ULsDewh1aZmX17ry8WpU9zBo/sqwaSNXj5yY9nZdZnkhkQajb2OlHMQWXv7yC/3HNQ8fQlURjvI7KxUVu7xEDw==
+gulp-esbuild@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.5.1.tgz#9928230caa20c69bda68921956781d05506e3710"
+  integrity sha512-Im0+/Og2XOpWd7JjWxPos0zYL24QZN8FuP/CZ/LcTQCKu0eR1LoyS0hdYRLNLNBS/bJ9OhPigsyktk+FW5FTkw==
   dependencies:
-    esbuild "^0.8.50"
+    esbuild "^0.8.51"
     plugin-error "^1.0.1"
     vinyl "^2.2.1"
 
@@ -17339,10 +17339,10 @@ webpack-stream@6.1.2:
     vinyl "^2.1.0"
     webpack "^4.26.1"
 
-webpack@5.24.1:
-  version "5.24.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.24.1.tgz#6b7730bfba1ee94b05d05ef7c32743a35105a744"
-  integrity sha512-eg+6OIt6npUSwbhRQY6XffAixEUSARBf+WAWOxrZwOB4jRbbpMXlridFy/Yt7N0U20Ry1vp/nnDbtN7l1rUdIA==
+webpack@5.24.2:
+  version "5.24.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.24.2.tgz#33790dad631e8b639f4246d762e257720875fe54"
+  integrity sha512-uxxKYEY4kMNjP+D2Y+8aw5Vd7ar4pMuKCNemxV26ysr1nk0YDiQTylg9U3VZIdkmI0YHa0uC8ABxL+uGxGWWJg==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.46"
