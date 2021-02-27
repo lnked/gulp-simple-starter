@@ -12,8 +12,19 @@ const { parsed = {} } = dotenv.config({
   path: envFile,
 });
 
+const envVariable = value => {
+  if (['true', 'false'].includes(value)) {
+    return value === 'true';
+  }
+
+  return JSON.stringify(value);
+};
+
 const environment = Object.entries(parsed).reduce(
-  (acc, [name, value]) => ({ ...acc, [name]: JSON.stringify(value) }),
+  (acc, [name, value]) => ({
+    ...acc,
+    [name]: envVariable(value),
+  }),
   {},
 );
 
