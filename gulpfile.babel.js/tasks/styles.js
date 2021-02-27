@@ -9,7 +9,6 @@ import postcss from 'gulp-postcss';
 import sassGlob from 'gulp-sass-glob';
 import sourcemaps from 'gulp-sourcemaps';
 import modifyCssUrls from 'gulp-modify-css-urls';
-import replaceTask from 'gulp-replace-task';
 
 import { rootPath, staticPathStyles, nodeModulesPath, production, development } from '../env';
 import { componentsPath, stylesPath, manifestPath, manifestConfig } from '../config';
@@ -50,16 +49,6 @@ export default () =>
     )
     .pipe(postcss(postCSSCallback))
     .pipe(plumber.stop())
-    .pipe(
-      replaceTask({
-        patterns: [
-          {
-            match: 'timestamp',
-            replacement: new Date().getTime(),
-          },
-        ],
-      }),
-    )
     .pipe(gulpIf(production, rev()))
     .pipe(gulpIf(development, sourcemaps.write('./')))
     .pipe(dest(staticPathStyles))

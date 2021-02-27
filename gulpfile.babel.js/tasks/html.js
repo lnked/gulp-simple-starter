@@ -39,7 +39,7 @@ export default () => {
     .pipe(frontMatter({ property: 'data' }))
     .pipe(nunjucksRender(nunjucksRenderConfig))
     .pipe(gulpIf(optimized, htmlmin(htmlminConfig)))
-    .pipe(gulpIf(optimized || production, replace('href=/static/ ', 'href=/static/')))
+    .pipe(gulpIf(optimized || production, replace('href=/static/ ', 'href=/')))
     .pipe(gulpIf(!optimized, beautify.html(htmlFormatConfig)))
     .pipe(gulpIf(optimized || production, revRewrite({ manifest })))
     .pipe(dest(resolve(outputPath)))
