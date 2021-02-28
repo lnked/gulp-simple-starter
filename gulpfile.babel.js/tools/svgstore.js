@@ -107,9 +107,9 @@ const svgo = new SVGO({
     {
       removeDimensions: true,
     },
-    {
-      removeAttrs: { attrs: '(stroke|fill)' },
-    },
+    // {
+    //   removeAttrs: { attrs: '(stroke|fill)' },
+    // },
   ],
 });
 
