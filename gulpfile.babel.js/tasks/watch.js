@@ -7,6 +7,7 @@ import { fontsWatchGlob } from './fonts';
 import { publicWatchGlob } from './public';
 import { stylesWatchGlob } from './styles';
 import { imagesWatchGlob } from './images';
+import { transferWatchGlob } from './transfer';
 import { scriptsWatchGlob } from './common.scripts';
 
 import { testsPatterns, svgStorePath } from '../config';
@@ -25,6 +26,7 @@ export default mode => {
     watch(publicWatchGlob, watchConfig, series('public'));
     watch(imagesWatchGlob, watchConfig, series('images'));
     watch(stylesWatchGlob, watchConfig, series('styles'));
+    watch(transferWatchGlob, watchConfig, series('transfer'));
     watch(templatesWatchGlob, watchConfig, series('templates'));
     watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, series(mode));
   };

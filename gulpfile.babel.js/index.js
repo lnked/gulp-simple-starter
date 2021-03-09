@@ -11,6 +11,7 @@ import publics from './tasks/public';
 import esBuild from './tasks/esbuild';
 import scripts from './tasks/scripts';
 import critical from './tasks/critical';
+import transfer from './tasks/transfer';
 import webserver from './tasks/webserver';
 import images, { cacheImages } from './tasks/images';
 
@@ -24,6 +25,7 @@ task('public', publics);
 task('esbuild', esBuild);
 task('scripts', scripts);
 task('critical', critical);
+task('transfer', transfer);
 task('images', series(cacheImages, images));
 task('templates', parallel('pug', 'html'));
 

@@ -1,6 +1,5 @@
 import { existsSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
-import zlib from 'zlib';
 import imagemin from 'gulp-imagemin';
 import imageminOptipng from 'imagemin-optipng';
 
@@ -15,6 +14,7 @@ export const stylesPath = 'src/styles';
 export const scriptsPath = 'src/scripts';
 export const svgStorePath = 'src/svgstore';
 export const componentsPath = 'src/shared/components';
+export const transferPaths = ['src/mediadata'];
 export const manifestConfig = {
   merge: true,
 };
@@ -194,7 +194,8 @@ export const nunjucksRenderConfig = {
 
 export const webpConfig = {
   ...((production && {
-    quality: 80,
+    lossless: true,
+    quality: 50,
     method: 6,
   }) ||
     {}),
