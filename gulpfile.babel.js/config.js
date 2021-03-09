@@ -135,7 +135,11 @@ export const htmlminConfig = {
 
 export const gzipConfig = {
   threshold: 1024,
-  gzipOptions: { level: 5, memLevel: 1 },
+  gzipOptions: {
+    level: 9,
+    memLevel: 1,
+    skipGrowingFiles: true,
+  },
 };
 
 export const imageminConfig = [

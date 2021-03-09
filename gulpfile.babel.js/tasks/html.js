@@ -42,6 +42,7 @@ export default () => {
     .pipe(gulpIf(optimized || production, replace('href=/static/ ', 'href=/')))
     .pipe(gulpIf(!optimized, beautify.html(htmlFormatConfig)))
     .pipe(gulpIf(optimized || production, revRewrite({ manifest })))
+    .pipe(replace('.js.gz', '.js'))
     .pipe(dest(resolve(outputPath)))
     .on('end', reload);
 };
