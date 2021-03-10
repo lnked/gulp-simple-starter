@@ -16,7 +16,7 @@ const optimizationConfig = {
 module.exports = {
   mode,
   target: 'web',
-  devtool: production ? false : 'source-map',
+  devtool: production ? 'source-map' : 'eval-cheap-module-source-map',
   entry: {
     app: './app',
   },

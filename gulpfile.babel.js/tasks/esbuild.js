@@ -4,7 +4,6 @@ import size from 'gulp-size';
 import rigger from 'gulp-rigger';
 import gulpEsBuild from 'gulp-esbuild';
 
-import { development } from '../env';
 import { scriptsPath } from '../config';
 import { appEnvironment } from '../env/transform';
 import { reload } from './webserver';
@@ -16,7 +15,7 @@ export default () =>
     .pipe(rigger())
     .pipe(
       gulpEsBuild({
-        sourcemap: development,
+        sourcemap: true,
         outdir: '../js',
         bundle: true,
         minify: true,
