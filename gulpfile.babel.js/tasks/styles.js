@@ -2,7 +2,6 @@ import { src, dest } from 'gulp';
 import rev from 'gulp-rev';
 import size from 'gulp-size';
 import sass from 'gulp-sass';
-import concat from 'gulp-concat';
 import gulpIf from 'gulp-if';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
@@ -24,7 +23,6 @@ export default () =>
     .pipe(gulpIf(SOURCEMAPS_ENABLED, sourcemaps.init()))
     .pipe(plumber())
     .pipe(sassGlob())
-    .pipe(concat('main.css'))
     .pipe(
       sass({
         includePaths: [stylesPath, nodeModulesPath],
