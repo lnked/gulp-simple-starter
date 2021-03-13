@@ -5,18 +5,21 @@ import sass from 'gulp-sass';
 import gulpIf from 'gulp-if';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
+import purgecss from 'gulp-purgecss';
 import sassGlob from 'gulp-sass-glob';
 import sourcemaps from 'gulp-sourcemaps';
 import modifyCssUrls from 'gulp-modify-css-urls';
 
-import { rootPath, staticPathStyles, nodeModulesPath, production, development } from '../env';
-import { componentsPath, stylesPath, manifestPath, manifestConfig, environment } from '../config';
+import { rootPath, staticPathStyles, nodeModulesPath, production } from '../env';
+import { componentsPath, stylesPath, manifestPath, manifestConfig, environment, purgeCSSConfig } from '../config';
 import { postCSSCallback } from '../postcss.callback';
 import { stream } from './webserver';
 
-export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`, `${componentsPath}/**/*.s?(a|c)?ss`];
+// export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`, `${componentsPath}/**/*.s?(a|c)?ss`];
+export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`];
 
 const { SOURCEMAPS_ENABLED } = environment;
+console.log('%cconfig.js line:104 purgeCSSConfig', 'color: #26bfa5;', purgeCSSConfig);
 
 export default () =>
   src([...stylesWatchGlob, `!${stylesPath}/**/_*.*`])
@@ -46,6 +49,15 @@ export default () =>
         prepend: '../',
         append: '',
       }),
+    )
+    .pipe(
+      gulpIf(
+        production,
+        purgecss({
+          content: purgeCSSConfig.templates,
+          safelist: purgeCSSConfig.safelist,
+        }),
+      ),
     )
     .pipe(postcss(postCSSCallback))
     .pipe(plumber.stop())

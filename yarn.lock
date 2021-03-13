@@ -3986,7 +3986,7 @@ commander@^5.1.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-5.1.0.tgz#46abbd1652f8e059bddaef99bbdcb2ad9cf179ae"
   integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
 
-commander@^6.2.0:
+commander@^6.0.0, commander@^6.2.0:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
@@ -7354,6 +7354,16 @@ gulp-pugbem@2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/gulp-pugbem/-/gulp-pugbem-2.2.4.tgz#161929c1e0d575eb82662eea99570119979688e3"
   integrity sha512-fpjXUvn3SKvR9rOYtGMMrp/mO8umTTTZGur0I45/DutdfPuoJ5i47/m6svD0ZJgWVBOAZFmeu4P7tSirBBO/pw==
+
+gulp-purgecss@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/gulp-purgecss/-/gulp-purgecss-4.0.2.tgz#3c76fb74a6945644bd81ee15b0c52c9e8b740eff"
+  integrity sha512-vPHYAsvfeub+F9yN9SUWUpqRfzwjPVBq+EjPk4b5SUPynGbensLJJFwODpx2X5i9k+Yp4aRl7ccebrmwrBd9AQ==
+  dependencies:
+    glob "^7.1.6"
+    plugin-error "^1.0.1"
+    purgecss "^4.0.2"
+    through2 "^4.0.1"
 
 gulp-rename@^2.0.0:
   version "2.0.0"
@@ -12998,7 +13008,7 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.1
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^8.2.6, postcss@^8.2.8:
+postcss@^8.2.1, postcss@^8.2.6, postcss@^8.2.8:
   version "8.2.8"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.8.tgz#0b90f9382efda424c4f0f69a2ead6f6830d08ece"
   integrity sha512-1F0Xb2T21xET7oQV9eKuctbM9S7BC0fetoHCc4H13z0PT6haiRLP4T0ZY4XWh7iLP0usgqykT6p9B2RtOf4FPw==
@@ -13450,6 +13460,16 @@ puppeteer@2.1.1:
     proxy-from-env "^1.0.0"
     rimraf "^2.6.1"
     ws "^6.1.0"
+
+purgecss@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-4.0.2.tgz#7281f233c08b4f41e1c5d85c66a2d064e6d7e1b3"
+  integrity sha512-6J1zOEAZJX6VbfcaJHgdQf4uPhxVXvHz7dGgWYXLOI9q7QFZ5feh8NZ2+G3ysii/Sr8OyUe5yhQ5Z/xZ5gIRnQ==
+  dependencies:
+    commander "^6.0.0"
+    glob "^7.0.0"
+    postcss "^8.2.1"
+    postcss-selector-parser "^6.0.2"
 
 q@^1.1.2:
   version "1.5.1"
@@ -15698,7 +15718,7 @@ through2@^3.0.0, through2@^3.0.1:
     inherits "^2.0.4"
     readable-stream "2 || 3"
 
-through2@^4.0.2:
+through2@^4.0.1, through2@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/through2/-/through2-4.0.2.tgz#a7ce3ac2a7a8b0b966c80e7c49f0484c3b239764"
   integrity sha512-iOqSav00cVxEEICeD7TjLB1sueEL+81Wpzp2bY17uZjZN0pWZPuo4suZ/61VujxmqSGFfgOcNuTZ85QJwNZQpw==

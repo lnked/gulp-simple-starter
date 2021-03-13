@@ -10,7 +10,8 @@ import postcssFixes from 'postcss-fixes';
 import postcssShortSpacing from 'postcss-short-spacing';
 import pseudoelements from 'postcss-pseudoelements';
 
-import { isUncss, outputFolder, production } from './env';
+import { isUncss, production } from './env';
+import { purgeCSSConfig } from './config';
 
 export const postCSSCallback = file => ({
   plugins: [
@@ -23,8 +24,8 @@ export const postCSSCallback = file => ({
     animation(),
     ...(isUncss && [
       uncss({
-        html: [`${outputFolder}/**/*.html`],
-        ignore: ['.fade', '.active', '.disabled', '.visible', '.hidden'],
+        html: purgeCSSConfig.templates,
+        ignore: purgeCSSConfig.safelist,
       }),
     ]),
     ...(production && [

@@ -4,7 +4,7 @@ import imagemin from 'gulp-imagemin';
 import imageminOptipng from 'imagemin-optipng';
 
 import { getData } from './get-data';
-import { cacheDirectory, development, production } from './env';
+import { cacheDirectory, development, templatesPath, production } from './env';
 
 export const publicPath = 'public';
 export const htmlPath = 'src/templates';
@@ -90,6 +90,13 @@ export const htmlFormatConfig = {
 };
 
 export const testsPatterns = ['**/__tests__/**/*.(j|t)s?(x)', '**/?(*.)+(spec|test).(j|t)s?(x)'];
+
+const safelistClasses = ['fade', 'active', 'disabled', 'visible', 'hidden', 'animate', 'animated'];
+
+export const purgeCSSConfig = {
+  templates: [`/${templatesPath}/*.html`, `/${templatesPath}/**/*.html`],
+  safelist: safelistClasses.map(name => [`.is-${name}`, `.${name}`]).flat(),
+};
 
 export const commonSVGO = [
   { sortAttrs: true },
