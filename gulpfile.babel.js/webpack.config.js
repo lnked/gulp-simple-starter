@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { resolve } from 'path';
 import webpack from 'webpack';
 import ESBuildPlugin from 'esbuild-webpack-plugin';
@@ -13,13 +14,25 @@ const optimizationConfig = {
   minimizer: [new ESBuildPlugin()],
 };
 
+const entries = fs.readdirSync(scriptsSourcePath).filter(file => {
+  const name = file.toLowerCase();
+  const isFile = fs.statSync(resolve(scriptsSourcePath, file)).isFile();
+
+  if (isFile && (name.includes('.js') || name.includes('.ts'))) {
+    return true;
+  }
+
+  return false;
+});
+
 module.exports = {
   mode,
   target: 'web',
   devtool: production ? 'source-map' : 'eval-cheap-module-source-map',
-  entry: {
-    app: './app',
-  },
+  entry: entries.reduce(
+    (acc, name) => ({ ...acc, [name.replace(/\.(t|j)s/, '')]: `./${name.replace(/\.(t|j)s/, '')}` }),
+    {},
+  ),
   output: {
     filename: './[name].js',
     path: scriptsSourcePath,
