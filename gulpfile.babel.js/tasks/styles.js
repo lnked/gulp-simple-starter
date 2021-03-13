@@ -19,7 +19,6 @@ import { stream } from './webserver';
 export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`];
 
 const { SOURCEMAPS_ENABLED } = environment;
-console.log('%cconfig.js line:104 purgeCSSConfig', 'color: #26bfa5;', purgeCSSConfig);
 
 export default () =>
   src([...stylesWatchGlob, `!${stylesPath}/**/_*.*`])
