@@ -2,10 +2,11 @@ import fs from 'fs';
 import { resolve } from 'path';
 import webpack from 'webpack';
 import ESBuildPlugin from 'esbuild-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import { mode, production, rootPath, cacheDirectory } from './env';
 import { appEnvironment } from './env/transform';
-import { scriptsPath } from './config';
+import { environment, scriptsPath } from './config';
 
 const scriptsSourcePath = resolve(rootPath, scriptsPath);
 
@@ -25,18 +26,53 @@ const entries = fs.readdirSync(scriptsSourcePath).filter(file => {
   return false;
 });
 
+const { SOURCEMAPS_ENABLED } = environment;
+
+const devtool = (() => {
+  if (production) {
+    if (SOURCEMAPS_ENABLED) {
+      return 'source-map';
+    }
+
+    return false;
+  }
+
+  return 'eval-cheap-module-source-map';
+})();
+
+const alias = [
+  'libs',
+  'hooks',
+  'utils',
+  'tools',
+  'types',
+  'stores',
+  'configs',
+  'helpers',
+  'services',
+  'settings',
+  'constants',
+  'components',
+].reduce(
+  (list, path) => ({
+    ...list,
+    [`@${path}`]: resolve(scriptsPath, path),
+  }),
+  {},
+);
+
 module.exports = {
   mode,
+  devtool,
   target: 'web',
-  devtool: production ? 'source-map' : 'eval-cheap-module-source-map',
   entry: entries.reduce(
     (acc, name) => ({ ...acc, [name.replace(/\.(t|j)s/, '')]: `./${name.replace(/\.(t|j)s/, '')}` }),
     {},
   ),
   output: {
-    filename: './[name].js',
     path: scriptsSourcePath,
     pathinfo: false,
+    filename: './[name].js',
     crossOriginLoading: 'anonymous',
   },
   context: scriptsSourcePath,
@@ -74,27 +110,20 @@ module.exports = {
     ],
   },
   resolve: {
+    alias,
     mainFiles: ['index'],
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
-    alias: {
-      '@libs': resolve(scriptsPath, 'libs'),
-      '@hooks': resolve(scriptsPath, 'hooks'),
-      '@utils': resolve(scriptsPath, 'utils'),
-      '@tools': resolve(scriptsPath, 'tools'),
-      '@types': resolve(scriptsPath, 'types'),
-      '@stores': resolve(scriptsPath, 'stores'),
-      '@configs': resolve(scriptsPath, 'configs'),
-      '@helpers': resolve(scriptsPath, 'helpers'),
-      '@services': resolve(scriptsPath, 'services'),
-      '@settings': resolve(scriptsPath, 'settings'),
-      '@constants': resolve(scriptsPath, 'constants'),
-      '@components': resolve(scriptsPath, 'components'),
-    },
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(appEnvironment),
     }),
+    ...((production && [
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+      }),
+    ]) ||
+      []),
   ],
   optimization: production ? optimizationConfig : {},
 };
