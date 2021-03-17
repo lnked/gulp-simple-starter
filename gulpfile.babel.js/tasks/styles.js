@@ -10,15 +10,14 @@ import sassGlob from 'gulp-sass-glob';
 import sourcemaps from 'gulp-sourcemaps';
 import modifyCssUrls from 'gulp-modify-css-urls';
 
-import { rootPath, staticPathStyles, nodeModulesPath, production } from '../env';
-import { componentsPath, stylesPath, manifestPath, manifestConfig, environment, purgeCSSConfig } from '../config';
+import { rootPath, staticPathStyles, nodeModulesPath, production, env } from '../env';
+import { stylesPath, manifestPath, manifestConfig, purgeCSSConfig } from '../config';
 import { postCSSCallback } from '../postcss.callback';
 import { stream } from './webserver';
 
-// export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`, `${componentsPath}/**/*.s?(a|c)?ss`];
 export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`];
 
-const { SOURCEMAPS_ENABLED } = environment;
+const { SOURCEMAPS_ENABLED } = env;
 
 export default () =>
   src([...stylesWatchGlob, `!${stylesPath}/**/_*.*`])

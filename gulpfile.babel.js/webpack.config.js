@@ -4,9 +4,9 @@ import webpack from 'webpack';
 import ESBuildPlugin from 'esbuild-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-import { mode, production, rootPath, cacheDirectory } from './env';
+import { mode, production, rootPath, cacheDirectory, env } from './env';
 import { appEnvironment } from './env/transform';
-import { environment, scriptsPath } from './config';
+import { scriptsPath } from './config';
 
 const scriptsSourcePath = resolve(rootPath, scriptsPath);
 
@@ -26,7 +26,7 @@ const entries = fs.readdirSync(scriptsSourcePath).filter(file => {
   return false;
 });
 
-const { SOURCEMAPS_ENABLED } = environment;
+const { SOURCEMAPS_ENABLED } = env;
 
 const devtool = (() => {
   if (production) {

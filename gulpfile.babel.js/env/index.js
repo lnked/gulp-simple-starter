@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 
-export { appEnvironment as environment } from './transform';
+export { appEnvironment as environment, environment as env } from './transform';
 export { argv, isUncss, mode, optimized, production, development } from './args';
 
 export const sourceFolder = 'src';

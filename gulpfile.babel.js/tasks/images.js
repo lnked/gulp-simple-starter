@@ -7,11 +7,11 @@ import plumber from 'gulp-plumber';
 import imagemin from 'gulp-imagemin';
 import tinypng from 'gulp-tinypng';
 
-import { imagesCache, imagesOutput, production } from '../env';
-import { imagesPath, imageminConfig, webpConfig, environment } from '../config';
+import { imagesPath, imageminConfig, webpConfig } from '../config';
+import { imagesCache, imagesOutput, production, env } from '../env';
 import { reload } from './webserver';
 
-const { TINYPNG_API_KEY = '', TINYPNG_ENABLED } = environment;
+const { TINYPNG_API_KEY = '', TINYPNG_ENABLED = false } = env;
 
 export const imagesWatchGlob = [`${imagesPath}`, `${imagesPath}/**/*.{png,jpe?g,gif,svg,webp}`];
 
