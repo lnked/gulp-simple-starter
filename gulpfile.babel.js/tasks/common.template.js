@@ -11,7 +11,7 @@ import { production, env } from '../env';
 
 const { GZIP_ENABLED = false, MINIFY_HTML = false } = env;
 
-export const templateTasks = (() => {
+export const templateTasks = () => {
   checkManifestPath();
   const manifest = readFileSync(manifestPath);
 
@@ -19,6 +19,6 @@ export const templateTasks = (() => {
     .pipe(gulpIf, MINIFY_HTML, htmlmin(htmlminConfig))
     .pipe(gulpIf, MINIFY_HTML, replace('href=/static/ ', 'href=/static/'))
     .pipe(gulpIf, !MINIFY_HTML, beautify.html(htmlFormatConfig))
-    .pipe(gulpIf, production, revRewrite({ manifest }))
+    .pipe(gulpIf, production, revRewrite({ manifest: JSON.stringify(JSON.parse(manifest)) }))
     .pipe(gulpIf, GZIP_ENABLED, replace('.js.gz', '.js'));
-})();
+};

@@ -22,6 +22,6 @@ export default () =>
     .pipe(rigger())
     .pipe(frontMatter({ property: 'data' }))
     .pipe(nunjucksRender(nunjucksRenderConfig))
-    .pipe(templateTasks())
+    .pipe(templateTasks()())
     .pipe(dest(resolve(outputPath)))
     .on('end', reload);

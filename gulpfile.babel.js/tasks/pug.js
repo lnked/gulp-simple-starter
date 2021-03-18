@@ -15,6 +15,6 @@ export default () =>
   src([`${htmlPath}/pages/**/*.pug`, `!${htmlPath}/**/_*.*`])
     .pipe(frontMatter({ property: 'data' }))
     .pipe(pug(pugConfig([pugBem])))
-    .pipe(templateTasks())
+    .pipe(templateTasks()())
     .pipe(dest(resolve(outputPath)))
     .on('end', reload);
