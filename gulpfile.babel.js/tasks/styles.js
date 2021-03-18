@@ -1,5 +1,5 @@
 import { src, dest } from 'gulp';
-import rev from 'gulp-rev';
+import rev from 'gulp-rev-all';
 import size from 'gulp-size';
 import sass from 'gulp-sass';
 import gulpIf from 'gulp-if';
@@ -11,13 +11,13 @@ import sourcemaps from 'gulp-sourcemaps';
 import modifyCssUrls from 'gulp-modify-css-urls';
 
 import { rootPath, staticPathStyles, nodeModulesPath, production, env } from '../env';
-import { stylesPath, manifestPath, manifestConfig, purgeCSSConfig } from '../config';
+import { stylesPath, revOptions, purgeCSSConfig } from '../config';
 import { postCSSCallback } from '../postcss.callback';
 import { stream } from './webserver';
 
 export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`];
 
-const { SOURCEMAPS_ENABLED } = env;
+const { SOURCEMAPS_ENABLED = false, REV_NAME_ENABLED = false } = env;
 
 export default () =>
   src([...stylesWatchGlob, `!${stylesPath}/**/_*.*`])
@@ -58,12 +58,12 @@ export default () =>
       ),
     )
     .pipe(postcss(postCSSCallback))
-    .pipe(plumber.stop())
-    .pipe(gulpIf(production, rev()))
+    // .pipe(gulpIf(REV_NAME_ENABLED, rev.revision(revOptions)))
     .pipe(gulpIf(SOURCEMAPS_ENABLED, sourcemaps.write('./')))
     .pipe(dest(staticPathStyles))
-    .pipe(gulpIf(production, rev.manifest(manifestPath, manifestConfig)))
-    .pipe(gulpIf(production, dest(rootPath)))
+    // .pipe(gulpIf(REV_NAME_ENABLED, rev.manifestFile()))
+    // .pipe(gulpIf(REV_NAME_ENABLED, dest(rootPath)))
+    .pipe(plumber.stop())
     .pipe(
       size({
         title: 'styles',

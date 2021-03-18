@@ -91,6 +91,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-replace": "1.0.0",
     "gulp-rev": "^9.0.0",
+    "gulp-rev-all": "^2.0.3",
     "gulp-rev-rewrite": "^4.0.0",
     "gulp-rigger": "0.5.8",
     "gulp-sass": "^4.1.0",

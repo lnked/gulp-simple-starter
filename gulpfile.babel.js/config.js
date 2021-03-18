@@ -1,9 +1,10 @@
 import { existsSync, writeFileSync } from 'fs';
-import { resolve } from 'path';
+import { resolve, join } from 'path';
 import imagemin from 'gulp-imagemin';
 import imageminOptipng from 'imagemin-optipng';
 
 import { getData } from './get-data';
+import { appEnvironment } from './env/transform';
 import { cacheDirectory, development, templatesPath, production } from './env';
 
 export const publicPath = 'public';
@@ -15,9 +16,6 @@ export const scriptsPath = 'src/scripts';
 export const svgStorePath = 'src/svgstore';
 export const componentsPath = 'src/shared/components';
 export const transferPaths = ['src/mediadata'];
-export const manifestConfig = {
-  merge: true,
-};
 export const manifestPath = resolve(cacheDirectory, 'rev-manifest.json');
 
 export const checkManifestPath = () => {
@@ -140,6 +138,26 @@ export const htmlminConfig = {
   removeStyleLinkTypeAttributes: true,
 };
 
+export const esBuildConfig = {
+  sourcemap: true,
+  outdir: '../js',
+  bundle: true,
+  minify: true,
+  format: 'esm',
+  platform: 'node',
+  loader: {
+    '.tsx': 'tsx',
+  },
+  define: appEnvironment,
+};
+
+export const scriptSizeConfig = {
+  title: 'scripts',
+  gzip: true,
+  showFiles: true,
+  showTotal: true,
+};
+
 export const gzipConfig = {
   threshold: 1024,
   gzipOptions: {
@@ -147,6 +165,15 @@ export const gzipConfig = {
     memLevel: 1,
     skipGrowingFiles: true,
   },
+};
+
+export const revOptions = {
+  merge: true,
+  debug: false,
+  hashLength: 4,
+  fileNameVersion: join('.cache', 'rev-version.json'),
+  fileNameManifest: join('.cache', 'rev-manifest.json'),
+  includeFilesInManifest: ['.js', '.css'],
 };
 
 export const imageminConfig = [

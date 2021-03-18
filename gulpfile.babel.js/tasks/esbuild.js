@@ -4,29 +4,17 @@ import size from 'gulp-size';
 import rigger from 'gulp-rigger';
 import gulpEsBuild from 'gulp-esbuild';
 
-import { scriptsPath } from '../config';
-import { appEnvironment } from '../env/transform';
+import { scriptsPath, scriptSizeConfig, esBuildConfig } from '../config';
 import { reload } from './webserver';
 
-import { scriptsBuildGlob, sizeConfig, scriptTasks } from './common.scripts';
+import { scriptsBuildGlob,  scriptTasks } from './common.scripts';
 
 export default () =>
   src([...scriptsBuildGlob, `!${scriptsPath}/**/_*.*`])
     .pipe(rigger())
     .pipe(
-      gulpEsBuild({
-        sourcemap: true,
-        outdir: '../js',
-        bundle: true,
-        minify: true,
-        format: 'esm',
-        platform: 'node',
-        loader: {
-          '.tsx': 'tsx',
-        },
-        define: appEnvironment,
-      }),
+      gulpEsBuild(esBuildConfig),
     )
     .pipe(scriptTasks())
-    .pipe(size(sizeConfig))
+    .pipe(size(scriptSizeConfig))
     .on('end', reload);

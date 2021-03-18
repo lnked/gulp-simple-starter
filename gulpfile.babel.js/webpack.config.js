@@ -1,65 +1,16 @@
-import fs from 'fs';
 import { resolve } from 'path';
-import webpack from 'webpack';
-import ESBuildPlugin from 'esbuild-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import ESBuildPlugin from 'esbuild-webpack-plugin';
 
-import { mode, production, rootPath, cacheDirectory, env } from './env';
-import { appEnvironment } from './env/transform';
-import { scriptsPath } from './config';
-
-const scriptsSourcePath = resolve(rootPath, scriptsPath);
+import { cacheDirectory, env, production, rootPath, mode, } from './env';
+import { alias, devtool, entries, scriptsSourcePath } from './tools/helpers';
 
 const optimizationConfig = {
   minimize: true,
   minimizer: [new ESBuildPlugin()],
 };
 
-const entries = fs.readdirSync(scriptsSourcePath).filter(file => {
-  const name = file.toLowerCase();
-  const isFile = fs.statSync(resolve(scriptsSourcePath, file)).isFile();
-
-  if (isFile && (name.includes('.js') || name.includes('.ts'))) {
-    return true;
-  }
-
-  return false;
-});
-
-const { SOURCEMAPS_ENABLED } = env;
-
-const devtool = (() => {
-  if (production) {
-    if (SOURCEMAPS_ENABLED) {
-      return 'source-map';
-    }
-
-    return false;
-  }
-
-  return 'eval-cheap-module-source-map';
-})();
-
-const alias = [
-  'libs',
-  'hooks',
-  'utils',
-  'tools',
-  'types',
-  'stores',
-  'configs',
-  'helpers',
-  'services',
-  'settings',
-  'constants',
-  'components',
-].reduce(
-  (list, path) => ({
-    ...list,
-    [`@${path}`]: resolve(scriptsPath, path),
-  }),
-  {},
-);
+const { BUNDLE_ANALYZER } = env;
 
 module.exports = {
   mode,
@@ -115,15 +66,12 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(appEnvironment),
-    }),
-    ...((production && [
+    ...BUNDLE_ANALYZER ? [
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
+        reportFilename: resolve(rootPath, '.cache/report.html'),
       }),
-    ]) ||
-      []),
+    ] : [],
   ],
   optimization: production ? optimizationConfig : {},
 };

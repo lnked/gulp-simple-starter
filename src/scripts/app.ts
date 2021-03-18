@@ -3,11 +3,11 @@ import Navigation from '@components/navigation';
 const modules = [Navigation];
 
 window.addEventListener('load', () => {
-  modules?.forEach(module => Object.prototype.hasOwnProperty.call(module, 'init') && module.init());
+  modules?.forEach(module => module?.init());
 });
 
 const terminate = () => {
-  modules?.forEach(module => Object.prototype.hasOwnProperty.call(module, 'terminate') && module.terminate());
+  modules?.forEach(module => module?.terminate());
 };
 
 window.addEventListener('unload', terminate);
