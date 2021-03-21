@@ -7360,14 +7360,14 @@ gulp-pugbem@2.2.4:
   resolved "https://registry.yarnpkg.com/gulp-pugbem/-/gulp-pugbem-2.2.4.tgz#161929c1e0d575eb82662eea99570119979688e3"
   integrity sha512-fpjXUvn3SKvR9rOYtGMMrp/mO8umTTTZGur0I45/DutdfPuoJ5i47/m6svD0ZJgWVBOAZFmeu4P7tSirBBO/pw==
 
-gulp-purgecss@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/gulp-purgecss/-/gulp-purgecss-4.0.2.tgz#3c76fb74a6945644bd81ee15b0c52c9e8b740eff"
-  integrity sha512-vPHYAsvfeub+F9yN9SUWUpqRfzwjPVBq+EjPk4b5SUPynGbensLJJFwODpx2X5i9k+Yp4aRl7ccebrmwrBd9AQ==
+gulp-purgecss@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/gulp-purgecss/-/gulp-purgecss-4.0.3.tgz#8f4cbc741798eab3f924d7daaf990000a3b9be6f"
+  integrity sha512-MyLL/zqy90e6ADNC30MoZ+THm/XtDCtZwnrMDB49rXKovd56Z3KS/PKA8Y2Br3gUzwAz9ACvfb3V4Gz4OZPQdg==
   dependencies:
     glob "^7.1.6"
     plugin-error "^1.0.1"
-    purgecss "^4.0.2"
+    purgecss "^4.0.3"
     through2 "^4.0.1"
 
 gulp-rename@^2.0.0:
@@ -13501,10 +13501,10 @@ puppeteer@2.1.1:
     rimraf "^2.6.1"
     ws "^6.1.0"
 
-purgecss@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-4.0.2.tgz#7281f233c08b4f41e1c5d85c66a2d064e6d7e1b3"
-  integrity sha512-6J1zOEAZJX6VbfcaJHgdQf4uPhxVXvHz7dGgWYXLOI9q7QFZ5feh8NZ2+G3ysii/Sr8OyUe5yhQ5Z/xZ5gIRnQ==
+purgecss@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-4.0.3.tgz#8147b429f9c09db719e05d64908ea8b672913742"
+  integrity sha512-PYOIn5ibRIP34PBU9zohUcCI09c7drPJJtTDAc0Q6QlRz2/CHQ8ywGLdE7ZhxU2VTqB7p5wkvj5Qcm05Rz3Jmw==
   dependencies:
     commander "^6.0.0"
     glob "^7.0.0"
@@ -16804,10 +16804,10 @@ webpack-stream@6.1.2:
     vinyl "^2.1.0"
     webpack "^4.26.1"
 
-webpack@5.27.0:
-  version "5.27.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.27.0.tgz#387458f83142253f2759e22415dc1359746e6940"
-  integrity sha512-So7grHu//UyJ+80VrNHjWwW6WSZkfWWD6a7NV/88r8G92PO6TYOGzbtTiZBwbPVkx6LVP8OYvHD+IxuJ2KBz4g==
+webpack@5.27.1:
+  version "5.27.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.27.1.tgz#6808fb6e45e35290cdb8ae43c7a10884839a3079"
+  integrity sha512-rxIDsPZ3Apl3JcqiemiLmWH+hAq04YeOXqvCxNZOnTp8ZgM9NEPtbu4CaMfMEf9KShnx/Ym8uLGmM6P4XnwCoA==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.46"
