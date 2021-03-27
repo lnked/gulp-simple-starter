@@ -1,0 +1,32 @@
+@keyframes scroll-bob {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  30%,
+  50% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  80%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes scroll-pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  15% {
+    opacity: 0
+  }
+  16% {
+    opacity: 0.45;
+  }
+  40%, 100% {
+    opacity: 0;
+    transform: scale(1.75);
+  }
+}
