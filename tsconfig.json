@@ -13,9 +13,11 @@
     "declaration": false,
     "skipLibCheck": true,
     "noResolve": true,
+    "importHelpers": false,
     "noImplicitAny": false,
     "esModuleInterop": true,
     "removeComments": true,
+    "downlevelIteration": true,
     "preserveConstEnums": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -36,7 +38,8 @@
       "@configs/*": ["./configs/*"],
       "@services/*": ["./services/*"],
       "@settings/*": ["./settings/*"],
-      "@components/*": ["./components/*"]
+      "@components/*": ["./components/*"],
+      "tslib" : ["node_modules/tslib/tslib.d.ts"]
     },
     "typeRoots": ["./node_modules/@types"]
   },
