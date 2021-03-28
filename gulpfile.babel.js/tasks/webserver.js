@@ -15,6 +15,9 @@ export default () => {
     notify: false,
     server: {
       baseDir: outputPath,
+      serveStaticOptions: {
+        extensions: ['html'],
+      },
     },
     snippetOptions: {
       rule: {
