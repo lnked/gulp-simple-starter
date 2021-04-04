@@ -9,8 +9,14 @@ const globals = Object.keys(environment).reduce((acc, name) => ({ ...acc, [name]
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['import', 'prettier', 'sonarjs', 'smells'],
-  extends: ['eslint:recommended', 'plugin:sonarjs/recommended', 'plugin:prettier/recommended', 'prettier'],
+  plugins: ['import', 'prettier', 'sonarjs', 'smells', 'clean-regex'],
+  extends: [
+    'eslint:recommended',
+    'plugin:sonarjs/recommended',
+    'plugin:prettier/recommended',
+    'plugin:clean-regex/recommended',
+    'prettier',
+  ],
   env: {
     es6: true,
     node: true,
@@ -34,6 +40,7 @@ module.exports = {
     'smells/no-complex-switch-case': 1,
     'smells/no-setinterval': 1,
     'smells/no-this-assign': 1,
+    'clean-regex/rule-name': 2,
     'sonarjs/cognitive-complexity': 'error',
     'sonarjs/no-identical-expressions': 'error',
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],

@@ -5641,6 +5641,14 @@ eslint-module-utils@^2.6.0:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
+eslint-plugin-clean-regex@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-clean-regex/-/eslint-plugin-clean-regex-0.5.1.tgz#1fc8d61a1df2702d8f267d58ac101f5243e7ef7c"
+  integrity sha512-ZuZxP2V2s2LI2OZPUF5eQQtgUQv1/Z7jDI2DG5GEHGM9D0T0LSbcg8ViuFolrOOmUP7dCz+JHN4gDQWyeDdvJg==
+  dependencies:
+    refa "^0.7.1"
+    regexpp "^3.1.0"
+
 eslint-plugin-import@2.22.1:
   version "2.22.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.22.1.tgz#0896c7e6a0cf44109a2d97b95903c2bb689d7702"
@@ -13808,6 +13816,13 @@ reduce-function-call@^1.0.1:
   integrity sha512-Hl/tuV2VDgWgCSEeWMLwxLZqX7OK59eU1guxXsRKTAyeYimivsKdtcV4fu3r710tpG5GmDKDhQ0HSZLExnNmyQ==
   dependencies:
     balanced-match "^1.0.0"
+
+refa@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/refa/-/refa-0.7.1.tgz#ebd1b36a0b6f83b2ec05df406bd8336d64de2e7f"
+  integrity sha512-rvs2Px1z/PS01L8wY06YZZYDg4KzWz2CZjjsUekhyF3gnvUhu9EMfdgKwGmSJYUQItpZEPJjv2uz4vUlOkUiZg==
+  dependencies:
+    regexpp "^3.1.0"
 
 regenerate-unicode-properties@^8.2.0:
   version "8.2.0"
