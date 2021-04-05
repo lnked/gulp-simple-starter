@@ -7250,10 +7250,10 @@ gulp-concat@^2.6.1:
     through2 "^2.0.0"
     vinyl "^2.0.0"
 
-gulp-esbuild@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.7.0.tgz#b37c2c75acf8aaf1a770feadae970ae0b87da506"
-  integrity sha512-avYdfKiazIqvEH4zQWVggStO96pVlzqLIO08HPheHYdHD10DIk1OdrXzqH3FuWISFoVXRBGyqUFoPcynCpmWmQ==
+gulp-esbuild@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.7.1.tgz#a3eefc6d7d1365772f27e7be7a38957ba76a0ee4"
+  integrity sha512-HaOGxdMbexdBpPKmDaCNoCul2OsJoBzpLhxojX1LvgwRHmkUbF0Tp/pG3N17wi+IkN8aViWoV94JtB9UAI2CKQ==
   dependencies:
     plugin-error "^1.0.1"
     vinyl "^2.2.1"
@@ -15519,10 +15519,10 @@ svgo@^2.3.0:
     csso "^4.2.0"
     stable "^0.1.8"
 
-swiper@6.5.3:
-  version "6.5.3"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-6.5.3.tgz#ff42617dd87277bd0f622c729572d3db47bee225"
-  integrity sha512-WsRKA/il3cHkpHFivvQCEFsgo9eYgvKpHBrgNsLCENyuG1z3E8Rc6zFMEioy5NDQI0BztR3r5UyMqBZyqs9u8Q==
+swiper@6.5.4:
+  version "6.5.4"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-6.5.4.tgz#b92a8d7771f4e3d9d5e02d598c8ab7f45533ab66"
+  integrity sha512-SaJGZXSf5+MNusOVllByZU2dEGWYg5n4M51Pq0sxqd9hjLgqReuGo9jlWd6B7Auy8dbVNHaPkGYem6FBjy0WOA==
   dependencies:
     dom7 "^3.0.0"
     ssr-window "^3.0.0"
