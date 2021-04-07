@@ -17,7 +17,11 @@ import { stream } from './webserver';
 
 export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`];
 
-const { SOURCEMAPS_ENABLED = false, REV_NAME_ENABLED = false } = env;
+const {
+  PURGE_CSS = false,
+  SOURCEMAPS_ENABLED = false,
+  // REV_NAME_ENABLED = false,
+} = env;
 
 export default () =>
   src([...stylesWatchGlob, `!${stylesPath}/**/_*.*`])
@@ -50,7 +54,7 @@ export default () =>
     )
     .pipe(
       gulpIf(
-        production,
+        PURGE_CSS,
         purgecss({
           content: purgeCSSConfig.templates,
           safelist: purgeCSSConfig.safelist,
