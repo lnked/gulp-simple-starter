@@ -38,7 +38,6 @@ module.exports = {
     'smells/no-setinterval': 1,
     'smells/no-complex-chaining': 0,
     'smells/no-complex-switch-case': 1,
-    'smells/no-setinterval': 1,
     'smells/no-this-assign': 1,
     'clean-regex/rule-name': 2,
     'sonarjs/cognitive-complexity': 'error',
