@@ -51,13 +51,16 @@ const through = require('through2');
 // };
 
 //The plugin
-const revision = (options) => {
-  options = assign({
-    // transformer: revision.defaultTransformer,
-    // hasher: revision.md5Hasher
-  }, options);
+const revision = options => {
+  options = assign(
+    {
+      // transformer: revision.defaultTransformer,
+      // hasher: revision.md5Hasher
+    },
+    options,
+  );
 
-  console.log('revision: ', { options });
+  // console.log('revision: ', { options });
 
   // //Check options
   // if (options.transformer && typeof options.transformer !== 'function') {
@@ -73,7 +76,7 @@ const revision = (options) => {
 
   return function (file, enc, cb) {
     cb();
-  }
+  };
 
   // return through.obj(function (file, enc, cb) {
   //     if (file.isNull()) {
@@ -112,11 +115,14 @@ const revision = (options) => {
 
 //The manifestor
 revision.manifest = function (options) {
-  options = assign({
-    path: 'assets-manifest.json',
-  }, options);
+  options = assign(
+    {
+      path: 'assets-manifest.json',
+    },
+    options,
+  );
 
-  console.log('manifest: ', { options });
+  // console.log('manifest: ', { options });
 
   // //???
   // var firstFile = null;

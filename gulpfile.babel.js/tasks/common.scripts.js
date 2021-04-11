@@ -15,8 +15,6 @@ export const scriptsWatchGlob = [...scriptsBuildGlob, `${scriptsPath}/**/*.{js,j
 
 const { GZIP_ENABLED = false, REV_NAME_ENABLED = false } = env;
 
-console.log({ rev: resolve(cacheDirectory, 'rev-version.json') });
-
 export const scriptTasks = lazypipe()
   // .pipe(gulpIf, REV_NAME_ENABLED, rev.revision(revOptions))
 
@@ -24,12 +22,12 @@ export const scriptTasks = lazypipe()
 
   .pipe(dest, staticPathScripts)
   .pipe(gulpIf, GZIP_ENABLED, gzip(gzipConfig))
-  .pipe(gulpIf, GZIP_ENABLED, dest(staticPathScripts))
+  .pipe(gulpIf, GZIP_ENABLED, dest(staticPathScripts));
 
-  // .pipe(gulpIf, REV_NAME_ENABLED, rev.manifestFile())
+// .pipe(gulpIf, REV_NAME_ENABLED, rev.manifestFile())
 
-  // .pipe(gulpIf, REV_NAME_ENABLED, revision.manifest({
-  //   path: resolve(cacheDirectory, 'rev-version.json'),
-  // }))
+// .pipe(gulpIf, REV_NAME_ENABLED, revision.manifest({
+//   path: resolve(cacheDirectory, 'rev-version.json'),
+// }))
 
-  // .pipe(gulpIf, REV_NAME_ENABLED, dest(rootPath));
+// .pipe(gulpIf, REV_NAME_ENABLED, dest(rootPath));
