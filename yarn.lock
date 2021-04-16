@@ -5592,6 +5592,11 @@ esbuild-webpack-plugin@^1.1.0:
   dependencies:
     esbuild "^0.7.15"
 
+esbuild@^0.11.11:
+  version "0.11.11"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.11.11.tgz#8f235e0a1a34253a47fd80d51f12084dd98074bd"
+  integrity sha512-iq5YdV63vY/nUAFIvY92BXVkYjMbOchnofLKoLKMPZIa4uuIJAJG9WRA+ZRjQBZbrsORUwvZcANeG2d3p46PJQ==
+
 esbuild@^0.7.15:
   version "0.7.22"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.22.tgz#9149b903f8128b7c45a754046c24199d76bbe08e"
@@ -7287,11 +7292,12 @@ gulp-concat@^2.6.1:
     through2 "^2.0.0"
     vinyl "^2.0.0"
 
-gulp-esbuild@^0.7.3:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.7.3.tgz#ce7fbd8371a1f20c2492ecefa618c40d5db15375"
-  integrity sha512-Dqj/i0iCPCUlbptTO4pnmnqSMTadi5+y3m5Aa1U/tTNT+UC/un9OLwSBQrGKRPVBHdz4PBKSn2ku+6PeE/ykQg==
+gulp-esbuild@^0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.7.4.tgz#0173365a685c46269e669c2c3cc8ab4cccc44274"
+  integrity sha512-6fN3quPZ0DD+hjoXnR1g/ZQcS1wZIyTkLA4MZ3u+1uFCFG9B4vbknX2l1PvuHyIDvd1UXpmBoxp7iT9c96VfNg==
   dependencies:
+    esbuild "^0.11.11"
     plugin-error "^1.0.1"
     vinyl "^2.2.1"
 
@@ -15806,10 +15812,10 @@ svgo@^2.3.0:
     csso "^4.2.0"
     stable "^0.1.8"
 
-swiper@6.5.6:
-  version "6.5.6"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-6.5.6.tgz#4d1dc5cd124696dd765818f2484a1ec8e0d3d3bc"
-  integrity sha512-oKVshbF0vhdMFJXtcNH8vLpmyCHc7VvvIlOUafyazzlYzCRJmI80FxoIBWKzSqDyy8EXRn7Iy78p9o4I1Bww/Q==
+swiper@6.5.7:
+  version "6.5.7"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-6.5.7.tgz#c66a95f70a49253e7bfcaea805a82379959cd8b7"
+  integrity sha512-PGS1eUxBgLkb5uCqAMQkE465lsk01Uf8FJWA1CMBQ374leDUSK79J2fIv+c6H/nXPixJ8VzzL5jPjTSu1f9AeQ==
   dependencies:
     dom7 "^3.0.0"
     ssr-window "^3.0.0"

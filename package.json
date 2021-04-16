@@ -75,7 +75,7 @@
     "gulp-beautify": "3.0.0",
     "gulp-clean": "0.4.0",
     "gulp-concat": "^2.6.1",
-    "gulp-esbuild": "^0.7.3",
+    "gulp-esbuild": "^0.7.4",
     "gulp-front-matter": "1.3.0",
     "gulp-gzip": "^1.4.2",
     "gulp-htmlmin": "^5.0.1",
@@ -162,7 +162,7 @@
     "pubsub-js": "^1.9.3",
     "querystate": "^1.0.9",
     "store.js": "1.0.4",
-    "swiper": "6.5.6",
+    "swiper": "6.5.7",
     "template7": "^1.4.2",
     "three": "0.127.0",
     "yall-js": "^3.2.0"
