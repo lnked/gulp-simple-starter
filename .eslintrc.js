@@ -10,13 +10,7 @@ module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   plugins: ['import', 'prettier', 'sonarjs', 'smells', 'clean-regex'],
-  extends: [
-    'eslint:recommended',
-    'plugin:sonarjs/recommended',
-    'plugin:prettier/recommended',
-    'plugin:clean-regex/recommended',
-    'prettier',
-  ],
+  extends: ['eslint:recommended', 'plugin:sonarjs/recommended', 'plugin:clean-regex/recommended', 'prettier'],
   env: {
     es6: true,
     node: true,
