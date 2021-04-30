@@ -5787,10 +5787,10 @@ esbuild-webpack-plugin@^1.1.0:
   dependencies:
     esbuild "^0.7.15"
 
-esbuild@^0.11.14:
-  version "0.11.15"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.11.15.tgz#d92250e1755294f84bc7a83ed191e60baadf7b6a"
-  integrity sha512-Hh40byWZZgYbiLhcoOWiOUIy8yUYQeCEA4F9feWytToD2jGfJ1X4VPf5dsqj6vRL29H3YmFqZsxIJa5q0ifB3g==
+esbuild@^0.11.16:
+  version "0.11.16"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.11.16.tgz#435f00474fb21e70f59a545b85e4cfc7ba106485"
+  integrity sha512-34ZWjo4ouvM5cDe7uRoM9GFuMyEmpH9fnVYmomvS1cq9ED9d/0ZG1r+p4P2VbX7ihjv36zA2SWTmP8Zmt/EANA==
 
 esbuild@^0.7.15:
   version "0.7.22"
@@ -7487,12 +7487,12 @@ gulp-concat@^2.6.1:
     through2 "^2.0.0"
     vinyl "^2.0.0"
 
-gulp-esbuild@^0.7.5:
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.7.5.tgz#068eb46bd30dec5b832b4d2ab88d835b251db501"
-  integrity sha512-9RxhDAwdBx+0i4nmHpG5u2Dcag2phXZWc1wMZhRImTmE5zFFe39RFHi6VphX14Vi6K8zjl09IZD/e9nrTA0AjA==
+gulp-esbuild@^0.7.6:
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.7.6.tgz#15b91f2796eafbde23b54f5a1c256e0f4c031c61"
+  integrity sha512-E9DicstoJ3VHXhAHWmZs8FmrV39ieXVecmsH1u93R/G3ReRXE7mcK/7ngVNbWgKShAsQPtOXQQ3EOIuuXdJ8Ew==
   dependencies:
-    esbuild "^0.11.14"
+    esbuild "^0.11.16"
     plugin-error "^1.0.1"
     vinyl "^2.2.1"
 
@@ -16037,10 +16037,10 @@ svgo@^2.3.0:
     csso "^4.2.0"
     stable "^0.1.8"
 
-swiper@6.5.8:
-  version "6.5.8"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-6.5.8.tgz#8a4f38145f99faa5d11b8d0306fc82e12801bcd5"
-  integrity sha512-SW8bNkJf8jCB4VdZsA1EZ3c87xshHS4f83YZVqT9ppkDKgspOfk9/I6dTtKGJFlsZpuE1S5X0LUAa7+QEaC0fQ==
+swiper@6.5.9:
+  version "6.5.9"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-6.5.9.tgz#ed6caa8bd9fd44d314944210551ce297d4fb09c7"
+  integrity sha512-zO3UCLVEiOXZontAQWBNpWFZGV3WaXwHSgvng0qIGLVMyxYGD6w78S7YkGAu/XBam1SBQNZzxqfFc/LDjNdq/A==
   dependencies:
     dom7 "^3.0.0"
     ssr-window "^3.0.0"
@@ -17399,10 +17399,10 @@ webpack-stream@6.1.2:
     vinyl "^2.1.0"
     webpack "^4.26.1"
 
-webpack@5.36.1:
-  version "5.36.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.36.1.tgz#d82bad3384f84ed45a8de3844c31730f56361ab7"
-  integrity sha512-2u25a82T+6quAxSlzEpN/R/RICwt20ONU3z3Ko05S8KVH9FXILcBYb2hD/rQtZT5y7lRAIsIIs05pdndY7ourQ==
+webpack@5.36.2:
+  version "5.36.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.36.2.tgz#6ef1fb2453ad52faa61e78d486d353d07cca8a0f"
+  integrity sha512-XJumVnnGoH2dV+Pk1VwgY4YT6AiMKpVoudUFCNOXMIVrEKPUgEwdIfWPjIuGLESAiS8EdIHX5+TiJz/5JccmRg==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.47"
