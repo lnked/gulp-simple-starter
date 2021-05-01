@@ -131,7 +131,7 @@
     "rsync": "^0.6.1",
     "size-limit": "4.10.2",
     "sort-css-media-queries": "1.5.4",
-    "stylelint": "13.13.0",
+    "stylelint": "13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended": "5.0.0",
     "stylelint-order": "4.1.0",
