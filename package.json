@@ -98,7 +98,7 @@
     "gulp-rigger": "0.5.8",
     "gulp-sass": "^4.1.0",
     "gulp-sass-glob": "1.1.0",
-    "gulp-size": "3.0.0",
+    "gulp-size": "4.0.0",
     "gulp-sourcemaps": "3.0.0",
     "gulp-tinypng": "^1.0.2",
     "gulp-watch": "5.0.1",
@@ -146,7 +146,7 @@
     "webpack": "5.36.2",
     "webpack-bundle-analyzer": "^4.4.1",
     "webpack-stream": "6.1.2",
-    "yargs": "16.2.0",
+    "yargs": "17.0.0",
     "zlib": "^1.0.5"
   },
   "dependencies": {
