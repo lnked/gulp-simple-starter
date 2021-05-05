@@ -1,5 +1,5 @@
-import { resolve } from 'path';
 import { src, dest } from 'gulp';
+import newer from 'gulp-newer';
 import rigger from 'gulp-rigger';
 import frontMatter from 'gulp-front-matter';
 import nunjucksRender from 'gulp-nunjucks-render';
@@ -19,9 +19,10 @@ export const htmlWatchGlob = [`${componentsPath}/**/*.{html,json}`, `${htmlPath}
 
 export default () =>
   src([`${htmlPath}/pages/**/*.html`, `!${htmlPath}/**/_*.*`])
+    .pipe(newer(outputPath))
     .pipe(rigger())
     .pipe(frontMatter({ property: 'data' }))
     .pipe(nunjucksRender(nunjucksRenderConfig))
     .pipe(templateTasks()())
-    .pipe(dest(resolve(outputPath)))
+    .pipe(dest(outputPath))
     .on('end', reload);

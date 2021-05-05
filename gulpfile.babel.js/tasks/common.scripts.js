@@ -8,7 +8,7 @@ import rev from 'gulp-rev-all';
 import revision from '../gulp-assets-revision';
 
 import { scriptsPath, revOptions, gzipConfig } from '../config';
-import { cacheDirectory, rootPath, staticPathScripts, env } from '../env';
+import { staticPathScripts, env } from '../env';
 
 export const scriptsBuildGlob = [`${scriptsPath}/*.{js,jsx,ts,tsx,mjs}`];
 export const scriptsWatchGlob = [...scriptsBuildGlob, `${scriptsPath}/**/*.{js,jsx,ts,tsx,mjs}`];

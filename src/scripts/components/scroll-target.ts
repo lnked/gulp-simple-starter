@@ -14,7 +14,7 @@ const scrollTarget = ({ trigger }) => {
       'scrollTop',
       '',
       document.documentElement.scrollTop,
-      target.offsetTop,
+      target?.offsetTop || 0,
       200,
       true,
     );

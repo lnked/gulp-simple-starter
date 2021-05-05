@@ -1,10 +1,10 @@
 // const { assign } = require('lodash');
 import { assign } from 'lodash';
 
-const crypto = require('crypto');
-const path = require('path');
-const gutil = require('gulp-util');
-const through = require('through2');
+// const crypto = require('crypto');
+// const path = require('path');
+// const gutil = require('gulp-util');
+// const through = require('through2');
 
 //Private Helpers
 // var transform = function transform(file, nameTransformer, hasher) {

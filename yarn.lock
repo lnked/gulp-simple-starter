@@ -7471,6 +7471,17 @@ gulp-beautify@3.0.0:
     js-beautify "^1.8.8"
     through2 "^2.0.0"
 
+gulp-changed@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/gulp-changed/-/gulp-changed-4.0.2.tgz#387c6b05a3d18519281516ebf8f49f2d5d56efd3"
+  integrity sha512-rAvQt+ByaqrMuJLwucvxC+MC02Vh8ksiJ16hoQlk4xnmlHiLJMque2aXXQMmyocQac3RIjNRcyr7iG1TNH15GA==
+  dependencies:
+    make-dir "^3.0.0"
+    plugin-error "^1.0.1"
+    replace-ext "^1.0.0"
+    through2 "^3.0.1"
+    touch "^3.1.0"
+
 gulp-clean@0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/gulp-clean/-/gulp-clean-0.4.0.tgz#3bc25e7084e641bbd7bde057cf90c01c50d95950"
@@ -11416,6 +11427,13 @@ nopt@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-5.0.0.tgz#530942bb58a512fccafe53fe210f13a25355dc88"
   integrity sha512-Tbj67rffqceeLpcRXrT7vKAN8CwfPeIBgM7E6iBkmKLV7bEMwpGgYLGv0jACUsECaa/vuxP0IjEont6umdMgtQ==
+  dependencies:
+    abbrev "1"
+
+nopt@~1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/nopt/-/nopt-1.0.10.tgz#6ddd21bd2a31417b92727dd585f8a6f37608ebee"
+  integrity sha1-bd0hvSoxQXuScn3Vhfim83YI6+4=
   dependencies:
     abbrev "1"
 
@@ -16500,6 +16518,13 @@ totalist@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/totalist/-/totalist-1.1.0.tgz#a4d65a3e546517701e3e5c37a47a70ac97fe56df"
   integrity sha512-gduQwd1rOdDMGxFG1gEvhV88Oirdo2p+KjoYFU7k2g+i7n6AFFbDQ5kMPUsW0pNbfQsB/cwXvT1i4Bue0s9g5g==
+
+touch@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/touch/-/touch-3.1.0.tgz#fe365f5f75ec9ed4e56825e0bb76d24ab74af83b"
+  integrity sha512-WBx8Uy5TLtOSRtIq+M03/sKDrXCLHxwDcquSP2c43Le03/9serjQBIztjRz6FkJez9D/hleyAXTBGLwwZUw9lA==
+  dependencies:
+    nopt "~1.0.10"
 
 tough-cookie@^2.3.3, tough-cookie@^2.5.0, tough-cookie@~2.5.0:
   version "2.5.0"

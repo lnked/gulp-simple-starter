@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import { src, dest } from 'gulp';
 import pug from 'gulp-pug';
+import newer from 'gulp-newer';
 import pugBem from 'gulp-pugbem';
 import frontMatter from 'gulp-front-matter';
 
@@ -13,6 +14,7 @@ export const pugWatchGlob = [`${htmlPath}/**/*.{pug,json}`];
 
 export default () =>
   src([`${htmlPath}/pages/**/*.pug`, `!${htmlPath}/**/_*.*`])
+    .pipe(newer(outputPath))
     .pipe(frontMatter({ property: 'data' }))
     .pipe(pug(pugConfig([pugBem])))
     .pipe(templateTasks()())

@@ -1,8 +1,8 @@
 import { src, dest } from 'gulp';
-import rev from 'gulp-rev-all';
 import size from 'gulp-size';
 import sass from 'gulp-sass';
 import gulpIf from 'gulp-if';
+import newer from 'gulp-newer';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
 import purgecss from 'gulp-purgecss';
@@ -10,21 +10,18 @@ import sassGlob from 'gulp-sass-glob';
 import sourcemaps from 'gulp-sourcemaps';
 import modifyCssUrls from 'gulp-modify-css-urls';
 
-import { rootPath, staticPathStyles, nodeModulesPath, production, env } from '../env';
-import { stylesPath, revOptions, purgeCSSConfig } from '../config';
+import { staticPathStyles, nodeModulesPath, env } from '../env';
+import { stylesPath, purgeCSSConfig } from '../config';
 import { postCSSCallback } from '../postcss.callback';
 import { stream } from './webserver';
 
 export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`];
 
-const {
-  PURGE_CSS = false,
-  SOURCEMAPS_ENABLED = false,
-  // REV_NAME_ENABLED = false,
-} = env;
+const { PURGE_CSS = false, SOURCEMAPS_ENABLED = false } = env;
 
 export default () =>
   src([...stylesWatchGlob, `!${stylesPath}/**/_*.*`])
+    .pipe(newer(staticPathStyles))
     .pipe(gulpIf(SOURCEMAPS_ENABLED, sourcemaps.init()))
     .pipe(plumber())
     .pipe(sassGlob())
