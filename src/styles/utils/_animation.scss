@@ -1,19 +1,59 @@
-.is-animated {
-  // outline: 2px solid lime;
-  transition: opacity .3s ease-in-out, transform .6s ease-in-out;
+.is-animated,
+.is-parallaxed {
+  transition: 1s opacity cubic-bezier(.25,.46,.45,.94), 1s transform cubic-bezier(.25,.46,.45,.94);
+
+  & + & {
+    transition-delay: .15s;
+  }
+
+  & + & + & {
+    transition-delay: .25s;
+  }
+
+  & + & + & + & {
+    transition-delay: .35s;
+  }
+
+  & + & + & + & + & {
+    transition-delay: .45s;
+  }
+
+  & + & + & + & + & + & {
+    transition-delay: .55s;
+  }
+
+  & + & + & + & + & + & + & {
+    transition-delay: .65s;
+  }
+
+  & + & + & + & + & + & + & + & {
+    transition-delay: .75s;
+  }
+
+  & + & + & + & + & + & + & + & + & {
+    transition-delay: .85s;
+  }
+}
+
+.fade-in,
+.fade-up,
+.fade-left,
+.fade-right {
+  opacity: 0;
+}
+
+.fade-in {
+  transform: translateY(-1.6rem);
 }
 
 .fade-up {
-  opacity: .3;
-  transform: translateY(5rem);
+  transform: translateY(1.6rem);
 }
 
 .fade-left {
-  opacity: .5;
   transform: translateX(-3rem);
 }
 
 .fade-right {
-  opacity: .5;
   transform: translateX(3rem);
 }

@@ -10,6 +10,12 @@
   }
 }
 
+@mixin minTablet {
+  @media screen and (min-width: 769px) {
+    @content;
+  }
+}
+
 @mixin netbook {
   @media screen and (max-width: 992px) {
     @content;
