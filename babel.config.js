@@ -45,6 +45,7 @@ module.exports = function (api) {
       ['@babel/plugin-transform-spread', { loose }],
       ['@babel/plugin-proposal-decorators', { legacy }],
       ['@babel/plugin-proposal-class-properties', { loose }],
+      ['@babel/plugin-proposal-nullish-coalescing-operator'],
       ['@babel/plugin-proposal-optional-chaining', { loose }],
       ['@babel/plugin-transform-template-literals', { loose }],
       ['@babel/plugin-transform-object-assign'],

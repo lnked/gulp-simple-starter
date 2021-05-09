@@ -10,7 +10,14 @@ module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   plugins: ['import', 'prettier', 'sonarjs', 'smells', 'clean-regex'],
-  extends: ['eslint:recommended', 'plugin:sonarjs/recommended', 'plugin:clean-regex/recommended', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:sonarjs/recommended',
+    'plugin:clean-regex/recommended',
+    'prettier',
+  ],
   env: {
     es6: true,
     node: true,
@@ -21,7 +28,7 @@ module.exports = {
   },
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 6,
+    ecmaVersion: 2018,
     ecmaFeatures: {
       modules: true,
     },
@@ -95,7 +102,10 @@ module.exports = {
     'no-undef-init': 1,
     'no-undefined': 0,
     'no-unused-expressions': 1,
-    'no-unused-vars': [1, { vars: 'all', args: 'after-used' }],
+    'no-unused-vars': 'off',
+    // '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars-experimental': 'error',
     'no-use-before-define': 1,
     'no-with': 1,
     'no-extra-semi': 1,
