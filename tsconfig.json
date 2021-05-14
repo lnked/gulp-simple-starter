@@ -6,6 +6,7 @@
     "target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
+    "jsx": "preserve",
     "strict": true,
     "noEmit": true,
     "allowJs": true,

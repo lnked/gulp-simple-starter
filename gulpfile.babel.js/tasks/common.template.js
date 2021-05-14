@@ -9,20 +9,15 @@ import rewrite from 'gulp-rev-rewrite';
 import { manifestPath, checkManifestPath, htmlFormatConfig, htmlminConfig } from '../config';
 import { env } from '../env';
 
-const {
-  MINIFY_HTML = false,
-  REV_NAME_ENABLED = false,
-} = env;
+const { MINIFY_HTML = false, REV_NAME_ENABLED = false } = env;
 
 export const templateTasks = () => {
   checkManifestPath();
   const manifest = readFileSync(manifestPath);
 
-  return (
-    lazypipe()
-      .pipe(gulpIf, MINIFY_HTML, htmlmin(htmlminConfig))
-      .pipe(gulpIf, MINIFY_HTML, replace('href=/static/ ', 'href=/static/'))
-      .pipe(gulpIf, !MINIFY_HTML, beautify.html(htmlFormatConfig))
-      .pipe(gulpIf, REV_NAME_ENABLED, rewrite({ manifest }))
-  );
+  return lazypipe()
+    .pipe(gulpIf, MINIFY_HTML, htmlmin(htmlminConfig))
+    .pipe(gulpIf, MINIFY_HTML, replace('href=/static/ ', 'href=/static/'))
+    .pipe(gulpIf, !MINIFY_HTML, beautify.html(htmlFormatConfig))
+    .pipe(gulpIf, REV_NAME_ENABLED, rewrite({ manifest }));
 };

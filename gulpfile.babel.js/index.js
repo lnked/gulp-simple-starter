@@ -27,8 +27,7 @@ task('scripts', scripts);
 task('critical', critical);
 task('transfer', transfer);
 task('images', series(cacheImages, images));
-task('preheat:templates', pug);
-task('templates', html);
+task('templates', series(pug, html));
 
 task('watch', watch('esbuild'));
 task('watch:webpack', watch('scripts'));

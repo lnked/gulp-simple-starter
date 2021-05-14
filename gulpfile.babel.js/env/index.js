@@ -9,6 +9,7 @@ export const outputFolder = 'dist';
 export const styleFolder = 'css';
 export const scriptsFolder = 'js';
 export const templatesFolder = 'templates';
+export const componentsFolder = 'components';
 
 export const rootPath = resolve(process.cwd());
 export const sourcePath = resolve(rootPath, sourceFolder);
@@ -19,5 +20,6 @@ export const cacheDirectory = resolve(rootPath, '.cache');
 export const nodeModulesPath = resolve(rootPath, 'node_modules');
 export const imagesCache = resolve(cacheDirectory, 'images');
 export const imagesOutput = resolve(staticPath, 'img');
-export const staticPathScripts = resolve(staticPath, scriptsFolder);
 export const staticPathStyles = resolve(staticPath, styleFolder);
+export const staticPathScripts = resolve(staticPath, scriptsFolder);
+export const staticPathComponents = resolve(staticPath, componentsFolder);

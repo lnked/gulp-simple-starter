@@ -5,6 +5,9 @@ import { existsSync, readFileSync } from 'fs';
 import { parseSVGStore } from './tools/svgstore';
 import { mode, environment, sourcePath, outputPath, styleFolder, development, production } from './env';
 
+const component = (name, initialState = {}) =>
+  `<div id="nano-${name.toLowerCase()}" data-props="${JSON.stringify(initialState)}"></div>`;
+
 export const getData = () => {
   const defaultStyles = `/static/${styleFolder}/main.css`;
 
@@ -25,8 +28,9 @@ export const getData = () => {
 
     return {
       ...data,
-      svgstore,
       mode,
+      svgstore,
+      component,
       styleName,
       production,
       development,
