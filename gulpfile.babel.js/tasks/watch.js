@@ -1,7 +1,6 @@
 import watch from 'gulp-watch';
 import { series } from 'gulp';
 
-import { pugWatchGlob } from './pug';
 import { htmlWatchGlob } from './html';
 import { fontsWatchGlob } from './fonts';
 import { publicWatchGlob } from './public';
@@ -15,7 +14,7 @@ import { testsPatterns, svgStorePath } from '../config';
 const svgstoreWatchGlob = [`${svgStorePath}/**/*.svg`];
 
 export default mode => {
-  const templatesWatchGlob = [...pugWatchGlob, ...htmlWatchGlob, ...svgstoreWatchGlob];
+  const templatesWatchGlob = [...htmlWatchGlob, ...svgstoreWatchGlob];
 
   const watchConfig = {
     usePolling: true,
