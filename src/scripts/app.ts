@@ -1,5 +1,5 @@
-import Navigation from '@components/navigation';
 import { useState } from '@hooks/useState';
+import Navigation from '@components/navigation';
 
 const modules = [Navigation];
 

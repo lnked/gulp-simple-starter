@@ -221,8 +221,7 @@ export const pugConfig = plugins => ({
 });
 
 export const nunjucksRenderConfig = {
-  // ext: '.njk',
-  ext: '',
+  ext: '.html',
   web: { async: true },
   data: getData(),
   path: [componentsPath, htmlPath, publicPath],
