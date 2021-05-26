@@ -1,21 +1,21 @@
-{% import "utils/mixins.html" as macro %}
+{% import "utils/mixins.njk" as macro %}
 <!DOCTYPE html>
 <html class="no-js" lang="ru" itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
-  {%- include "./_head.html" -%}
+  {%- include "./_head.njk" -%}
 
   <body class="page{% if development %} debug{% endif %}{% if bodyClass %} {{ bodyClass }}{% endif %}">
     {{ svgstore | safe }}
 
     <main class="layout-wrapper">
-      {%- include "components/_header.html" -%}
+      {%- include "components/_header.njk" -%}
 
       <div class="layout-wrapper__content">
         {%- block content -%}{%- endblock -%}
       </div>
     </main>
 
-    {%- include "components/_footer.html" -%}
-    {%- include "components/_scripts.html" -%}
+    {%- include "components/_footer.njk" -%}
+    {%- include "components/_scripts.njk" -%}
   </body>
 </html>

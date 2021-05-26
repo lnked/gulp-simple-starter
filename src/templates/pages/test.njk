@@ -5,7 +5,7 @@ description: Главная
 keywords: Главная
 ---
 
-{%- extends "layouts/_base.html" -%}
+{%- extends "layouts/_base.njk" -%}
 
 {# {%- block css -%}
   {{ super() }}
@@ -18,9 +18,5 @@ keywords: Главная
 {%- endblock -%} #}
 
 {%- block content -%}
-  {{ component("Counter", { }) | safe }}
-
-  <div style="background-color: #d2d2d2; padding: 15px">
-    <button type="button" id="counter">count <span id="counter-value">{{ counter }}</span></button>
-  </div>
+  page name
 {%- endblock -%}

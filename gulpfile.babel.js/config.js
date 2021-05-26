@@ -92,7 +92,7 @@ export const testsPatterns = ['**/__tests__/**/*.(j|t)s?(x)', '**/?(*.)+(spec|te
 const safelistClasses = ['fade', 'active', 'disabled', 'visible', 'hidden', 'animate', 'animated'];
 
 export const purgeCSSConfig = {
-  templates: [`/${templatesPath}/*.html`, `/${templatesPath}/**/*.html`],
+  templates: [`/${templatesPath}/*.{njk,html}`, `/${templatesPath}/**/*.{njk,html}`],
   safelist: safelistClasses.map(name => [`.is-${name}`, `.${name}`]).flat(),
 };
 
@@ -221,7 +221,8 @@ export const pugConfig = plugins => ({
 });
 
 export const nunjucksRenderConfig = {
-  ext: '.html',
+  // ext: '.njk',
+  ext: '',
   web: { async: true },
   data: getData(),
   path: [componentsPath, htmlPath, publicPath],

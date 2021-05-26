@@ -14,10 +14,12 @@ nunjucksRender.nunjucks.configure({
   lstripBlocks: false,
 });
 
-export const htmlWatchGlob = [`${componentsPath}/**/*.{pug,html,json}`, `${htmlPath}/**/*.{pug,html,json}`];
+const extensions = 'nunjucks,nj,njk,html,htm,template,tmpl,tpl';
+
+export const htmlWatchGlob = [`${componentsPath}/**/*.{${extensions},json}`, `${htmlPath}/**/*.{${extensions},json}`];
 
 export default () =>
-  src([`${htmlPath}/pages/**/*.html`, `!${htmlPath}/**/_*.*`])
+  src([`${htmlPath}/pages/**/*.{${extensions}}`, `!${htmlPath}/**/_*.*`])
     .pipe(rigger())
     .pipe(frontMatter({ property: 'data' }))
     .pipe(nunjucksRender(nunjucksRenderConfig))
