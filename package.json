@@ -141,11 +141,11 @@
     "svgo-sync": "CoDEmanX/svgo-sync",
     "thread-loader": "^3.0.4",
     "through2": "^4.0.2",
-    "ts-jest": "^27.0.0",
+    "ts-jest": "^27.0.1",
     "tslib": "^2.2.0",
     "typescript": "^4.3.2",
     "uncss": "0.17.3",
-    "webpack": "5.37.1",
+    "webpack": "5.38.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-stream": "6.1.2",
     "yargs": "17.0.1",
@@ -168,7 +168,7 @@
     "store.js": "1.0.4",
     "swiper": "6.6.2",
     "template7": "^1.4.2",
-    "three": "0.128.0",
+    "three": "0.129.0",
     "yall-js": "^3.2.0"
   },
   "scarfSettings": {
