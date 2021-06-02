@@ -1757,10 +1757,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.44.tgz#df7503e6002847b834371c004b372529f3f85215"
   integrity sha512-+gaugz6Oce6ZInfI/tK4Pq5wIIkJMEJUu92RB3Eu93mtj4wjjjz9EB5mLp5s1pSsLXdC/CPut/xF20ZzAQJbTA==
 
-"@types/node@^15.6.1":
-  version "15.6.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.6.1.tgz#32d43390d5c62c5b6ec486a9bc9c59544de39a08"
-  integrity sha512-7EIraBEyRHEe7CH+Fm1XvgqU6uwZN8Q7jppJGcqjROMT29qhAuuOxYB1uEY5UMYQKEmA5D+5tBnhdaPXSsLONA==
+"@types/node@^15.6.2":
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.6.2.tgz#c61d49f38af70da32424b5322eee21f97e627175"
+  integrity sha512-dxcOx8801kMo3KlU+C+/ctWrzREAH7YvoF3aoVpRdqgs+Kf7flp+PJDN/EX5bME3suDUZHsxes9hpvBmzYlWbA==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -5847,10 +5847,10 @@ esbuild-webpack-plugin@^1.1.0:
   dependencies:
     esbuild "^0.7.15"
 
-esbuild@^0.12.1:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.12.1.tgz#f652d5b3b9432dbb42fc2c034ddd62360296e03d"
-  integrity sha512-WfQ00MKm/Y4ysz1u9PCUAsV66k5lbrcEvS6aG9jhBIavpB94FBdaWeBkaZXxCZB4w+oqh+j4ozJFWnnFprOXbg==
+esbuild@^0.12.5:
+  version "0.12.5"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.12.5.tgz#36076a6bc1966ba2741981d30512e95e8aaff495"
+  integrity sha512-vcuP53pA5XiwUU4FnlXM+2PnVjTfHGthM7uP1gtp+9yfheGvFFbq/KyuESThmtoHPUrfZH5JpxGVJIFDVD1Egw==
 
 esbuild@^0.7.15:
   version "0.7.22"
@@ -7553,12 +7553,12 @@ gulp-concat@^2.6.1:
     through2 "^2.0.0"
     vinyl "^2.0.0"
 
-gulp-esbuild@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.8.0.tgz#d7842ba60a2b03b0025596cb51dc8d84eab48652"
-  integrity sha512-Kkf5wJ8X3cbu+G5abk9hIYJ4vX2Wz2atesW6fTHTt/OKaSlcpE2sxogNPh7cca79lRmcwxR+kXamhbCwY+ABfQ==
+gulp-esbuild@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/gulp-esbuild/-/gulp-esbuild-0.8.1.tgz#bdc815d08ed197e840540d3e1abf561e7ee2222a"
+  integrity sha512-MZufAiwGPzp1iepK34z0ICh8QdFxCVtqX036QSo303DtvJhP2fXVDTlPRYCVYQVBXYor8uvYWH/paxZ43RYh/Q==
   dependencies:
-    esbuild "^0.12.1"
+    esbuild "^0.12.5"
     plugin-error "^1.0.1"
     vinyl "^2.2.1"
 
