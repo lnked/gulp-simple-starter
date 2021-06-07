@@ -105,6 +105,7 @@ module.exports = {
     'no-unused-vars': 'off',
     // '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
     '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-unused-vars-experimental': 'error',
     'no-use-before-define': 1,
     'no-with': 1,

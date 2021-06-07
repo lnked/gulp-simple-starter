@@ -1,25 +1,37 @@
-import glob from 'glob';
 import { resolve } from 'path';
 import { existsSync, readFileSync } from 'fs';
 
+import { manifestPath } from './config';
+import { mode, environment, sourcePath, styleFolder, development, production } from './env';
 import { parseSVGStore } from './tools/svgstore';
-import { mode, environment, sourcePath, outputPath, styleFolder, development, production } from './env';
+
+const getStyles = () => {
+  const defaultStyles = [`/static/${styleFolder}/main.css`];
+
+  if (existsSync(manifestPath)) {
+    const rawData = readFileSync(manifestPath);
+    const data = JSON.parse(rawData);
+
+    const re = /\.css/;
+
+    const styles = Object.keys(data).reduce((acc, name) => [...acc, ...(re.test(name) ? [data[name]] : [])], []);
+
+    if (styles.length) {
+      return styles.map(style => `/static/${styleFolder}/${style}`);
+    }
+  }
+
+  return defaultStyles;
+};
 
 const component = (name, initialState = {}) =>
   `<div id="nano-${name.toLowerCase()}" data-props="${JSON.stringify(initialState)}"></div>`;
 
 export const getData = () => {
-  const defaultStyles = `/static/${styleFolder}/main.css`;
-
   const jsonFile = resolve(sourcePath, 'templates/data.json');
   const jsonExists = existsSync(jsonFile);
 
-  const [style] = glob.sync(`${outputPath}/**/*.css`);
-  const revisionFile = style && style.split('/').pop();
-
-  const styleName = development
-    ? defaultStyles
-    : (revisionFile && `/static/${styleFolder}/${revisionFile}`) || defaultStyles;
+  const styles = getStyles();
 
   if (jsonExists) {
     const svgstore = parseSVGStore();
@@ -29,9 +41,9 @@ export const getData = () => {
     return {
       ...data,
       mode,
+      styles,
       svgstore,
       component,
-      styleName,
       production,
       development,
       environment,

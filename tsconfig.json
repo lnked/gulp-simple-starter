@@ -3,7 +3,7 @@
     "rootDir": "./",
     "baseUrl": "src/scripts",
     "outDir": "dist",
-    "target": "es5",
+    "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "preserve",

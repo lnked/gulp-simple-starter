@@ -1,14 +1,11 @@
-import { resolve } from 'path';
 import { dest } from 'gulp';
+import rev from 'gulp-rev';
 import gzip from 'gulp-gzip';
 import gulpIf from 'gulp-if';
 import lazypipe from 'lazypipe';
-import rev from 'gulp-rev-all';
 
-import revision from '../gulp-assets-revision';
-
-import { scriptsPath, revOptions, gzipConfig } from '../config';
-import { staticPathScripts, env } from '../env';
+import { scriptsPath, manifestPath, gzipConfig, revOptions } from '../config';
+import { staticPathScripts, rootPath, env } from '../env';
 
 export const scriptsBuildGlob = [`${scriptsPath}/*.{js,jsx,ts,tsx,mjs}`];
 export const scriptsWatchGlob = [...scriptsBuildGlob, `${scriptsPath}/**/*.{js,jsx,ts,tsx,mjs}`];
@@ -16,18 +13,11 @@ export const scriptsWatchGlob = [...scriptsBuildGlob, `${scriptsPath}/**/*.{js,j
 const { GZIP_ENABLED = false, REV_NAME_ENABLED = false } = env;
 
 export const scriptTasks = lazypipe()
-  // .pipe(gulpIf, REV_NAME_ENABLED, rev.revision(revOptions))
-
-  .pipe(gulpIf, REV_NAME_ENABLED, revision(revOptions))
-
+  .pipe(gulpIf, REV_NAME_ENABLED, rev())
   .pipe(dest, staticPathScripts)
+
   .pipe(gulpIf, GZIP_ENABLED, gzip(gzipConfig))
-  .pipe(gulpIf, GZIP_ENABLED, dest(staticPathScripts));
+  .pipe(gulpIf, GZIP_ENABLED, dest(staticPathScripts))
 
-// .pipe(gulpIf, REV_NAME_ENABLED, rev.manifestFile())
-
-// .pipe(gulpIf, REV_NAME_ENABLED, revision.manifest({
-//   path: resolve(cacheDirectory, 'rev-version.json'),
-// }))
-
-// .pipe(gulpIf, REV_NAME_ENABLED, dest(rootPath));
+  .pipe(gulpIf, REV_NAME_ENABLED, rev.manifest(manifestPath, revOptions))
+  .pipe(gulpIf, REV_NAME_ENABLED, dest(rootPath));
