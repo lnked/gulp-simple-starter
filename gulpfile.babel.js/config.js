@@ -148,6 +148,7 @@ export const esBuildConfig = {
   loader: {
     '.tsx': 'tsx',
   },
+  target: 'es6',
   define: appEnvironment,
 };
 
@@ -169,11 +170,6 @@ export const gzipConfig = {
 
 export const revOptions = {
   merge: true,
-  debug: false,
-  hashLength: 4,
-  fileNameVersion: join('.cache', 'rev-version.json'),
-  fileNameManifest: join('.cache', 'rev-manifest.json'),
-  includeFilesInManifest: ['.js', '.css'],
 };
 
 export const imageminConfig = [

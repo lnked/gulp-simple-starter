@@ -20,6 +20,11 @@ keywords: Главная
 {%- block content -%}
   {{ component("Counter", { }) | safe }}
 
+  <img src="img/1.jpg" alt="">
+  <img src="images/1.jpg" alt="">
+  <img src="static/img/1.jpg" alt="">
+  <img src="static/images/1.jpg" alt="">
+
   <div style="background-color: #d2d2d2; padding: 15px">
     <button type="button" id="counter">count <span id="counter-value">{{ counter }}</span></button>
   </div>

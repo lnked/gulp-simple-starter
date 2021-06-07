@@ -1,9 +1,9 @@
-type getStateProps = () => any;
-type setStateProps = (value: any) => void;
+type getStateProps = () => any; // eslint-disable-line
+type setStateProps = (value: unknown) => void;
 
 type useStateResponse = [getStateProps, setStateProps];
 
-export const useState = (value: any): useStateResponse => {
+export const useState = (value: unknown): useStateResponse => {
   let current = value;
 
   function getValue() {
