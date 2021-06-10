@@ -2,6 +2,7 @@ dist/*
 output/*
 __tests__/**
 __mocks__/**
+public/*
 node_modules/*
 gulpfile.babel.js/*
 *.test.js

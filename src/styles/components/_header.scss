@@ -1,11 +1,5 @@
 .layout-header {
-  // position: absolute;
-  // left: 0;
-  // right: 0;
-  // top: 0;
-  // z-index: 102;
   height: $header-height;
-  padding: 0 20px;
 
   @media (max-width: 767px) {
     height: 80px;

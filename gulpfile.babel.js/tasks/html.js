@@ -1,5 +1,5 @@
-import glob from 'glob';
 import { src, dest } from 'gulp';
+import glob from 'glob';
 import newer from 'gulp-newer';
 import rigger from 'gulp-rigger';
 import frontMatter from 'gulp-front-matter';

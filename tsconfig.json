@@ -4,13 +4,16 @@
     "baseUrl": "src/scripts",
     "outDir": "dist",
     "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "jsx": "preserve",
+    "newLine": "LF",
     "strict": true,
     "noEmit": true,
     "allowJs": true,
+    "checkJs": true,
     "sourceMap": true,
+    "explainFiles": true,
     "declaration": false,
     "skipLibCheck": true,
     "noResolve": true,
@@ -20,6 +23,7 @@
     "removeComments": true,
     "downlevelIteration": true,
     "preserveConstEnums": true,
+    "emitDeclarationOnly": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "suppressImplicitAnyIndexErrors": true,
@@ -45,5 +49,5 @@
     "typeRoots": ["./node_modules/@types"]
   },
   "include": ["./**/*", "node_modules/@types"],
-  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
+  "exclude": ["node_modules/**", "gulpfile.babel.js/**", "public/**", "**/*.spec.ts", "**/*.test.ts"]
 }

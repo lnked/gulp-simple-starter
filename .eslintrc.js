@@ -142,4 +142,12 @@ module.exports = {
     'require-yield': 1,
     'no-var': 1,
   },
+  overrides: [
+    {
+      files: ['public/*.js'],
+      rules: {
+        'no-var': 0,
+      },
+    },
+  ],
 };

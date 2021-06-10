@@ -1,4 +1,6 @@
+// @ts-nocheck
 import { src } from 'gulp';
+import glob from 'glob';
 import size from 'gulp-size';
 import newer from 'gulp-newer';
 import rigger from 'gulp-rigger';
@@ -11,9 +13,11 @@ import { reload } from './webserver';
 
 import { scriptsWatchGlob, scriptTasks } from './common.scripts';
 
+const files = glob.sync(`${scriptsPath}/**/*.(j|t)sx?`);
+
 export default () =>
   src([...scriptsWatchGlob, `!${scriptsPath}/**/_*.*`])
-    .pipe(newer(staticPathScripts))
+    .pipe(newer({ dest: staticPathScripts, extra: files }))
     .pipe(rigger())
     .pipe(webpack({ config: webpackConfig }))
     .pipe(scriptTasks())

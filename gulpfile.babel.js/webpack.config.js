@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ESBuildPlugin from 'esbuild-webpack-plugin';
 
-import { cacheDirectory, env, production, rootPath, mode, } from './env';
+import { cacheDirectory, env, production, rootPath, mode } from './env';
 import { alias, devtool, entries, scriptsSourcePath } from './tools/helpers';
 
 const optimizationConfig = {
@@ -66,12 +66,14 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
   plugins: [
-    ...BUNDLE_ANALYZER ? [
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'static',
-        reportFilename: resolve(rootPath, '.cache/report.html'),
-      }),
-    ] : [],
+    ...(BUNDLE_ANALYZER
+      ? [
+          new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+            reportFilename: resolve(rootPath, '.cache/report.html'),
+          }),
+        ]
+      : []),
   ],
   optimization: production ? optimizationConfig : {},
 };
