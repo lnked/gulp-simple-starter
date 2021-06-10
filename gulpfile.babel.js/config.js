@@ -1,5 +1,5 @@
-import { existsSync, writeFileSync } from 'fs';
-import { resolve, join } from 'path';
+import { existsSync, writeFileSync, mkdirSync } from 'fs';
+import { resolve } from 'path';
 import imagemin from 'gulp-imagemin';
 import imageminOptipng from 'imagemin-optipng';
 
@@ -19,6 +19,10 @@ export const transferPaths = ['src/mediadata'];
 export const manifestPath = resolve(cacheDirectory, 'rev-manifest.json');
 
 export const checkManifestPath = () => {
+  if (!existsSync(cacheDirectory)) {
+    mkdirSync(cacheDirectory);
+  }
+
   if (!existsSync(manifestPath)) {
     writeFileSync(manifestPath, '{}');
   }
