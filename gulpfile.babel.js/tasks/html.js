@@ -5,7 +5,7 @@ import rigger from 'gulp-rigger';
 import frontMatter from 'gulp-front-matter';
 import nunjucksRender from 'gulp-nunjucks-render';
 
-import { componentsPath, htmlPath, nunjucksRenderConfig } from '../config';
+import { sharedPath, htmlPath, nunjucksRenderConfig } from '../config';
 import { development, outputPath } from '../env';
 import { templateTasks } from './common.template';
 import { reload } from './webserver';
@@ -20,7 +20,7 @@ const extensions = 'nunjucks,nj,njk,html,htm,template,tmpl,tpl';
 
 const files = glob.sync(`${htmlPath}/**/*.{${extensions}}`);
 
-export const htmlWatchGlob = [`${componentsPath}/**/*.{${extensions},json}`, `${htmlPath}/**/*.{${extensions},json}`];
+export const htmlWatchGlob = [`${sharedPath}/**/*.{${extensions},json}`, `${htmlPath}/**/*.{${extensions},json}`];
 
 export default () =>
   src([`${htmlPath}/pages/**/*.{${extensions}}`, `!${htmlPath}/**/_*.*`])

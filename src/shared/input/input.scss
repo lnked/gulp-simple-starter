@@ -1,0 +1,15 @@
+.input-label {
+  display: inline-block;
+  border: 2px solid violet;
+}
+
+.input {
+  padding: 0 15px;
+  height: 32px;
+  color: #fff;
+  background-color: #f00;
+
+  &::placeholder {
+    color: #fff;
+  }
+}

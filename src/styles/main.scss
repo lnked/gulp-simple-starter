@@ -3,7 +3,8 @@
 @import 'core/*';
 @import 'sections/*';
 @import 'components/*';
-@import 'shared/components/*';
+
+@import '../shared/**/*.scss';
 
 html {
   font-size: 10px;

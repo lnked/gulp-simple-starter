@@ -13,25 +13,25 @@ import sourcemaps from 'gulp-sourcemaps';
 import modifyCssUrls from 'gulp-modify-css-urls';
 
 import { staticPathStyles, nodeModulesPath, rootPath, env } from '../env';
-import { stylesPath, componentsPath, manifestPath, purgeCSSConfig, revOptions } from '../config';
+import { stylesPath, sharedPath, manifestPath, purgeCSSConfig, revOptions } from '../config';
 import { postCSSCallback } from '../postcss.callback';
 import { stream } from './webserver';
 
-export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`, `${componentsPath}/**/*.s?(a|c)?ss`];
+export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`, `${sharedPath}/**/*.s?(a|c)?ss`];
 
 const { PURGE_CSS = false, SOURCEMAPS_ENABLED = false, REV_NAME_ENABLED = false } = env;
 
 const files = glob.sync(`${stylesPath}/**/*.s?(a|c)?ss`);
 
 export default () =>
-  src([`${stylesPath}/**/*.s?(a|c)?ss`, `!${stylesPath}/**/_*.*`, `!${componentsPath}/**/_*.*`])
+  src([`${stylesPath}/**/*.s?(a|c)?ss`, `!${stylesPath}/**/_*.*`, `!${sharedPath}/**/*.*`])
     .pipe(newer({ dest: staticPathStyles, extra: files }))
     .pipe(gulpIf(SOURCEMAPS_ENABLED, sourcemaps.init()))
     .pipe(plumber())
     .pipe(sassGlob())
     .pipe(
       sass({
-        includePaths: [stylesPath, nodeModulesPath],
+        includePaths: [stylesPath, sharedPath, nodeModulesPath],
       }),
     )
     .pipe(

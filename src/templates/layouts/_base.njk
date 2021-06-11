@@ -9,14 +9,14 @@
     {{ svgstore | safe }}
 
     <main class="layout-wrapper">
-      {%- include "components/_header.njk" -%}
+      {%- include "header/header.njk" -%}
 
       <div class="layout-wrapper__content">
         {%- block content -%}{%- endblock -%}
       </div>
     </main>
 
-    {%- include "components/_footer.njk" -%}
+    {%- include "footer/footer.njk" -%}
     {%- include "components/_scripts.njk" -%}
   </body>
 </html>

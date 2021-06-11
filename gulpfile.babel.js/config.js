@@ -14,7 +14,7 @@ export const imagesPath = 'src/images';
 export const stylesPath = 'src/styles';
 export const scriptsPath = 'src/scripts';
 export const svgStorePath = 'src/svgstore';
-export const componentsPath = 'src/shared/components';
+export const sharedPath = 'src/shared';
 export const transferPaths = ['src/mediadata'];
 export const manifestPath = resolve(cacheDirectory, 'rev-manifest.json');
 
@@ -214,7 +214,7 @@ export const imageminConfig = [
 export const pugConfig = plugins => ({
   data: getData(),
   plugins,
-  basedir: [componentsPath, htmlPath, publicPath],
+  basedir: [sharedPath, htmlPath, publicPath],
   debug: false,
   pretty: true,
   verbose: false,
@@ -224,7 +224,7 @@ export const nunjucksRenderConfig = {
   ext: '.html',
   web: { async: true },
   data: getData(),
-  path: [componentsPath, htmlPath, publicPath],
+  path: [sharedPath, htmlPath, publicPath],
   envOptions: {
     watch: development,
   },
