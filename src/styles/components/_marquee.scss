@@ -1,0 +1,39 @@
+// <div class="marquee">
+//   <div class="marquee__inner">
+//     <span class="marquee__content">СТАРТ 25 ИЮНЯ!</span>
+//     <span class="marquee__content">СТАРТ 25 ИЮНЯ!</span>
+//   </div>
+// </div>
+
+.marquee {
+  position: absolute;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &__inner {
+    position: absolute;
+    width: 200%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: marquee 5s linear infinite;
+    overflow: hidden;
+  }
+
+  &__content {
+    width: 50%;
+    float: left;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(calc(-25% + 20vw), 0, 0);
+  }
+  100% {
+    transform: translate3d(calc(-50% + 20vw), 0, 0);
+  }
+}
