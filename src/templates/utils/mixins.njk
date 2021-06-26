@@ -1,8 +1,10 @@
-{% macro picture(image = '', title = '', className = '') %}
+{% macro picture(image = '', className = '', title = '') %}
+  {% set pic = image.replace(r/\.(jpe?g|png|gif)/gi , '') %}
+
   <picture class="picture{% if className %} {{ className }}{% endif %}">
-    <source srcset="{{ image }}.webp" type="image/webp">
-    <source srcset="{{ image }}.jpg" type="image/jpeg">
-    <img src="{{ image }}.jpg" alt="{{ title | escape }}">
+    <source srcset="{{ pic }}.webp" type="image/webp">
+    <source srcset="{{ pic }}.jpg" type="image/jpeg">
+    <img src="{{ pic }}.jpg" alt="{{ title | escape }}">
   </picture>
 {% endmacro %}
 
