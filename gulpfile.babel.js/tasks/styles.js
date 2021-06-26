@@ -1,7 +1,8 @@
 import { src, dest } from 'gulp';
 import glob from 'glob';
 import size from 'gulp-size';
-import sass from 'gulp-sass';
+import gulpSass from 'gulp-sass';
+import nodeSass from 'sass';
 import rev from 'gulp-rev';
 import gulpIf from 'gulp-if';
 import newer from 'gulp-newer';
@@ -21,6 +22,7 @@ export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`, `${sharedPath}/
 
 const { PURGE_CSS = false, SOURCEMAPS_ENABLED = false, REV_NAME_ENABLED = false } = env;
 
+const sass = gulpSass(nodeSass);
 const files = glob.sync(`${stylesPath}/**/*.s?(a|c)?ss`);
 
 export default () =>

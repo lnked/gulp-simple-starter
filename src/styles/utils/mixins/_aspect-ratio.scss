@@ -1,7 +1,7 @@
-// @include aspect-ratio(16,9);
+@use "sass:math";
 
 @mixin aspect-ratio($x, $y, $pseudo: true) {
-  $padding: unquote(($y / $x) * 100 + '%');
+  $padding: unquote(math.div($y, $x) * 100 + '%');
 
   @if $pseudo {
     &:before {
@@ -14,3 +14,5 @@
     padding-top: $padding;
   }
 }
+
+// @include aspect-ratio(16,9);

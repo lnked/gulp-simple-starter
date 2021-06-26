@@ -3472,20 +3472,20 @@ browser-process-hrtime@^1.0.0:
   resolved "https://registry.npmjs.org/browser-process-hrtime/-/browser-process-hrtime-1.0.0.tgz"
   integrity sha512-9o5UecI3GhkpM6DrXr69PblIuWxPKk9Y0jHBRhdocZ2y7YECBFCsHm79Pr3OyR2AvjhDkabFJaDJMYRazHgsow==
 
-browser-sync-client@^2.27.1:
-  version "2.27.1"
-  resolved "https://registry.yarnpkg.com/browser-sync-client/-/browser-sync-client-2.27.1.tgz#42b1a3b5e4e6ddb8f2e1d1a242f6288afa3d9859"
-  integrity sha512-/w4dGzleL2Td2pffYgAzIURYK0uTpDlSjxVc26kIPXDD8FwAgnt0SRqMrEKRnF9UzHMN5VxdqBwa8isGmFlJGA==
+browser-sync-client@^2.27.3:
+  version "2.27.3"
+  resolved "https://registry.yarnpkg.com/browser-sync-client/-/browser-sync-client-2.27.3.tgz#6525466f819d5672c5b7fbc65465050a1428326b"
+  integrity sha512-GaadUAfO0hmueUi5hikJQhv1Qdak4qc62WFWl+0MQcqWTKDFG4fFbjnXs/W/sDpcOHclXVbNZqx2l+LLwuNz5Q==
   dependencies:
     etag "1.8.1"
     fresh "0.5.2"
     mitt "^1.1.3"
     rxjs "^5.5.6"
 
-browser-sync-ui@^2.27.1:
-  version "2.27.1"
-  resolved "https://registry.yarnpkg.com/browser-sync-ui/-/browser-sync-ui-2.27.1.tgz#275cc3474e134dee58d5f15c0df344c5c49a1303"
-  integrity sha512-lmHVODr1k1IKILhhwrr2iQmoLj95eElqBj8cUC7voXqKvv18Wt/VBosZX6IpKU+WMML8YasgyDS1hqTM+Tu4kA==
+browser-sync-ui@^2.27.3:
+  version "2.27.3"
+  resolved "https://registry.yarnpkg.com/browser-sync-ui/-/browser-sync-ui-2.27.3.tgz#d37c1c93e022cd6e3bab1828dcd914b8f10ec724"
+  integrity sha512-va7dNwF+BC9gBVuVYa07wZPWEp4mTgi8/08oXiAzH0aSXOciu7II/Pu0V1fOFhRWcoFQxP8EzRJ4JP9Drx8evQ==
   dependencies:
     async-each-series "0.1.1"
     connect-history-api-fallback "^1"
@@ -3494,13 +3494,13 @@ browser-sync-ui@^2.27.1:
     socket.io-client "^2.4.0"
     stream-throttle "^0.1.3"
 
-browser-sync@2.27.1:
-  version "2.27.1"
-  resolved "https://registry.yarnpkg.com/browser-sync/-/browser-sync-2.27.1.tgz#2be671d44ce03562b989d13167238ad275f3e2b2"
-  integrity sha512-pw2hUeFPAfR75+fEMz0J4T+QtxC3x6hyc/W4FCiai8+b3BO5lqpwIOX3t6VDQyRDRcAFWsiIBZVZ0LCNZfEE+g==
+browser-sync@2.27.3:
+  version "2.27.3"
+  resolved "https://registry.yarnpkg.com/browser-sync/-/browser-sync-2.27.3.tgz#a6759502e53de7fee43ba5e35e1bce1c3e1ef1dd"
+  integrity sha512-kyU5t5Sbm0lwCZTM4r2TKO9opznOT/P8eorkwWF4leZkbIZGyZohbSBiifYEWWlElM/vCRRhN/AqBH/3sSfOUw==
   dependencies:
-    browser-sync-client "^2.27.1"
-    browser-sync-ui "^2.27.1"
+    browser-sync-client "^2.27.3"
+    browser-sync-ui "^2.27.3"
     bs-recipes "1.3.4"
     bs-snippet-injector "^2.0.1"
     chokidar "^3.5.1"
@@ -3991,6 +3991,21 @@ cheerio@^0.22.0:
     lodash.reject "^4.4.0"
     lodash.some "^4.4.0"
 
+"chokidar@>=3.0.0 <4.0.0", chokidar@^3.5.2:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.2.tgz#dba3976fcadb016f66fd365021d91600d01c1e75"
+  integrity sha512-ekGhOnNVPgT77r4K/U3GDhu+FQ2S8TnK/s2KbIGXi0SZWuwkZ2QNyfWdZW+TVfn84DpEP7rLeCt2UI6bJ8GwbQ==
+  dependencies:
+    anymatch "~3.1.2"
+    braces "~3.0.2"
+    glob-parent "~5.1.2"
+    is-binary-path "~2.1.0"
+    is-glob "~4.0.1"
+    normalize-path "~3.0.0"
+    readdirp "~3.6.0"
+  optionalDependencies:
+    fsevents "~2.3.2"
+
 chokidar@^2.0.0, chokidar@^2.1.8:
   version "2.1.8"
   resolved "https://registry.npmjs.org/chokidar/-/chokidar-2.1.8.tgz"
@@ -4024,21 +4039,6 @@ chokidar@^3.4.1, chokidar@^3.5.1:
     readdirp "~3.5.0"
   optionalDependencies:
     fsevents "~2.3.1"
-
-chokidar@^3.5.2:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.2.tgz#dba3976fcadb016f66fd365021d91600d01c1e75"
-  integrity sha512-ekGhOnNVPgT77r4K/U3GDhu+FQ2S8TnK/s2KbIGXi0SZWuwkZ2QNyfWdZW+TVfn84DpEP7rLeCt2UI6bJ8GwbQ==
-  dependencies:
-    anymatch "~3.1.2"
-    braces "~3.0.2"
-    glob-parent "~5.1.2"
-    is-binary-path "~2.1.0"
-    is-glob "~4.0.1"
-    normalize-path "~3.0.0"
-    readdirp "~3.6.0"
-  optionalDependencies:
-    fsevents "~2.3.2"
 
 chownr@^1.1.1:
   version "1.1.4"
@@ -4749,6 +4749,17 @@ css-select@^3.1.2:
     domutils "^2.4.3"
     nth-check "^2.0.0"
 
+css-select@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/css-select/-/css-select-4.1.3.tgz#a70440f70317f2669118ad74ff105e65849c7067"
+  integrity sha512-gT3wBNd9Nj49rAbmtFHj1cljIAOLYSX1nZ8CB7TBO3INYckygm5B7LISU/szY//YmdiSLbJvDLOx9VnMVpMBxA==
+  dependencies:
+    boolbase "^1.0.0"
+    css-what "^5.0.0"
+    domhandler "^4.2.0"
+    domutils "^2.6.0"
+    nth-check "^2.0.0"
+
 css-select@~1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/css-select/-/css-select-1.2.0.tgz"
@@ -4815,6 +4826,11 @@ css-what@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/css-what/-/css-what-4.0.0.tgz"
   integrity sha512-teijzG7kwYfNVsUh2H/YN62xW3KK9YhXEgSlbxMlcyjPNvdKJqFx5lrwlJgoFP1ZHlB89iGDlo/JyshKeRhv5A==
+
+css-what@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/css-what/-/css-what-5.0.1.tgz#3efa820131f4669a8ac2408f9c32e7c7de9f4cad"
+  integrity sha512-FYDTSHb/7KXsWICVsxdmiExPjCfRC4qRFBdVwv7Ax9hMnvMmEjP9RfxTEZ3qPZGmADDn2vAKSo9UcN1jKVYscg==
 
 css@^2.0.0:
   version "2.2.4"
@@ -5492,6 +5508,15 @@ domutils@^2.4.3:
   version "2.6.0"
   resolved "https://registry.npmjs.org/domutils/-/domutils-2.6.0.tgz"
   integrity sha512-y0BezHuy4MDYxh6OvolXYsH+1EMGmFbwv5FKW7ovwMG6zTPWqNPq3WF9ayZssFq+UlKdffGLbOEaghNdaOm1WA==
+  dependencies:
+    dom-serializer "^1.0.1"
+    domelementtype "^2.2.0"
+    domhandler "^4.2.0"
+
+domutils@^2.6.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/domutils/-/domutils-2.7.0.tgz#8ebaf0c41ebafcf55b0b72ec31c56323712c5442"
+  integrity sha512-8eaHa17IwJUPAiB+SoTYBo5mCdeMgdcAoXJ59m6DT1vw+5iLS3gNoqYaRowaBKtGVrOF1Jz4yDTgYKLK2kvfJg==
   dependencies:
     dom-serializer "^1.0.1"
     domelementtype "^2.2.0"
@@ -13411,10 +13436,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-2.3.1.tgz"
-  integrity sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==
+prettier@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
+  integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
 
 pretty-bytes@^5.3.0, pretty-bytes@^5.6.0:
   version "5.6.0"
@@ -14528,6 +14553,13 @@ safe-regex@^1.1.0:
   resolved "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
+sass@^1.35.1:
+  version "1.35.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.35.1.tgz#90ecf774dfe68f07b6193077e3b42fb154b9e1cd"
+  integrity sha512-oCisuQJstxMcacOPmxLNiLlj4cUyN2+8xJnG7VanRoh2GOLr9RqkvI4AxA4a6LHVg/rsu+PmxXeGhrdSF9jCiQ==
+  dependencies:
+    chokidar ">=3.0.0 <4.0.0"
+
 sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
@@ -15630,6 +15662,19 @@ svgo@^2.3.0:
     chalk "^4.1.0"
     commander "^7.1.0"
     css-select "^3.1.2"
+    css-tree "^1.1.2"
+    csso "^4.2.0"
+    stable "^0.1.8"
+
+svgo@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/svgo/-/svgo-2.3.1.tgz#603a69ce50311c0e36791528f549644ec1b3f4bc"
+  integrity sha512-riDDIQgXpEnn0BEl9Gvhh1LNLIyiusSpt64IR8upJu7MwxnzetmF/Y57pXQD2NMX2lVyMRzXt5f2M5rO4wG7Dw==
+  dependencies:
+    "@trysound/sax" "0.1.1"
+    chalk "^4.1.0"
+    commander "^7.1.0"
+    css-select "^4.1.3"
     css-tree "^1.1.2"
     csso "^4.2.0"
     stable "^0.1.8"
