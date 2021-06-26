@@ -1,5 +1,5 @@
 import watch from 'gulp-watch';
-import { series } from 'gulp';
+import { parallel } from 'gulp';
 
 import { htmlWatchGlob } from './html';
 import { fontsWatchGlob } from './fonts';
@@ -21,12 +21,12 @@ export default mode => {
   };
 
   return () => {
-    watch(fontsWatchGlob, watchConfig, series('fonts'));
-    watch(publicWatchGlob, watchConfig, series('public'));
-    watch(imagesWatchGlob, watchConfig, series('images'));
-    watch(stylesWatchGlob, watchConfig, series('styles'));
-    watch(transferWatchGlob, watchConfig, series('transfer'));
-    watch(templatesWatchGlob, watchConfig, series('templates'));
-    watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, series(mode));
+    watch(fontsWatchGlob, watchConfig, parallel('fonts'));
+    watch(publicWatchGlob, watchConfig, parallel('public'));
+    watch(imagesWatchGlob, watchConfig, parallel('images'));
+    watch(stylesWatchGlob, watchConfig, parallel('styles'));
+    watch(transferWatchGlob, watchConfig, parallel('transfer'));
+    watch(templatesWatchGlob, watchConfig, parallel('templates'));
+    watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, parallel(mode));
   };
 };

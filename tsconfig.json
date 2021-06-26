@@ -23,7 +23,6 @@
     "removeComments": true,
     "downlevelIteration": true,
     "preserveConstEnums": true,
-    "emitDeclarationOnly": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "suppressImplicitAnyIndexErrors": true,
