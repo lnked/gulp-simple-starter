@@ -2401,11 +2401,6 @@ acorn@^8.0.4, acorn@^8.2.1, acorn@^8.2.4:
   resolved "https://registry.npmjs.org/acorn/-/acorn-8.2.4.tgz"
   integrity sha512-Ibt84YwBDDA890eDiDCEqcbwvHlBvzzDkU2cGBBDDI1QWT12jTiXIOn2CIw5KK4i6N5Z2HUxwYjzriDyqaqqZg==
 
-add@2.0.6:
-  version "2.0.6"
-  resolved "https://registry.npmjs.org/add/-/add-2.0.6.tgz"
-  integrity sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=
-
 after@0.8.2:
   version "0.8.2"
   resolved "https://registry.npmjs.org/after/-/after-0.8.2.tgz"
@@ -3278,11 +3273,6 @@ beeper@^1.0.0:
   version "1.1.1"
   resolved "https://registry.npmjs.org/beeper/-/beeper-1.1.1.tgz"
   integrity sha1-5tXqjF2tABMEpwsiY4RH9pyy+Ak=
-
-bempug@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/bempug/-/bempug-1.1.1.tgz"
-  integrity sha1-d8+j+Vl+SMse22ysQIZBewIeUKw=
 
 big.js@^5.2.2:
   version "5.2.2"
@@ -4374,13 +4364,6 @@ concat-stream@^1.5.0, concat-stream@^1.6.0, concat-stream@^1.6.2:
     inherits "^2.0.3"
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
-
-concat-with-sourcemaps@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/concat-with-sourcemaps/-/concat-with-sourcemaps-1.1.0.tgz"
-  integrity sha512-4gEjHJFT9e+2W/77h/DS5SGUgwDaOwprX8L/gl5+3ixnzkVJJsZWDSelmN3Oilw3LNDZjZV0yqH1hLG3k6nghg==
-  dependencies:
-    source-map "^0.6.1"
 
 config-chain@^1.1.11, config-chain@^1.1.12:
   version "1.1.12"
@@ -6837,13 +6820,6 @@ follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.0.tgz"
   integrity sha512-0vRwd7RKQBTt+mgu87mtYeofLFZpTas2S9zY+jIeuLJMNvudIgF52nr19q40HOwH5RrhWIPuj9puybzSJiRrVg==
 
-for-each@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.npmjs.org/for-each/-/for-each-0.3.3.tgz"
-  integrity sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==
-  dependencies:
-    is-callable "^1.1.3"
-
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/for-in/-/for-in-1.0.2.tgz"
@@ -6929,11 +6905,6 @@ from@~0:
   version "0.1.7"
   resolved "https://registry.npmjs.org/from/-/from-0.1.7.tgz"
   integrity sha1-g8YK/Fi5xWmXAH7Rp2izqzA6RP4=
-
-fromentries@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.npmjs.org/fromentries/-/fromentries-1.3.2.tgz"
-  integrity sha512-cHEpEQHUg0f8XdtZCc2ZAhrHzKzT0MrFUTcvx+hfxYu7rGMDc5SKoXFh+n4YigxsHXRzc6OrCshdR1bWH6HHyg==
 
 front-matter@^2.0.0:
   version "2.3.0"
@@ -7135,16 +7106,6 @@ getpass@^0.1.1:
   integrity sha1-Xv+OPmhNVprkyysSgmBOi6YhSfo=
   dependencies:
     assert-plus "^1.0.0"
-
-gifsicle@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.npmjs.org/gifsicle/-/gifsicle-4.0.1.tgz"
-  integrity sha512-A/kiCLfDdV+ERV/UB+2O41mifd+RxH8jlRG8DMxZO84Bma/Fw0htqZ+hY2iaalLRNyUu7tYZQslqUBJxBggxbg==
-  dependencies:
-    bin-build "^3.0.0"
-    bin-wrapper "^4.0.0"
-    execa "^1.0.0"
-    logalot "^2.0.0"
 
 gifsicle@^5.0.0:
   version "5.2.0"
@@ -7518,17 +7479,6 @@ gulp-beautify@3.0.0:
     js-beautify "^1.8.8"
     through2 "^2.0.0"
 
-gulp-changed@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/gulp-changed/-/gulp-changed-4.0.3.tgz#f9f57944b2cbb72b3cdbb93f51fb5cbd1adda898"
-  integrity sha512-oIymgTNmmIvdqRRpdtohmELix81q+CA/D9DgVCvaM4Ulai0xgalf+XS6A95JwskbxRGQKtzzhMmdWZEuikX67w==
-  dependencies:
-    make-dir "^3.0.0"
-    plugin-error "^1.0.1"
-    replace-ext "^1.0.0"
-    through2 "^3.0.1"
-    touch "^3.1.0"
-
 gulp-clean@0.4.0:
   version "0.4.0"
   resolved "https://registry.npmjs.org/gulp-clean/-/gulp-clean-0.4.0.tgz"
@@ -7563,15 +7513,6 @@ gulp-cli@^2.2.0:
     semver-greatest-satisfied-range "^1.1.0"
     v8flags "^3.2.0"
     yargs "^7.1.0"
-
-gulp-concat@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.npmjs.org/gulp-concat/-/gulp-concat-2.6.1.tgz"
-  integrity sha1-Yz0WyV2IUEYorQJmVmPO5aR5M1M=
-  dependencies:
-    concat-with-sourcemaps "^1.0.0"
-    through2 "^2.0.0"
-    vinyl "^2.0.0"
 
 gulp-esbuild@^0.8.2:
   version "0.8.2"
@@ -7729,11 +7670,6 @@ gulp-purgecss@^4.0.3:
     purgecss "^4.0.3"
     through2 "^4.0.1"
 
-gulp-rename@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/gulp-rename/-/gulp-rename-2.0.0.tgz"
-  integrity sha512-97Vba4KBzbYmR5VBs9mWmK+HwIf5mj+/zioxfZhOKeXtx5ZjBk57KFlePf5nxq9QsTtFl0ejnHE3zTC9MHXqyQ==
-
 gulp-replace@1.1.3:
   version "1.1.3"
   resolved "https://registry.npmjs.org/gulp-replace/-/gulp-replace-1.1.3.tgz"
@@ -7744,19 +7680,6 @@ gulp-replace@1.1.3:
     istextorbinary "^3.0.0"
     replacestream "^4.0.3"
     yargs-parser ">=5.0.0-security.0"
-
-gulp-rev-all@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/gulp-rev-all/-/gulp-rev-all-3.0.0.tgz"
-  integrity sha512-NJaiLopZA1f+OuUXcsmtwtB1aXZl/PaO0JRm/P8qwwGTJ6BR1OLASrKkehFNMxoylBbPGPfTxFR7BQ+EoaJIvQ==
-  dependencies:
-    chalk "^4.1.0"
-    fancy-log "^1.3.2"
-    isbinaryfile "^4.0.6"
-    merge "^2.1.1"
-    plugin-error "^1.0.1"
-    through2 "^4.0.2"
-    vinyl "^2.2.1"
 
 gulp-rev-rewrite@^4.0.0:
   version "4.0.0"
@@ -8384,15 +8307,6 @@ ignore@^5.1.1, ignore@^5.1.4, ignore@^5.1.8:
   resolved "https://registry.npmjs.org/ignore/-/ignore-5.1.8.tgz"
   integrity sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw==
 
-imagemin-gifsicle@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.npmjs.org/imagemin-gifsicle/-/imagemin-gifsicle-6.0.1.tgz"
-  integrity sha512-kuu47c6iKDQ6R9J10xCwL0lgs0+sMz3LRHqRcJ2CRBWdcNmo3T5hUaM8hSZfksptZXJLGKk8heSAvwtSdB1Fng==
-  dependencies:
-    exec-buffer "^3.0.0"
-    gifsicle "^4.0.0"
-    is-gif "^3.0.0"
-
 imagemin-gifsicle@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npmjs.org/imagemin-gifsicle/-/imagemin-gifsicle-7.0.0.tgz"
@@ -8401,26 +8315,6 @@ imagemin-gifsicle@^7.0.0:
     execa "^1.0.0"
     gifsicle "^5.0.0"
     is-gif "^3.0.0"
-
-imagemin-jpegtran@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmjs.org/imagemin-jpegtran/-/imagemin-jpegtran-6.0.0.tgz"
-  integrity sha512-Ih+NgThzqYfEWv9t58EItncaaXIHR0u9RuhKa8CtVBlMBvY0dCIxgQJQCfwImA4AV1PMfmUKlkyIHJjb7V4z1g==
-  dependencies:
-    exec-buffer "^3.0.0"
-    is-jpg "^2.0.0"
-    jpegtran-bin "^4.0.0"
-
-imagemin-lint-staged@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/imagemin-lint-staged/-/imagemin-lint-staged-0.4.0.tgz"
-  integrity sha512-41OYUu3AEHCrfAjWMo0Ou28oGI/F5SNK4E9ec5Wu4yd24tahl7hn9gBh3p9608Y3/WH2hyU4OhRryDuovKhIrQ==
-  dependencies:
-    imagemin-gifsicle "^6.0.1"
-    imagemin-jpegtran "^6.0.0"
-    imagemin-optipng "^6.0.0"
-    imagemin-svgo "^7.0.0"
-    util.promisify "^1.0.0"
 
 imagemin-mozjpeg@^8.0.0:
   version "8.0.0"
@@ -8439,15 +8333,6 @@ imagemin-optipng@8.0.0:
     exec-buffer "^3.0.0"
     is-png "^2.0.0"
     optipng-bin "^7.0.0"
-
-imagemin-optipng@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmjs.org/imagemin-optipng/-/imagemin-optipng-6.0.0.tgz"
-  integrity sha512-FoD2sMXvmoNm/zKPOWdhKpWdFdF9qiJmKC17MxZJPH42VMAp17/QENI/lIuP7LCUnLVAloO3AUoTSNzfhpyd8A==
-  dependencies:
-    exec-buffer "^3.0.0"
-    is-png "^1.0.0"
-    optipng-bin "^5.0.0"
 
 imagemin-optipng@^7.0.0:
   version "7.1.0"
@@ -8757,7 +8642,7 @@ is-buffer@^2.0.0:
   resolved "https://registry.npmjs.org/is-buffer/-/is-buffer-2.0.5.tgz"
   integrity sha512-i2R6zNFDwgEHJyQUtJEk0XFi1i0dPFn/oqjK3/vPCcDeJvW5NQ83V8QbicfF1SupOaB0h8ntgBC2YiE7dfyctQ==
 
-is-callable@^1.1.3, is-callable@^1.1.4, is-callable@^1.2.3:
+is-callable@^1.1.4, is-callable@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.2.3.tgz#8b1e0500b73a1d76c70487636f368e519de8db8e"
   integrity sha512-J1DcMe8UYTBSrKezuIUTUwjXsho29693unXM2YhJUTR2txK/eG47bvNa/wipPFmZFgr/N6f1GA66dv0mEyTIyQ==
@@ -9061,11 +8946,6 @@ is-plain-object@^5.0.0:
   resolved "https://registry.npmjs.org/is-plain-object/-/is-plain-object-5.0.0.tgz"
   integrity sha512-VRSzKkbMm5jMDoKLbltAkFQ5Qr7VDiTFGXxYFXXowVj387GeGNOCsOH6Msy00SGZ3Fp84b1Naa1psqgcCIEP5Q==
 
-is-png@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/is-png/-/is-png-1.1.0.tgz"
-  integrity sha1-1XSxK/J1wDUEVVcLDltXqwYgd84=
-
 is-png@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/is-png/-/is-png-2.0.0.tgz"
@@ -9219,11 +9099,6 @@ isarray@2.0.1:
   version "2.0.1"
   resolved "https://registry.npmjs.org/isarray/-/isarray-2.0.1.tgz"
   integrity sha1-o32U7ZzaLVmGXJ92/llu4fM4dB4=
-
-isbinaryfile@^4.0.6:
-  version "4.0.8"
-  resolved "https://registry.npmjs.org/isbinaryfile/-/isbinaryfile-4.0.8.tgz"
-  integrity sha512-53h6XFniq77YdW+spoRrebh0mnmTxRPTlcuIArO57lmMdq4uBKFKaeTjnb92oYWrSn/LVL+LT+Hap2tFQj8V+w==
 
 isexe@^2.0.0:
   version "2.0.0"
@@ -9759,24 +9634,6 @@ joi@^17.4.0:
     "@sideway/address" "^4.1.0"
     "@sideway/formula" "^3.0.0"
     "@sideway/pinpoint" "^2.0.0"
-
-jpegtran-bin@5.0.2:
-  version "5.0.2"
-  resolved "https://registry.npmjs.org/jpegtran-bin/-/jpegtran-bin-5.0.2.tgz"
-  integrity sha512-4FSmgIcr8d5+V6T1+dHbPZjaFH0ogVyP4UVsE+zri7S9YLO4qAT2our4IN3sW3STVgNTbqPermdIgt2XuAJ4EA==
-  dependencies:
-    bin-build "^3.0.0"
-    bin-wrapper "^4.0.0"
-    logalot "^2.0.0"
-
-jpegtran-bin@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmjs.org/jpegtran-bin/-/jpegtran-bin-4.0.0.tgz"
-  integrity sha512-2cRl1ism+wJUoYAYFt6O/rLBfpXNWG2dUWbgcEkTt5WGMnqI46eEro8T4C5zGROxKRqyKpCBSdHPvt5UYCtxaQ==
-  dependencies:
-    bin-build "^3.0.0"
-    bin-wrapper "^4.0.0"
-    logalot "^2.0.0"
 
 jquery@^3.6.0:
   version "3.6.0"
@@ -10988,11 +10845,6 @@ merge2@^1.2.3, merge2@^1.3.0:
   resolved "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-merge@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.npmjs.org/merge/-/merge-2.1.1.tgz"
-  integrity sha512-jz+Cfrg9GWOZbQAnDQ4hlVnQky+341Yk5ru8bZSe6sIDTCIg8n9i/u7hSQGSVOF3C7lH6mGtqjkiT9G4wFLL0w==
-
 mico-spinner@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/mico-spinner/-/mico-spinner-1.0.0.tgz#3ec7a3a5343019db1d97812bfdfc802ee8c277f8"
@@ -11423,13 +11275,6 @@ nopt@^5.0.0:
   dependencies:
     abbrev "1"
 
-nopt@~1.0.10:
-  version "1.0.10"
-  resolved "https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz"
-  integrity sha1-bd0hvSoxQXuScn3Vhfim83YI6+4=
-  dependencies:
-    abbrev "1"
-
 normalize-newline@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/normalize-newline/-/normalize-newline-3.0.0.tgz"
@@ -11644,7 +11489,7 @@ object.defaults@^1.0.0, object.defaults@^1.1.0:
     for-own "^1.0.0"
     isobject "^3.0.0"
 
-object.getownpropertydescriptors@^2.1.0, object.getownpropertydescriptors@^2.1.1:
+object.getownpropertydescriptors@^2.1.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/object.getownpropertydescriptors/-/object.getownpropertydescriptors-2.1.2.tgz#1bd63aeacf0d5d2d2f31b5e393b03a7c601a23f7"
   integrity sha512-WtxeKSzfBjlzL+F9b7M7hewDzMwy+C8NRssHd1YrNlzHzIDrXcXiNOMrezdAEM4UXixgV+vvnyBeN7Rygl2ttQ==
@@ -11788,15 +11633,6 @@ optionator@^0.9.1:
     prelude-ls "^1.2.1"
     type-check "^0.4.0"
     word-wrap "^1.2.3"
-
-optipng-bin@^5.0.0:
-  version "5.1.0"
-  resolved "https://registry.npmjs.org/optipng-bin/-/optipng-bin-5.1.0.tgz"
-  integrity sha512-9baoqZTNNmXQjq/PQTWEXbVV3AMO2sI/GaaqZJZ8SExfAzjijeAP7FEeT+TtyumSw7gr0PZtSUYB/Ke7iHQVKA==
-  dependencies:
-    bin-build "^3.0.0"
-    bin-wrapper "^4.0.0"
-    logalot "^2.0.0"
 
 optipng-bin@^6.0.0:
   version "6.0.0"
@@ -12321,24 +12157,12 @@ pinkie@^2.0.0:
   resolved "https://registry.npmjs.org/pinkie/-/pinkie-2.0.4.tgz"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
 
-pinst@^2.1.6:
-  version "2.1.6"
-  resolved "https://registry.npmjs.org/pinst/-/pinst-2.1.6.tgz"
-  integrity sha512-B4dYmf6nEXg1NpDSB+orYWvKa5Kfmz5KzWC29U59dpVM4S/+xp0ak/JMEsw04UQTNNKps7klu0BUalr343Gt9g==
-  dependencies:
-    fromentries "^1.3.2"
-
 pirates@^4.0.0, pirates@^4.0.1:
   version "4.0.1"
   resolved "https://registry.npmjs.org/pirates/-/pirates-4.0.1.tgz"
   integrity sha512-WuNqLTbMI3tmfef2TKxlQmAiLHKtFhlsCZnPIpuv2Ow0RDVO8lfy1Opf4NUzlMXLjPl+Men7AuVdX6TA+s+uGA==
   dependencies:
     node-modules-regexp "^1.0.0"
-
-pixel-glass@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.npmjs.org/pixel-glass/-/pixel-glass-1.0.13.tgz"
-  integrity sha1-xWl2Ts3SoV2m3qmM8WjvC/AHNqs=
 
 pixrem@^3.0.2:
   version "3.0.2"
@@ -14493,11 +14317,6 @@ rmdir@~1.0.4:
   dependencies:
     node.flow "1.2.3"
 
-rsync@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.npmjs.org/rsync/-/rsync-0.6.1.tgz"
-  integrity sha1-NoGgCYvYdQRI+L+dof7gn3djdCs=
-
 run-parallel@^1.1.9:
   version "1.2.0"
   resolved "https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz"
@@ -16121,13 +15940,6 @@ totalist@^1.0.0:
   resolved "https://registry.npmjs.org/totalist/-/totalist-1.1.0.tgz"
   integrity sha512-gduQwd1rOdDMGxFG1gEvhV88Oirdo2p+KjoYFU7k2g+i7n6AFFbDQ5kMPUsW0pNbfQsB/cwXvT1i4Bue0s9g5g==
 
-touch@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/touch/-/touch-3.1.0.tgz"
-  integrity sha512-WBx8Uy5TLtOSRtIq+M03/sKDrXCLHxwDcquSP2c43Le03/9serjQBIztjRz6FkJez9D/hleyAXTBGLwwZUw9lA==
-  dependencies:
-    nopt "~1.0.10"
-
 tough-cookie@^2.3.3, tough-cookie@^2.5.0, tough-cookie@~2.5.0:
   version "2.5.0"
   resolved "https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.5.0.tgz"
@@ -16638,17 +16450,6 @@ util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
-
-util.promisify@^1.0.0:
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/util.promisify/-/util.promisify-1.1.1.tgz"
-  integrity sha512-/s3UsZUrIfa6xDhr7zZhnE9SLQ5RIXyYfiVnMMyMDzOc8WhWN4Nbh36H842OyurKbCDAesZOJaVyvmSl6fhGQw==
-  dependencies:
-    call-bind "^1.0.0"
-    define-properties "^1.1.3"
-    for-each "^0.3.3"
-    has-symbols "^1.0.1"
-    object.getownpropertydescriptors "^2.1.1"
 
 util.promisify@~1.0.0:
   version "1.0.1"

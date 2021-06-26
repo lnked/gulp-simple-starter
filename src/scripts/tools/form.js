@@ -11,7 +11,7 @@ const sendMail = ({ name, phone }) => {
   });
 };
 
-function toJSON( form ) {
+function toJSON(form) {
   const data = {};
   const elements = form.querySelectorAll('input, select, textarea');
 
@@ -29,7 +29,7 @@ function toJSON( form ) {
 
 const feedback = () => {
   const form = document.getElementById('feedback');
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', e => {
     e.preventDefault();
 
     const json = toJSON(e.target);

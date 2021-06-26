@@ -4,15 +4,13 @@ if (Cookies.enabled) {
   Cookies.set('key', 'value');
 }
 
-
 Cookies.defaults = {
   path: '/',
-  secure: true
+  secure: true,
 };
 
 Cookies.set('key', 'value'); // Will be secure and have a path of '/'
 Cookies.expire('key'); // Will expire the cookie with a path of '/'
-
 
 // First set a cookie
 Cookies.set('key', 'value');
@@ -31,8 +29,6 @@ Cookies.expire('key').get('key'); // undefined
 
 // Using the alias
 Cookies('key', undefined);
-
-
 
 // Setting a cookie value
 Cookies.set('key', 'value');
