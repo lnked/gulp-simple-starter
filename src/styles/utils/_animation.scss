@@ -1,38 +1,47 @@
-// .is-animated,
-// .is-parallaxed {
+// .is-animated {
 //   transition: 1s opacity cubic-bezier(.25,.46,.45,.94), 1s transform cubic-bezier(.25,.46,.45,.94);
 
 //   & + & {
-//     transition-delay: .15s;
+//     transition-delay: .1s;
 //   }
 
 //   & + & + & {
-//     transition-delay: .25s;
+//     transition-delay: .2s;
 //   }
 
 //   & + & + & + & {
-//     transition-delay: .35s;
+//     transition-delay: .3s;
 //   }
 
 //   & + & + & + & + & {
-//     transition-delay: .45s;
+//     transition-delay: .4s;
 //   }
 
 //   & + & + & + & + & + & {
-//     transition-delay: .55s;
+//     transition-delay: .5s;
 //   }
 
 //   & + & + & + & + & + & + & {
-//     transition-delay: .65s;
+//     transition-delay: .6s;
 //   }
 
 //   & + & + & + & + & + & + & + & {
-//     transition-delay: .75s;
+//     transition-delay: .7s;
 //   }
 
 //   & + & + & + & + & + & + & + & + & {
-//     transition-delay: .85s;
+//     transition-delay: .8s;
 //   }
+// }
+
+// .fade-up {
+//   opacity: 0;
+//   transform: translateY(2rem);
+// }
+
+// .fade-in {
+//   opacity: 0;
+//   transform: translateY(1.6rem);
 // }
 
 // .fade-in,
