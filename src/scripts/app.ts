@@ -1,10 +1,13 @@
-import { useState } from '@hooks/useState';
 import Navigation from '@components/navigation';
+import { useState } from '@hooks/useState';
+import Modal from '@tools/modal';
 
 const modules = [Navigation];
 
 const init = () => {
   const [getCounter, setCounter] = useState(2);
+
+  Modal.open('test');
 
   const button = document.getElementById('counter');
   const values: HTMLElement | null = document.getElementById('counter-value');

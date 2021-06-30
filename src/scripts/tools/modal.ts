@@ -22,6 +22,10 @@ const Modal = (() => {
 
     const template = document.querySelector(`#tmpl-modal-${name}`);
 
+    // var temp = document.getElementsByTagName("template")[0];
+    // const clon = temp.content.cloneNode(true);
+    // document.body.appendChild(clon)
+
     if (template) {
       document.body.innerHTML += template?.innerHTML;
     }
