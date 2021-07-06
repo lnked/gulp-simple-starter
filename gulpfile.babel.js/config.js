@@ -1,11 +1,11 @@
-import { existsSync, writeFileSync, mkdirSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { resolve } from 'path';
 import imagemin from 'gulp-imagemin';
 import imageminOptipng from 'imagemin-optipng';
 
 import { getData } from './get-data';
 import { appEnvironment } from './env/transform';
-import { cacheDirectory, development, templatesPath, production } from './env';
+import { cacheDirectory, development, templatesPath, production, env } from './env';
 
 export const publicPath = 'public';
 export const htmlPath = 'src/templates';
@@ -18,6 +18,8 @@ export const sharedPath = 'src/shared';
 export const transferPaths = ['src/mediadata'];
 export const manifestPath = resolve(cacheDirectory, 'rev-manifest.json');
 
+const { REV_NAME_ENABLED = false } = env;
+
 export const checkManifestPath = () => {
   if (!existsSync(cacheDirectory)) {
     mkdirSync(cacheDirectory);
@@ -26,6 +28,14 @@ export const checkManifestPath = () => {
   if (!existsSync(manifestPath)) {
     writeFileSync(manifestPath, '{}');
   }
+};
+
+export const manifestContents = () => {
+  if (REV_NAME_ENABLED && existsSync(manifestPath)) {
+    return readFileSync(manifestPath);
+  }
+
+  return {};
 };
 
 export const htmlFormatConfig = {

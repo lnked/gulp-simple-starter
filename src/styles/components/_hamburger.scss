@@ -1,0 +1,85 @@
+.hamburger {
+  $parent: &;
+
+  position: relative;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border: 0;
+  font-size: 0;
+  outline: 0;
+  background-color: transparent;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    content: '';
+    width: 26px;
+    height: 2px;
+    background-color: $white;
+    transition: background-color .2s ease-in-out, transform .2s ease-in-out;
+    transform-origin: left;
+
+    .layout-header--dark & {
+      background-color: $black;
+    }
+  }
+
+  &:before {
+    margin-top: -5px;
+  }
+
+  &:after {
+    margin-top: 5px;
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      background-color: $black;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 9px;
+    height: 2px;
+    margin-top: 5px;
+    margin-left: 26px;
+    background-color: $white;
+    text-indent: -100px;
+    transition: opacity .15s ease-in-out, background-color .2s ease-in-out, transform .2s ease-in-out;
+
+    .layout-header--dark & {
+      background-color: $black;
+    }
+
+    .is-active & {
+      opacity: 0;
+      transform: translateX(-9px);
+    }
+
+    #{$parent}:hover & {
+      background-color: $black;
+    }
+  }
+
+  &.is-active {
+    &:before,
+    &:after {
+      background-color: $black;
+    }
+
+    &:before {
+      transform: rotate(45deg) translateX(-6px) translateX(6px) translateY(-6px);
+    }
+
+    &:after {
+      transform: rotate(-45deg) translateX(-6px) translateX(6px) translateY(6px);
+    }
+  }
+}

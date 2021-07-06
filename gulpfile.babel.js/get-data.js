@@ -2,13 +2,15 @@ import { resolve } from 'path';
 import { existsSync, readFileSync } from 'fs';
 
 import { manifestPath } from './config';
-import { mode, environment, sourcePath, styleFolder, development, production } from './env';
+import { mode, environment, sourcePath, styleFolder, development, production, env } from './env';
 import { parseSVGStore } from './tools/svgstore';
+
+const { REV_NAME_ENABLED = false } = env;
 
 const getStyles = () => {
   const defaultStyles = [`/static/${styleFolder}/main.css`];
 
-  if (existsSync(manifestPath)) {
+  if (REV_NAME_ENABLED && existsSync(manifestPath)) {
     const rawData = readFileSync(manifestPath);
     const data = JSON.parse(rawData);
 
