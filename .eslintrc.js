@@ -144,7 +144,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['public/*.js'],
+      files: ['public/*.js', 'gulpfile.babel.js'],
       rules: {
         'no-var': 0,
       },

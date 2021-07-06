@@ -11,7 +11,7 @@
     "strict": true,
     "noEmit": true,
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": false,
     "sourceMap": true,
     "explainFiles": true,
     "declaration": false,
@@ -48,5 +48,5 @@
     "typeRoots": ["./node_modules/@types"]
   },
   "include": ["./**/*", "node_modules/@types"],
-  "exclude": ["node_modules/**", "gulpfile.babel.js/**", "public/**", "**/*.spec.ts", "**/*.test.ts"]
+  "exclude": ["node_modules/**/*", "gulpfile.babel.js/**/*", "public/**/*", "**/*.spec.ts", "**/*.test.ts"]
 }
