@@ -13,13 +13,15 @@ import { reload } from './webserver';
 
 import { scriptsWatchGlob, scriptTasks } from './common.scripts';
 
-const files = glob.sync(`${scriptsPath}/**/*.(j|t)sx?`);
+const files = glob.sync(`${scriptsPath}/**/*.{js,jsx,ts,tsx,mjs}`, {
+  ignore: [`${scriptsPath}/*.{js,jsx,ts,tsx,mjs}`],
+});
 
 export default () =>
   src([...scriptsWatchGlob, `!${scriptsPath}/**/_*.*`])
-    .pipe(newer({ dest: staticPathScripts, extra: files }))
     .pipe(rigger())
     .pipe(webpack({ config: webpackConfig }))
+    .pipe(newer({ dest: staticPathScripts, extra: files }))
     .pipe(scriptTasks())
     .pipe(size(scriptSizeConfig))
     .on('end', reload);

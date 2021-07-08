@@ -5,6 +5,7 @@ import gulpSass from 'gulp-sass';
 import nodeSass from 'sass';
 import rev from 'gulp-rev';
 import gulpIf from 'gulp-if';
+import debug from 'gulp-debug';
 import newer from 'gulp-newer';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
@@ -23,7 +24,9 @@ export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`, `${sharedPath}/
 const { PURGE_CSS = false, SOURCEMAPS_ENABLED = false, REV_NAME_ENABLED = false } = env;
 
 const sass = gulpSass(nodeSass);
-const files = glob.sync(`${stylesPath}/**/*.s?(a|c)?ss`);
+const files = glob.sync(`${stylesPath}/**/*.s?(a|c)?ss`, {
+  ignore: [`${stylesPath}/*`],
+});
 
 export default () =>
   src([`${stylesPath}/**/*.s?(a|c)?ss`, `!${stylesPath}/**/_*.*`, `!${sharedPath}/**/*.*`])
@@ -68,7 +71,6 @@ export default () =>
     .pipe(gulpIf(REV_NAME_ENABLED, rev()))
     .pipe(gulpIf(SOURCEMAPS_ENABLED, sourcemaps.write('./')))
     .pipe(dest(staticPathStyles))
-
     .pipe(gulpIf(REV_NAME_ENABLED, rev.manifest(manifestPath, revOptions)))
     .pipe(gulpIf(REV_NAME_ENABLED, dest(rootPath)))
     .pipe(plumber.stop())
@@ -79,4 +81,5 @@ export default () =>
         showTotal: true,
       }),
     )
+    .pipe(debug())
     .pipe(stream());

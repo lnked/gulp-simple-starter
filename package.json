@@ -73,6 +73,7 @@
     "gulp": "4.0.2",
     "gulp-beautify": "3.0.0",
     "gulp-clean": "0.4.0",
+    "gulp-debug": "^4.0.0",
     "gulp-esbuild": "^0.8.3",
     "gulp-front-matter": "1.3.0",
     "gulp-gzip": "^1.4.2",

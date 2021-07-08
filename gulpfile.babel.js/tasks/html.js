@@ -18,16 +18,18 @@ nunjucksRender.nunjucks.configure({
 
 const extensions = 'nunjucks,nj,njk,html,htm,template,tmpl,tpl';
 
-const files = glob.sync(`${htmlPath}/**/*.{${extensions}}`);
+const files = glob.sync(`${htmlPath}/**/*.{${extensions}}`, {
+  ignore: [`${htmlPath}/pages/**/*`],
+});
 
 export const htmlWatchGlob = [`${sharedPath}/**/*.{${extensions},json}`, `${htmlPath}/**/*.{${extensions},json}`];
 
 export default () =>
   src([`${htmlPath}/pages/**/*.{${extensions}}`, `!${htmlPath}/**/_*.*`])
-    .pipe(newer({ dest: outputPath, extra: files }))
     .pipe(rigger())
     .pipe(frontMatter({ property: 'data' }))
     .pipe(nunjucksRender(nunjucksRenderConfig))
+    .pipe(newer({ dest: outputPath, extra: files }))
     .pipe(templateTasks()())
     .pipe(dest(outputPath))
     .on('end', reload);
