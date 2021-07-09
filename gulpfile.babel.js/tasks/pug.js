@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import { src, dest } from 'gulp';
 import pug from 'gulp-pug';
 import pugBem from 'gulp-pugbem';
+import debug from 'gulp-debug';
 import frontMatter from 'gulp-front-matter';
 
 import { pugConfig, htmlPath } from '../config';
@@ -15,4 +16,5 @@ export default () =>
     .pipe(pug(pugConfig([pugBem])))
     .pipe(templateTasks()())
     .pipe(dest(resolve(outputPath)))
+    .pipe(debug())
     .on('end', reload);

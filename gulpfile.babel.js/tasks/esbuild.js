@@ -1,6 +1,7 @@
 import { src } from 'gulp';
 
 import size from 'gulp-size';
+import debug from 'gulp-debug';
 import rigger from 'gulp-rigger';
 import gulpEsBuild from 'gulp-esbuild';
 
@@ -15,4 +16,5 @@ export default () =>
     .pipe(gulpEsBuild(esBuildConfig))
     .pipe(scriptTasks())
     .pipe(size(scriptSizeConfig))
+    .pipe(debug())
     .on('end', reload);

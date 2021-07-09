@@ -3,11 +3,12 @@ import { src } from 'gulp';
 import glob from 'glob';
 import size from 'gulp-size';
 import newer from 'gulp-newer';
+import debug from 'gulp-debug';
 import rigger from 'gulp-rigger';
 import webpack from 'webpack-stream';
 
 import { scriptsPath, scriptSizeConfig } from '../config';
-import { staticPathScripts } from '../env';
+import { development, staticPathScripts } from '../env';
 import webpackConfig from '../webpack.config';
 import { reload } from './webserver';
 
@@ -19,9 +20,19 @@ const files = glob.sync(`${scriptsPath}/**/*.{js,jsx,ts,tsx,mjs}`, {
 
 export default () =>
   src([...scriptsWatchGlob, `!${scriptsPath}/**/_*.*`])
+    .pipe(
+      gulpIf(
+        development,
+        newer({
+          extra: files,
+          dest: staticPathScripts,
+          ext: '.js',
+        }),
+      ),
+    )
     .pipe(rigger())
     .pipe(webpack({ config: webpackConfig }))
-    .pipe(newer({ dest: staticPathScripts, extra: files }))
     .pipe(scriptTasks())
     .pipe(size(scriptSizeConfig))
+    .pipe(debug())
     .on('end', reload);

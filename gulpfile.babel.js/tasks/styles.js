@@ -14,7 +14,7 @@ import sassGlob from 'gulp-sass-glob';
 import sourcemaps from 'gulp-sourcemaps';
 import modifyCssUrls from 'gulp-modify-css-urls';
 
-import { staticPathStyles, nodeModulesPath, rootPath, env } from '../env';
+import { staticPathStyles, nodeModulesPath, rootPath, env, development } from '../env';
 import { stylesPath, sharedPath, manifestPath, purgeCSSConfig, revOptions } from '../config';
 import { postCSSCallback } from '../postcss.callback';
 import { stream } from './webserver';
@@ -29,10 +29,19 @@ const files = glob.sync(`${stylesPath}/**/*.s?(a|c)?ss`, {
 });
 
 export default () =>
-  src([`${stylesPath}/**/*.s?(a|c)?ss`, `!${stylesPath}/**/_*.*`, `!${sharedPath}/**/*.*`])
-    .pipe(newer({ dest: staticPathStyles, extra: files }))
+  src(`${stylesPath}/*.s?(a|c)?ss`)
     .pipe(gulpIf(SOURCEMAPS_ENABLED, sourcemaps.init()))
     .pipe(plumber())
+    .pipe(
+      gulpIf(
+        development,
+        newer({
+          extra: files,
+          dest: staticPathStyles,
+          ext: '.css',
+        }),
+      ),
+    )
     .pipe(sassGlob())
     .pipe(
       sass({

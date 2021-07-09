@@ -1,5 +1,4 @@
 import gulpIf from 'gulp-if';
-import debug from 'gulp-debug';
 import lazypipe from 'lazypipe';
 import htmlmin from 'gulp-htmlmin';
 import replace from 'gulp-replace';
@@ -37,6 +36,5 @@ export const templateTasks = () => {
     .pipe(replaceImagePath, 'src')
     .pipe(replaceImagePath, 'srcset')
     .pipe(gulpIf, !MINIFY_HTML, beautify.html(htmlFormatConfig))
-    .pipe(gulpIf, REV_NAME_ENABLED, rewrite({ manifest: manifestContents() }))
-    .pipe(debug);
+    .pipe(gulpIf, REV_NAME_ENABLED, rewrite({ manifest: manifestContents() }));
 };
