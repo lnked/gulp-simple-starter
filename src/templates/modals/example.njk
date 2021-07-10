@@ -1,0 +1,19 @@
+{% verbatim %}
+<template id="tmpl-modal-example">
+  <div class="modal j-modal" id="modal-example" aria-hidden="true" tabindex="-1" role="dialog" aria-labelledby="Результат формы">
+    <button type="button" class="modal__close j-modal-close" data-dismiss="modal" aria-label="Закрыть" data-target="#modal-example">
+      <svg role="img">
+        <use xlink:href="#close"/>
+      </svg>
+    </button>
+
+    <div class="modal__content" role="document" data-change="true">
+      {{ name }}
+
+      {{#data}}
+        <b>{{name}}</b>
+      {{/data}}
+    </div>
+  </div>
+</template>
+{% endverbatim %}

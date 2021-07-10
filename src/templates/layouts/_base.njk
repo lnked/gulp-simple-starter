@@ -8,6 +8,8 @@
   <body class="page{% if development %} debug{% endif %}{% if bodyClass %} {{ bodyClass }}{% endif %}">
     {{ svgstore | safe }}
 
+    {%- include "modals/example.njk" -%}
+
     <main class="layout-wrapper">
       {%- include "header/header.njk" -%}
 

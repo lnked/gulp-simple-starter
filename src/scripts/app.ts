@@ -7,7 +7,10 @@ const modules = [Navigation];
 const init = () => {
   const [getCounter, setCounter] = useState(2);
 
-  Modal.open('test');
+  Modal.open('example', {
+    name: 'example name',
+    data: [{ name: 'item 111' }, { name: 'item 222' }, { name: 'item 444' }],
+  });
 
   const button = document.getElementById('counter');
   const values: HTMLElement | null = document.getElementById('counter-value');

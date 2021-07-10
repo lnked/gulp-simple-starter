@@ -1,3 +1,5 @@
+import Mustache from 'mustache';
+
 const Modal = (() => {
   const bodyTag = document.body;
 
@@ -13,34 +15,25 @@ const Modal = (() => {
     return null;
   };
 
-  const getModalTemplate = name => {
+  const getModalTemplate = (name, data) => {
     const rendered = getRenderedModal(name);
 
     if (rendered) {
       return rendered;
     }
 
-    const template = document.querySelector(`#tmpl-modal-${name}`);
+    const template = document.getElementById(`tmpl-modal-${name}`);
 
-    // var temp = document.getElementsByTagName("template")[0];
-    // const clon = temp.content.cloneNode(true);
-    // document.body.appendChild(clon)
-
-    if (template) {
-      document.body.innerHTML += template?.innerHTML;
+    if (template?.tagName.toLowerCase() === 'template') {
+      document.body.insertAdjacentHTML('beforeend', Mustache.render(template.innerHTML, data));
+    } else if (template) {
+      document.body.insertAdjacentHTML('beforeend', template.innerHTML);
     }
 
     return getRenderedModal(name);
   };
 
-  // function unMountClose() {
-  //   // const buttons = document.querySelectorAll('.j-modal-close');
-  //   // buttons.forEach(element => element.removeEventListener('click', handleClose));
-  // }
-
   const _close = (withBody = true) => {
-    // unMountClose();
-
     const opened = document.querySelector('.modal.is-open');
 
     if (withBody) {
@@ -61,8 +54,8 @@ const Modal = (() => {
     buttons.forEach(element => element.addEventListener('click', handleClose));
   };
 
-  const _open = (name: string, withBody = true) => {
-    const element = getModalTemplate(name);
+  const _open = (name: string, data = {}, withBody = true) => {
+    const element = getModalTemplate(name, data);
 
     if (element) {
       element?.classList.add('is-open');
@@ -96,9 +89,8 @@ const Modal = (() => {
     },
     terminate: () => {
       elements.forEach(node => node.removeEventListener('click', handleOpen));
-      // unMountClose();
     },
-    open: name => _open(name),
+    open: (name, data = {}) => _open(name, data),
     close: () => _close(),
   };
 })();
