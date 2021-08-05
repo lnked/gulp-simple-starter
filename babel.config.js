@@ -12,6 +12,17 @@ module.exports = function (api) {
       [
         '@babel/preset-env',
         {
+          loose: true,
+          modules: 'commonjs',
+          shippedProposals: true,
+          forceAllTransforms: true,
+          exclude: [
+            'transform-typeof-symbol',
+            'transform-regenerator',
+            'transform-async-to-generator',
+            '@babel/plugin-transform-regenerator',
+            '@babel/plugin-transform-async-to-generator',
+          ],
           targets: {
             node: 'current',
           },
