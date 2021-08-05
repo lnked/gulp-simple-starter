@@ -4,6 +4,7 @@ import glob from 'glob';
 import size from 'gulp-size';
 import newer from 'gulp-newer';
 import debug from 'gulp-debug';
+import gulpIf from 'gulp-if';
 import rigger from 'gulp-rigger';
 import webpack from 'webpack-stream';
 
