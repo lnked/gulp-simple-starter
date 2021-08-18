@@ -59,7 +59,7 @@
     "browser-sync": "2.27.5",
     "critical": "^4.0.1",
     "css-mqpacker": "7.0.0",
-    "cssnano": "5.0.7",
+    "cssnano": "5.0.8",
     "dotenv": "^10.0.0",
     "esbuild-webpack-plugin": "^1.1.0",
     "eslint": "7.32.0",
