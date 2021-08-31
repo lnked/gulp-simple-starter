@@ -152,20 +152,6 @@ export const htmlminConfig = {
   removeStyleLinkTypeAttributes: true,
 };
 
-export const esBuildConfig = {
-  sourcemap: true,
-  outdir: '../js',
-  bundle: true,
-  minify: true,
-  format: 'esm',
-  platform: 'node',
-  loader: {
-    '.tsx': 'tsx',
-  },
-  target: 'es6',
-  define: appEnvironment,
-};
-
 export const scriptSizeConfig = {
   title: 'scripts',
   gzip: true,

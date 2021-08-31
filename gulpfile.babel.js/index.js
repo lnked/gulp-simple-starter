@@ -8,7 +8,6 @@ import build from './tasks/build';
 import fonts from './tasks/fonts';
 import styles from './tasks/styles';
 import publics from './tasks/public';
-import esBuild from './tasks/esbuild';
 import scripts from './tasks/scripts';
 import critical from './tasks/critical';
 import transfer from './tasks/transfer';
@@ -22,22 +21,16 @@ task('clean.revision', cleanRevision);
 task('fonts', fonts);
 task('styles', styles);
 task('public', publics);
-task('esbuild', esBuild);
 task('scripts', scripts);
 task('critical', critical);
 task('transfer', transfer);
 task('images', series(cacheImages, images));
 task('templates', series(pug, html));
 
-task('watch', watch('esbuild'));
-task('watch:webpack', watch('scripts'));
+task('watch', watch('scripts'));
 
-task('build', build('esbuild'));
-task('build:webpack', build('scripts'));
+task('build', build('scripts'));
 
 task('webserver', webserver);
-task('preheat:webpack', series(parallel('styles', 'scripts'), 'templates'));
-task('start:webpack', series(['clean.revision', 'preheat:webpack'], parallel('webserver', 'watch:webpack')));
-
-task('preheat', series(parallel('styles', 'esbuild'), 'templates'));
+task('preheat', series(parallel('styles', 'scripts'), 'templates'));
 task('default', series(['clean.revision', 'preheat'], parallel('webserver', 'watch')));
