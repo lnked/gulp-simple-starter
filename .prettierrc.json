@@ -7,7 +7,7 @@
   "singleQuote": true,
   "jsxSingleQuote": false,
   "eslintIntegration": true,
-  "jsxBracketSameLine": false,
+  "bracketSameLine": false,
   "stylelintIntegration": true,
   "arrowParens": "avoid",
   "bracketSpacing": true,
