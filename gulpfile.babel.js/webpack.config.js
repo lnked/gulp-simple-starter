@@ -1,14 +1,9 @@
 import { resolve } from 'path';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import ESBuildPlugin from 'esbuild-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 
 import { cacheDirectory, env, production, rootPath, mode } from './env';
 import { alias, devtool, entries, scriptsSourcePath } from './tools/helpers';
-
-const optimizationConfig = {
-  minimize: true,
-  minimizer: [new ESBuildPlugin()],
-};
 
 const { BUNDLE_ANALYZER } = env;
 
@@ -75,5 +70,16 @@ module.exports = {
         ]
       : []),
   ],
-  optimization: production ? optimizationConfig : {},
+  ...(production
+    ? {
+        optimization: {
+          minimize: true,
+          minimizer: [
+            new TerserPlugin({
+              parallel: true,
+            }),
+          ],
+        },
+      }
+    : {}),
 };
