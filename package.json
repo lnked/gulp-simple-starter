@@ -103,7 +103,7 @@
     "jest-config": "^27.2.2",
     "lazypipe": "^1.0.2",
     "lint-staged": "11.1.2",
-    "nanoid": "^3.1.23",
+    "nanoid": "^3.1.28",
     "path": "^0.12.7",
     "postcss": "8.3.8",
     "postcss-animation": "0.0.12",
@@ -135,7 +135,7 @@
     "webpack": "5.54.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-stream": "7.0.0",
-    "yargs": "17.2.0",
+    "yargs": "17.2.1",
     "zlib": "^1.0.5"
   },
   "dependencies": {
