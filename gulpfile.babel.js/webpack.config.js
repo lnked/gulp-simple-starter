@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import TerserPlugin from 'terser-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
 
 import { cacheDirectory, env, production, rootPath, mode } from './env';
 import { alias, devtool, entries, scriptsSourcePath } from './tools/helpers';
@@ -24,15 +25,6 @@ module.exports = {
   context: scriptsSourcePath,
   module: {
     rules: [
-      {
-        test: /\.(ts|js)x?$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: scriptsSourcePath,
-        options: {
-          configFile: resolve(rootPath, '.eslintrc.js'),
-        },
-      },
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
@@ -61,6 +53,16 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
   plugins: [
+    // new ESLintPlugin({
+    //   cache: true,
+    //   ignore: true,
+    //   emitWarning: true,
+    //   useEslintrc: true,
+    //   exclude: [`/node_modules/`],
+    //   extensions: ['js', 'jsx', 'ts', 'tsx'],
+    //   eslintPath: resolve(rootPath, '.eslintrc.js'),
+    //   resolvePluginsRelativeTo: __dirname,
+    // }),
     ...(BUNDLE_ANALYZER
       ? [
           new BundleAnalyzerPlugin({
