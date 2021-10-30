@@ -50,19 +50,18 @@ module.exports = {
   resolve: {
     alias,
     mainFiles: ['index'],
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+    modules: ['node_modules'],
+    extensions: ['', '.ts', '.tsx', '.js', '.jsx', '.json'],
+    unsafeCache: true,
+    preferRelative: true,
+    cacheWithContext: true,
   },
   plugins: [
-    // new ESLintPlugin({
-    //   cache: true,
-    //   ignore: true,
-    //   emitWarning: true,
-    //   useEslintrc: true,
-    //   exclude: [`/node_modules/`],
-    //   extensions: ['js', 'jsx', 'ts', 'tsx'],
-    //   eslintPath: resolve(rootPath, '.eslintrc.js'),
-    //   resolvePluginsRelativeTo: __dirname,
-    // }),
+    new ESLintPlugin({
+      files: ['src/**/*.tsx?', 'src/**/*.jsx?'],
+      exclude: [`/node_modules/`],
+      extensions: ['js', 'jsx', 'ts', 'tsx'],
+    }),
     ...(BUNDLE_ANALYZER
       ? [
           new BundleAnalyzerPlugin({
