@@ -59,7 +59,7 @@ module.exports = {
   plugins: [
     new ESLintPlugin({
       files: ['src/**/*.tsx?', 'src/**/*.jsx?'],
-      exclude: [`/node_modules/`],
+      exclude: ['/node_modules/'],
       extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
     ...(BUNDLE_ANALYZER
