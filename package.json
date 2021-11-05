@@ -132,7 +132,7 @@
     "tslib": "^2.3.0",
     "typescript": "^4.4.3",
     "uncss": "0.17.3",
-    "webpack": "5.61.0",
+    "webpack": "5.62.1",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-stream": "7.0.0",
     "yargs": "17.2.1",
