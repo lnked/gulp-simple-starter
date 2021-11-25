@@ -14,7 +14,7 @@ const replaceImagePath = source => {
   const regex = new RegExp(`${source}="([^\\"]+)"`, 'gim');
 
   return replace(regex, (match, src) => {
-    const iRegex = new RegExp(`${source}="(.*?).(png|jpe?g|gif|svg|webp)"`, 'gim');
+    const iRegex = new RegExp(`${source}="(.*?).(ogv|webm|swf|mp4|png|jpe?g|gif|svg|webp)"`, 'gim');
 
     if (iRegex.test(match)) {
       return `${source}="/${staticFolder}/${imagesFolder}/${src.replace(
