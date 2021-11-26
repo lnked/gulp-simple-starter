@@ -109,7 +109,7 @@
     "postcss-animation": "0.0.12",
     "postcss-fixes": "3.0.0",
     "postcss-import": "14.0.2",
-    "postcss-loader": "^6.1.1",
+    "postcss-loader": "^6.2.1",
     "postcss-position": "^1.1.0",
     "postcss-pseudoelements": "^5.0.0",
     "postcss-short-spacing": "^4.0.0",
@@ -155,7 +155,7 @@
     "store.js": "1.0.4",
     "swiper": "7.3.1",
     "template7": "^1.4.2",
-    "three": "0.134.0",
+    "three": "0.135.0",
     "yall-js": "^3.2.0"
   },
   "scarfSettings": {
