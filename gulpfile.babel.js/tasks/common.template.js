@@ -12,7 +12,7 @@ const { MINIFY_HTML = false, REV_NAME_ENABLED = false } = env;
 
 const replaceImagePath = source => {
   const regex = new RegExp(`${source}="([^\\"]+)"`, 'gim');
-  const iRegex = new RegExp(`${source}="([\\w+\/\-]+).(mp4|webm|png|gif|svg|webp|ogv|swf|jpe?g)"`, 'gim');
+  const iRegex = new RegExp(`${source}="([\\w+\\d+\/\-]+).(mp4|webm|png|gif|svg|webp|ogv|swf|jpe?g)"`, 'im');
 
   return replace(regex, (match, src) => {
     const isMatched = iRegex.test(match);
