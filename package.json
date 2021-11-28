@@ -84,7 +84,7 @@
     "gulp-postcss": "9.0.1",
     "gulp-pug": "5.0.0",
     "gulp-pugbem": "2.2.4",
-    "gulp-purgecss": "^4.0.3",
+    "gulp-purgecss": "^4.1.1",
     "gulp-replace": "1.1.3",
     "gulp-rev": "^9.0.0",
     "gulp-rev-rewrite": "^5.0.0",
