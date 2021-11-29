@@ -1,10 +1,11 @@
 {
+  "pageLang": "en",
   "pageTitle": "Gulp Simple starter",
-  "companyName": "Comapy name",
+  "companyName": "Company name",
   "copyright": "© 2021. All Rights Reserved.",
   "og": {
     "type": "place",
-    "title": "",
+    "title": "Gulp Simple starter",
     "url": "",
     "image": "",
     "place": {
