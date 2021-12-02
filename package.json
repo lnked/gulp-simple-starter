@@ -65,7 +65,7 @@
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-smells": "^1.0.1",
-    "eslint-plugin-sonarjs": "^0.10.0",
+    "eslint-plugin-sonarjs": "^0.11.0",
     "eslint-webpack-plugin": "^3.1.1",
     "fs": "^0.0.1-security",
     "gulp": "4.0.2",
@@ -99,8 +99,8 @@
     "husky": "7.0.4",
     "imagemin-optipng": "8.0.0",
     "immutable-css": "1.1.2",
-    "jest": "^27.4.2",
-    "jest-config": "^27.4.2",
+    "jest": "^27.4.3",
+    "jest-config": "^27.4.3",
     "lazypipe": "^1.0.2",
     "lint-staged": "12.1.2",
     "nanoid": "^3.1.29",
@@ -135,7 +135,7 @@
     "webpack": "5.64.4",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-stream": "7.0.0",
-    "yargs": "17.2.1",
+    "yargs": "17.3.0",
     "zlib": "^1.0.5"
   },
   "dependencies": {
