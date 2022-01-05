@@ -13,7 +13,10 @@ import { reload } from './webserver';
 
 const { TINYPNG_API_KEY = '', TINYPNG_ENABLED = false } = env;
 
-export const imagesWatchGlob = [`${imagesPath}/*`, `${imagesPath}/**/*.{png,jpe?g,gif,svg,webp}`];
+export const imagesWatchGlob = [
+  `${imagesPath}/*.{png,jpe?g,gif,svg,webp,ogg,mp4,mov}`,
+  `${imagesPath}/**/*.{png,jpe?g,gif,svg,webp,ogg,mp4,mov}`,
+];
 
 const condition = formats => file => {
   const { history = [] } = file || {};
@@ -22,10 +25,12 @@ const condition = formats => file => {
   return formats.includes(filename.split('.').pop() || '');
 };
 
+console.log('%cimages.js line:25 {imagesWatchGlob}', 'color: white; background-color: #26bfa5;', { imagesWatchGlob });
+
 export const cacheImages = () =>
-  src([`${imagesPath}/*.*`, `${imagesPath}/**/*.*`])
+  src(imagesWatchGlob)
     .pipe(plumber())
-    .pipe(newer(imagesCache))
+    .pipe(newer(imagesCache, { ctime: true }))
     .pipe(gulpIf(production, imagemin(imageminConfig, { name: 'images', verbose: true })))
     .pipe(gulpIf(TINYPNG_ENABLED && condition(['png']), tinypng(TINYPNG_API_KEY)))
     .pipe(dest(imagesCache))
