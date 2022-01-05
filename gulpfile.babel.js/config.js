@@ -3,8 +3,6 @@ import { resolve } from 'path';
 import imagemin from 'gulp-imagemin';
 import imageminOptipng from 'imagemin-optipng';
 
-import { getData } from './get-data';
-import { appEnvironment } from './env/transform';
 import { cacheDirectory, development, templatesPath, production, env } from './env';
 
 export const publicPath = 'public';
@@ -207,19 +205,9 @@ export const imageminConfig = [
   }),
 ];
 
-export const pugConfig = plugins => ({
-  data: getData(),
-  plugins,
-  basedir: [sharedPath, htmlPath, publicPath],
-  debug: false,
-  pretty: true,
-  verbose: false,
-});
-
 export const nunjucksRenderConfig = {
   ext: '.html',
   web: { async: true },
-  data: getData(),
   path: [sharedPath, htmlPath, publicPath],
   envOptions: {
     watch: development,
@@ -236,3 +224,7 @@ export const webpConfig = {
 };
 
 export { environment } from './env/transform';
+
+export const watchConfig = {
+  usePolling: true,
+};

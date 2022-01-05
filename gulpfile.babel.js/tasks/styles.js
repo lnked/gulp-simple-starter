@@ -24,7 +24,7 @@ export const stylesWatchGlob = [`${stylesPath}/**/*.s?(a|c)?ss`, `${sharedPath}/
 const { PURGE_CSS = false, SOURCEMAPS_ENABLED = false, REV_NAME_ENABLED = false } = env;
 
 const sass = gulpSass(nodeSass);
-const files = glob.sync(`${stylesPath}/**/*.s?(a|c)?ss`, {
+const files = glob.sync(`{${stylesPath},${sharedPath}}/**/*.s?(a|c)?ss`, {
   ignore: [`${stylesPath}/*`],
 });
 

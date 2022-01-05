@@ -18,7 +18,10 @@ const replaceImagePath = source => {
     const isMatched = iRegex.test(match);
 
     if (isMatched) {
-      return `${source}="/${staticFolder}/${imagesFolder}/${src.replace(/((\/)?static(\/)?)?(\/)?(img|images)(\/)?/im, '')}"`;
+      return `${source}="/${staticFolder}/${imagesFolder}/${src.replace(
+        /((\/)?static(\/)?)?(\/)?(img|images)(\/)?/im,
+        '',
+      )}"`;
     }
 
     return match;

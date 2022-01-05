@@ -31,26 +31,24 @@ const component = (name, initialState = {}) =>
 
 export const getData = () => {
   const jsonFile = resolve(sourcePath, 'templates/data.json');
-  const jsonExists = existsSync(jsonFile);
 
-  const styles = getStyles();
-
-  if (jsonExists) {
-    const svgstore = parseSVGStore();
-    const rawData = readFileSync(jsonFile);
-    const data = JSON.parse(rawData);
-
-    return {
-      ...data,
-      mode,
-      styles,
-      svgstore,
-      component,
-      production,
-      development,
-      environment,
-    };
+  if (!existsSync(jsonFile)) {
+    return {};
   }
 
-  return {};
+  const styles = getStyles();
+  const svgstore = parseSVGStore();
+  const rawData = readFileSync(jsonFile);
+  const data = JSON.parse(rawData);
+
+  return {
+    ...data,
+    mode,
+    styles,
+    svgstore,
+    component,
+    production,
+    development,
+    environment,
+  };
 };

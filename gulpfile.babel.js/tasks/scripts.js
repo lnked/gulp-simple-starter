@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { src } from 'gulp';
 import glob from 'glob';
 import size from 'gulp-size';
@@ -10,17 +9,20 @@ import webpack from 'webpack-stream';
 
 import { scriptsPath, scriptSizeConfig } from '../config';
 import { development, staticPathScripts } from '../env';
+import commonScripts from './common.scripts';
 import webpackConfig from '../webpack.config';
 import { reload } from './webserver';
 
-import { scriptsWatchGlob, scriptTasks } from './common.scripts';
+const extensions = '{js,jsx,ts,tsx,mjs}';
 
-const files = glob.sync(`${scriptsPath}/**/*.{js,jsx,ts,tsx,mjs}`, {
-  ignore: [`${scriptsPath}/*.{js,jsx,ts,tsx,mjs}`],
+const files = glob.sync(`${scriptsPath}/**/*.${extensions}`, {
+  ignore: [`${scriptsPath}/*.${extensions}`],
 });
 
+export const scriptsWatchGlob = [`${scriptsPath}/*.${extensions}`, `${scriptsPath}/**/*.${extensions}`];
+
 export default () =>
-  src([...scriptsWatchGlob, `!${scriptsPath}/**/_*.*`])
+  src([...scriptsWatchGlob, `!${scriptsPath}/**/_*.*`], { nodir: true })
     .pipe(
       gulpIf(
         development,
@@ -33,7 +35,7 @@ export default () =>
     )
     .pipe(rigger())
     .pipe(webpack({ config: webpackConfig }))
-    .pipe(scriptTasks())
+    .pipe(commonScripts())
     .pipe(size(scriptSizeConfig))
     .pipe(debug())
     .on('end', reload);

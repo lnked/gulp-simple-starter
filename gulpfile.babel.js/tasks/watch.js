@@ -1,32 +1,23 @@
-import watch from 'gulp-watch';
-import { series } from 'gulp';
+import { watch } from 'gulp';
 
-import { htmlWatchGlob } from './html';
-import { fontsWatchGlob } from './fonts';
-import { publicWatchGlob } from './public';
-import { stylesWatchGlob } from './styles';
-import { imagesWatchGlob } from './images';
-import { transferWatchGlob } from './transfer';
-import { scriptsWatchGlob } from './common.scripts';
-
-import { testsPatterns, svgStorePath } from '../config';
+import { testsPatterns, svgStorePath, watchConfig } from '../config';
+import fonts, { fontsWatchGlob } from './fonts';
+import publicWatch, { publicWatchGlob } from './public';
+import styles, { stylesWatchGlob } from './styles';
+import images, { imagesWatchGlob } from './images';
+import transfer, { transferWatchGlob } from './transfer';
+import templates, { htmlWatchGlob } from './html';
+import scripts, { scriptsWatchGlob } from './scripts';
 
 const svgstoreWatchGlob = [`${svgStorePath}/**/*.svg`];
+const templatesWatchGlob = [...htmlWatchGlob, ...svgstoreWatchGlob];
 
-export default mode => {
-  const templatesWatchGlob = [...htmlWatchGlob, ...svgstoreWatchGlob];
-
-  const watchConfig = {
-    usePolling: true,
-  };
-
-  return () => {
-    watch(fontsWatchGlob, watchConfig, series('fonts'));
-    watch(publicWatchGlob, watchConfig, series('public'));
-    watch(imagesWatchGlob, watchConfig, series('images'));
-    watch(stylesWatchGlob, watchConfig, series('styles'));
-    watch(transferWatchGlob, watchConfig, series('transfer'));
-    watch(templatesWatchGlob, watchConfig, series('templates'));
-    watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns }, series(mode));
-  };
+export default () => {
+  watch(fontsWatchGlob, watchConfig, fonts);
+  watch(publicWatchGlob, watchConfig, publicWatch);
+  watch(imagesWatchGlob, watchConfig, images);
+  watch(stylesWatchGlob, watchConfig, styles);
+  watch(transferWatchGlob, watchConfig, transfer);
+  watch(templatesWatchGlob, watchConfig, templates);
+  watch(scriptsWatchGlob, { ...watchConfig, ignored: testsPatterns, ignoreInitial: false }, scripts);
 };

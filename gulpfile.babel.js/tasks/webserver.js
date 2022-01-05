@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import browserSync from 'browser-sync';
+import bssi from 'browsersync-ssi';
 
 import { outputPath } from '../env';
 
@@ -12,9 +13,11 @@ export const reload = () => browserSync.reload();
 export default () => {
   devServer.init({
     open: true,
+    online: true,
     notify: false,
     server: {
       baseDir: outputPath,
+      middleware: bssi({ baseDir: outputPath, ext: '.html' }),
       serveStaticOptions: {
         extensions: ['html'],
       },
@@ -25,6 +28,7 @@ export default () => {
       },
     },
     reloadOnRestart: true,
+    ghostMode: { clicks: false },
   });
 
   devServer.watch(watchGlob).on('change', devServer.reload);

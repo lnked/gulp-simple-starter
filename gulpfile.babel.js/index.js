@@ -1,10 +1,7 @@
 import { task, series, parallel } from 'gulp';
 
-import pug from './tasks/pug';
 import html from './tasks/html';
 import watch from './tasks/watch';
-import clean, { cleanRevision } from './tasks/clean';
-import build from './tasks/build';
 import fonts from './tasks/fonts';
 import styles from './tasks/styles';
 import publics from './tasks/public';
@@ -12,9 +9,9 @@ import scripts from './tasks/scripts';
 import critical from './tasks/critical';
 import transfer from './tasks/transfer';
 import webserver from './tasks/webserver';
+import clean, { cleanRevision } from './tasks/clean';
 import images, { cacheImages } from './tasks/images';
 
-task('pug', pug);
 task('html', html);
 task('clean', clean);
 task('clean.revision', cleanRevision);
@@ -25,11 +22,13 @@ task('scripts', scripts);
 task('critical', critical);
 task('transfer', transfer);
 task('images', series(cacheImages, images));
-task('templates', series(pug, html));
+task('templates', html);
 
-task('watch', watch('scripts'));
-
-task('build', build('scripts'));
+task('watch', watch);
+task(
+  'build',
+  series('clean', 'images', parallel('styles', 'scripts'), parallel('templates', 'public', 'transfer', 'fonts')),
+);
 
 task('webserver', webserver);
 task('preheat', series(parallel('styles', 'scripts'), 'templates'));

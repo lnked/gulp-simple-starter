@@ -13,7 +13,7 @@ import { reload } from './webserver';
 
 const { TINYPNG_API_KEY = '', TINYPNG_ENABLED = false } = env;
 
-export const imagesWatchGlob = [`${imagesPath}`, `${imagesPath}/**/*.{png,jpe?g,gif,svg,webp}`];
+export const imagesWatchGlob = [`${imagesPath}/*`, `${imagesPath}/**/*.{png,jpe?g,gif,svg,webp}`];
 
 const condition = formats => file => {
   const { history = [] } = file || {};

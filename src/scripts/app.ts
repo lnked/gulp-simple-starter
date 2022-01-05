@@ -1,6 +1,6 @@
+import Modal from '@tools/modal';
 import Navigation from '@components/navigation';
 import { useState } from '@hooks/useState';
-import Modal from '@tools/modal';
 
 const modules = [Navigation];
 
