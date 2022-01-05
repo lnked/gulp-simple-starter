@@ -25,8 +25,6 @@ const condition = formats => file => {
   return formats.includes(filename.split('.').pop() || '');
 };
 
-console.log('%cimages.js line:25 {imagesWatchGlob}', 'color: white; background-color: #26bfa5;', { imagesWatchGlob });
-
 export const cacheImages = () =>
   src(imagesWatchGlob)
     .pipe(plumber())
