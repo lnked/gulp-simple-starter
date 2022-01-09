@@ -7,20 +7,31 @@ keywords: Главная
 
 {%- extends "layouts/_base.njk" -%}
 
-{# {%- block css -%}
+{# add additional styles
+{%- block css -%}
   {{ super() }}
   <link rel="stylesheet" href="" />
 {%- endblock -%}
+#}
 
+{# add additional scripts
 {%- block scripts -%}
   {{ super() }}
   <script src=""></script>
-{%- endblock -%} #}
+{%- endblock -%}
+#}
 
 {%- block content -%}
-  {%- include "input/input.njk" -%}
+<section>
+  <div class="layout">
+    {%- include "input/input.njk" -%}
 
-  <div style="background-color: #d2d2d2; padding: 15px">
-    <button type="button" id="counter">count <span id="counter-value">{{ counter }}</span></button>
+    <br>
+    <br>
+
+    <div style="background-color: #d2d2d2; padding: 15px">
+      <button type="button" id="counter">count <span id="counter-value">{{ counter }}</span></button>
+    </div>
   </div>
+</section>
 {%- endblock -%}

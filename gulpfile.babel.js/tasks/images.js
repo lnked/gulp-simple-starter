@@ -29,7 +29,7 @@ export const cacheImages = () =>
   src(imagesWatchGlob)
     .pipe(plumber())
     .pipe(newer(imagesCache, { ctime: true }))
-    .pipe(gulpIf(production, imagemin(imageminConfig, { name: 'images', verbose: true })))
+    .pipe(gulpIf(production, imagemin(imageminConfig, { name: 'images', verbose: false })))
     .pipe(gulpIf(TINYPNG_ENABLED && condition(['png']), tinypng(TINYPNG_API_KEY)))
     .pipe(dest(imagesCache))
     .pipe(gulpIf(condition(['jpg', 'jpeg']), webp(webpConfig)))
