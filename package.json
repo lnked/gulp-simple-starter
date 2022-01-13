@@ -115,7 +115,7 @@
     "postcss-uncss": "0.17.0",
     "precss": "^4.0.0",
     "prettier": "^2.5.0",
-    "sass": "^1.47.0",
+    "sass": "^1.48.0",
     "size-limit": "7.0.5",
     "sort-css-media-queries": "2.0.4",
     "stylelint": "14.2.0",
