@@ -13,10 +13,9 @@ import { reload } from './webserver';
 
 const { TINYPNG_API_KEY = '', TINYPNG_ENABLED = false } = env;
 
-export const imagesWatchGlob = [
-  `${imagesPath}/*.{png,jpe?g,gif,svg,webp,ogg,mp4,mov}`,
-  `${imagesPath}/**/*.{png,jpe?g,gif,svg,webp,ogg,mp4,mov}`,
-];
+const extensions = '{png,jpg,jpeg,gif,svg,webp,ogg,mp4,mov}';
+
+export const imagesWatchGlob = [`${imagesPath}/*.${extensions}`, `${imagesPath}/**/*.${extensions}`];
 
 const condition = formats => file => {
   const { history = [] } = file || {};
@@ -37,7 +36,7 @@ export const cacheImages = () =>
     .pipe(dest(imagesCache));
 
 export default () =>
-  src([`${imagesCache}/**/*.*`])
+  src(`${imagesCache}/**/*.${extensions}`)
     .pipe(dest(imagesOutput))
     .pipe(
       size({
