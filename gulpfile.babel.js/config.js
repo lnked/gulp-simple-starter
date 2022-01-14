@@ -16,7 +16,13 @@ export const sharedPath = 'src/shared';
 export const transferPaths = ['src/mediadata'];
 export const manifestPath = resolve(cacheDirectory, 'rev-manifest.json');
 
-const { REV_NAME_ENABLED = false } = env;
+const {
+  REV_NAME_ENABLED = false,
+  GIF_OPTIMIZE = false,
+  PNG_OPTIMIZE = false,
+  JPG_OPTIMIZE = false,
+  SVG_OPTIMIZE = false,
+} = env;
 
 export const checkManifestPath = () => {
   if (!existsSync(cacheDirectory)) {
@@ -171,38 +177,46 @@ export const revOptions = {
 };
 
 export const imageminConfig = [
-  imagemin.gifsicle({
-    interlaced: true,
-    optimizationLevel: 3,
-  }),
-  imagemin.mozjpeg({
-    interlaced: true,
-    progressive: true,
-  }),
-  imagemin.optipng(
-    {
-      optimizationLevel: 5,
-    },
-    {
-      use: imageminOptipng(),
-    },
-  ),
-  imagemin.svgo({
-    plugins: [
-      ...commonSVGO,
-      { cleanupIDs: true },
-      { removeViewBox: false },
-      { removeHiddenElems: true },
-      { removeEditorsNSData: true },
-      { removeEmptyContainers: true },
-      { removeUselessStrokeAndFill: false },
+  ...(GIF_OPTIMIZE && [
+    imagemin.gifsicle({
+      interlaced: true,
+      optimizationLevel: 3,
+    }),
+  ]),
+  ...(PNG_OPTIMIZE && [
+    imagemin.optipng(
       {
-        removeAttrs: {
-          attrs: ['id', 'class', 'data-name'],
-        },
+        optimizationLevel: 5,
       },
-    ],
-  }),
+      {
+        use: imageminOptipng(),
+      },
+    ),
+  ]),
+  ...(JPG_OPTIMIZE && [
+    imagemin.mozjpeg({
+      interlaced: true,
+      progressive: true,
+    }),
+  ]),
+  ...(SVG_OPTIMIZE && [
+    imagemin.svgo({
+      plugins: [
+        ...commonSVGO,
+        { cleanupIDs: true },
+        { removeViewBox: false },
+        { removeHiddenElems: true },
+        { removeEditorsNSData: true },
+        { removeEmptyContainers: true },
+        { removeUselessStrokeAndFill: false },
+        {
+          removeAttrs: {
+            attrs: ['id', 'class', 'data-name'],
+          },
+        },
+      ],
+    }),
+  ]),
 ];
 
 export const nunjucksRenderConfig = {
