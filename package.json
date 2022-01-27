@@ -101,7 +101,7 @@
     "jest": "^27.4.7",
     "jest-config": "^27.4.7",
     "lazypipe": "^1.0.2",
-    "lint-staged": "12.3.1",
+    "lint-staged": "12.3.2",
     "nanoid": "^3.2.0",
     "path": "^0.12.7",
     "postcss": "8.4.5",
@@ -160,7 +160,7 @@
     "store.js": "1.0.4",
     "swiper": "7.4.1",
     "template7": "^1.4.2",
-    "three": "0.136.0",
+    "three": "0.137.2",
     "yall-js": "^3.2.0"
   },
   "scarfSettings": {
