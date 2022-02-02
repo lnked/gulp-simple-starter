@@ -115,7 +115,7 @@
     "postcss-uncss": "0.17.0",
     "precss": "^4.0.0",
     "prettier": "^2.5.0",
-    "sass": "^1.49.4",
+    "sass": "^1.49.7",
     "size-limit": "7.0.5",
     "sort-css-media-queries": "2.0.4",
     "stylelint": "14.3.0",
@@ -158,7 +158,7 @@
     "pubsub-js": "^1.9.4",
     "querystate": "^1.0.9",
     "store.js": "1.0.4",
-    "swiper": "8.0.1",
+    "swiper": "8.0.2",
     "template7": "^1.4.2",
     "three": "0.137.5",
     "yall-js": "^3.2.0"
