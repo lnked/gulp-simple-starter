@@ -11,8 +11,8 @@ import transfer from './tasks/transfer';
 import webserver from './tasks/webserver';
 import clean, { cleanRevision } from './tasks/clean';
 import images, { cacheImages } from './tasks/images';
+import { check } from './tools/helpers';
 
-task('html', html);
 task('clean', clean);
 task('clean.revision', cleanRevision);
 task('fonts', fonts);
@@ -25,11 +25,12 @@ task('images', series(cacheImages, images));
 task('templates', html);
 
 task('watch', watch);
+
 task(
   'build',
-  series('clean', 'images', parallel('styles', 'scripts'), parallel('templates', 'public', 'transfer', 'fonts')),
+  series(check, 'clean', 'images', parallel('styles', 'scripts'), parallel('templates', 'public', 'transfer', 'fonts')),
 );
 
 task('webserver', webserver);
-task('preheat', series(parallel('styles', 'scripts'), 'templates'));
-task('default', series(['clean.revision', 'preheat'], parallel('webserver', 'watch')));
+task('preheat', series(check, parallel('styles', 'scripts'), 'templates'));
+task('default', series([check, 'clean.revision', 'preheat'], parallel('webserver', 'watch')));

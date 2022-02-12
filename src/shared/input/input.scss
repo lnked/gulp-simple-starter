@@ -6,9 +6,13 @@
 .input {
   padding: 0 15px;
   height: 32px;
-  color: #fff;
+
+  &,
+  &::placeholder {
+    color: #121212;
+  }
 
   &::placeholder {
-    color: #fff;
+    opacity: .5;
   }
 }

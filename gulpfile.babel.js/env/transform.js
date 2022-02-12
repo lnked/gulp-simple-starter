@@ -1,8 +1,8 @@
-const dotenv = require('dotenv');
-const { existsSync } = require('fs');
-const { resolve } = require('path');
+import dotenv from 'dotenv';
+import { resolve } from 'path';
+import { existsSync } from 'fs';
 
-const { mode, production, development } = require('./args');
+import { mode, production, development } from './args';
 
 const envName = (existsSync(`.env.${mode}`) && `.env.${mode}`) || '.env';
 
