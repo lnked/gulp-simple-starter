@@ -8,7 +8,7 @@ import { alias, devtool, entries, scriptsSourcePath } from './tools/helpers';
 
 const { BUNDLE_ANALYZER } = env;
 
-module.exports = {
+export default {
   mode,
   devtool,
   target: 'web',
