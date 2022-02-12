@@ -35,7 +35,13 @@ module.exports = {
     },
   },
   globals,
-  settings: { 'import/resolver': 'webpack' },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+      },
+    },
+  },
   rules: {
     'smells/no-switch': 1,
     'smells/no-setinterval': 1,
