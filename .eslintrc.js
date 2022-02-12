@@ -27,6 +27,7 @@ module.exports = {
     commonjs: true,
   },
   parserOptions: {
+    project: './tsconfig.json',
     sourceType: 'module',
     ecmaVersion: 2018,
     ecmaFeatures: {
@@ -34,6 +35,7 @@ module.exports = {
     },
   },
   globals,
+  settings: { 'import/resolver': 'webpack' },
   rules: {
     'smells/no-switch': 1,
     'smells/no-setinterval': 1,

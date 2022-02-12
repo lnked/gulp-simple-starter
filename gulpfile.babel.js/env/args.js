@@ -8,11 +8,4 @@ const development = Boolean(argv.development);
 
 const mode = production ? 'production' : 'development';
 
-module.exports = {
-  argv,
-  isUncss,
-  optimized,
-  production,
-  development,
-  mode,
-};
+export { argv, isUncss, optimized, production, development, mode };

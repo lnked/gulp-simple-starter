@@ -40,7 +40,4 @@ const appEnvironment = Object.entries(parsed).reduce(
   },
 );
 
-module.exports = {
-  environment,
-  appEnvironment,
-};
+export { environment, appEnvironment };
