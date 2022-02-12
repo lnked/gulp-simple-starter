@@ -41,9 +41,11 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
+        paths: ['src'],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
         moduleDirectory: ['node_modules', 'src/'],
       },
+      typescript: {},
     },
   },
   rules: {
