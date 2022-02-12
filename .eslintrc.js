@@ -14,6 +14,9 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
     'plugin:sonarjs/recommended',
     'plugin:clean-regex/recommended',
     'prettier',
@@ -39,6 +42,7 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+        moduleDirectory: ['node_modules', 'src/'],
       },
     },
   },
