@@ -1,5 +1,5 @@
+import { join, extname, resolve } from 'path';
 import { existsSync, readdirSync, statSync, copyFile } from 'fs';
-import { resolve } from 'path';
 
 import { scriptsPath } from '../config';
 import { env, development, production, rootPath } from '../env';
@@ -94,3 +94,22 @@ export const check = cb => {
 
   cb();
 };
+
+const getAllFiles = (dirPath, arrayOfFiles = []) => {
+  const exts = ['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp', 'webm', 'ogg', 'ogv', 'mp4', 'mov'];
+  const files = readdirSync(dirPath);
+
+  files.forEach(file => {
+    const source = join(dirPath, file);
+
+    if (statSync(source).isDirectory()) {
+      arrayOfFiles = getAllFiles(source, arrayOfFiles);
+    } else if (exts.includes(extname(source).substring(1))) {
+      arrayOfFiles.push(source);
+    }
+  });
+
+  return arrayOfFiles;
+};
+
+export const countFiles = folder => getAllFiles(folder).length;

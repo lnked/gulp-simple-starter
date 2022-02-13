@@ -20,7 +20,7 @@ const envVariable = value => {
   return JSON.stringify(value);
 };
 
-const environment = Object.entries(parsed).reduce(
+export const environment = Object.entries(parsed).reduce(
   (acc, [name, value]) => ({
     ...acc,
     [name]: envVariable(value),
@@ -28,7 +28,7 @@ const environment = Object.entries(parsed).reduce(
   {},
 );
 
-const appEnvironment = Object.entries(parsed).reduce(
+export const appEnvironment = Object.entries(parsed).reduce(
   (acc, [name, value]) => ({
     ...acc,
     ...(name.startsWith('GULP_APP_') && { [name.replace('GULP_APP_', '')]: JSON.stringify(value) }),
@@ -39,5 +39,3 @@ const appEnvironment = Object.entries(parsed).reduce(
     development,
   },
 );
-
-export { environment, appEnvironment };

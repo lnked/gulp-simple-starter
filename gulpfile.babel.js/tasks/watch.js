@@ -1,6 +1,6 @@
 import { series, watch } from 'gulp';
 
-import { testsPatterns, svgStorePath, watchConfig } from '../config';
+import { testsPatterns, svgStorePath } from '../config';
 import fonts, { fontsWatchGlob } from './fonts';
 import publicWatch, { publicWatchGlob } from './public';
 import styles, { stylesWatchGlob } from './styles';
@@ -11,6 +11,10 @@ import scripts, { scriptsWatchGlob } from './scripts';
 
 const svgstoreWatchGlob = [`${svgStorePath}/**/*.svg`];
 const templatesWatchGlob = [...htmlWatchGlob, ...svgstoreWatchGlob];
+
+const watchConfig = {
+  usePolling: true,
+};
 
 export default () => {
   watch(fontsWatchGlob, watchConfig, fonts);

@@ -1,7 +1,6 @@
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { resolve } from 'path';
 import imagemin from 'gulp-imagemin';
-import imageminOptipng from 'imagemin-optipng';
 
 import { cacheDirectory, development, templatesPath, production, env } from './env';
 
@@ -128,7 +127,6 @@ export const commonSVGO = [
   { removeStyleElement: true },
   { removeUselessDefs: true },
   { removeXMLProcInst: true },
-  { transformsWithOnePath: true },
   {
     cleanupNumericValues: {
       floatPrecision: 2,
@@ -136,8 +134,8 @@ export const commonSVGO = [
   },
   {
     convertColors: {
-      names2hex: true,
       rgb2hex: true,
+      names2hex: true,
     },
   },
 ];
@@ -175,49 +173,37 @@ export const gzipConfig = {
 export const revOptions = {
   merge: true,
 };
-
 export const imageminConfig = [
   ...(GIF_OPTIMIZE && [
     imagemin.gifsicle({
       interlaced: true,
-      optimizationLevel: 3,
     }),
-  ]),
-  ...(PNG_OPTIMIZE && [
-    imagemin.optipng(
-      {
-        optimizationLevel: 5,
-      },
-      {
-        use: imageminOptipng(),
-      },
-    ),
   ]),
   ...(JPG_OPTIMIZE && [
     imagemin.mozjpeg({
-      interlaced: true,
+      quality: 85,
       progressive: true,
+    }),
+  ]),
+  ...(PNG_OPTIMIZE && [
+    imagemin.optipng({
+      optimizationLevel: 5,
     }),
   ]),
   ...(SVG_OPTIMIZE && [
     imagemin.svgo({
       plugins: [
         ...commonSVGO,
-        { cleanupIDs: true },
+        { cleanupIDs: false },
         { removeViewBox: false },
         { removeHiddenElems: true },
         { removeEditorsNSData: true },
         { removeEmptyContainers: true },
         { removeUselessStrokeAndFill: false },
-        {
-          removeAttrs: {
-            attrs: ['id', 'class', 'data-name'],
-          },
-        },
       ],
     }),
   ]),
-];
+].filter(Boolean);
 
 export const nunjucksRenderConfig = {
   ext: '.html',
@@ -235,10 +221,4 @@ export const webpConfig = {
     method: 6,
   }) ||
     {}),
-};
-
-export { environment } from './env/transform';
-
-export const watchConfig = {
-  usePolling: true,
 };
