@@ -1,6 +1,5 @@
-import { extname, resolve } from 'path';
 import { src, dest } from 'gulp';
-import { lstatSync, statSync, existsSync, mkdirSync, readdirSync } from 'fs';
+import { existsSync, mkdirSync } from 'fs';
 import gulpIf from 'gulp-if';
 import size from 'gulp-size';
 import webp from 'gulp-webp';
@@ -15,7 +14,7 @@ import colors from 'ansi-colors';
 import { imagesPath, imageminConfig, webpConfig } from '../config';
 import { imagesCache, imagesOutput, production, env } from '../env';
 import { reload } from './webserver';
-import { countFiles } from '../tools/helpers';
+import { countFiles, getFilesList, countDiffFiles } from '../tools/helpers';
 
 const { TINYPNG_API_KEY = '', TINYPNG_ENABLED = false } = env;
 
@@ -51,27 +50,26 @@ if (!existsSync(imagesCache)) {
   );
 }
 
-const fileCount = countFiles(imagesPath);
-const fileCountCache = countFiles(imagesCache);
-
-const fileSize = statSync(imagesCache).size;
+const fileList = getFilesList(imagesPath);
+const fileCount = countFiles(fileList);
 
 const progressStream = progress({
   time: 100,
-  length: fileSize,
+  length: countFiles(getFilesList(imagesCache)),
   objectMode: true,
 });
 
 progressStream.on('progress', stats => {
-  progressBar.update(Math.round(stats.percentage, 2), {
+  progressBar.update(stats.percentage.toFixed(0), {
+    value: countDiffFiles(imagesCache, fileList),
     total: fileCount,
-    value: fileCountCache,
   });
 });
 
 export const cacheImages = () => {
   progressBar.start(fileCount, 0, {
-    value: fileCountCache,
+    value: countDiffFiles(imagesCache, fileList),
+    total: fileCount,
   });
 
   return src(imagesWatchGlob)
@@ -92,9 +90,7 @@ export const cacheImages = () => {
     .pipe(gulpIf(condition(['jpg', 'jpeg']), webp(webpConfig)))
     .pipe(plumber.stop())
     .pipe(dest(imagesCache))
-    .on('end', () => {
-      progressBar.stop();
-    });
+    .on('end', () => production && progressBar.stop());
 };
 
 export default () =>

@@ -2,7 +2,7 @@ import { join, extname, resolve } from 'path';
 import { existsSync, readdirSync, statSync, copyFile } from 'fs';
 
 import { scriptsPath } from '../config';
-import { env, development, production, rootPath } from '../env';
+import { env, development, production, sourceFolder, cacheDirectory, rootPath } from '../env';
 
 const { SOURCEMAPS_ENABLED } = env;
 
@@ -95,7 +95,7 @@ export const check = cb => {
   cb();
 };
 
-const getAllFiles = (dirPath, arrayOfFiles = []) => {
+export const getFilesList = (dirPath, arrayOfFiles = []) => {
   const exts = ['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp', 'webm', 'ogg', 'ogv', 'mp4', 'mov'];
   const files = readdirSync(dirPath);
 
@@ -103,7 +103,7 @@ const getAllFiles = (dirPath, arrayOfFiles = []) => {
     const source = join(dirPath, file);
 
     if (statSync(source).isDirectory()) {
-      arrayOfFiles = getAllFiles(source, arrayOfFiles);
+      arrayOfFiles = getFilesList(source, arrayOfFiles);
     } else if (exts.includes(extname(source).substring(1))) {
       arrayOfFiles.push(source);
     }
@@ -112,4 +112,13 @@ const getAllFiles = (dirPath, arrayOfFiles = []) => {
   return arrayOfFiles;
 };
 
-export const countFiles = folder => getAllFiles(folder).length;
+export const countFiles = files => files.length;
+
+export const countDiffFiles = (folder, files) => {
+  const list = getFilesList(folder).map(file => file.replace(cacheDirectory, ''));
+  const sources = files.map(file => file.replace(sourceFolder, ''));
+
+  const intersection = list.filter(name => sources.includes(name));
+
+  return list.length - intersection.length;
+};

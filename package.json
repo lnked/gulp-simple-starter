@@ -1,7 +1,9 @@
 {
   "name": "gulp-simple-starter",
   "version": "1.2.4",
-  "description": "",
+  "author": "Edik Bulikyan <ed.proff@gmail.com>",
+  "license": "MIT",
+  "description": "Gulp starter kit",
   "scripts": {
     "size": "size-limit",
     "start": "gulp --development",
@@ -20,8 +22,6 @@
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
   },
-  "author": "Edik Bulikyan <ed.proff@gmail.com>",
-  "license": "MIT",
   "devDependencies": {
     "@babel/core": "7.17.2",
     "@babel/plugin-proposal-class-properties": "7.16.7",
