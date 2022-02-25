@@ -105,7 +105,7 @@
     "lint-staged": "12.3.4",
     "nanoid": "^3.3.1",
     "path": "^0.12.7",
-    "postcss": "8.4.6",
+    "postcss": "8.4.7",
     "postcss-animation": "0.0.12",
     "postcss-fixes": "3.0.0",
     "postcss-import": "14.0.2",
@@ -117,7 +117,7 @@
     "precss": "^4.0.0",
     "prettier": "^2.5.0",
     "progress-stream": "^2.0.0",
-    "sass": "^1.49.8",
+    "sass": "^1.49.9",
     "size-limit": "7.0.8",
     "sort-css-media-queries": "2.0.4",
     "stylelint": "14.5.3",
@@ -163,7 +163,7 @@
     "store.js": "1.0.4",
     "swiper": "8.0.6",
     "template7": "^1.4.2",
-    "three": "0.137.5",
+    "three": "0.138.0",
     "yall-js": "^3.2.0"
   },
   "scarfSettings": {
