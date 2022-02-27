@@ -1,10 +1,10 @@
 dist/*
 output/*
-__tests__/**
-__mocks__/**
+__tests__/*
+__mocks__/*
 public/*
 node_modules/*
-gulpfile.babel.js/**
+gulpfile.babel.js/*
 *.test.js
 *.spec.js
 babel.config.js
