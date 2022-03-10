@@ -59,7 +59,7 @@
     "browsersync-ssi": "^0.2.4",
     "critical": "^4.0.1",
     "css-mqpacker": "7.0.0",
-    "cssnano": "5.1.0",
+    "cssnano": "5.1.1",
     "dotenv": "^16.0.0",
     "eslint": "8.10.0",
     "eslint-config-prettier": "^8.5.0",
@@ -148,7 +148,7 @@
   "dependencies": {
     "@babel/polyfill": "7.12.1",
     "@babel/runtime": "7.17.2",
-    "axios": "0.26.0",
+    "axios": "0.26.1",
     "cli-progress": "^3.10.0",
     "cookies-js": "1.2.3",
     "date.js": "0.3.3",
