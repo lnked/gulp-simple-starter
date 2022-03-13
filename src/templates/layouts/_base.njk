@@ -3,7 +3,15 @@
 <!DOCTYPE html>
 <html class="no-js" lang="{{ pageLang }}" itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
-  {%- include "./_head.njk" -%}
+  <head>
+    {%- block css -%}
+      {% for style in styles %}<link rel="stylesheet" href="{{ style }}">{% endfor %}
+    {%- endblock -%}
+
+    {%- include "components/_meta.njk" -%}
+
+    <script>(function(d){d.className=d.className.replace(/\bno-js/,'')})(document.documentElement)</script>
+  </head>
 
   <body class="page{% if development %} debug{% endif %}{% if bodyClass %} {{ bodyClass }}{% endif %}">
     {{ svgstore | safe }}
@@ -19,6 +27,9 @@
     </main>
 
     {%- include "footer/footer.njk" -%}
-    {%- include "components/_scripts.njk" -%}
+
+    {%- block scripts -%}
+      {%- include "components/_scripts.njk" -%}
+    {%- endblock -%}
   </body>
 </html>
