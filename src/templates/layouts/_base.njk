@@ -8,7 +8,7 @@
       {% for style in styles %}<link rel="stylesheet" href="{{ style }}">{% endfor %}
     {%- endblock -%}
 
-    {%- include "components/_meta.njk" -%}
+    {%- include "./_meta-tags.njk" -%}
 
     <script>(function(d){d.className=d.className.replace(/\bno-js/,'')})(document.documentElement)</script>
   </head>
