@@ -1,0 +1,27 @@
+{% import "utils/mixins.njk" as macro %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="{{ pageLang }}" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
+  <head>
+    {%- block css -%}
+      {% for style in styles %}<link rel="stylesheet" href="{{ style }}">{% endfor %}
+    {%- endblock -%}
+
+    {%- include "./_meta-tags.njk" -%}
+
+    <script>(function(d){d.className=d.className.replace(/\bno-js/,'')})(document.documentElement)</script>
+  </head>
+
+  <body class="page{% if development %} debug{% endif %}{% if bodyClass %} {{ bodyClass }}{% endif %}">
+    {{ svgstore | safe }}
+
+    <main class="layout-wrapper">
+      <div class="layout-wrapper__content" style="padding-top: 120px">
+        {%- block content -%}{%- endblock -%}
+      </div>
+    </main>
+
+    {%- block scripts -%}{%- endblock -%}
+  </body>
+</html>

@@ -1,0 +1,23 @@
+---
+pageTitle: Главная
+current: index
+description: Главная
+keywords: Главная
+---
+
+{%- extends "layouts/_qr.njk" -%}
+
+{# add additional scripts  #}
+{%- block scripts -%}
+  {{ super() }}
+  <script src="/static/js/qr.js"></script>
+{%- endblock -%}
+
+{%- block content -%}
+<section>
+  <div class="layout" stytle="display: flex; min-height: 100vh; align-items: center; justify-content: center;">
+    <button type="button" id="request" stytle="padding: 15px;">Запросить доступ к камере</button>
+    {# <button type="button" id="revoke">Отозвать доступ к камере</button> #}
+  </div>
+</section>
+{%- endblock -%}
