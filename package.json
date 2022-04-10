@@ -61,7 +61,7 @@
     "css-mqpacker": "7.0.0",
     "cssnano": "5.1.7",
     "dotenv": "^16.0.0",
-    "eslint": "8.12.0",
+    "eslint": "8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-clean-regex": "^0.5.1",
@@ -142,7 +142,7 @@
     "webpack": "5.72.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-stream": "7.0.0",
-    "yargs": "17.4.0",
+    "yargs": "17.4.1",
     "zlib": "^1.0.5"
   },
   "dependencies": {
@@ -161,7 +161,7 @@
     "pubsub-js": "^1.9.4",
     "querystate": "^1.0.9",
     "store.js": "1.0.4",
-    "swiper": "8.0.7",
+    "swiper": "8.1.0",
     "template7": "^1.4.2",
     "three": "0.139.2",
     "yall-js": "^3.2.0"
