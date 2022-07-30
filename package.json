@@ -44,7 +44,7 @@
     "@types/axios": "^0.14.0",
     "@types/jest": "^28.1.6",
     "@types/mustache": "^4.2.1",
-    "@types/node": "^18.6.1",
+    "@types/node": "^18.6.2",
     "@types/terser-webpack-plugin": "^5.2.0",
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
@@ -163,7 +163,7 @@
     "store.js": "1.0.4",
     "swiper": "8.3.2",
     "template7": "^1.4.2",
-    "three": "0.142.0",
+    "three": "0.143.0",
     "yall-js": "^4.0.2"
   },
   "scarfSettings": {
