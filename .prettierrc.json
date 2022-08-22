@@ -9,7 +9,7 @@
   "eslintIntegration": true,
   "bracketSameLine": false,
   "stylelintIntegration": true,
-  "arrowParens": "avoid",
+  "arrowParens": "always",
   "bracketSpacing": true,
   "parser": "typescript",
   "endOfLine": "auto"
