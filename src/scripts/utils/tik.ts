@@ -1,5 +1,6 @@
 declare global {
   interface Window {
+    webkitRequestAnimationFrame: any;
     mozRequestAnimationFrame: any;
     msRequestAnimationFrame: any;
     oRequestAnimationFrame: any;
@@ -16,7 +17,7 @@ export const requestAnimationFrame =
     window.setTimeout(callback, 1000 / 60);
   };
 
-export const tik = onUpdate => {
+export const tik = (onUpdate) => {
   const loop = () => {
     onUpdate(window.pageYOffset, () => {
       requestAnimationFrame(loop);

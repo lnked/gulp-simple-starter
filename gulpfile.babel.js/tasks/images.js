@@ -22,7 +22,7 @@ const extensions = '{png,jpg,jpeg,gif,svg,webp,webm,ogg,ogv,mp4,mov}';
 
 export const imagesWatchGlob = [`${imagesPath}/*.${extensions}`, `${imagesPath}/**/*.${extensions}`];
 
-const condition = formats => file => {
+const condition = (formats) => (file) => {
   const { history = [] } = file || {};
   const [filename] = history;
 
@@ -30,7 +30,7 @@ const condition = formats => file => {
 };
 
 const progressBar = new cliProgress.SingleBar({
-  format: 'Image optimization progress |' + colors.cyan('{bar}') + '| {percentage}% || {value}/{total} Files',
+  format: 'Image optimization progress |' + colors.cyan('{bar}') + '| {percentage}% | {value}/{total} Files',
   barCompleteChar: '\u2588',
   barIncompleteChar: '\u2591',
   hideCursor: true,
@@ -59,7 +59,7 @@ const progressStream = progress({
   objectMode: true,
 });
 
-progressStream.on('progress', stats => {
+progressStream.on('progress', (stats) => {
   progressBar.update(stats.percentage.toFixed(0), {
     value: countDiffFiles(imagesCache, fileList),
     total: fileCount,

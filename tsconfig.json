@@ -47,6 +47,6 @@
     },
     "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["./**/*", "node_modules/@types"],
+  "include": ["./src/scripts/**/*", "node_modules/@types"],
   "exclude": ["node_modules/**/*", "gulpfile.babel.js/**/*", "public/**/*", "**/*.spec.ts", "**/*.test.ts"]
 }

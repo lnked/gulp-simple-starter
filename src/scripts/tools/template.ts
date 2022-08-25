@@ -1,3 +1,4 @@
+// @ts-ignore
 import Template7 from 'template7';
 
 declare global {

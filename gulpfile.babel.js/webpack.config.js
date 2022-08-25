@@ -2,8 +2,9 @@ import { resolve } from 'path';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import TerserPlugin from 'terser-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
-import { cacheDirectory, env, production, rootPath, mode } from './env';
+import { cacheDirectory, env, production, development, rootPath, mode } from './env';
 import { alias, devtool, entries, scriptsSourcePath } from './tools/helpers';
 
 const { BUNDLE_ANALYZER } = env;
@@ -33,6 +34,7 @@ export default {
             loader: 'thread-loader',
             options: {
               name: 'js',
+              workers: 4,
               workerParallelJobs: 50,
               poolRespawn: production,
             },
@@ -50,13 +52,20 @@ export default {
   resolve: {
     alias,
     mainFiles: ['index'],
+    roots: ['node_modules', scriptsSourcePath],
     modules: ['node_modules'],
-    extensions: ['', '.ts', '.tsx', '.js', '.jsx', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     unsafeCache: true,
     preferRelative: true,
     cacheWithContext: true,
   },
   plugins: [
+    new ForkTsCheckerWebpackPlugin({
+      async: development,
+      typescript: {
+        configFile: resolve(rootPath, './tsconfig.json'),
+      },
+    }),
     new ESLintPlugin({
       files: ['src/**/*.tsx?', 'src/**/*.jsx?'],
       exclude: ['/node_modules/'],

@@ -5,7 +5,7 @@ import { useState } from '@hooks/useState';
 const modules = [Navigation];
 
 const init = () => {
-  const [getCounter, setCounter] = useState(2);
+  const [count, setCounter] = useState(2);
 
   Modal.open('example', {
     name: 'example name',
@@ -16,26 +16,25 @@ const init = () => {
   const values: HTMLElement | null = document.getElementById('counter-value');
 
   const pasteValue = () => {
-    const next = getCounter();
-    values!.innerText = next.toString();
+    values!.innerText = count.toString();
   };
 
   pasteValue();
 
   button?.addEventListener('click', () => {
     setCounter(Math.random() * 11);
-    setCounter(count => count + 1);
+    setCounter((prevCount) => Number(prevCount) + 1);
     pasteValue();
   });
 };
 
 window.addEventListener('load', () => {
   init();
-  modules?.forEach(module => module?.init());
+  modules?.forEach((module) => module?.init());
 });
 
 const terminate = () => {
-  modules?.forEach(module => module?.terminate());
+  modules?.forEach((module) => module?.terminate());
 };
 
 window.addEventListener('unload', terminate);

@@ -1,4 +1,3 @@
-import precss from 'precss';
 import cssnano from 'cssnano';
 import MQPacker from 'css-mqpacker';
 import sortCSSmq from 'sort-css-media-queries';
@@ -13,9 +12,8 @@ import pseudoelements from 'postcss-pseudoelements';
 import { isUncss, production } from './env';
 import { purgeCSSConfig } from './config';
 
-export const postCSSCallback = file => ({
+export const postCSSCallback = (file) => ({
   plugins: [
-    precss(),
     MQPacker({ sort: sortCSSmq }),
     postcssFixes({ preset: 'safe' }),
     immutableCss({ verbose: false }),
