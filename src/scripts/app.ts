@@ -2,6 +2,7 @@ import Modal from '@tools/modal';
 import Navigation from '@components/navigation';
 import { onChange, onClick } from '@helpers/events';
 import { useState } from '@hooks/useState';
+import { useEffect } from '@hooks/useEffect';
 
 const modules = [Navigation];
 
@@ -20,6 +21,16 @@ const init = () => {
     setCounter(target.value);
     pasteValue();
   });
+
+  const count = getCount();
+
+  useEffect(() => {
+    console.log('%c mount', 'color: white; background-color: #33bf26;');
+
+    return () => {
+      console.log('%c unmount', 'color: white; background-color: #bf2626;');
+    };
+  }, [count]);
 
   onClick('#open-modal', () => {
     console.log('click open-modal');

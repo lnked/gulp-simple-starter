@@ -6,8 +6,8 @@ const Navigation = (() => {
 
   const elements = document.querySelectorAll('.j-nav');
 
-  state.set('c', 'd');
-  state.get('colors');
+  state.set('color', 'red');
+  state.get('color');
   state.get('wizard', 'Merlin');
 
   // state.remove('c');
@@ -23,10 +23,10 @@ const Navigation = (() => {
 
   return {
     terminate: () => {
-      elements.forEach(target => target.removeEventListener('click', listener, false));
+      elements.forEach((target) => target.removeEventListener('click', listener, false));
     },
     init: () => {
-      elements.forEach(target => target.addEventListener('click', listener, false));
+      elements.forEach((target) => target.addEventListener('click', listener, false));
     },
   };
 })();
