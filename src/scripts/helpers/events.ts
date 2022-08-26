@@ -34,23 +34,19 @@ const addListener = (
 export const onClick = (selector: SelectorType, callback: CallbackType) => {
   if (typeof selector === 'string') {
     addListener('click', getElement(selector), callback);
-  }
-
-  if (typeof selector === 'object' && selector !== null) {
+  } else if (typeof selector === 'object' && selector !== null) {
     addListener('click', selector, callback);
   }
 };
 
 export const onChange = (selector: SelectorType, callback: ResponseCallbackType) => {
-  if (typeof selector === 'string') {
-    addListener('input', getElement(selector), (event?: Event) => {
-      callback((event?.target as HTMLInputElement).value);
-    });
-  }
+  const listener = (event?: Event) => {
+    callback((event?.target as HTMLInputElement).value);
+  };
 
-  if (typeof selector === 'object' && selector !== null) {
-    addListener('change', selector, (event?: Event) => {
-      callback((event?.target as HTMLInputElement).value);
-    });
+  if (typeof selector === 'string') {
+    addListener('input', getElement(selector), listener);
+  } else if (typeof selector === 'object' && selector !== null) {
+    addListener('change', selector, listener);
   }
 };
