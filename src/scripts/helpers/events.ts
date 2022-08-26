@@ -1,5 +1,5 @@
 type CallbackType = (event?: Event) => void;
-type ResponseCallbackType = (value?: string) => void;
+type ResponseCallbackType = (target: HTMLInputElement) => void;
 type SelectorType = HTMLElement | string | null;
 type SupportedEventsType = 'click' | 'change' | 'input';
 
@@ -41,12 +41,14 @@ export const onClick = (selector: SelectorType, callback: CallbackType) => {
 
 export const onChange = (selector: SelectorType, callback: ResponseCallbackType) => {
   const listener = (event?: Event) => {
-    callback((event?.target as HTMLInputElement).value);
+    if (event?.target instanceof HTMLInputElement) {
+      callback(event.target);
+    }
   };
 
   if (typeof selector === 'string') {
     addListener('input', getElement(selector), listener);
   } else if (typeof selector === 'object' && selector !== null) {
-    addListener('change', selector, listener);
+    addListener('input', selector, listener);
   }
 };

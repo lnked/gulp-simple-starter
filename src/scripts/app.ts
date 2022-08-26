@@ -16,13 +16,9 @@ const init = () => {
 
   pasteValue();
 
-  onChange('#test-input', (value) => {
-    setCounter(value?.toString());
+  onChange('#test-input', (target) => {
+    setCounter(target.value);
     pasteValue();
-  });
-
-  onClick('.xx', () => {
-    console.log('click class');
   });
 
   onClick('#open-modal', () => {
