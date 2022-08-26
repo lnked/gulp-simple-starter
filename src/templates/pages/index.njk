@@ -29,8 +29,14 @@ keywords: Главная
     <br>
     <br>
 
+    <div class="xx">xx 1</div>
+    <div class="xx">xx 2</div>
+
     <div style="background-color: #d2d2d2; padding: 15px">
-      <button type="button" id="counter">count <span id="counter-value">{{ counter }}</span></button>
+      <div style="background-color: #eee; color: #000; padding: 5px; margin-bottom: 20px;" id="counter-value">count: {{ counter }}</div>
+      <button style="padding: 4px 6px;" type="button" id="counter-increase">+</button>
+      <button style="padding: 4px 6px;" type="button" id="counter-decrease">-</button>
+      <button style="padding: 4px 6px;" type="button" id="open-modal">Open Modal</button>
     </div>
   </div>
 </section>

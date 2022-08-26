@@ -1,29 +1,45 @@
 import Modal from '@tools/modal';
 import Navigation from '@components/navigation';
+import { onClick } from '@helpers/events';
 import { useState } from '@hooks/useState';
 
 const modules = [Navigation];
 
 const init = () => {
-  const [count, setCounter] = useState(2);
+  const [getCount, setCounter] = useState(0);
 
-  Modal.open('example', {
-    name: 'example name',
-    data: [{ name: 'item 111' }, { name: 'item 222' }, { name: 'item 444' }],
-  });
-
-  const button = document.getElementById('counter');
   const values: HTMLElement | null = document.getElementById('counter-value');
 
   const pasteValue = () => {
-    values!.innerText = count.toString();
+    values!.innerText = getCount().toString();
   };
 
   pasteValue();
 
-  button?.addEventListener('click', () => {
-    setCounter(Math.random() * 11);
+  onClick('.xx', () => {
+    console.log('click class');
+  });
+
+  onClick('#open-modal', () => {
+    console.log('click open-modal');
+
+    Modal.open('example', {
+      name: 'example name',
+      data: [{ name: 'item 111' }, { name: 'item 222' }, { name: 'item 444' }],
+    });
+  });
+
+  onClick('#counter-increase', () => {
+    console.log('click increase');
+
     setCounter((prevCount) => Number(prevCount) + 1);
+    pasteValue();
+  });
+
+  onClick('#counter-decrease', () => {
+    console.log('click decrease');
+
+    setCounter((prevCount) => Number(prevCount) - 1);
     pasteValue();
   });
 };

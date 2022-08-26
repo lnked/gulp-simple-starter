@@ -20,6 +20,7 @@ body {
 
 html {
   quotes: "“" "”";
+  font-size: $rem-base;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }

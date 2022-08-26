@@ -36,17 +36,19 @@
       "*": ["*", "./*"],
       "@libs/*": ["./libs/*"],
       "@hooks/*": ["./hooks/*"],
+      "@helpers/*": ["./helpers/*"],
       "@utils/*": ["./utils/*"],
       "@tools/*": ["./tools/*"],
       "@stores/*": ["./stores/*"],
       "@configs/*": ["./configs/*"],
       "@services/*": ["./services/*"],
       "@settings/*": ["./settings/*"],
+      "@constants/*": ["./constants/*"],
       "@components/*": ["./components/*"],
       "tslib" : ["node_modules/tslib/tslib.d.ts"]
     },
-    "typeRoots": ["./node_modules/@types"]
+    "typeRoots": ["node_modules/@types"]
   },
-  "include": ["./src/scripts/**/*", "node_modules/@types"],
+  "include": ["src/scripts/**/*", "node_modules/@types"],
   "exclude": ["node_modules/**/*", "gulpfile.babel.js/**/*", "public/**/*", "**/*.spec.ts", "**/*.test.ts"]
 }
