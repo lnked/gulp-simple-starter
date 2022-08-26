@@ -1,4 +1,7 @@
-type CallbackType = () => void;
+type CallbackType = (event?: Event) => void;
+type ResponseCallbackType = (value?: string) => void;
+type SelectorType = HTMLElement | string | null;
+type SupportedEventsType = 'click' | 'change' | 'input';
 
 const getElement = (selector: string) => {
   const isSingleElement = selector.substring(0, 1) === '#';
@@ -10,26 +13,44 @@ const getElement = (selector: string) => {
   return document.querySelectorAll(selector);
 };
 
-const addListener = (node: NodeListOf<Element> | Element | null, callback: CallbackType) => {
+const addListener = (
+  event: SupportedEventsType,
+  node: NodeListOf<Element> | Element | null,
+  callback: CallbackType,
+) => {
   if (node === null) {
     return;
   }
 
   if (node instanceof NodeList) {
     for (const element of node) {
-      element.addEventListener('click', callback);
+      element.addEventListener(event, callback);
     }
   } else {
-    node?.addEventListener('click', callback);
+    node?.addEventListener(event, callback);
   }
 };
 
-export const onClick = (selector: HTMLElement | string | null, callback: CallbackType) => {
+export const onClick = (selector: SelectorType, callback: CallbackType) => {
   if (typeof selector === 'string') {
-    addListener(getElement(selector), callback);
+    addListener('click', getElement(selector), callback);
   }
 
   if (typeof selector === 'object' && selector !== null) {
-    addListener(selector, callback);
+    addListener('click', selector, callback);
+  }
+};
+
+export const onChange = (selector: SelectorType, callback: ResponseCallbackType) => {
+  if (typeof selector === 'string') {
+    addListener('input', getElement(selector), (event?: Event) => {
+      callback((event?.target as HTMLInputElement).value);
+    });
+  }
+
+  if (typeof selector === 'object' && selector !== null) {
+    addListener('change', selector, (event?: Event) => {
+      callback((event?.target as HTMLInputElement).value);
+    });
   }
 };

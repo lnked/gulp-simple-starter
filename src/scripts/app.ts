@@ -1,6 +1,6 @@
 import Modal from '@tools/modal';
 import Navigation from '@components/navigation';
-import { onClick } from '@helpers/events';
+import { onChange, onClick } from '@helpers/events';
 import { useState } from '@hooks/useState';
 
 const modules = [Navigation];
@@ -15,6 +15,11 @@ const init = () => {
   };
 
   pasteValue();
+
+  onChange('#test-input', (value) => {
+    setCounter(value?.toString());
+    pasteValue();
+  });
 
   onClick('.xx', () => {
     console.log('click class');
