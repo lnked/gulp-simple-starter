@@ -80,6 +80,10 @@ export default {
         ]
       : []),
   ],
+  performance: {
+    hints: false,
+    assetFilter: (assetFilename) => assetFilename.endsWith('.js'),
+  },
   ...(production
     ? {
         optimization: {
