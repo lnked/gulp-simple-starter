@@ -57,7 +57,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "browser-sync": "2.27.10",
     "browsersync-ssi": "^0.2.4",
-    "critical": "^4.0.1",
+    "critical": "^5.0.1",
     "css-mqpacker": "7.0.0",
     "cssnano": "5.1.13",
     "dotenv": "^16.0.2",
