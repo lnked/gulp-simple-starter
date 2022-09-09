@@ -135,7 +135,7 @@
     "svgo-sync": "CoDEmanX/svgo-sync",
     "terser-webpack-plugin": "^5.3.6",
     "thread-loader": "^3.0.4",
-    "ts-jest": "^28.0.8",
+    "ts-jest": "^29.0.0",
     "tslib": "^2.4.0",
     "typescript": "^4.8.3",
     "uncss": "0.17.3",
