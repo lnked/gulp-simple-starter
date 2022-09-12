@@ -31,7 +31,7 @@ const files = glob.sync(`{${stylesPath},${sharedPath}}/**/*.s?(a|c)?ss`, {
 export default () =>
   src(`${stylesPath}/*.s?(a|c)?ss`)
     .pipe(gulpIf(SOURCEMAPS_ENABLED, sourcemaps.init()))
-    .pipe(plumber())
+    .pipe(gulpIf(development, plumber()))
     .pipe(
       gulpIf(
         development,

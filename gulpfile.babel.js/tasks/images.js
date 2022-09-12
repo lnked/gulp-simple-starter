@@ -12,7 +12,7 @@ import cliProgress from 'cli-progress';
 import colors from 'ansi-colors';
 
 import { imagesPath, imageminConfig, webpConfig } from '../config';
-import { imagesCache, imagesOutput, production, env } from '../env';
+import { imagesCache, imagesOutput, production, env, development } from '../env';
 import { reload } from './webserver';
 import { countFiles, getFilesList, countDiffFiles } from '../tools/helpers';
 
@@ -73,7 +73,7 @@ export const cacheImages = () => {
   });
 
   return src(imagesWatchGlob)
-    .pipe(plumber())
+    .pipe(gulpIf(development, plumber()))
     .pipe(newer(imagesCache, { ctime: true }))
     .pipe(
       gulpIf(
