@@ -61,7 +61,7 @@
     "critical": "^4.0.1",
     "css-mqpacker": "7.0.0",
     "cssnano": "5.1.13",
-    "dotenv": "^16.0.2",
+    "dotenv": "^16.0.3",
     "eslint": "8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.1",
