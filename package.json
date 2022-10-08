@@ -61,7 +61,7 @@
     "css-mqpacker": "7.0.0",
     "cssnano": "5.1.13",
     "dotenv": "^16.0.3",
-    "eslint": "8.24.0",
+    "eslint": "8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.1",
     "eslint-plugin-clean-regex": "^0.5.1",
@@ -148,7 +148,7 @@
   "dependencies": {
     "@babel/polyfill": "7.12.1",
     "@babel/runtime": "7.19.0",
-    "axios": "1.1.0",
+    "axios": "1.1.2",
     "cli-progress": "^3.11.2",
     "cookies-js": "1.2.3",
     "date.js": "0.3.3",
