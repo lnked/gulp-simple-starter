@@ -1,0 +1,22 @@
+.loader {
+  position: relative;
+
+  &__spinner {
+    width: 120px;
+    height: 120px;
+
+    &__circle {
+      transition: 0.35s stroke-dashoffset;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    user-select: none;
+    pointer-events: none;
+  }
+}

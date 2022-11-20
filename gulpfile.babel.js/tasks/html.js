@@ -27,7 +27,12 @@ const files = glob.sync(`${htmlPath}/**/*.{${extensions}}`, {
   ignore: [`${htmlPath}/pages/**/*`],
 });
 
-export const htmlWatchGlob = [`${sharedPath}/**/*.{${extensions}}`, `${htmlPath}/**/*.{${extensions}}`];
+export const htmlWatchGlob = [
+  `${sharedPath}/**/*.{${extensions}}`,
+  `${sharedPath}/*.{${extensions}}`,
+  `${htmlPath}/**/*.{${extensions}}`,
+  `${htmlPath}/*.{${extensions}}`,
+];
 
 export default () =>
   src([`${htmlPath}/pages/**/*.{${extensions}}`, `!${htmlPath}/**/_*.*`])

@@ -3,6 +3,7 @@ import Navigation from '@components/navigation';
 import { onChange, onClick } from '@helpers/events';
 import { useState } from '@hooks/useState';
 import { useEffect } from '@hooks/useEffect';
+import { animate } from '@helpers/animate';
 
 const modules = [Navigation];
 
@@ -58,6 +59,7 @@ const init = () => {
 
 window.addEventListener('load', () => {
   init();
+  animate();
   modules?.forEach((module) => module?.init());
 });
 
