@@ -1,22 +1,76 @@
+$size: 120px;
+$half-size: 120px / 2;
+$border-size: 10px;
+$padding-size: 2px;
+$background-color: #fff;
+
+$logo: $size - $border-size * 2;
+$size2: $size + $padding-size * 2;
+$half-size2: $half-size + $padding-size * 2;
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 .loader {
   position: relative;
+  position: relative;
+  width: $size;
+  height: $size;
+  box-shadow: inset 0 0 0 $border-size;
+  transform: translateZ(0);
 
-  &__spinner {
-    width: 120px;
-    height: 120px;
+  color: rgba(214, 56, 49, 0.5);
 
-    &__circle {
-      transition: 0.35s stroke-dashoffset;
-      transform: rotate(-90deg);
-      transform-origin: 50% 50%;
-    }
+  &,
+  &:before,
+  &:after {
+    border-radius: 50%;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+  }
+
+  &:before {
+    width: $half-size2;
+    height: $size2;
+    background: $background-color;
+    border-radius: $size2 0 0 $size2;
+    top: -$padding-size;
+    left: -$padding-size;
+    transform-origin: $half-size + $padding-size $half-size + $padding-size;
+    animation: loader 2s infinite ease 1.5s;
+  }
+
+  &:after {
+    width: $half-size + $padding-size * 2;
+    height: $size2;
+    background: $background-color;
+    border-radius: 0 $size2 $size2 0;
+    top: -$padding-size;
+    left: $half-size - $padding-size;
+    transform-origin: $padding-size $half-size + $padding-size;
+    animation: loader 2s infinite ease;
   }
 
   &__logo {
-    position: absolute;
-    left: 10px;
-    top: 10px;
+    width: $logo;
+    height: $logo;
+    padding: $padding-size;
+    position: absolute $border-size;
     user-select: none;
     pointer-events: none;
+    text-indent: 0;
+    z-index: 10;
   }
 }
